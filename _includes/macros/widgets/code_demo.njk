@@ -1,0 +1,19 @@
+{% from 'macros/widgets/code_block.njk' import codeBlock as codeBlock %}
+
+{% macro codeDemo(description, result, code) %}
+<div class='bfx-docs-widget-code-demo__wrapper'>
+  <div class='bfx-docs-widget-code-demo__left bfx-docs-widget-code-demo__result'>
+    {{ result }}
+  </div>
+  <div class='bfx-docs-widget-code-demo__right'>
+    <div class='bfx-docs-widget-code-demo__code'>
+      {{ codeBlock(code) }}
+    </div>
+    <div class='bfx-docs-widget-code-demo__desc'>
+      <p>
+        {{ description }}
+      </p>
+    </div>
+  </div>
+</div>
+{% endmacro %}

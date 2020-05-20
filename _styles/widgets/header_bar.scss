@@ -1,0 +1,34 @@
+@import './variables.scss';
+
+#bfx-header-bar {
+  height: 71px;
+  color: $fg;
+}
+
+#bfx-header-bar__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+
+  > a {
+    line-height: 71px;
+  }
+
+  img {
+    max-width: 211px;
+  }
+}
+
+#bfx-header-bar__title {
+  font-size: 18px;
+  width: 100%;
+  flex: 1;
+  text-align: right;
+}
+
+#bfx-header-bar__github {
+  margin-left: 16px;
+  line-height: 71px;
+}
+

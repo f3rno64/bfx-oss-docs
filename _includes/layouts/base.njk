@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    {% block meta %}{% endblock %}
+
+    <link rel="stylesheet" type="text/css" href="/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/highlightjs/night-owl.css" />
+
+    <title>{{ page_title }}</title>
+  </head>
+  <body>
+    {% include 'widgets/header_bar.njk' %}
+
+    <div id="bfx-docs-content-wrapper">
+      {% block body %}{% endblock %}
+    </div>
+
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

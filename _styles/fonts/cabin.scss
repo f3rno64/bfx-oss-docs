@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin'), local('Cabin-Regular'),
+       url('/assets/fonts/cabin/cabin-v14-latin-regular.woff2') format('woff2'),
+       url('/assets/fonts/cabin/cabin-v14-latin-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Cabin Medium'), local('Cabin-Medium'),
+       url('/assets/fonts/cabin/cabin-v14-latin-500.woff2') format('woff2'),
+       url('/assets/fonts/cabin/cabin-v14-latin-500.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cabin';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Cabin Italic'), local('Cabin-Italic'),
+       url('/assets/fonts/cabin/cabin-v14-latin-italic.woff2') format('woff2'),
+       url('/assets/fonts/cabin/cabin-v14-latin-italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cabin';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Cabin Medium Italic'), local('Cabin-MediumItalic'),
+       url('/assets/fonts/cabin/cabin-v14-latin-500italic.woff2') format('woff2'),
+       url('/assets/fonts/cabin/cabin-v14-latin-500italic.woff') format('woff');
+}

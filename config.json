@@ -1,0 +1,263 @@
+{
+  "output": {
+    "static_site": "./dist/site",
+    "jsdoc_dist": "./dist/jsdoc",
+    "jsdoc_conf": ".jsdoc-merged.json"
+  },
+
+  "routing": {
+    "/": "index.njk",
+    "/libraries/$repo": "libraries/$repo.njk"
+  },
+
+  "layouts": {
+    "engine": "nunjucks",
+    "include_path": "_includes",
+    "pages_path": "_pages",
+    "options": {
+      "autoescape": true,
+      "throwOnUndefined": true,
+      "trimBlocks": true
+    }
+  },
+
+  "assets": {
+    "svg": "_assets/svg",
+    "svg/svg-icons": "_assets/npm/svg-icon/dist/svg",
+    "css/highlightjs": "_assets/npm/highlight.js/src/styles"
+  },
+
+  "styles": {
+    "config": {
+      "compressed": true,
+      "sourceMap": true,
+      "sourceMapContents": true,
+      "includePaths": [
+        "_styles/"
+      ]
+    },
+
+    "sources": {
+      "index.css": "_styles/main.scss"
+    }
+  },
+
+  "markdown": {
+    "parser": "markdown-it",
+    "options": {
+      "html": true,
+      "linkify": true,
+      "typographer": true,
+      "quotes": "'“”‘’'"
+    },
+
+    "plugins": {
+      "markdown-it-emoji": {},
+      "markdown-it-highlightjs": {
+        "auto": false,
+        "code": true
+      }
+    }
+  },
+
+  "package-root": "./modules",
+
+  "packages": {
+    "bitfinex-api-node": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-mock-srv": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-core": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-models": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-plugin-example": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-plugin-managed-candles": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-plugin-managed-ob": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-plugin-ob-checksum": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-plugin-seq-audit": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-plugin-wd": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-rest": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-util": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-api-node-ws1": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-algo": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-algo-server": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-backtest": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-chart": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-data-server": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-ext-plugin-bitfinex": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-ext-plugin-dummy": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-indicators": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-models": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-models-adapter-lowdb": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-models-adapter-sql": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-models-adapter-template": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-server": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-strategy": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-strategy-exec": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-ui-config": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-hf-util": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "bfx-ws2-api-audit": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "cbq-js": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "caron": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "eos-name-verify": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "grenache-browser-http": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "grenache-grape": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "grenache-nodejs-base": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "grenache-nodejs-http": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "grenache-nodejs-link": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "grenache-nodejs-utp": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "grenache-nodejs-ws": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "grenache-nodejs-ws-tls": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "lib-js-util-currencies": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "lib-js-util-math": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "lib-js-util-number": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "lib-js-util-symbol": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "smidgen": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "sunbeam": {
+      "type": "node",
+      "docs_index": "docs/"
+    },
+    "wasteland": {
+      "type": "node",
+      "docs_index": "docs/"
+    }
+  }
+}

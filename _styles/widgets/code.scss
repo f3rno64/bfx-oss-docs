@@ -1,0 +1,25 @@
+@import 'variables';
+
+.bfx-docs-code figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.bfx-docs-code,
+.highlighter-rouge {
+  &, figure {
+    border-radius: 4px;
+  }
+
+  pre {
+    box-shadow: $content-box-shadow;
+    padding: 32px;
+  }
+
+  code {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+}

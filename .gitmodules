@@ -1,0 +1,270 @@
+[submodule "modules/affiliates-nicknames"]
+	path = modules/affiliates-nicknames
+	url = https://github.com/f3rno/affiliates-nicknames.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-mock-srv"]
+	path = modules/bfx-api-mock-srv
+	url = https://github.com/f3rno/bfx-api-mock-srv.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-core"]
+	path = modules/bfx-api-node-core
+	url = https://github.com/f3rno/bfx-api-node-core.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-mock-data"]
+	path = modules/bfx-api-node-mock-data
+	url = https://github.com/f3rno/bfx-api-node-mock-data.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-models"]
+	path = modules/bfx-api-node-models
+	url = https://github.com/f3rno/bfx-api-node-models.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-plugin-example"]
+	path = modules/bfx-api-node-plugin-example
+	url = https://github.com/f3rno/bfx-api-node-plugin-example.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-plugin-managed-candles"]
+	path = modules/bfx-api-node-plugin-managed-candles
+	url = https://github.com/f3rno/bfx-api-node-plugin-managed-candles.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-plugin-managed-ob"]
+	path = modules/bfx-api-node-plugin-managed-ob
+	url = https://github.com/f3rno/bfx-api-node-plugin-managed-ob.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-plugin-ob-checksum"]
+	path = modules/bfx-api-node-plugin-ob-checksum
+	url = https://github.com/f3rno/bfx-api-node-plugin-ob-checksum.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-plugin-seq-audit"]
+	path = modules/bfx-api-node-plugin-seq-audit
+	url = https://github.com/f3rno/bfx-api-node-plugin-seq-audit.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-plugin-wd"]
+	path = modules/bfx-api-node-plugin-wd
+	url = https://github.com/f3rno/bfx-api-node-plugin-wd.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-rest"]
+	path = modules/bfx-api-node-rest
+	url = https://github.com/f3rno/bfx-api-node-rest.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-util"]
+	path = modules/bfx-api-node-util
+	url = https://github.com/f3rno/bfx-api-node-util.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-api-node-ws1"]
+	path = modules/bfx-api-node-ws1
+	url = https://github.com/f3rno/bfx-api-node-ws1.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-algo"]
+	path = modules/bfx-hf-algo
+	url = https://github.com/f3rno/bfx-hf-algo.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-algo-server"]
+	path = modules/bfx-hf-algo-server
+	url = https://github.com/f3rno/bfx-hf-algo-server.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-backtest"]
+	path = modules/bfx-hf-backtest
+	url = https://github.com/f3rno/bfx-hf-backtest.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-chart"]
+	path = modules/bfx-hf-chart
+	url = https://github.com/f3rno/bfx-hf-chart.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-data-server"]
+	path = modules/bfx-hf-data-server
+	url = https://github.com/f3rno/bfx-hf-data-server.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-ext-plugin-bitfinex"]
+	path = modules/bfx-hf-ext-plugin-bitfinex
+	url = https://github.com/f3rno/bfx-hf-ext-plugin-bitfinex.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-ext-plugin-dummy"]
+	path = modules/bfx-hf-ext-plugin-dummy
+	url = https://github.com/f3rno/bfx-hf-ext-plugin-dummy.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-indicators"]
+	path = modules/bfx-hf-indicators
+	url = https://github.com/f3rno/bfx-hf-indicators.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-indicators-py"]
+	path = modules/bfx-hf-indicators-py
+	url = https://github.com/f3rno/bfx-hf-indicators-py.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-models"]
+	path = modules/bfx-hf-models
+	url = https://github.com/f3rno/bfx-hf-models.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-models-adapter-lowdb"]
+	path = modules/bfx-hf-models-adapter-lowdb
+	url = https://github.com/f3rno/bfx-hf-models-adapter-lowdb.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-models-adapter-sql"]
+	path = modules/bfx-hf-models-adapter-sql
+	url = https://github.com/f3rno/bfx-hf-models-adapter-sql.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-models-adapter-template"]
+	path = modules/bfx-hf-models-adapter-template
+	url = https://github.com/f3rno/bfx-hf-models-adapter-template.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-server"]
+	path = modules/bfx-hf-server
+	url = https://github.com/f3rno/bfx-hf-server.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-strategy"]
+	path = modules/bfx-hf-strategy
+	url = https://github.com/f3rno/bfx-hf-strategy.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-strategy-exec"]
+	path = modules/bfx-hf-strategy-exec
+	url = https://github.com/f3rno/bfx-hf-strategy-exec.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-strategy-py"]
+	path = modules/bfx-hf-strategy-py
+	url = https://github.com/f3rno/bfx-hf-strategy-py.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-ui"]
+	path = modules/bfx-hf-ui
+	url = https://github.com/f3rno/bfx-hf-ui.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-ui-config"]
+	path = modules/bfx-hf-ui-config
+	url = https://github.com/f3rno/bfx-hf-ui-config.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-hf-util"]
+	path = modules/bfx-hf-util
+	url = https://github.com/f3rno/bfx-hf-util.git
+	branch = feature-oss-docs
+[submodule "modules/bfx-ws2-api-audit"]
+	path = modules/bfx-ws2-api-audit
+	url = https://github.com/f3rno/bfx-ws2-api-audit.git
+	branch = feature-oss-docs
+[submodule "modules/bitfinex-api-go"]
+	path = modules/bitfinex-api-go
+	url = https://github.com/f3rno/bitfinex-api-go.git
+	branch = feature-oss-docs
+[submodule "modules/bitfinex-api-node"]
+	path = modules/bitfinex-api-node
+	url = https://github.com/f3rno/bitfinex-api-node.git
+	branch = feature-oss-docs
+[submodule "modules/bitfinex-api-py"]
+	path = modules/bitfinex-api-py
+	url = https://github.com/f3rno/bitfinex-api-py.git
+	branch = feature-oss-docs
+[submodule "modules/bitfinex-api-rb"]
+	path = modules/bitfinex-api-rb
+	url = https://github.com/f3rno/bitfinex-api-rb.git
+	branch = feature-oss-docs
+[submodule "modules/caron"]
+	path = modules/caron
+	url = https://github.com/f3rno/caron.git
+	branch = feature-oss-docs
+[submodule "modules/cbq-js"]
+	path = modules/cbq-js
+	url = https://github.com/f3rno/cbq-js.git
+	branch = feature-oss-docs
+[submodule "modules/eos-name-verify"]
+	path = modules/eos-name-verify
+	url = https://github.com/f3rno/eos-name-verify.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-browser-http"]
+	path = modules/grenache-browser-http
+	url = https://github.com/f3rno/grenache-browser-http.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-grape"]
+	path = modules/grenache-grape
+	url = https://github.com/f3rno/grenache-grape.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-nodejs-base"]
+	path = modules/grenache-nodejs-base
+	url = https://github.com/f3rno/grenache-nodejs-base.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-nodejs-http"]
+	path = modules/grenache-nodejs-http
+	url = https://github.com/f3rno/grenache-nodejs-http.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-nodejs-link"]
+	path = modules/grenache-nodejs-link
+	url = https://github.com/f3rno/grenache-nodejs-link.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-nodejs-proxy"]
+	path = modules/grenache-nodejs-proxy
+	url = https://github.com/f3rno/grenache-nodejs-proxy.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-nodejs-utp"]
+	path = modules/grenache-nodejs-utp
+	url = https://github.com/f3rno/grenache-nodejs-utp.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-nodejs-ws"]
+	path = modules/grenache-nodejs-ws
+	url = https://github.com/f3rno/grenache-nodejs-ws.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-nodejs-ws-tls"]
+	path = modules/grenache-nodejs-ws-tls
+	url = https://github.com/f3rno/grenache-nodejs-ws-tls.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-nodejs-zmq"]
+	path = modules/grenache-nodejs-zmq
+	url = https://github.com/f3rno/grenache-nodejs-zmq.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-ruby-base"]
+	path = modules/grenache-ruby-base
+	url = https://github.com/f3rno/grenache-ruby-base.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-ruby-http"]
+	path = modules/grenache-ruby-http
+	url = https://github.com/f3rno/grenache-ruby-http.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-ruby-ws"]
+	path = modules/grenache-ruby-ws
+	url = https://github.com/f3rno/grenache-ruby-ws.git
+	branch = feature-oss-docs
+[submodule "modules/grenache-rust"]
+	path = modules/grenache-rust
+	url = https://github.com/f3rno/grenache-rust.git
+	branch = feature-oss-docs
+[submodule "modules/lib-js-util-currencies"]
+	path = modules/lib-js-util-currencies
+	url = https://github.com/f3rno/lib-js-util-currencies.git
+	branch = feature-oss-docs
+[submodule "modules/lib-js-util-math"]
+	path = modules/lib-js-util-math
+	url = https://github.com/f3rno/lib-js-util-math.git
+	branch = feature-oss-docs
+[submodule "modules/lib-js-util-number"]
+	path = modules/lib-js-util-number
+	url = https://github.com/f3rno/lib-js-util-number.git
+	branch = feature-oss-docs
+[submodule "modules/lib-js-util-symbol"]
+	path = modules/lib-js-util-symbol
+	url = https://github.com/f3rno/lib-js-util-symbol.git
+	branch = feature-oss-docs
+[submodule "modules/moonbeam"]
+	path = modules/moonbeam
+	url = https://github.com/f3rno/moonbeam.git
+	branch = feature-oss-docs
+[submodule "modules/pesto-rb"]
+	path = modules/pesto-rb
+	url = https://github.com/f3rno/pesto-rb.git
+	branch = feature-oss-docs
+[submodule "modules/smidgen"]
+	path = modules/smidgen
+	url = https://github.com/f3rno/smidgen.git
+	branch = feature-oss-docs
+[submodule "modules/sunbeam"]
+	path = modules/sunbeam
+	url = https://github.com/f3rno/sunbeam.git
+	branch = feature-oss-docs
+[submodule "modules/tpx"]
+	path = modules/tpx
+	url = https://github.com/f3rno/tpx.git
+	branch = feature-oss-docs
+[submodule "modules/wasteland"]
+	path = modules/wasteland
+	url = https://github.com/f3rno/wasteland.git
+	branch = feature-oss-docs
+[submodule "_assets/npm/highlight.js"]
+	path = _assets/npm/highlight.js
+	url = https://github.com/highlightjs/highlight.js
+[submodule "_assets/npm/svg-icon"]
+	path = _assets/npm/svg-icon
+	url = https://github.com/leungwensen/svg-icon

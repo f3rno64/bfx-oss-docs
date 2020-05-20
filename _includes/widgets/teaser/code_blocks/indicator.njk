@@ -1,0 +1,12 @@
+{% from 'macros/widgets/code_block.njk' import codeBlock as codeBlock %}
+
+{% set src %}
+const ema = new EMA([20])
+
+ema.add(14000)
+// …
+
+console.log('ema(20) value: %f', ema.v())
+{% endset %}
+
+{{ codeBlock(src) }}

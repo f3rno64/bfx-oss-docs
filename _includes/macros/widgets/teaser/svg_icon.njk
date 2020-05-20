@@ -1,0 +1,21 @@
+{% macro svgIcon(path, alt, light=true) %}
+
+{% set src %}/svg/svg-icons/{{ path }}{% endset %}
+
+{% if light == true %}
+  {% set style = 'background: #fff; padding: 2px; border-radius: 50%;' %}
+{% else %}
+  {% set style = '' %}
+{% endif %}
+
+<img
+  width="32px"
+  alt="{{ alt }}"
+  src="{{ src }}"
+
+  {% if light %}
+  style="{{ style }}"
+  {% endif %}
+/>
+
+{% endmacro %}

@@ -1,0 +1,26 @@
+{% from 'macros/widgets/teaser/logo_icon_row.njk' import logoIconRow %}
+
+{% macro teaser(data={}) %}
+<div id="bfx-docs-home-teaser">
+<div id="bfx-docs-home-teaser__top">
+  <div id="bfx-docs-home-teaser__left">
+    <p id="bfx-docs-home-teaser__left_title">{{ data.title }}</p>
+    <p id="bfx-docs-home-teaser__left_subtitle">{{ data.subtitle }}</p>
+    <p id="bfx-docs-home-teaser__left_text">{{ data.text }}</p>
+    <div id="bfx-docs-home-teaser__left_list">
+      {% for offering in data.offerings %}
+        <p>&bull; {{ offering }}</p>
+      {% endfor %}
+    </div>
+    <div id="bfx-docs-home-teaser__left_extra">
+      {{ logoIconRow('Languages', data.language_icons) }}
+      {{ logoIconRow('Technologies', data.technology_icons) }}
+    </div>
+  </div>
+  <div id="bfx-docs-home-teaser__right">
+    {% include 'widgets/teaser/code_blocks/order.njk' %}
+    {% include 'widgets/teaser/code_blocks/indicator.njk' %}
+    {% include 'widgets/teaser/code_blocks/strategy.njk' %}
+  </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,14 @@
+{% from 'macros/widgets/teaser/dependency_icon.njk' import dependencyIcon %}
+
+{% macro logoIconRow(label, icons) %}
+<div class="bfx-docs-logo-icon-row">
+  <ul>
+    {% for icon in icons %}
+    <li>
+      {{ dependencyIcon(icon) }}
+    </li>
+    {% endfor %}
+  </ul>
+  <p>{{ label }}</p>
+</div>
+{% endmacro %}

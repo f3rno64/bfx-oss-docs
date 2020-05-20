@@ -1,0 +1,25 @@
+@import '../variables.scss';
+
+.bfx-docs-widget-code-demo__wrapper {
+  display: flex;
+  flex-direction: row;
+
+  .bfx-docs-widget-code-demo__left {
+    width: 60%;
+    margin-right: 32px;
+  }
+
+  .bfx-docs-widget-code-demo__right {
+    width: calc(40% - 32px);
+  }
+
+  .bfx-docs-widget-code-demo__code .bfx-docs-code {
+    display: flex;
+  }
+
+  .bfx-docs-widget-code-demo__desc {
+    font-size: 16px;
+    line-height: 1.3;
+    color: $text-title;
+  }
+}

@@ -1,0 +1,41 @@
+@import './variables.scss';
+
+.bfx-docs-library-category-block {
+  background: $bg-dark;
+  padding: 16px;
+  border: 1px solid $border;
+
+  display: flex;
+  flex-direction: row;
+
+  > * {
+    width: 50%;
+    flex: 1;
+  }
+}
+
+.bfx-docs-library-category-block__label {
+  color: $text-title;
+}
+
+.bfx-docs-library-category-block__list {
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+
+  a {
+    color: $fg;
+  }
+
+  li {
+    margin-bottom: 2px;
+  }
+}
+
+.bfx-docs-home-lib-block-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+  grid-auto-rows: minmax(250px, auto);
+}

@@ -1,0 +1,22 @@
+@import './variables.scss';
+
+.bfx-docs-library-stats__header {
+  display: flex;
+  flex-direction: row;
+
+  p {
+    line-height: 32px
+  }
+
+  > p:first-child {
+    font-size: 32px;
+    width: 100%;
+    flex: 1
+  }
+
+  > p:last-child {
+    color: $text-title;
+    font-size: 16px;
+    text-align: right;
+  }
+}

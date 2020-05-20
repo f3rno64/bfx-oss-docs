@@ -1,0 +1,7 @@
+{% from 'macros/widgets/teaser/svg_icon.njk' import svgIcon %}
+
+{% macro dependencyIcon(path, alt='Dependency') %}
+<li>
+  {{ svgIcon(path, alt) }}
+</li>
+{% endmacro %}

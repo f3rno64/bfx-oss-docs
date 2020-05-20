@@ -1,0 +1,11 @@
+@import './variables.scss';
+
+.bfx-docs-section {
+  .bfx-docs-section__header {
+    width: 100%;
+    text-align: center;
+    padding: 24px 0 24px 0;
+    margin-bottom: 32px;
+    border-bottom: 1px solid $border;
+  }
+}

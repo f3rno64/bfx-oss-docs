@@ -1,0 +1,183 @@
+h4.name {
+  background: #1d3e21;
+}
+
+.type-signature {
+  color: #fffdbb;
+}
+
+a,
+span.param-type,
+.params td .param-type,
+.param-type dd,
+nav > ul > li > a,
+nav > h2 > a,
+a:active {
+  color: #1d3e21 !important;
+}
+
+.signature {
+  color: #83c0ff;
+}
+
+span.param-type {
+  font-weight: bold;
+}
+
+
+code, tt, kbd, samp {
+  font-family: 'IBM Plex Mono';
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.prettyprint code {
+  background-color: transparent;
+  line-height: 1.5;
+}
+
+body {
+  font-family: 'Cabin';
+  font-weight: 400;
+  padding: 0;
+}
+
+body > nav {
+  padding: 0 0 0 20px;
+  background: #f9f9f9;
+  width: 300px;
+}
+
+body > nav h2 {
+  margin-top: 16px;
+}
+
+#id-main h1,
+#id-main h2,
+#id-main h3,
+#id-main h4,
+#id-main h5,
+#id-main h6,
+input,
+textarea {
+  font-family: 'Source Code Pro' !important;
+  font-weight: 400;
+}
+
+nav input#nav-search {
+  margin-bottom: 24px;
+  background-color: transparent;
+  border: 1px solid #388241;
+  box-shadow: none;
+  padding: 4px 16px;
+  font-size: 14px;
+  color: #000;
+}
+
+dl.details > dd.tag-source > ul.dummy > li {
+  font-size: 16px;
+}
+
+.container-overview > dl.details + h5 {
+  margin-top: 24px;
+}
+
+.container-overview > pre.prettyprint {
+  margin: 1em 0 2em 0;
+}
+
+nav.wrap > h2 + h3 {
+  margin-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 24px;
+  margin-right: 24px;
+}
+
+nav.wrap li > a {
+  font-size: 12px;
+}
+
+#main {
+  width: calc(100% - 290px);
+}
+
+nav.wrap #nav-search {
+  padding-right: 0;
+  margin-right: 0;
+  margin-top: 24px;
+  margin-left: 22px;
+  display: block;
+}
+
+.class-description.usertext {
+  font-size: 16px;
+}
+
+.container-overview > .description.usertext > p {
+  width: 70%;
+}
+
+.container-overview table.params tr td.description.last h6 {
+  margin-top: 18px;
+}
+
+#main {
+  padding: 0 64px;
+}
+
+#page-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 32px 0;
+  margin-bottom: 32px;
+}
+
+h1.page-title, h1.package-title {
+  line-height: 32px;
+  margin: 0;
+}
+
+h1.page-title,
+h1.package-title {
+  font-family: 'IBM Plex Mono';
+}
+
+h1.page-title {
+  font-size: 32px;
+  width: 100%;
+  flex: 1;
+}
+
+h1.package-title {
+  font-size: 24px;
+  text-align: right;
+  color: #333;
+}
+
+#page-title-wrapper + section {
+  padding: 0;
+}
+
+nav.wrap {
+  padding-bottom: 16px;
+}
+
+nav.wrap nav h3 {
+  margin-top: 24px;
+}
+
+body > footer {
+  margin-left: 300px;
+  text-align: right;
+  color: #888;
+}
+
+body > footer a {
+  color: #333;
+}
+
+#main > section > article > p > a,
+#main > section > article > ul a {
+  color: #5351ad !important;
+}
