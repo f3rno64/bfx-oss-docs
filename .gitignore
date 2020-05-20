@@ -18,5 +18,5 @@ tmp.sh
 .jsdoc-merged.json
 !./dist/jsdoc/.keep
 !./dist/site/.keep
-./dist/site
-./dist/jsdoc
+dist/site
+dist/jsdoc
