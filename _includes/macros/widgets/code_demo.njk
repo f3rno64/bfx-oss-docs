@@ -1,15 +1,15 @@
 {% from 'macros/widgets/code_snippet.njk' import codeSnippet %}
 
 {% macro codeDemo(description, result, code) %}
-<div class='bfx-docs-widget-code-demo__wrapper'>
-  <div class='bfx-docs-widget-code-demo__left bfx-docs-widget-code-demo__result'>
+<div class='bfx-oss-docs-widget-code-demo__wrapper'>
+  <div class='bfx-oss-docs-widget-code-demo__left bfx-docs-widget-code-demo__result'>
     {{ result }}
   </div>
-  <div class='bfx-docs-widget-code-demo__right'>
-    <div class='bfx-docs-widget-code-demo__code'>
+  <div class='bfx-oss-docs-widget-code-demo__right'>
+    <div class='bfx-oss-docs-widget-code-demo__code'>
       {{ codeSnippet(code) }}
     </div>
-    <div class='bfx-docs-widget-code-demo__desc'>
+    <div class='bfx-oss-docs-widget-code-demo__desc'>
       <p>
         {% markdown %}
         {{ description }}

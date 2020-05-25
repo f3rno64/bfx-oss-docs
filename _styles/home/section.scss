@@ -1,7 +1,7 @@
 @import './variables.scss';
 
-.bfx-docs-section {
-  .bfx-docs-section__header {
+.bfx-oss-docs-section {
+  .bfx-oss-docs-section__header {
     width: 100%;
     text-align: center;
     padding: 24px 0 24px 0;
@@ -10,6 +10,6 @@
   }
 }
 
-.bfx-docs-section + .bfx-docs-section {
+.bfx-oss-docs-section + .bfx-oss-docs-section {
   margin-top: 32px;
 }

@@ -1,6 +1,6 @@
 @import './variables.scss';
 
-.bfx-docs-library-category-block {
+.bfx-oss-docs-library-category-block {
   background: $bg-dark;
   padding: 16px;
   border: 1px solid $border;
@@ -14,11 +14,11 @@
   }
 }
 
-.bfx-docs-library-category-block__label {
+.bfx-oss-docs-library-category-block__label {
   color: $text-title;
 }
 
-.bfx-docs-library-category-block__list {
+.bfx-oss-docs-library-category-block__list {
   list-style-type: none;
   text-align: left;
   margin: 0;
