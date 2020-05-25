@@ -2,7 +2,6 @@
 
 const fs = require('fs')
 const sass = require('sass')
-const HLJS = require('highlight.js')
 const _keys = require('lodash/keys')
 const _isEmpty = require('lodash/isEmpty')
 const _isObject = require('lodash/isObject')
