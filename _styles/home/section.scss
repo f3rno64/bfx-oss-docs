@@ -9,3 +9,7 @@
     border-bottom: 1px solid $border;
   }
 }
+
+.bfx-docs-section + .bfx-docs-section {
+  margin-top: 32px;
+}

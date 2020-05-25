@@ -1,0 +1,18 @@
+{% from 'macros/widgets/repo_block.njk' import repoBlock %}
+
+{% set label = 'Primary API Libraries' %}
+{% set desc %}
+Official API libraries available in several languages for interfacing with
+the Bitfinex WebSocket and REST APIs.
+{% endset %}
+
+{% set list %}
+<li><a href="/libraries/bitfinex-api-node">bitfinex-api-node</a></li>
+<li><a href="/sources/bitfinex-api-py/docs">bitfinex-api-py</a></li>
+<li><a href="/sources/bitfinex-api-rb/docs">bitfinex-api-rb</a></li>
+<li><a href="/sources/bitfinex-api-go/docs">bitfinex-api-go</a></li>
+<li><a href="/sources/bfx-api-node-rest/docs">bfx-api-node-rest</a></li>
+<li><a href="/sources/bfx-api-node-ws1/docs">bfx-api-node-ws1</a></li>
+{% endset %}
+
+{{ repoBlock(label, desc, list) }}

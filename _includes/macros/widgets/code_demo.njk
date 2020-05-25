@@ -1,4 +1,4 @@
-{% from 'macros/widgets/code_block.njk' import codeBlock as codeBlock %}
+{% from 'macros/widgets/code_snippet.njk' import codeSnippet %}
 
 {% macro codeDemo(description, result, code) %}
 <div class='bfx-docs-widget-code-demo__wrapper'>
@@ -7,11 +7,13 @@
   </div>
   <div class='bfx-docs-widget-code-demo__right'>
     <div class='bfx-docs-widget-code-demo__code'>
-      {{ codeBlock(code) }}
+      {{ codeSnippet(code) }}
     </div>
     <div class='bfx-docs-widget-code-demo__desc'>
       <p>
+        {% markdown %}
         {{ description }}
+        {% endmarkdown %}
       </p>
     </div>
   </div>

@@ -1,0 +1,32 @@
+{% from 'macros/widgets/repo_block.njk' import repoBlock %}
+
+{% set label = 'Utilities' %}
+{% set desc %}
+A fast & lightweight JS Candlestick Chart, an indicator library, and many
+useful modules for Node.JS and Ruby.
+{% endset %}
+
+{% set list %}
+<li><a href="/sources/bfx-hf-chart/docs">bfx-hf-chart</a></li>
+<li><a href="/sources/bfx-api-node-models/docs">bfx-api-node-models</a></li>
+<li><a href="/sources/bfx-api-node-util/docs">bfx-api-node-util</a></li>
+<li><a href="/sources/bfx-hf-util/docs">bfx-hf-util</a></li>
+<li><a href="/sources/bfx-hf-indicators/docs">bfx-hf-indicators</a></li>
+<li><a href="/sources/bfx-hf-indicators-py/docs">bfx-hf-indicators-py</a></li>
+<li><a href="/sources/bfx-api-mock-srv/docs">bfx-api-mock-srv</a></li>
+<li><a href="/sources/bfx-api-node-mock-data/docs">bfx-api-node-mock-data</a></li>
+<li><a href="/sources/bfx-ws2-api-audit/docs">bfx-ws2-api-audit</a></li>
+<li><a href="/sources/lib-js-util-number/docs">lib-js-util-number</a></li>
+<li><a href="/sources/lib-js-util-math/docs">lib-js-util-math</a></li>
+<li><a href="/sources/lib-js-util-symbol/docs">lib-js-util-symbol</a></li>
+<li><a href="/sources/lib-js-util-currencies/docs">lib-js-util-currencies</a></li>
+<li><a href="/sources/wasteland/docs">wasteland</a></li>
+<li><a href="/sources/smidgen/docs">smidgen</a></li>
+<li><a href="/sources/caron/docs">caron</a></li>
+<li><a href="/sources/cbq-js/docs">cbq-js</a></li>
+<li><a href="/sources/pesto-rb/docs">pesto-rb</a></li>
+<li><a href="/sources/tpx/docs">tpx</a></li>
+<li><a href="/sources/affiliates-nicknames/docs">affiliates-nicknames</a></li>
+{% endset %}
+
+{{ repoBlock(label, desc, list) }}

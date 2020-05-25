@@ -3,11 +3,11 @@
 
 {% set page_title = 'Bitfinex Open Source' %}
 
-{% extends 'layouts/base.njk' %}
+{% extends 'layouts/bfx_base.njk' %}
 
-{% block body %}
+{% block bfx_body %}
 {{ teaser({
-  title: 'Bitfinex Open Source :rocket:',
+  title: 'Bitfinex Open Source',
   subtitle: 'Frameworks &amp; libraries in a variety of languages',
   text: [
     'Build distributed systems, leverage the Bitfinex API, automate your',
@@ -33,11 +33,10 @@
 
   technology_icons: [
     "logos/react.svg",
-    "logos/lodash.svg",
-    "logos/postgresql.svg",
     "logos/redis.svg"
   ]
 }) }}
 
 {% include 'widgets/home/section_chart.njk' %}
+{% include 'widgets/home/section_oss_repos.njk' %}
 {% endblock %}

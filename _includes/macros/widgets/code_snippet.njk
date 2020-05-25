@@ -1,0 +1,12 @@
+{% macro codeSnippet(src) %}
+
+{% set fullSrcPath %}
+code_snippets/{{ src }}
+{% endset %}
+
+<div class="bfx-docs-code">
+{% code 'javascript' %}
+{{ includeFile(fullSrcPath) }}
+{% endcode %}
+</div>
+{% endmacro %}

@@ -1,0 +1,12 @@
+{% from 'macros/widgets/repo_block.njk' import repoBlock %}
+
+{% set label = 'EOS Utilities' %}
+{% set desc = 'Node.JS EOS API Libraries &amp; Utilities' %}
+
+{% set list %}
+<li><a href="/sources/moonbeam/docs">moonbeam</a></li>
+<li><a href="/sources/sunbeam/docs">sunbeam</a></li>
+<li><a href="/sources/eos-name-verify/docs">eos-name-verify</a></li>
+{% endset %}
+
+{{ repoBlock(label, desc, list) }}

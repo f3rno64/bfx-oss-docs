@@ -1,0 +1,28 @@
+{% from 'macros/widgets/repo_block.njk' import repoBlock %}
+
+{% set label = 'Grenache' %}
+{% set desc %}
+Lightweight micro-services framework for building distributed systems; serves
+as the core of the Bitfinex backend infrastructure.
+{% endset %}
+
+{% set list %}
+<li><a href="/sources/grenache-cli/docs">grenache-cli</a></li>
+<li><a href="/sources/grenache/docs">grenache</a></li>
+<li><a href="/sources/grenache-grape/docs">grenache-grape</a></li>
+<li><a href="/sources/grenache-rust/docs">grenache-rust</a></li>
+<li><a href="/sources/grenache-browser-http/docs">grenache-browser-http</a></li>
+<li><a href="/sources/grenache-nodejs-ws/docs">grenache-nodejs-ws</a></li>
+<li><a href="/sources/grenache-nodejs-ws-tls/docs">grenache-nodejs-ws-tls</a></li>
+<li><a href="/sources/grenache-nodejs-http/docs">grenache-nodejs-http</a></li>
+<li><a href="/sources/grenache-nodejs-base/docs">grenache-nodejs-base</a></li>
+<li><a href="/sources/grenache-nodejs-link/docs">grenache-nodejs-link</a></li>
+<li><a href="/sources/grenache-nodejs-utp/docs">grenache-nodejs-utp</a></li>
+<li><a href="/sources/grenache-nodejs-proxy/docs">grenache-nodejs-proxy</a></li>
+<li><a href="/sources/grenache-nodejs-zmq/docs">grenache-nodejs-zmq</a></li>
+<li><a href="/sources/grenache-ruby-base/docs">grenache-ruby-base</a></li>
+<li><a href="/sources/grenache-ruby-http/docs">grenache-ruby-http</a></li>
+<li><a href="/sources/grenache-ruby-ws/docs">grenache-ruby-ws</a></li>
+{% endset %}
+
+{{ repoBlock(label, desc, list) }}

@@ -1,0 +1,11 @@
+{% from 'macros/widgets/repo_block.njk' import repoBlock %}
+
+{% set label = 'Agorithmic Orders' %}
+{% set desc = 'Algorithmic Order Framework &amp; Execution Server' %}
+
+{% set list %}
+<li><a href="/sources/bfx-hf-algo/docs">bfx-hf-algo</a></li>
+<li><a href="/sources/bfx-hf-algo-server/docs">bfx-hf-algo-server</a></li>
+{% endset %}
+
+{{ repoBlock(label, desc, list) }}

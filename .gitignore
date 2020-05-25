@@ -12,7 +12,6 @@ tags
 Session.vim
 .undodir
 yarn-error.log
-scripts
 notes
 tmp.sh
 .jsdoc-merged.json

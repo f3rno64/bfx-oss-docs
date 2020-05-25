@@ -1,0 +1,11 @@
+{% from 'macros/widgets/repo_block.njk' import repoBlock %}
+
+{% set label = 'Honey Framework UI' %}
+{% set desc = 'A trading terminal and UI components for building your own.' %}
+
+{% set list %}
+<li><a href="/sources/bfx-hf-ui/docs">bfx-hf-ui</a></li>
+<li><a href="/sources/bfx-hf-ui-config/docs">bfx-hf-ui-config</a></li>
+{% endset %}
+
+{{ repoBlock(label, desc, list) }}

@@ -1,0 +1,19 @@
+{% from 'macros/widgets/repo_block.njk' import repoBlock %}
+
+{% set label = 'Honey Framework Core' %}
+{% set desc %}
+Core honey framework libraries, providing a flexible DB backend, an API
+adapter for Bitfinex, and a modular sandboxed API server.
+{% endset %}
+
+{% set list %}
+<li><a href="/sources/bfx-hf-server/docs">bfx-hf-server</a></li>
+<li><a href="/sources/bfx-hf-models/docs">bfx-hf-models</a></li>
+<li><a href="/sources/bfx-hf-models-adapter-lowdb/docs">bfx-hf-models-adapter-lowdb</a></li>
+<li><a href="/sources/bfx-hf-models-adapter-sql/docs">bfx-hf-models-adapter-sql</a></li>
+<li><a href="/sources/bfx-hf-models-adapter-template/docs">bfx-hf-models-adapter-template</a></li>
+<li><a href="/sources/bfx-hf-ext-plugin-bitfinex/docs">bfx-hf-ext-plugin-bitfinex</a></li>
+<li><a href="/sources/bfx-hf-ext-plugin-dummy/docs">bfx-hf-ext-plugin-dummy</a></li>
+{% endset %}
+
+{{ repoBlock(label, desc, list) }}

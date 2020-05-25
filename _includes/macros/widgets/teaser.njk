@@ -1,4 +1,5 @@
 {% from 'macros/widgets/teaser/logo_icon_row.njk' import logoIconRow %}
+{% from 'macros/widgets/code_snippet.njk' import codeSnippet %}
 
 {% macro teaser(data={}) %}
 <div id="bfx-docs-home-teaser">
@@ -18,9 +19,9 @@
     </div>
   </div>
   <div id="bfx-docs-home-teaser__right">
-    {% include 'widgets/teaser/code_blocks/order.njk' %}
-    {% include 'widgets/teaser/code_blocks/indicator.njk' %}
-    {% include 'widgets/teaser/code_blocks/strategy.njk' %}
+    {{ codeSnippet('order.js') }}
+    {{ codeSnippet('indicator.js') }}
+    {{ codeSnippet('strategy.js') }}
   </div>
 </div>
 {% endmacro %}

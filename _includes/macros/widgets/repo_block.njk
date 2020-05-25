@@ -1,0 +1,15 @@
+{% macro repoBlock(label, description, list) %}
+<div class='bfx-docs-library-category-block'>
+  <div class='bfx-docs-library-category-block__left'>
+    <div class='bfx-docs-library-category-block__label'>
+      {{ label }}
+    </div>
+    <div class='bfx-docs-library-category-block__description'>
+      <p>{{ description }}</p>
+    </div>
+  </div>
+  <ul class='bfx-docs-library-category-block__list'>
+    {{ list }}
+  </ul>
+</div>
+{% endmacro %}

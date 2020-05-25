@@ -1613,7 +1613,7 @@ he@1.2.0, he@^1.1.1:
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
-highlight.js@^10.0.3:
+highlight.js@*, highlight.js@^10.0.3:
   version "10.0.3"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.0.3.tgz#5effcc58420f113f279a0badb8ac50c4be06e63b"
   integrity sha512-9FG7SSzv9yOY5CGGxfI6NDm7xLYtMOjKtPBxw7Zff3t5UcRcUNTGEeS8lNjhceL34KeetLMoGMFTGoaa83HwyQ==
@@ -2525,6 +2525,14 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
+nunjucks-extension-code-highlight@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/nunjucks-extension-code-highlight/-/nunjucks-extension-code-highlight-0.0.1.tgz#a4f0425f244e23499f145b10fa9b0903b1af2a15"
+  integrity sha512-E1o5XBwHiz0T3tE4v0sguWOYRR4/pouC22IFgZ6awvvOwSOxwzFa4PiB5c01eXtQNvWL8PuIV+/5JS79A5oVEA==
+  dependencies:
+    highlight.js "*"
+    nunjucks "*"
+
 nunjucks-highlight.js@^0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/nunjucks-highlight.js/-/nunjucks-highlight.js-0.0.5.tgz#983661dbdaca0f011ac35efb7d7836e16ddec1af"
@@ -2535,7 +2543,7 @@ nunjucks-markdown@^2.0.1:
   resolved "https://registry.yarnpkg.com/nunjucks-markdown/-/nunjucks-markdown-2.0.1.tgz#d55e75433a35850e2c345651fe3f931ed9b156a2"
   integrity sha1-1V51Qzo1hQ4sNFZR/j+THtmxVqI=
 
-nunjucks@^3.2.1:
+nunjucks@*, nunjucks@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-3.2.1.tgz#f229539281e92c6ad25d8c578c9bdb41655caf83"
   integrity sha512-LYlVuC1ZNSalQQkLNNPvcgPt2M9FTY9bs39mTCuFXtqh7jWbYzhDlmz2M6onPiXEhdZo+b9anRhc+uBGuJZ2bQ==

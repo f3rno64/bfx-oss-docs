@@ -1,0 +1,17 @@
+{% from 'macros/widgets/repo_block.njk' import repoBlock %}
+
+{% set label = 'Trading Strategies &amp; Backtesting' %}
+{% set desc %}
+A framework for developing automated trading strategies, coupled with tooling
+for execution on both historical data and the live markets.
+{% endset %}
+
+{% set list %}
+<li><a href="/sources/bfx-hf-strategy/docs">bfx-hf-strategy</a></li>
+<li><a href="/sources/bfx-hf-strategy-exec/docs">bfx-hf-strategy-exec</a></li>
+<li><a href="/sources/bfx-hf-strategy-py/docs">bfx-hf-strategy-py</a></li>
+<li><a href="/sources/bfx-hf-backtest/docs">bfx-hf-backtest</a></li>
+<li><a href="/sources/bfx-hf-data-server/docs">bfx-hf-data-server</a></li>
+{% endset %}
+
+{{ repoBlock(label, desc, list) }}

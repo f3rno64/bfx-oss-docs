@@ -1,0 +1,17 @@
+{% from 'macros/widgets/section.njk' import section %}
+
+{% set content %}
+<div class="bfx-oss-docs-repo-block-container">
+  {% include 'widgets/home/repo_blocks/primary_api.njk' %}
+  {% include 'widgets/home/repo_blocks/evented_node_api.njk' %}
+  {% include 'widgets/home/repo_blocks/grenache.njk' %}
+  {% include 'widgets/home/repo_blocks/hf_core.njk' %}
+  {% include 'widgets/home/repo_blocks/algo_orders.njk' %}
+  {% include 'widgets/home/repo_blocks/trading_strategies.njk' %}
+  {% include 'widgets/home/repo_blocks/hf_ui.njk' %}
+  {% include 'widgets/home/repo_blocks/utilities.njk' %}
+  {% include 'widgets/home/repo_blocks/eos_utilities.njk' %}
+</div>
+{% endset %}
+
+{{ section('Our Open Source', content) }}

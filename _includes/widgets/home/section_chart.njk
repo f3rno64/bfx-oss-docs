@@ -1,6 +1,6 @@
-{% from 'macros/widgets/chart.njk' import chart as chart %}
-{% from 'macros/widgets/section.njk' import section as section %}
-{% from 'macros/widgets/code_demo.njk' import codeDemo as codeDemo %}
+{% from 'macros/widgets/chart.njk' import chart %}
+{% from 'macros/widgets/section.njk' import section %}
+{% from 'macros/widgets/code_demo.njk' import codeDemo %}
 
 {% set chart_demo_description %}
 Our charting library comes in at less than 12KB GZipped and supports all
@@ -10,38 +10,12 @@ scrolling window of data, and a wrapping React component is provided for
 integration.
 {% endset %}
 
-{% set chart_demo_code %}
-{% code %}js
-import React from 'react'
-import HFI from 'bfx-hf-indicators'
-import BFXChart from '../dist/components/Chart/Chart'
-
-const DATA = [....]
-const INDICATORS = [
-  [new HFI.EMA([20]), [20]],
-  [new HFI.EMA([100]), [100]],
-  [new HFI.RSI([14]), [14]]
-]
-
-const DemoComponent = () => (
-  <BFXChart
-    disableToolbar
-    candles={DATA}
-    candleWidth='1m'
-    indicators={indicators}
-    width={800}
-    height={600}
-  />
-)
-{% endcode %}
-{% endset %}
-
 {% set chart_demo_result %}
 {{ chart('100%', '100%') }}
 {% endset %}
 
 {% set content %}
-{{ codeDemo(chart_demo_description, chart_demo_result, chart_demo_code) }}
+{{ codeDemo(chart_demo_description, chart_demo_result, 'chart.js') }}
 {% endset %}
 
-{{ section('`bfx-hf-chart` - Financial Charting Library', content) }}
+{{ section('Financial Charting Library', content) }}

@@ -7,18 +7,15 @@
   margin-inline-end: 0;
 }
 
-.bfx-docs-code,
-.highlighter-rouge {
+.bfx-docs-code {
   &, figure {
     border-radius: 4px;
   }
 
-  pre {
-    box-shadow: $content-box-shadow;
-    padding: 32px;
-  }
-
   code {
+    box-shadow: $content-box-shadow;
+    padding: 16px;
+
     font-size: 13px;
     line-height: 1.3;
   }

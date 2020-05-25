@@ -1,6 +1,3 @@
-{% from 'macros/widgets/code_block.njk' import codeBlock as codeBlock %}
-
-{% set src %}
 const ws = new WSv2({ transform: true })
 const o = new Order({
   type: Order.type.EXCHANGE_LIMIT,
@@ -11,6 +8,3 @@ const o = new Order({
 }, ws)
 
 await o.submit()
-{% endset %}
-
-{{ codeBlock(src) }}

@@ -268,3 +268,6 @@
 [submodule "_assets/npm/svg-icon"]
 	path = _assets/npm/svg-icon
 	url = https://github.com/leungwensen/svg-icon
+[submodule "_assets/npm/bfx-hf-chart"]
+	path = _assets/npm/bfx-hf-chart
+	url = https://github.com/bitfinexcom/bfx-hf-chart.git

@@ -1,6 +1,3 @@
-{% from 'macros/widgets/code_block.njk' import codeBlock as codeBlock %}
-
-{% set src %}
 if (this.inALongPosition()) {
   if (
     (this.ticksSinceLastTrade() > 5) &&
@@ -12,6 +9,3 @@ if (this.inALongPosition()) {
     return closePosition('close long A')
   }
 }
-{% endset %}
-
-{{ codeBlock(src) }}

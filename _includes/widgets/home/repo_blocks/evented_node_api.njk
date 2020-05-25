@@ -1,0 +1,16 @@
+{% from 'macros/widgets/repo_block.njk' import repoBlock %}
+
+{% set label = 'Evented Node.JS API Library' %}
+{% set desc = 'Alternative event-driven Node.JS WebSocket API Library' %}
+
+{% set list %}
+<li><a href="/sources/bfx-api-node-core/docs">bfx-api-node-core</a></li>
+<li><a href="/sources/bfx-api-node-plugin-example/docs">bfx-api-node-plugin-example</a></li>
+<li><a href="/sources/bfx-api-node-plugin-managed-candles/docs">bfx-api-node-plugin-managed-candles</a></li>
+<li><a href="/sources/bfx-api-node-plugin-managed-ob/docs">bfx-api-node-plugin-managed-ob</a></li>
+<li><a href="/sources/bfx-api-node-plugin-ob-checksum/docs">bfx-api-node-plugin-ob-checksum</a></li>
+<li><a href="/sources/bfx-api-node-plugin-seq-audit/docs">bfx-api-node-plugin-seq-audit</a></li>
+<li><a href="/sources/bfx-api-node-plugin-wd/docs">bfx-api-node-plugin-wd</a></li>
+{% endset %}
+
+{{ repoBlock(label, desc, list) }}

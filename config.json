@@ -15,7 +15,7 @@
     "include_path": "_includes",
     "pages_path": "_pages",
     "options": {
-      "autoescape": true,
+      "autoescape": false,
       "throwOnUndefined": true,
       "trimBlocks": true
     }
@@ -24,7 +24,8 @@
   "assets": {
     "svg": "_assets/svg",
     "svg/svg-icons": "_assets/npm/svg-icon/dist/svg",
-    "css/highlightjs": "_assets/npm/highlight.js/src/styles"
+    "css/highlightjs": "_assets/npm/highlight.js/src/styles",
+    "bfx-hf-chart": "_assets/npm/bfx-hf-chart/build"
   },
 
   "styles": {

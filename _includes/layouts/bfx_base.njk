@@ -1,0 +1,16 @@
+{% extends 'layouts/base.njk' %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="/index.css" />
+  <link rel="stylesheet" type="text/css" href="/css/highlightjs/night-owl.css" />
+{% endblock %}
+
+{% block body %}
+  {% include 'widgets/header_bar.njk' %}
+
+  <div id="bfx-docs-content-wrapper">
+    {% block bfx_body %}{% endblock %}
+  </div>
+
+  {% include 'widgets/footer_bar.njk' %}
+{% endblock %}
