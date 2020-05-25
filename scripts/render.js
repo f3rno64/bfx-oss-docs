@@ -39,23 +39,23 @@ if (layoutConfig.engine !== 'nunjucks') {
 }
 
 const nunjucksEnv = nunjucks.configure(
-  `${__dirname}/../${layoutConfig.include_path}`, layoutConfig.options
+  `${__dirname}/../${layoutConfig.includePath}`, layoutConfig.options
 )
 
 nunjucksCodeHighlight(nunjucksEnv)
 nunjucksMarkdown.register(nunjucksEnv, mdRenderer.render.bind(mdRenderer))
 nunjucksEnv.addGlobal('includeFile', src => (
   fs.readFileSync(
-    `${__dirname}/../${layoutConfig.include_path}/${src.split('\n')[0]}`, 'utf-8'
+    `${__dirname}/../${layoutConfig.includePath}/${src.split('\n')[0]}`, 'utf-8'
   )
 ))
 
-const pageFileNames = fs.readdirSync(`${__dirname}/../${layoutConfig.pages_path}`)
+const pageFileNames = fs.readdirSync(`${__dirname}/../${layoutConfig.pagesPath}`)
 
 pageFileNames.forEach(pageFileName => {
   const pageName = pageFileName.split('.')[0]
-  const srcPath = `${__dirname}/../${layoutConfig.pages_path}/${pageFileName}`
-  const dstPath = `${__dirname}/../${config.output.static_site}/${pageName}.html`
+  const srcPath = `${__dirname}/../${layoutConfig.pagesPath}/${pageFileName}`
+  const dstPath = `${__dirname}/../${config.output.staticSite}/${pageName}.html`
 
   console.log('rendering %s -> %s', srcPath, dstPath)
 
@@ -75,17 +75,17 @@ pageFileNames.forEach(pageFileName => {
 _keys(config.styles.sources).forEach((dest) => {
   const res = sass.renderSync({
     file: config.styles.sources[dest],
-    outFile: `${__dirname}/../${config.output.static_site}/${dest}`,
+    outFile: `${__dirname}/../${config.output.staticSite}/${dest}`,
     ...(config.styles.config || {})
   })
 
-  fs.writeFileSync(`${__dirname}/../${config.output.static_site}/${dest}`, res.css.toString())
-  fs.writeFileSync(`${__dirname}/../${config.output.static_site}/${dest}.map`, res.map.toString())
+  fs.writeFileSync(`${__dirname}/../${config.output.staticSite}/${dest}`, res.css.toString())
+  fs.writeFileSync(`${__dirname}/../${config.output.staticSite}/${dest}.map`, res.map.toString())
 })
 
 _keys(config.assets).forEach((dest) => {
   const assetSrc = `${__dirname}/../${config.assets[dest]}`
-  const assetDest = `${__dirname}/../${config.output.static_site}/${dest}`
+  const assetDest = `${__dirname}/../${config.output.staticSite}/${dest}`
 
   console.log(`copy ${assetSrc} -> ${assetDest}`)
 
