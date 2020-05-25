@@ -1,0 +1,36 @@
+{
+  "title": "Calc",
+  "id": "ws-auth-input-calc",
+  "description": "Send calc requests to trigger specific calculations.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "Requesting a calculation can be done by constructing a payload using the \"calc\" abbreviation. Include the calc parameters in the payload as an array. Please look to the sidebar for an example payload."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "[\n  0,\n  \"calc\",\n  null,\n  [\n    [\"margin_base\"],\n    [\"margin_sym_tBTCUSD\"],\n    [\"position_tBTCUSD\"],\n    [\"wallet_margin_BTC\"],\n    [\"wallet_funding_USD\"],\n    [\"balance\"]\n  ]\n]",
+            "language": "javascript",
+            "name": "Payload"
+          }
+        ],
+        "sidebar": true
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "## Possible prefixes:\n\n- `margin_sym_SYMBOL`\n- `funding_sym_SYMBOL`\n- `position_SYMBOL`\n- `wallet_WALLET-TYPE_CURRENCY`\n- `balance`"
+    },
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "info",
+        "title": "NOTE",
+        "body": "Calculations are on demand, so no more streaming of unnecessary data.\nWebsocket server allows up to 30 calculations per batch. If the client sends too many concurrent requests (or tries to spam) requests, it will receive an error and potentially a disconnection.\nThe Websocket server performs a maximum of 8 calculations per second per client."
+      }
+    }
+  ]
+}

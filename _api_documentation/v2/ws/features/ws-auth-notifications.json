@@ -1,0 +1,76 @@
+{
+  "title": "Notifications",
+  "id": "ws-auth-notifications",
+  "description": "The Notifications channel is a work in progress that will be used for different changes in status, price alerts, etc.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "Subscribe to the account information channel to keep track of your notifications. The account information channel will provide a feed of your notifications for as long as the channel remains open. Any authenticated connection is automatically subscribed to the account information channel.\n\nExample code to open an authenticated connection can be found on our [Authenticated Channels Page](doc:ws-auth).\n\nNotification events are sent with CHAN_ID = 0 and can be identified by looking at the TYPE stream field. Notification events can be recognised by the 'n' (notification) abbreviation."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "[\n  CHAN_ID, \n  TYPE, //'n' \n  [\n    MTS, \n    TYPE, \n    MESSAGE_ID, \n    null, \n      NOTIFY_INFO // NOTIFY_INFO comes as an array or object and differs per notification  \n    CODE, \n    STATUS, \n    TEXT,\n    ...\n  ]\n]\n  \n[0,\"n\",[1575282446099,\"fon-req\",null,null,[41238905,null,null,null,-1000,null,null,null,null,null,null,null,null,null,0.002,2,null,null,null,null,null],null,\"SUCCESS\",\"Submitting funding bid of 1000.0 USD at 0.2000 for 2 days.\"]]  ",
+            "language": "json",
+            "name": "Update ('n')"
+          },
+          {
+            "code": "notify_info =  [ \n  ID, \n  GID,\n  CID,\n  SYMBOL, \n  MTS_CREATE, \n  MTS_UPDATE, \n  AMOUNT, \n  AMOUNT_ORIG, \n  TYPE,\n  TYPE_PREV,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  FLAGS,\n  STATUS,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  PRICE,\n  PRICE_AVG,\n  PRICE_TRAILING,\n  PRICE_AUX_LIMIT,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  NOTIFY, \n  HIDDEN, \n  PLACED_ID,\n  ...\n]",
+            "language": "javascript",
+            "name": "on-req / oc-req"
+          },
+          {
+            "code": "notify_info = [ \n  KEY, \n  ‘price’, \n  SYMBOL, \n  PRICE, \n  COUNT, \n  DIRECTION \n]",
+            "language": "javascript",
+            "name": "uca / price"
+          },
+          {
+            "code": "notify_info = [\n  ID,\n  SYMBOL,\n  MTS_CREATED,\n  MTS_UPDATED,\n  AMOUNT,\n  AMOUNT_ORIG,\n  TYPE,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  FLAGS,\n  STATUS,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  RATE,\n  PERIOD,\n  NOTIFY,\n  HIDDEN,\n  _PLACEHOLDER,\n  RENEW,\n  RATE_REAL,\n  ...\n]",
+            "language": "javascript",
+            "name": "fon-req / foc-req"
+          }
+        ],
+        "sidebar": true
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": ""
+    },
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "warning",
+        "title": "Work In Progress",
+        "body": "This section (Notifications) is currently a work in progress, but it will be a way to be alerted as to different changes in status, price alerts, etc"
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Stream Fields**\n\nTerm | Type | Description\n-- | -- | --\nCHAN_ID | int | Identification number for the channel subscribtion. Notification events are always sent through the account information channel with CHAN_ID = 0\nTYPE | string | 'n' (notification)\nMTS  |  int  |  Millisecond Time Stamp of the update\nTYPE  |  string  |  Purpose of notification ('on-req', 'oc-req', 'uca', 'fon-req', 'foc-req') - an overview of all types can be found in our [Abbreviation Glossary](doc:abbreviations-glossary)\nMESSAGE_ID  |  int  |  unique ID of the message\nNOTIFY_INFO  |  array/object |  A message containing information regarding the notification\nCODE  |  null or integer  | Work in progress\nSTATUS  |  string  |  Status of the notification; it may vary over time (SUCCESS, ERROR, FAILURE, ...)\nTEXT  |  string  |  Text of the notification"
+    },
+    {
+      "type": "API_HEADER",
+      "content": {
+        "title": "Custom Notifications"
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "The following javascript example will allow you to create a custom notification."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "const obj = [\n  0,\n  'n',\n  MESSAGE_ID, // can be null\n  {\n    type: 'ucm-test',\n    info: {\n      foo: 1,\n      bar: 2\n    }\n  }\n]\n\nw1.send(JSON.stringify(obj))",
+            "language": "javascript"
+          }
+        ]
+      }
+    }
+  ]
+}

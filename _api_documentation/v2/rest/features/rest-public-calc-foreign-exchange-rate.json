@@ -1,0 +1,6 @@
+{
+  "title": "Foreign Exchange Rate",
+  "id": "rest-public-calc-foreign-exchange-rate",
+  "description": "Calculate the exchange rate between two currencies",
+  "elements": []
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Funding Info",
+  "id": "ws-auth-funding",
+  "description": "Get account funding info",
+  "elements": [
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "[CHAN_ID,'fiu',['sym',SYMBOL[YIELD_LOAN,YIELD_LEND,DURATION_LOAN,DURATION_LEND,...],...]]",
+            "language": "text",
+            "name": "Update ('fiu')"
+          }
+        ],
+        "sidebar": true
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Stream Fields**\n\nTerm | Type | Description\n-- | -- | --\nSYMBOL | string  |  The symbol the information pertains to (funding currencies)\nYIELD_LOAN |  float  |  Weighted average rate for taken funding\nYIELD_LEND |  float  | Weighted average rate for provided funding\nDURATION_LOAN |  float  |  Weighted average duration for taken funding\nDURATION_LEND |  float  | Weighted average duration for provided funding"
+    },
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "info",
+        "title": "NOTE",
+        "body": "These messages have gained the ability to send the calculation values equal to \"null\" meaning that the new calculated value is not yet available.In order to receive those values the user have to actively request for it with a \"calc\" message.See calc input dedicated section for more details."
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Positions",
+  "id": "ws-auth-positions",
+  "description": "Receive a snapshot and updates for any position events on your account.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "Subscribe to the account information channel to keep track of your positions. The account information channel provides a snapshot and updates on the positions in your account. The snapshot is delivered upon subscribing and any changes to your positions will be provided as updates for as long as the channel remains open. Any authenticated connection is automatically subscribed to the account information channel.\n\nExample code to open an authenticated connection can be found on our [Authenticated Channels Page](doc:ws-auth).\n\nPosition events are sent with CHAN_ID = 0 and can be identified by looking at the TYPE stream field. Positions events will use one of the following abbreviations: 'ps' (positions snapshot), 'pn' (position new), 'pu' (position update), and 'pc' (position close)."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "[\n  CHAN_ID, \n  TYPE, // 'ps'\n  [\n    [\n      SYMBOL, \n      STATUS, \n      AMOUNT, \n      BASE_PRICE, \n      MARGIN_FUNDING, \n      MARGIN_FUNDING_TYPE,\n      PL,\n      PL_PERC,\n      PRICE_LIQ,\n      LEVERAGE,\n      FLAG,\n      POSITION_ID,\n      MTS_CREATE,\n      MTS_UPDATE,\n      PLACEHOLDER,\n      TYPE,\n      PLACEHOLDER,\n      COLLATERAL,\n      COLLATERAL_MIN,\n      META\n    ], \n    ...\n  ]\n]\n  \n[0,\"ps\",[[\"tETHUST\",\"ACTIVE\",0.2,153.71,0,0,null,null,null,null,null,142420429,null,null,null,0,null,0,null,{\"reason\":\"TRADE\",\"order_id\":34934099168,\"order_id_oppo\":34934090814,\"liq_stage\":null,\"trade_price\":\"153.71\",\"trade_amount\":\"0.2\"}]]]  ",
+            "language": "json",
+            "name": "Snapshot ('ps')"
+          },
+          {
+            "code": "[\n  CHAN_ID, \n  TYPE, // <‘pn’, ’pu’, ‘pc’>\n  [\n      SYMBOL, \n      STATUS, \n      AMOUNT, \n      BASE_PRICE, \n      MARGIN_FUNDING, \n      MARGIN_FUNDING_TYPE,\n      PL,\n      PL_PERC,\n      PRICE_LIQ,\n      LEVERAGE,\n      FLAG,\n      POSITION_ID,\n      MTS_CREATE,\n      MTS_UPDATE,\n      PLACEHOLDER,\n      TYPE,\n      PLACEHOLDER,\n      COLLATERAL,\n      COLLATERAL_MIN,\n      META\n  ]\n]\n\n[0,\"pu\",[\"tETHUST\",\"ACTIVE\",0.2,153.71,0,0,-0.07944800000000068,-0.05855181835925015,67.52755254906451,1.409288545397275,null,142420429,null,null,null,0,null,0,0,{\"reason\":\"TRADE\",\"order_id\":34934099168,\"order_id_oppo\":34934090814,\"liq_stage\":null,\"trade_price\":\"153.71\",\"trade_amount\":\"0.2\"}]]",
+            "language": "json",
+            "name": "Update ('pn', 'pu', 'pc')"
+          }
+        ],
+        "sidebar": true
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Stream Fields**\n\nTerm | Type | Description\n--|--|--\nCHAN_ID | int | Identification number for the channel subscribtion. Position events are always sent through the account information channel with CHAN_ID = 0\nTYPE | string | 'ps' (position snapshot), 'pn' (position new), 'pu' (position update), 'pc' (position close)\nSYMBOL | string | Pair (tBTCUSD, …).\nSTATUS | string | Status (ACTIVE, CLOSED).\n±AMOUNT | float | Size of the position. Positive values means a long position, negative values means a short position. 0 means position closed.\nBASE_PRICE | float | The price at which you entered your position.\nMARGIN_FUNDING | float | The amount of funding being used for this position.\nMARGIN_FUNDING_TYPE | int | 0 for daily, 1 for term.\nPL | float | Profit & Loss\nPL_PERC | float | Profit & Loss Percentage\nPRICE_LIQ | float | Liquidation price\nLEVERAGE | float | Beta value\nPOSITION_ID | int | Position ID\nMTS_CREATE| int | Millisecond timestamp of creation\nMTS_UPDATE| int | Millisecond timestamp of update\nTYPE| int | Identifies the type of position, 0 = Margin position, 1 = Derivatives position\nCOLLATERAL | float | The amount of collateral applied to the open position\nCOLLATERAL_MIN | float | The minimum amount of collateral required for the position\nMETA | json string | Additional meta information about the position"
+    },
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "info",
+        "title": "NOTE",
+        "body": "These messages have gained the ability to send the calculation values (liquidation price) equal to \"null\" meaning that the new calculated value is not yet available.\n\nIn order to receive those values the user have to actively request for it with a \"calc\" message.\nSee [calc input dedicated section](http://docs.bitfinex.com/v2/docs/changelog#section--calc-input-message) for more details."
+      }
+    }
+  ]
+}

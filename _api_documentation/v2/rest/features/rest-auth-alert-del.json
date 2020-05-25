@@ -1,0 +1,6 @@
+{
+  "title": "Alert Delete",
+  "id": "rest-auth-alert-del",
+  "description": "Delete an active alert.",
+  "elements": []
+}

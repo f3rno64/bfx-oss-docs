@@ -1,0 +1,6 @@
+{
+  "title": "Funding Auto-renew",
+  "id": "rest-auth-funding-auto-renew",
+  "description": "Activate or deactivate auto-renew. Allows you to specify the currency, amount, rate, and period.",
+  "elements": []
+}

@@ -1,6 +1,7 @@
 {
   "output": {
     "staticSite": "./dist/site",
+    "convertedRIOAPIDocs": "./_api_documentation",
     "unifiedJSDocDist": "./dist/jsdoc",
     "unifiedJSDocConfig": "./.jsdoc-merged.json"
   },
@@ -20,6 +21,7 @@
     "svg": "_assets/svg",
     "svg/svg-icons": "_assets/npm/svg-icon/dist/svg",
     "css/highlightjs": "_assets/npm/highlight.js/src/styles",
+    "css/normalize.css": "_assets/css/normalize.css/normalize.css",
     "bfx-hf-chart": "_assets/npm/bfx-hf-chart/build"
   },
 

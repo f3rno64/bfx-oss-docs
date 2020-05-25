@@ -1,0 +1,15 @@
+{
+  "title": "Derivative Position Collateral",
+  "id": "rest-auth-deriv-pos-collateral-set",
+  "description": "Update the amount of collateral for a Derivative position",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "Sets the amount of collateral, applied to the active derivative position, for the given symbol.\n[block:image]\n{\n\"images\": [\n{\n\"image\": [\n\"https://files.readme.io/1e9466b-Screenshot_2.png\",\n\"Screenshot_2.png\",\n1543,\n127,\n\"#161e28\"\n],\n\"caption\": \"\"\n}\n]\n}"
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "The amount of collateral applied correlates to the spread between the base price and the liquidation price.\n\nMore collateral equals less chance of the position being liquidated, and vice-versa\n"
+    }
+  ]
+}

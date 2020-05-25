@@ -1,0 +1,57 @@
+{
+  "title": "Trades",
+  "id": "ws-public-trades",
+  "description": "This channel sends a trade message whenever a trade occurs at Bitfinex. It includes all the pertinent details of the trade, such as price, size and the time of execution. The channel can send funding trade data as well.",
+  "elements": [
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "const ws = require('ws')\nconst w = new ws('wss://api-pub.bitfinex.com/ws/2')\n\nw.on('message', (msg) => console.log(msg))\n\nlet msg = JSON.stringify({ \n  event: 'subscribe', \n  channel: 'trades', \n  symbol: 'tBTCUSD' \n})\n\nw.on('open', () => w.send(msg))",
+            "language": "javascript"
+          },
+          {
+            "code": "wscat -c wss://api-pub.bitfinex.com/ws/2\n{ \"event\": \"subscribe\",  \"channel\": \"trades\",  \"symbol\": \"tBTCUSD\" }",
+            "language": "shell"
+          },
+          {
+            "code": "ws = websocket.WebSocketApp('wss://api-pub.bitfinex.com/ws/2')\n\nws.on_open = lambda self: self.send('{ \"event\": \"subscribe\", \"channel\": \"trades\", \"symbol\": \"tBTCUSD\"}')\n\nws.on_message = lambda self, evt:  print (evt)",
+            "language": "python"
+          }
+        ]
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": ""
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "// request\n{ \n  event: \"subscribe\", \n  channel: \"trades\", \n  symbol: SYMBOL \n}\n\n// response Trading\n{\n  event: \"subscribed\",\n  channel: \"trades\",\n  chanId: CHANNEL_ID,\n  symbol: \"tBTCUSD\"\n  pair: \"BTCUSD\"\n}\n\n{\"event\":\"subscribed\",\"channel\":\"trades\",\"chanId\":19111,\"symbol\":\"tBTCUSD\",\"pair\":\"BTCUSD\"}\n\n// response Funding\n{\n  event: \"subscribed\",\n  channel: \"trades\",\n  chanId: CHANNEL_ID,\n  symbol: \"fUSD\"\n}\n\n{\"event\":\"subscribed\",\"channel\":\"trades\",\"chanId\":339521,\"symbol\":\"fUSD\",\"currency\":\"USD\"}",
+            "language": "javascript",
+            "name": "Request / Response"
+          },
+          {
+            "code": "// on trading pairs (ex. tBTCUSD)\n[\n  CHANNEL_ID,\n  [\n    [\n      ID,\n      MTS,\n      AMOUNT,\n      PRICE\n    ],\n    ...\n  ]\n]\n\n[17470,[[401597393,1574694475039,0.005,7244.9],[401597392,1574694470503,-0.01,7245.3]]]  \n\n// on funding currencies (ex. fUSD)\n[\n  CHANNEL_ID,\n  [\n    [\n      ID,\n      MTS,\n      AMOUNT,\n      RATE,\n      PERIOD\n    ],\n    ...\n  ]\n]\n  \n[339521,[[133323072,1574694245478,-258.7458086,0.0002587,2],[133323071,1574694245368,-1932.20263916,0.0002587,2]]]",
+            "language": "javascript",
+            "name": "Snapshot"
+          },
+          {
+            "code": "// on trading pairs (ex. tBTCUSD)\n[\n  CHANNEL_ID,\n  <\"te\", \"tu\">,\n  [\n    ID,\n    MTS,\n    AMOUNT,\n    PRICE\n  ]\n]\n\n[17470,\"te\",[401597395,1574694478808,0.005,7245.3]]\n[17470,\"tu\",[401597395,1574694478808,0.005,7245.3]]\n\n// on funding currencies (ex. fUSD)\n[\n  CHANNEL_ID,\n  <\"fte\", \"ftu\">,\n  [\n    ID,\n    MTS,\n    AMOUNT,\n    RATE,\n    PERIOD\n  ]\n]\n\n[337371,\"fte\",[133323543,1574694605000,-59.84,0.00023647,2]]\n[337371,\"ftu\",[133323543,1574694605000,-59.84,0.00023647,2]]",
+            "language": "javascript",
+            "name": "Update"
+          }
+        ],
+        "sidebar": true
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Request Fields**\n\nFields | Type | Description\n--- | --- | ---\nSYMBOL | String | Trading pair or funding currency\n"
+    }
+  ]
+}

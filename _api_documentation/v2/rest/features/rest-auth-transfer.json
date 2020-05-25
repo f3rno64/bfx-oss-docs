@@ -1,0 +1,19 @@
+{
+  "title": "Transfer Between Wallets",
+  "id": "rest-auth-transfer",
+  "description": "Transfer funds between wallets. This endpoint can also be used to convert USDT to USDT0 for derivatives trading.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Response Fields**\n\nTerm | Type | Description\n-- | -- | --\nMTS  |  int  |  Millisecond Time Stamp of the update\nTYPE  |  string  |  Purpose of notification ('on-req', 'oc-req', 'uca', 'fon-req', 'foc-req')\nMESSAGE_ID  |  int  |  unique ID of the message\nMTS_UPDATED  |  int  |  Millisecond Time Stamp when the transfer was created\nWALLET_FROM | string | Starting wallet\nWALLET_TO | string | Destination wallet\nCURRENCY | string | Currency\nCURRENCY_TO | str | Currency converted to\nAMOUNT | int | Amount of Transfer\nCODE  |  null or integer  | Work in progress\nSTATUS  |  string  |  Status of the notification; it may vary over time (SUCCESS, ERROR, FAILURE, ...)\nTEXT  |  string  |  Text of the notification"
+    },
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "info",
+        "title": "Derivatives Wallet",
+        "body": "Note that the margin wallet, for Derivative symbols, is the derivatives wallet. If the destination is 'margin' and the currency_to is 'USTF0', the funds will end up in the derivatives wallet."
+      }
+    }
+  ]
+}

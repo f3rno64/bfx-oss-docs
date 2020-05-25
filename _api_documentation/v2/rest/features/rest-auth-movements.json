@@ -1,0 +1,11 @@
+{
+  "title": "Movements",
+  "id": "rest-auth-movements",
+  "description": "View your past deposits/withdrawals. Currency can be specified to retrieve movements specific to that currency.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Fields**\n\nTerm | Type | Description\n-- | -- | --\nID  |   String  |   Movement identifier\nCURRENCY    |   String  |   The symbol of the currency (ex. \"BTC\")\nCURRENCY_NAME   |   String  |   The extended name of the currency (ex. \"BITCOIN\")\nMTS_STARTED |   Date  |   Movement started at\nMTS_UPDATED |   Date  |   Movement last updated at\nSTATUS  |   String  |   Current status\nAMOUNT  |   String  |   Amount of funds moved (positive for deposits, negative for withdrawals)\nFEES    |   String  |   Tx Fees applied\nDESTINATION_ADDRESS |   String  |   Destination address\nTRANSACTION_ID  |   String  |   Transaction identifier\nWITHDRAW_TRANSACTION_ID  |   String  |   Optional personal withdraw transaction note\n"
+    }
+  ]
+}

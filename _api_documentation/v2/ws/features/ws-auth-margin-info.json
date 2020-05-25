@@ -1,0 +1,36 @@
+{
+  "title": "Margin Info",
+  "id": "ws-auth-margin-info",
+  "description": "Receive margin info updates for your account.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "Subscribe to the account information channel to keep track of your margin info. The account information channel will provide a feed of your margin info for as long as the channel remains open. Any authenticated connection is automatically subscribed to the account information channel.\n\nExample code to open an authenticated connection can be found on our [Authenticated Channels Page](doc:ws-auth).\n\nMargin info events are sent with CHAN_ID = 0 and can be identified by looking at the TYPE stream field. Margin info events can be recognised by the 'miu' (margin info update) abbreviation."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "// margin base calc\n[\n  CHAN_ID,\n  TYPE, // 'miu'\n  [\n    'base',\n    [\n      USER_PL, \n      USER_SWAPS, \n      MARGIN_BALANCE, \n      MARGIN_NET,\n      MARGIN_REQUIRED\n      ...\n    ]\n   ]\n]\n\n[0,\"miu\",[\"base\",[-13.014640000000007,0,49331.70267297,49318.68803297,27]]]\n\n// margin symbol calc\n[\n  CHAN_ID,\n  TYPE, // 'miu'\n  [\n    'sym',\n    SYMBOL,\n    [\n      TRADABLE_BALANCE,\n      GROSS_BALANCE,\n      BUY,\n      SELL,\n      ...\n    ]\n   ]\n]\n  \n[0,\"miu\",[\"sym\",\"tETHUSD\",[149361.09689202666,149639.26293509,830.0182168075556,895.0658432466332,null,null,null,null]]]  ",
+            "language": "json",
+            "name": "Update ('miu')"
+          }
+        ],
+        "sidebar": true
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Stream Fields**\n\nTerm | Type | Description\n-- | -- | --\nCHAN_ID | int | Identification number for the channel subscribtion. Margin info events are always sent through the account information channel with CHAN_ID = 0\nTYPE | string | 'miu' (margin info update)\nUSER_PL |  float  |  User Profit and Loss\nUSER_SWAPS |  float  |  Amount of swaps a user has\nSYMBOL | string  |  The symbol the information pertains to\nTRADABLE_BALANCE |  float  |  Your buying power (how large a position you can obtain)\nMARGIN_BALANCE |  float  |  Balance in your margin funding account\nMARGIN_NET |  float  |  Balance after P&L is accounted for\nMARGIN_REQUIRED |  float  |  Minimum required margin to keep positions open"
+    },
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "info",
+        "title": "NOTE",
+        "body": "These messages have gained the ability to send the calculation values equal to \"null\" meaning that the new calculated value is not yet available.\nIn order to receive those values the user have to actively request for it with a \"calc\" message.\nSee calc input dedicated section for more details."
+      }
+    }
+  ]
+}

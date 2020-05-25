@@ -1,0 +1,11 @@
+{
+  "title": "Funding Loans History",
+  "id": "rest-auth-funding-loans-hist",
+  "description": "Inactive funds not used in positions.\nLimited to last 3 days.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Fields**\n\nTerm | Type | Description\n-- | -- | --\nID  |  integer  |  Offer ID\nSYMBOL  |  string  |  The currency of the offer (fUSD, etc)\nSIDE  |  int |  1 if you are the lender, 0 if you are both the lender and borrower, -1 if you're the borrower\nMTS_CREATE  |  int  |  Millisecond Time Stamp when the offer was created\nMTS_UPDATE  |  int  |  Millisecond Time Stamp when the offer was created\nAMOUNT  |  float  |  Amount the offer is for\nFLAGS  |  object  |  future params object (stay tuned)\nSTATUS  |  string  | Offer Status: ACTIVE, EXECUTED, PARTIALLY FILLED, CANCELED\nRATE  |  float  |  Rate of the offer\nPERIOD  |  int  |  Period of the offer\nMTS_OPENING  |  int  |  Millisecond Time Stamp for when the loan was opened\nMTS_LAST_PAYOUT  |  int  |  Millisecond Time Stamp for when the last payout was made\nNOTIFY  |  int  |  0 if false, 1 if true\nHIDDEN  |  int  |  0 if false, 1 if true\nRENEW  |  int  |  0 if false, 1 if true\nNO_CLOSE  |  int  | If funding will be returned when position is closed. 0 if false, 1 if true\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Claim Position",
+  "id": "rest-auth-position-claim",
+  "description": "The claim feature allows the use of funds you have in your Margin Wallet to settle a leveraged position as an exchange buy or sale. Claiming some or all of a position requires that you have enough partially realized P/L (you've reduced the position at a profit) and/or funds (BTC or USD) in your Margin Wallet (net of any outstanding financing charges) to satisfy some or all of the outstanding financing associated with your position.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Response Fields**\n\nTerm | Type | Description\n-- | -- | --\nMTS  |  int  |  Millisecond Time Stamp of the update\nTYPE  |  string  |  Purpose of notification ('on-req', 'oc-req', 'uca', 'fon-req', 'foc-req', 'pm-req')\nMESSAGE_ID  |  int  |  unique ID of the message\nSYMBOL | string | Pair (tBTCUSD, …).\nPOSITION_STATUS | string | Status (ACTIVE, CLOSED).\n±AMOUNT | float | Size of the position. Positive values means a long position, negative values means a short position.\nBASE_PRICE | float | Base price of the position. (Average traded price of the previous orders of the position)\nMARGIN_FUNDING | float | The amount of funding being used for this position.\nMARGIN_FUNDING_TYPE | int | 0 for daily, 1 for term.\nPOSITION_ID | int | position identifier\nMTS_CREATE | time | Timestamp of creation (millis)\nMTS_UPDATE | time | Timestamp of last update (millis)\nPOS_TYPE | int | Type of Position (0 for margin, 1 for deriv)\nCOLLATERAL | str | Collateral\nMIN_COLLATERAL | str | Min Collateral Required\nMETA | str | Meta data about the position claim\nCODE  |  null or integer  | Work in progress\nSTATUS  |  string  |  Status of the notification; it may vary over time (SUCCESS, ERROR, FAILURE, ...)\nTEXT  |  string  |  Text of the notification"
+    },
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "info",
+        "title": "Position ID",
+        "body": "Position ID retrievable via https://docs.bitfinex.com/v2/reference#rest-auth-positions"
+      }
+    }
+  ]
+}

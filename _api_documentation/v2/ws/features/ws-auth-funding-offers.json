@@ -1,0 +1,29 @@
+{
+  "title": "Funding Offers",
+  "id": "ws-auth-funding-offers",
+  "description": "Receive a snapshot and updates for any position events on your account.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "Subscribe to the account information channel to keep track of your funding offers. The account information channel provides a snapshot and updates on the funding offers in your account. The snapshot is delivered upon subscribing and any changes to your positions will be provided as updates for as long as the channel remains open. Any authenticated connection is automatically subscribed to the account information channel.\n\nExample code to open an authenticated connection can be found on our [Authenticated Channels Page](doc:ws-auth).\n\nFunding offer events are sent with CHAN_ID = 0 and can be identified by looking at the TYPE stream field. Funding offer events will use one of the following abbreviations: 'fos' (funding offers snapshot), 'fon' (funding offer new), 'fou' (funding offers update), and 'foc' (funding offer cancel)."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "[\n  CHAN_ID,\n  TYPE,  //'fos'\n  [\n    [\n      ID,\n      SYMBOL,\n      MTS_CREATED,\n      MTS_UPDATED,\n      AMOUNT,\n      AMOUNT_ORIG,\n      OFFER_TYPE,\n      _PLACEHOLDER,\n      _PLACEHOLDER,\n      FLAGS,\n      STATUS,\n      _PLACEHOLDER,\n      _PLACEHOLDER,\n      _PLACEHOLDER,\n      RATE,\n      PERIOD,\n      NOTIFY,\n      HIDDEN,\n      _PLACEHOLDER,\n      RENEW,\n      RATE_REAL,\n    ],\n    ...\n  ]\n]\n    \n[0,\"fos\",[[41237920,\"fETH\",1573912039000,1573912039000,0.5,0.5,\"LIMIT\",null,null,0,\"ACTIVE\",null,null,null,0.0024,2,0,0,null,0,null]]]",
+            "language": "json",
+            "name": "Snapshot ('fos')"
+          },
+          {
+            "code": "[\n  CHAN_ID,\n  TYPE, // <'fon', 'fou', 'foc'>\n  [\n    ID,\n    SYMBOL,\n    MTS_CREATED,\n    MTS_UPDATED,\n    AMOUNT,\n    AMOUNT_ORIG,\n    TYPE,\n    _PLACEHOLDER,\n    _PLACEHOLDER,\n    FLAGS,\n    STATUS,\n    _PLACEHOLDER,\n    _PLACEHOLDER,\n    _PLACEHOLDER,\n    RATE,\n    PERIOD,\n    NOTIFY,\n    HIDDEN,\n    _PLACEHOLDER,\n    RENEW,\n    RATE_REAL\n  ]\n]\n\n[0,\"fon\",[41238747,\"fUST\",1575026670000,1575026670000,5000,5000,\"LIMIT\",null,null,0,\"ACTIVE\",null,null,null,0.006000000000000001,30,0,0,null,0,null]]",
+            "language": "json",
+            "name": "Update ('fon', 'fou', 'foc')"
+          }
+        ],
+        "sidebar": true
+      }
+    }
+  ]
+}

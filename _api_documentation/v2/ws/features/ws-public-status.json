@@ -1,0 +1,48 @@
+{
+  "title": "Status",
+  "id": "ws-public-status",
+  "description": "Subscribe to and receive different types of platform information - currently supports derivatives pair status and liquidation feed.",
+  "elements": [
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "const ws = require('ws')\nconst w = new ws('wss://api-pub.bitfinex.com/ws/2')\n\nw.on('message', (msg) => console.log(msg))\n\nlet msg = JSON.stringify({ \n  event: 'subscribe', \n  channel: 'status', \n  key: 'deriv:tBTCF0:USTF0' \n})\n\nw.on('open', () => w.send(msg))",
+            "language": "javascript"
+          },
+          {
+            "code": "wscat -c wss://api-pub.bitfinex.com/ws/2\n{ \"event\": \"subscribe\",  \"channel\": \"status\",  \"key\": \"deriv:tBTCF0:USTF0\" }",
+            "language": "shell"
+          },
+          {
+            "code": "ws = websocket.WebSocketApp('wss://api-pub.bitfinex.com/ws/2')\n\nws.on_open = lambda self: self.send('{ \"event\": \"subscribe\", \"channel\": \"status\", \"key\": \"deriv:tBTCF0:USTF0\"}')\n\nws.on_message = lambda self, evt:  print (evt)",
+            "language": "python"
+          }
+        ]
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "The value of the key, contained in the subscription payload, determines what status data will be returned.\n\nDerivatives status updates:\nkey: \"deriv:SYMBOL\" // e.g. \"deriv:tBTCF0:USTF0\"\n\nLiquidation feed updates:\nkey: \"liq:global\""
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "// request\n{ \n  event: \"subscribe\", \n  channel: \"status\", \n  key: KEY\n}\n\n// response - \n{\n   event: \"subscribed\",\n   channel: \"status\",\n   chanId: CHANNEL_ID,\n   key: KEY\n}\n\n//Derivative pair status\n{\"event\":\"subscribed\",\"channel\":\"status\",\"chanId\":335856,\"key\":\"deriv:tBTCF0:USTF0\"}\n\n//Liquidation feed\n{\"event\":\"subscribed\",\"channel\":\"status\",\"chanId\":91684,\"key\":\"liq:global\"}\n",
+            "language": "javascript",
+            "name": "Request / Response"
+          },
+          {
+            "code": "// Derivatives Status\n[\n  CHANNEL_ID,\n  [\n    TIME_MS,\n    PLACEHOLDER, \n    DERIV_PRICE,\n    SPOT_PRICE,\n    PLACEHOLDER,\n    INSURANCE_FUND_BALANCE,\n    PLACEHOLDER,\n    NEXT_FUNDING_EVT_TIMESTAMP_MS,\n    NEXT_FUNDING_ACCRUED,\n    NEXT_FUNDING_STEP,\n    PLACEHOLDER,\n    CURRENT_FUNDING\n    PLACEHOLDER,\n    PLACEHOLDER,\n    MARK_PRICE,\n    PLACEHOLDER,\n    PLACEHOLDER,\n    OPEN_INTEREST\n  ]\n]\n\n[335856,[1574700235000,null,7242.85,7246.55,null,413428.41553523,null,1574726400000,0.00005674,870,null,0.00030976,null,null,7237.91,null,null,155.3675257]]\n\n// Liquidation feed updates\n[\n  CHANNEL_ID,\n  [\n    ['pos', \n     POS_ID, \n     TIME_MS, \n     PLACEHOLDER, \n     SYMBOL, \n     AMOUNT, \n     BASE_PRICE, \n     PLACEHOLDER, \n     IS_MATCH, \n     IS_MARKET_SOLD, \n     PLACEHOLDER\n     LIQUIDATION_PRICE\n    ]\n  ]\n]\n\n[91684,[[\"pos\",142397657,1574697680828.2002,null,\"tBSVUSD\",-2.62932,91.583875238719,null,1,1,null,112.27]]]",
+            "language": "javascript",
+            "name": "Update"
+          }
+        ],
+        "sidebar": true
+      }
+    }
+  ]
+}

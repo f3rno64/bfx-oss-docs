@@ -8,7 +8,7 @@ const _isObject = require('lodash/isObject')
 const fsExtra = require('fs-extra')
 const nunjucks = require('nunjucks')
 const nunjucksMarkdown = require('nunjucks-markdown')
-const nunjucksCodeHighlight = require('nunjucks-extension-code-highlight')
+const nunjucksHighlight = require('nunjucks-extension-code-highlight')
 const MarkdownIt = require('markdown-it')
 
 const config = require('../config.json')
@@ -42,7 +42,8 @@ const nunjucksEnv = nunjucks.configure(
   `${__dirname}/../${layoutConfig.includePath}`, layoutConfig.options
 )
 
-nunjucksCodeHighlight(nunjucksEnv)
+nunjucksHighlight(nunjucksEnv)
+
 nunjucksMarkdown.register(nunjucksEnv, mdRenderer.render.bind(mdRenderer))
 nunjucksEnv.addGlobal('includeFile', src => (
   fs.readFileSync(

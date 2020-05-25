@@ -11,6 +11,24 @@
     border-right: 1px solid #aaa;
     padding-right: 32px;
     margin-right: 32px;
+
+    ul {
+      list-style-type: none;
+
+      li {
+        width: 100%;
+
+        &.bfx-oss-docs-readmeio__sidebar-divider {
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #333;
+        }
+
+        &.bfx-oss-docs-readmeio__sidebar-label {
+          color: #999;
+        }
+      }
+    }
   }
 
   #bfx-oss-docs-readmeio__content {

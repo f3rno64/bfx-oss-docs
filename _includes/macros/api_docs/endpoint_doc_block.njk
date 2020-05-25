@@ -1,0 +1,33 @@
+{# TODO: support multiple code blocks/switching #}
+
+{% macro endpointDocBlock(title, subtitle, fields, resLabel, resSample, notice, noticeType='info') %}
+<div class="bfx-oss-docs-readmeio-block">
+  <div class="bfx-oss-docs-readmeio-block__left">
+    <h2 class="bfx-oss-docs-readmeio-block__title">{{ title }}</h2>
+    <p class="bfx-oss-docs-readmeio-block__subtitle">{{ subtitle }}</p>
+    <div class="bfx-oss-docs-readmeio-block__markdown">
+      {% markdown %}
+      {{ fields }}
+      {% endmarkdown %}
+    </div>
+    {% if notice %}
+    <div class="bfx-oss-docs-readmeio-block__callout {{ noticeType }}">
+      <p class="bfx-oss-docs-readmeio-block__callout-title">NOTE</p>
+      <p class="bfx-oss-docs-readmeio-block__callout-body">
+        {{ notice }}
+      </p>
+    </div>
+    {% endif %}
+  </div>
+  <div class="bfx-oss-docs-readmeio-block__right">
+    {% if resLabel and resSample %}
+    <div class="bfx-oss-docs-readmeio-block__code">
+      <p>{{ resLabel }}</p>
+      {% code 'javascript' %}
+      {{- resSample -}}
+      {% endcode %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}

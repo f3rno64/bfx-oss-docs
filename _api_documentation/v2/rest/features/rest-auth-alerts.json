@@ -1,0 +1,11 @@
+{
+  "title": "Alert List",
+  "id": "rest-auth-alerts",
+  "description": "Retrieve a list of active price alerts.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Ratelimit**: 45 req/min\n"
+    }
+  ]
+}

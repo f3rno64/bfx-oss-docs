@@ -1,0 +1,11 @@
+{
+  "title": "User Info",
+  "id": "rest-auth-info-user",
+  "description": "Retrieve the user ID, email, username and timezone setting for the account associated with the API key used.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Fields**\n\nTerm | Type | Description\n-- | -- | --\nID  |  int |  Account ID\nEMAIL  |  string  |  Account Email\nUSERNAME  |  string|  Account username\nMTS_ACCOUNT_CREATE | int | Millisecond timestamp of account creation\nVERIFIED | int |  Indicates if the user has a verified status (KYC) 1 = true, 0 = false\nTIMEZONE | string | Account timezone setting\n"
+    }
+  ]
+}

@@ -271,3 +271,6 @@
 [submodule "_assets/npm/bfx-hf-chart"]
 	path = _assets/npm/bfx-hf-chart
 	url = https://github.com/bitfinexcom/bfx-hf-chart.git
+[submodule "_assets/css/normalize.css"]
+	path = _assets/css/normalize.css
+	url = https://github.com/necolas/normalize.css

@@ -1,0 +1,15 @@
+{
+  "title": "User Settings Read",
+  "id": "rest-auth-settings",
+  "description": "Allows you to read custom settings by providing a key. You can set or adjust these settings using the [User Settings Write](https://docs.bitfinex.com/reference#user-settings-set) endpoint.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Body Fields**\n\nTerm | Type | Description\n-- | -- | --\nKeys  |   Array  |   Array of keys requested. Must follow regex pattern `/^api:[A-Za-z0-9_-]*$/`\n"
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Returned Fields**\n\nTerm | Type | Description\n-- | -- | --\nKEY  |   String  |   Requested Key\nVALUE | Self defined | Returned setting\n"
+    }
+  ]
+}

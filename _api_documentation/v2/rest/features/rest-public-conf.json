@@ -1,0 +1,23 @@
+{
+  "title": "Configs",
+  "id": "rest-public-conf",
+  "description": "Fetch currency and symbol site configuration data. \n\nA variety of types of config data can be fetched by constructing a path with an Action, Object, and conditionally a Detail value. \n\nMultiple sets of parameters may be passed, in a single request, to fetch multiple parts of the sites currency and symbol configuration data.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Path parameters and constructing a valid config request path**\nA valid config request path is built up from 1 to 3 path parameters, an Action value, an Object value, and a Detail value.\n\nUse the information below to configure your request parameters and retrieve a variety of different configurations.\n\n1. ** Request Prefix**\nEvery request must start with a _pub:_ prefix, e.g. **pub:**map:currency:sym\n\n2. **Action Parameter**\nPick the high level action you would like to perform:\n\n|🔽valid action values| notes | complete request\n|:--|:--|:--|\n| map | Map symbols to related details| -\n| list | Fetch a list currencies, pairs, or leaderboard competitions| -\n| info | Fetch detailed information about pairs or transactions| -\n| fees | Fetch the derivatives fees configuration. Does not require an Object or Detail parameter| pub:fees\n\n3. **Object Parameter**\nPick the object you would like to receive.\nAn action will only accept certain object values.\nRefer to the table to see what objects can be used with what actions:\n\n🔽action value|object == currency  |object == pair |object == tx\n|--|:--:|:--:|:--:|\n|map\t|✔ |- | -|\n|list\t        |✔ |✔| -|\n|info\t        |-  |✔ |✔|\n\nNext, determine if a Detail parameter needs to be supplied alongside the selected action and object type:\n\n🔽action & object value (request) |is a detail parameter value required|notes|complete request\n|--|:--:|:--|:--|\n|map:currency\t|✔ | Select a Detail value from the table below to use this request| -\n|map:tx\t|✔ | The only detail for tx is 'method' and will map all currencies to the appropriate withdrawal method for API withdrawals| pub:map:tx:method\n|list:currency\t|-  | Fetches a list of all currencies available on the platform: | pub:list:currency\n|list:pair\t        |✔ | Select a Detail value from the table below to use this request| -\n|list:competitions\t        |- | Fetches a list of leaderboard competitions| -\n|info:pair\t        |-  |  Fetches an array of market information for each currency (WIP) | pub:info:pair\n|info:tx\t        |✔|  The only detail for info:tx is 'detail' and it shows the whether the status of our wallets for deposits and withdrawals (Active = 1, Maintenance = 0) | pub:info:tx:detail\n"
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "***If no Detail value is required then step 3 can be skipped.***\n\n4. **Detail Parameter**\nPick the detail that will be contained in the object.\nAn object will only accept certain detail values.\nRefer to the table to see what details can be used with what objects:\n\n🔽detail value | object == currency | object == pair | notes | complete request\n|--|:--:|:--:|:--|:--|\n|exchange\t|-  |✔ | Fetches a list of valid exchange trading pairs |pub:list:pair:exchange\n|margin\t\t|-  |✔ | Fetches a list of valid margin trading pairs |pub:list:pair:margin\n|sym\t\t|✔  |- | Maps symbols to their API symbols (e.g. BAB -> BCH) | pub:map:currency:sym\n|label\t\t|✔  |- | Maps symbols to their verbose friendly names (e.g. BNT -> Bancor) | pub:map:currency:label\n|unit\t\t        |✔  |- | Maps symbols to unit of measure (where applicable) | pub:map:currency:unit\n|undl\t\t|✔  |- | Maps derivatives symbols to their underlying currency | pub:map:currency:undl\n|pool\t\t|✔  |- | Maps symbols to underlying network/protocol they operate on | pub:map:curreny:pool\n|explorer\t        |✔  |- | Maps symbols to their recognised block explorer URLs | pub:map:currency:explorer\n\n"
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Requesting multiple configurations**\nInstead of performing a request for each configuration item it is possible to fetch multiple configurations in a single request.\n\nSimpy append each request into a single string.\nComma separate each request, without any spaces.\n\nExample of a multi-request that will fetch both margin and exchange trading pairs:\npub:list:pair:exchange,pub:list:pair:margin\n"
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Response structure**\nAll valid permutations and their responses are available for viewing from the code snippet above.\n"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "title": "Raw Books",
+  "id": "ws-public-raw-books",
+  "description": "The Raw Books channel provides the most granular books.",
+  "elements": [
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "const ws = require('ws')\nconst w = new ws('wss://api-pub.bitfinex.com/ws/2')\n\nw.on('message', (msg) => console.log(msg))\n\nlet msg = JSON.stringify({ \n  event: 'subscribe', \n  channel: 'book',\n  prec: 'R0',\n  symbol: 'tBTCUSD' \n})\n\nw.on('open', () => w.send(msg))",
+            "language": "javascript"
+          },
+          {
+            "code": "wscat -c wss://api-pub.bitfinex.com/ws/2\n{ \"event\": \"subscribe\", \"channel\": \"book\", \"prec\": \"R0\", \"symbol\": \"tBTCUSD\" }",
+            "language": "shell"
+          },
+          {
+            "code": "ws = websocket.WebSocketApp('wss://api-pub.bitfinex.com/ws/2')\n\nws.on_open = lambda self: self.send('{ \"event\": \"subscribe\", \"channel\": \"book\", \"prec\": \"R0\", \"symbol\": \"tBTCUSD\" }')\n\nws.on_message = lambda self, evt:  print (evt)",
+            "language": "python"
+          }
+        ]
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": ""
+    },
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "info",
+        "title": "Note",
+        "body": "PRICE = 0 means that you have to remove the order from your book."
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": ""
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "// request\n{\n  event: \"subscribe\",\n  channel: \"book\",\n  prec: \"R0\",\n  symbol: SYMBOL,\n  len: LENGTH\n}\n\n{\"event\":\"subscribed\",\"channel\":\"book\",\"chanId\":433290,\"symbol\":\"tBTCUSD\",\"prec\":\"R0\",\"freq\":\"F0\",\"len\":\"25\",\"pair\":\"BTCUSD\"}\n\n// response\n{\n  event: \"subscribed\",\n  channel: \"book\",\n  chanId: CHANNEL_ID,\n  symbol: SYMBOL,\n  prec: PRECISION,\n  len: LENGTH\n}\n\n{\"event\":\"subscribed\",\"channel\":\"book\",\"chanId\":472778,\"symbol\":\"fUSD\",\"prec\":\"R0\",\"freq\":\"F0\",\"len\":\"25\",\"currency\":\"USD\"}",
+            "language": "json",
+            "name": "Request / Response"
+          },
+          {
+            "code": "// on trading pairs (ex. tBTCUSD)\n[\n  CHANNEL_ID,\n  [\n    [\n      ORDER_ID,\n      PRICE,\n      AMOUNT\n    ],\n    ...\n  ]\n]\n\n[433290,[[34753002978,7294.7,1.54340371]]]  \n  \n// on funding currencies (ex. fUSD)\n[\n  CHANNEL_ID,\n  [\n    [\n      OFFER_ID,\n      PERIOD,\n      RATE,\n      AMOUNT\n    ],\n    ...\n  ]\n]\n\n[472778,[[658282397,30,0.000233,-530]]]",
+            "language": "json",
+            "name": "Snapshot"
+          },
+          {
+            "code": "// on trading pairs (ex. tBTCUSD)\n[\n  CHANNEL_ID,\n  [\n    ORDER_ID,\n    PRICE,\n    AMOUNT\n  ]\n]\n\n[433290,[34753006045,0,-1]]\n  \n// on funding currencies (ex. fUSD)\n[\n  CHANNEL_ID,\n  [\n    OFFER_ID,\n    PERIOD,\n    RATE,\n    AMOUNT\n  ]\n]\n\n[472778,[658286906,2,0,1]]",
+            "language": "javascript",
+            "name": "Updates"
+          }
+        ],
+        "sidebar": true
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Request Fields**\n\nFields | Type | Description\n--- | --- | ---\nSYMBOL | String | Trading pair or funding currency\nPREC | string | Level of price aggregation (R0 for Raw Books).<br>\nLEN | string | Number of price points (\"1\", \"25\", \"100\") [default=\"25\"]\n"
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Stream Fields**\n\nFields | Type | Description\n-- | -- | --\nCHANNEL_ID | int | Identification number assigned to the channel for the duration of this connection.\nORDER_ID | int | Identification number of the order.\nOFFER_ID | int | Identification number of the funding offer.\nPRICE | float | Order price; if 0 you have to remove the order from your book\nPERIOD | int | Funding period in days\nRATE | float | Funding rate for the offer; if 0 you have to remove the offer from your book\n±AMOUNT | float |  Amount of order\nTrading: if AMOUNT > 0 then bid else ask; Funding: if AMOUNT < 0 then bid else ask;\n\n"
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "** Algorithm to create and keep a book instance updated **\n\n1. subscribe to channel with R0 precision\n2. receive the raw book snapshot and create your in-memory book structure\n3. when *PRICE* > 0 then you have to add or update the order\n4. when *PRICE* = 0 then you have to delete the order\n"
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Note:** The algorithm for raw books using `R0` is based on the *ORDER ID* instead of *COUNT*, *PRICE* and *AMOUNT*.\nIf *LENGTH* is set to 25, you will get 25 orders (not price levels). If all orders belong to the same price level, your orderbook will just have that one price level.\n"
+    }
+  ]
+}

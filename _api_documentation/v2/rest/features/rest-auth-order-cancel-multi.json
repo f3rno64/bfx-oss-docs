@@ -1,0 +1,15 @@
+{
+  "title": "Cancel Order Multi",
+  "id": "rest-auth-order-cancel-multi",
+  "description": "Cancel multiple orders simultaneously. \n\nOrders can be canceled based on the Order ID, the combination of Client Order ID and Client Order Date, or the Group Order ID. Alternatively, the body param 'all' can be used with a value of 1 to cancel all orders.",
+  "elements": [
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "danger",
+        "title": "Cancel All Orders",
+        "body": "Please note that using {\"all\" : 1} to cancel all orders will cancel all trading as well as all derivatives orders. Order IDs can be passed instead to cancel only selected orders."
+      }
+    }
+  ]
+}

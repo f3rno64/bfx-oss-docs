@@ -1,0 +1,11 @@
+{
+  "title": "Pulse Write",
+  "id": "rest-auth-pulse-add",
+  "description": "Allows you to write Pulse messages",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Formatting**\n\n* Title and Content should be strings (no HTML content allowed).\n* Content field can be formatted using markdown.\n* Images can be added to the body using the base64 format.\n"
+    }
+  ]
+}

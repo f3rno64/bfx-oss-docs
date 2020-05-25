@@ -1,0 +1,61 @@
+{
+  "title": "Candles",
+  "id": "ws-public-candles",
+  "description": "The Candles endpoint provides OCHL (Open, Close, High, Low) and volume data for the specified trading pair.",
+  "elements": [
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "const ws = require('ws')\nconst w = new ws('wss://api-pub.bitfinex.com/ws/2')\n\nw.on('message', (msg) => console.log(msg))\n\nlet msg = JSON.stringify({ \n  event: 'subscribe', \n  channel: 'candles', \n  key: 'trade:1m:tBTCUSD' //'trade:TIMEFRAME:SYMBOL'\n})\n\nw.on('open', () => w.send(msg))",
+            "language": "javascript"
+          },
+          {
+            "code": "wscat -c wss://api-pub.bitfinex.com/ws/2\n{ \"event\": \"subscribe\",  \"channel\": \"candles\",  \"key\": \"trade:1m:tBTCUSD\" }",
+            "language": "shell"
+          },
+          {
+            "code": "ws = websocket.WebSocketApp('wss://api-pub.bitfinex.com/ws/2')\n\nws.on_open = lambda self: self.send('{ \"event\": \"subscribe\",  \"channel\": \"candles\",  \"key\": \"trade:1m:tBTCUSD\" }')\n\nws.on_message = lambda self, evt:  print (evt)",
+            "language": "python"
+          }
+        ]
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": ""
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "// request\n{\n   event: \"subscribe\",\n   channel: \"candles\",\n   key: \"trade:1m:tBTCUSD\"\n}\n\n// response\n{\n  event: \"subscribed\",\n  channel: \"candles\",\n  chanId\": CHANNEL_ID,\n  key: \"trade:1m:tBTCUSD\"\n}\n\n{\"event\":\"subscribed\",\"channel\":\"candles\",\"chanId\":343351,\"key\":\"trade:1m:tBTCUSD\"}",
+            "language": "javascript",
+            "name": "Request / Response"
+          },
+          {
+            "code": "[\n  CHANNEL_ID,\n  [\n    [\n      MTS,\n      OPEN,\n      CLOSE,\n      HIGH,\n      LOW,\n      VOLUME\n    ],\n    ...\n  ]\n]\n\n[343351,[[1574698260000,7379.785503,7383.8,7388.3,7379.785503,1.68829482]]]",
+            "language": "javascript",
+            "name": "Snapshot"
+          },
+          {
+            "code": "[\n  CHANNEL_ID,\n  [\n    MTS,\n    OPEN,\n    CLOSE,\n    HIGH,\n    LOW,\n    VOLUME\n  ]\n]\n\n[343351,[1574698200000,7399.9,7379.7,7399.9,7371.8,41.63633658]]",
+            "language": "javascript",
+            "name": "Update"
+          }
+        ],
+        "sidebar": true
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Request Fields**\n\nFields | Type | Description\n--- | --- | ---\nKEY | string | Specify the time frame and symbol ('trade:TIMEFRAME:SYMBOL')\n"
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Stream Fields**\n\nFields | Type | Description\n--- | --- | ---\nCHANNEL_ID | int | Identification number assigned to the channel for the duration of this connection.\nMTS | int | millisecond time stamp\nOPEN  |  float  |  First execution during the time frame\nCLOSE  |  float  | Last execution during the time frame\nHIGH  |  float  |  Highest execution during the time frame\nLOW  |  float  |  Lowest execution during the timeframe\nVOLUME  |  float  |  Quantity of symbol traded within the timeframe\n"
+    }
+  ]
+}

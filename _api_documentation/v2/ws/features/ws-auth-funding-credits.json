@@ -1,0 +1,29 @@
+{
+  "title": "Funding Credits",
+  "id": "ws-auth-funding-credits",
+  "description": "Receive a snapshot and updates for any funding credits (funds used in active positions) on your account.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "Subscribe to the account information channel to keep track of your funding credits. The account information channel provides a snapshot and updates on the funding credits in your account. The snapshot is delivered upon subscribing and any changes to your funding credits will be provided as updates for as long as the channel remains open. Any authenticated connection is automatically subscribed to the account information channel.\n\nExample code to open an authenticated connection can be found on our [Authenticated Channels Page](doc:ws-auth).\n\nFunding credits events are sent with CHAN_ID = 0 and can be identified by looking at the TYPE stream field. Funding credits events will use one of the following abbreviations: 'fcs' (funding credits snapshot), 'fcn' (funding credits new), 'fcu' (funding credits update), 'fcc' (funding credits close)."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "[\n  CHAN_ID,\n  TYPE, //'fcs'\n  [\n    [\n      ID,\n      SYMBOL,\n      SIDE,\n      MTS_CREATE,\n      MTS_UPDATE,\n      AMOUNT,\n      FLAGS,\n      STATUS,\n      _PLACEHOLDER,\n      _PLACEHOLDER,\n      _PLACEHOLDER,\n      RATE,\n      PERIOD,\n      MTS_OPENING,\n      MTS_LAST_PAYOUT,\n      NOTIFY,\n      HIDDEN,\n      _PLACEHOLDER,\n      RENEW,\n      RATE_REAL,\n      NO_CLOSE,\n      POSITION_PAIR\n    ],\n    ...\n  ]\n]\n    \n[0,\"fcs\",[[26223578,\"fUST\",1,1575052261000,1575296187000,350,0,\"ACTIVE\",null,null,null,0,30,1575052261000,1575293487000,0,0,null,0,null,0,\"tBTCUST\"],[26223711,\"fUSD\",-1,1575291961000,1575296187000,180,0,\"ACTIVE\",null,null,null,0.002,7,1575282446000,1575295587000,0,0,null,0,null,0,\"tETHUSD\"]]]",
+            "language": "json",
+            "name": "Snapshot ('fcs')"
+          },
+          {
+            "code": " [\n  CHAN_ID,\n  TYPE, // 'fcn', 'fcu', 'fcc':\n  [\n    ID, \n    SYMBOL, \n    SIDE, \n    MTS_CREATE, \n    MTS_UPDATE, \n    AMOUNT, \n    FLAGS, \n    STATUS,\n    _PLACEHOLDER,\n    _PLACEHOLDER,\n    _PLACEHOLDER,\n    RATE,\n    PERIOD, \n    MTS_OPENING, \n    MTS_LAST_PAYOUT, \n    NOTIFY, \n    HIDDEN, \n    _PLACEHOLDER,\n    RENEW,\n    RATE_REAL, \n    NO_CLOSE, \n    POSITION_PAIR\n  ]\n]\n\n[0,\"fcu\",[26223578,\"fUST\",1,1575052261000,1575296787000,350,0,\"ACTIVE\",null,null,null,0,30,1575052261000,1575293487000,0,0,null,0,null,0,\"tBTCUST\"]]",
+            "language": "json",
+            "name": "Update ('fcn', 'fcu', 'fcc')"
+          }
+        ],
+        "sidebar": true
+      }
+    }
+  ]
+}

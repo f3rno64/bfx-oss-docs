@@ -1,0 +1,11 @@
+{
+  "title": "Book",
+  "id": "rest-public-book",
+  "description": "The Public Books endpoint allows you to keep track of the state of Bitfinex order books on a price aggregated basis with customizable precision. Raw books can be retrieved by using precision R0.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Response Details**\n\nFields | Type | Description\n--- | --- | ---\nPRICE | float | Price level (Trading only)\nRATE | float | Rate level (Funding only)\nPERIOD | float | Period level (Funding only)\nCOUNT | int | Number of orders at that price level\n±AMOUNT | float | Total amount available at that price level.\nORDER_ID | int | Order ID\n\nFor Trading: if AMOUNT > 0 then bid else ask.\nFor Funding: if AMOUNT > 0 then ask else bid.\n"
+    }
+  ]
+}

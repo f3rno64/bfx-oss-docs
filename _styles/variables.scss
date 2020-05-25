@@ -1,7 +1,18 @@
+// TODO: Refactor/standardize naming
 $bg-light: #273640;
 $bg-dark: #1b262d;
 $border: #19232a;
+$color-border-table: #d2d2d2;
 $fg: #a2a7aa;
+
+$color-bg-callout-warning: #f9e7cd;
+$color-fg-callout-warning-title: #b57417;
+$color-fg-callout-warning-body: #333;
+$color-border-callout-warning: $color-fg-callout-warning-title;
+
+$bfx-green: #16b157;
+$bfx-green-light: #75b34f;
+$bfx-green-dark: #13944f;
 
 $text-title: #fff;
 $text-faded: #aaa;

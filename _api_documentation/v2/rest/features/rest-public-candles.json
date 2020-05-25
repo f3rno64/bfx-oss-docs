@@ -1,0 +1,22 @@
+{
+  "title": "Candles",
+  "id": "rest-public-candles",
+  "description": "The Candles endpoint provides OCHL (Open, Close, High, Low) and volume data for the specified funding currency or trading pair. The endpoint provides the last 100 candles by default, but a limit and a start and/or end timestamp can be specified.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Response Details**\n\nFields | Type | Description\n--- | --- | ---\nMTS | int | millisecond time stamp\nOPEN  |  float  |  First execution during the time frame\nCLOSE  |  float  | Last execution during the time frame\nHIGH  |  float  |  Highest execution during the time frame\nLOW  |  float  |  Lowest execution during the timeframe\nVOLUME  |  float  |  Quantity of symbol traded within the timeframe\n\n"
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Available Keys**\n\nKey | Description | Arguments | Example\n--- | --- | --- | ---\ntrade | Trading Candles | :TF :SYM_TRADING | trade :1m :tBTCUSD\ntrade | Funding Candles | :TF :SYM_FUNDING:pPERIOD | trade :1m :fUSD :p30\ntrade | Aggregate Funding Candles (AGGR=[10,30]) | :TF :SYM_FUNDING :aAGGR :pPER_START :p :PER_END | trade :1m :fUSD :a10 :p2 :p10 , trade :1m :fUSD :a10 :p11 :p20 , trade :1m :fUSD :a10 :p21 :p30 , trade :1m :fUSD :a30 :p2 :p30"
+    },
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "warning",
+        "body": "Specifying either 'hist' or 'last' is mandatory for all keys."
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Historical Credits (deprecated)",
+  "id": "ws-auth-historical-credits",
+  "description": "Deprecated channel that provides historical information on your provided funding used in active positions.",
+  "elements": [
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "[\n  CHAN_ID,\n  'hfcs',\n  [\n    [\n      ID,\n      SYMBOL,\n      SYMBOL,\n      MTS_CREATE,\n      MTS_UPDATE,\n      AMOUNT,\n      FLAGS,\n      STATUS,\n      _PLACEHOLDER,\n      _PLACEHOLDER,\n      _PLACEHOLDER,\n      RATE,\n      PERIOD,\n      MTS_OPENING,\n      MTS_LAST_PAYOUT,\n      NOTIFY,\n      HIDDEN,\n      _PLACEHOLDER,\n      RENEW,\n      RATE_REAL,\n      NO_CLOSE,\n      POSITION_PAIR,\n      ...\n    ],\n    ...\n  ]\n]\n",
+            "language": "json",
+            "name": "Snapshot"
+          }
+        ],
+        "sidebar": true
+      }
+    }
+  ]
+}

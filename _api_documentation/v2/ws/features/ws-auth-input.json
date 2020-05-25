@@ -1,0 +1,37 @@
+{
+  "title": "Websocket Inputs",
+  "id": "ws-auth-input",
+  "description": "This page lists the additional code necessary to send inputs through your Websocket connection. This code is needed in addition to the authentication payload listed [here](https://docs.bitfinex.com/docs/ws-auth).",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "Edit the example code below depending on the type of input you wish to send. Simply edit the order details according to your wishes and the requirements for each input. You will also need to ensure that the payload (inputPayload) includes the appropriate abbreviation for the action you wish to perform. The example code included on this page is used to send a new order and therefore includes the 'on' (order new) abbreviation. Use different abbreviations for different actions. A full list of abbreviations can be found in our [Abbreviation Glossary](doc:abbreviations-glossary)."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "//...\n//authentication code\n//....\nconst inputDetails = {\n    \"cid\": Date.now(),\n    \"type\": \"LIMIT\",\n    \"symbol\": 'tBTCUSD',\n    \"amount\": \"0.020\",\n    \"price\": '9600'\n}\n\nconst inputPayload = [0, 'on', null, inputDetails] // Note how the payload is constructed here. It consists of an array starting with the CHANNEL_ID, TYPE, and PLACEHOLDER and is followed by the inputDetails object.\n\n//Websocket Listener\n\nwss.on('message', (msg) => {     // The 'message' event is called whenever the ws recieves ANY message\n  let response = JSON.parse(msg)\n  if (response.event === 'auth') {\n    wss.send(JSON.stringify(inputPayload));// Submit payload for input\n  }\n  console.log(msg); // ALL ws receipts will be logged to console\n})",
+            "language": "javascript"
+          }
+        ]
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "###Tradable Balance Error\n\nIn some cases, when the above code is used to place an order is used, a tradable balance error can be returned even though there is sufficient tradable balance in the account. This can happen when the order is sent before the wallet snapshot is sent through the channel. To avoid this, use a sleep function to slightly delay sending the order when opening a new connection. Here is an example:"
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "function sleep(milliseconds) {\n  const date = Date.now();\n  let currentDate = null;\n  do {\n    currentDate = Date.now();\n  } while (currentDate - date < milliseconds);\n}\nconst wss = new WebSocket('wss://api.bitfinex.com/ws/2')\nwss.onopen = function (event) {\n            let inputPayload = JSON.stringify([\n                0,\n                \"on\",\n                null,\n                {\n                  \"cid\": Date.now(),\n                  \"type\": \"LIMIT\",\n                  \"symbol\": 'tBTCUSD',\n                  \"amount\": \"0.020\",\n                  \"price\": '9600'\n                }\n                ])\n            wss.send(JSON.stringify(payload))\n            sleep(1000);\n            wss.send(inputPayload);\n          };",
+            "language": "javascript"
+          }
+        ]
+      }
+    }
+  ]
+}

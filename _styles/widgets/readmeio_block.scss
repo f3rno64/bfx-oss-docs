@@ -8,26 +8,36 @@
     flex: 1;
     padding-right: 32px;
 
+    p > a {
+      color: $bfx-green-light;
+    }
+
     .bfx-oss-docs-readmeio-block__subtitle {
       color: #6d757c;
       padding-bottom: 32px;
       border-bottom: 1px solid #eee;
+      max-width: 75%;
+      line-height: 1.5;
     }
 
-    .bfx-oss-docs-readmeio-block__fields {
+    .bfx-oss-docs-readmeio-block__markdown {
       font-family: $font-body;
 
       strong {
         font-weight: normal;
+        font-size: 16px;
+        font-family: $font-headers;
       }
 
       table {
-        border: 1px solid gray;
+        border-spacing: 0;
+        width: 100%;
 
         thead {
           background: #eee;
 
           th {
+            border: 1px solid $color-border-table;
             padding: 6px 13px;
             font-weight: normal;
           }
@@ -36,8 +46,13 @@
         tbody {
           tr {
             td {
+              border: 1px solid $color-border-table;
               padding: 6px 13px;
               color: #666;
+            }
+
+            &:first-child td {
+              border-top: none;
             }
 
             &:nth-child(2n) {
@@ -51,10 +66,11 @@
     .bfx-oss-docs-readmeio-block__callout {
       padding: 16px 16px 16px 32px;
       background: #eee;
-      margin-top: 32px;
+      margin: 32px auto;
       border-left-width: 4px;
       border-left-style: solid;
       border-left-color: #ccc;
+      max-width: 75%;
 
       .bfx-oss-docs-readmeio-block__callout-body {
         line-height: 1.5;
@@ -69,6 +85,44 @@
           color: #5bc0de;
         }
       }
+
+      &.warning {
+        background: $color-bg-callout-warning;
+        border-left-color: $color-border-callout-warning;
+
+        .bfx-oss-docs-readmeio-block__callout-title {
+          color: $color-fg-callout-warning-title;
+        }
+      }
+    }
+  }
+
+  .bfx-oss-docs-readmeio-block__code {
+    background: #fff;
+    margin: 16px;
+
+    > p:first-child {
+      font-size: 12px;
+      font-family: $font-code;
+      text-align: center;
+      border-bottom: 1px solid $bfx-green;
+      background: $bfx-green-dark;
+      color: $text-title;
+      padding: 8px 0;
+      margin: 0;
+    }
+
+    pre {
+      margin: 0;
+
+      code {
+        display: block;
+        padding: 8px;
+        margin: 0;
+        line-height: 1.3;
+        font-size: 11px;
+        font-family: $font-code;
+      }
     }
   }
 
@@ -76,21 +130,5 @@
     flex: 1;
     max-width: 300px;
     background: #eee;
-
-    .bfx-oss-docs-readmeio-block__code {
-      background: #fff;
-      margin: 16px;
-
-      > p:first-child {
-        text-align: center;
-        border-bottom: 1px solid #ccc;
-        padding: 8px 0;
-        font-size: 12px;
-      }
-
-      pre {
-        padding: 0 16px;
-      }
-    }
   }
 }

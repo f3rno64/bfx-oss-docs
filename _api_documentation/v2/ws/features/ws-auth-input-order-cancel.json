@@ -1,0 +1,33 @@
+{
+  "title": "Cancel Order",
+  "id": "ws-auth-input-order-cancel",
+  "description": "Cancels the specified order",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "To cancel an order, construct a payload using the \"oc\" (order cancel) abbreviation. The order details need to include either the Internal Order ID or the Client Order ID and Client Order ID Date (YYYY-MM-DD format). Please look to the sidebar for examples.\n\nWhen you cancel an order, you will receive a message of the appropriated type on the \"account info\" channel. Example responses are included in the sidebar. Please look to the [Orders](ref:ws-auth-orders) and [Notifications](ref:ws-auth-notifications) pages for further information.\n\nOrder inputs require you to run the authentication code along with additional code for the input. The authentication code can be found  on our [Authenticated Channels](doc:ws-auth) and the additional code for inputs can be found on the [Websocket Inputs](ref:ws-input) page."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "// Cancel order by internal order Id\n[\n  0,\n  \"oc\",\n  null,\n  {\n    \"id\": ID\n  }\n]\n\n// Cancel order using client order Id and order creation date\n[\n  0,\n  \"oc\",\n  null,\n  {\n    \"cid\": CID,\n    \"cid_date\": CID_DATE\n  }\n]",
+            "language": "json",
+            "name": "Payload"
+          },
+          {
+            "code": "// When the cancellation request is submitted you will receive an 'n' (notification) event as confirmation. If the cancellation is successful, you will also receive  an 'oc' (order cancelled) event. Both events are sent through CHANNEL_ID = 0.\n\n[\nCHANNEL_ID\nEVENT\n [\n MTS, //omitted for 'oc' event\n TYPE, //omitted for 'oc' event\n MESSAGE_ID, //omitted for 'oc' event\n null, //omitted for 'oc' event\n  [\n  ID,\n  GID,\n  CID,\n  SYMBOL,\n  MTS_CREATE, \n  MTS_UPDATE, \n  AMOUNT, \n  AMOUNT_ORIG, \n  TYPE,\n  TYPE_PREV,\n  MTS_TIF,\n  _PLACEHOLDER,\n  FLAGS,\n  ORDER_STATUS,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  PRICE,\n  PRICE_AVG,\n  PRICE_TRAILING,\n  PRICE_AUX_LIMIT,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  HIDDEN, \n  PLACED_ID,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  ROUTING,\n  _PLACEHOLDER,\n  _PLACEHOLDER,\n  META\n  ]\n CODE, //omitted for 'oc' event\n STATUS, //omitted for 'oc' event\n TEXT //omitted for 'oc' event\n ]\n]\n\n[0,\"n\",[1575291219660,\"oc-req\",null,null,[1185815100,null,1575289350475,\"tETHUSD\",1575289351944,1575289447644,-3,-3,\"LIMIT\",\"LIMIT\",null,null,0,\"ACTIVE\",null,null,240,0,0,0,null,null,null,0,0,null,null,null,\"API>BFX\",null,null,null],null,\"SUCCESS\",\"Submitted for cancellation; waiting for confirmation (ID: 1185815100).\"]]\n\n[0,\"oc\",[1185815100,null,1575289350475,\"tETHUSD\",1575289351944,1575291219663,-3,-3,\"LIMIT\",\"LIMIT\",null,null,0,\"CANCELED\",null,null,240,0,0,0,null,null,null,0,0,null,null,null,\"API>BFX\",null,null,null]]",
+            "language": "json",
+            "name": "Response"
+          }
+        ],
+        "sidebar": true
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "** Request Fields **\n\nName | Type | Description\n-- | -- | --\nid  |  int64  |  Internal Order ID\ncid  |  int45  |  Client Order ID\ncid_date  |  string  |  Client Order ID Date\n"
+    }
+  ]
+}

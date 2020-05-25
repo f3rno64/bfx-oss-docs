@@ -1,0 +1,24 @@
+{
+  "title": "Order Multi-OP",
+  "id": "ws-auth-input-order-multi-op",
+  "description": "Send multiple order-related operations.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "The Order Multi-OP command allows sending of multiple order operations at the same time. To do this, construct a payload with the \"ox_multi\" (order operation multi) abbreviation. Use the inner array to specify the different operations you would like to perform, starting each separate operation with the appropriate abbreviation followed by an object holding the details.\n\nYou will receive messages to confirm your requests through \"n\" (notification) events and, if successful, confirmation of the operations using other event messages (\"on\", \"oc\", \"ou\", etc.). Please look to the [Orders](ref:ws-auth-orders) and [Notifications](ref:ws-auth-notifications) pages for further information on the responses you receive.\n\nOrder inputs require you to run the authentication code along with additional code for the input. The authentication code can be found  on our [Authenticated Channels](doc:ws-auth) and the additional code for inputs can be found on the [Websocket Inputs](ref:ws-input) page."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "// Model\n[\n  0,\n  \"ox_multi\",\n  null,\n  [\n    [OPERATION, {}],\n    [OPERATION, {}],\n    [OPERATION, {}],\n    ...\n  ]\n]\n  \n// Example\n[\n  0,\n  \"ox_multi\",\n  null,\n  [\n    [\"on\", {...}],\n    [\"oc\", {...}],\n    [\"oc_multi\", {...}],\n    [\"oc\", {...}],\n    ...\n  ]\n]",
+            "language": "json",
+            "name": "Payload"
+          }
+        ],
+        "sidebar": true
+      }
+    }
+  ]
+}

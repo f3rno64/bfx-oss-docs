@@ -1,0 +1,33 @@
+{
+  "title": "Cancel Offer",
+  "id": "ws-auth-input-offer-cancel",
+  "description": "Cancel a funding offer.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "To cancel an offer, construct a payload using the \"foc\" (funding offer cancel) abbreviation. Include the Offer ID in the payload. Please look to the sidebar for a model and example.\n\nWhen you cancel an offer, you will receive a message of the appropriated type on the \"account info\" channel. Example responses are included in the sidebar. Please look to the [Funding Offers](ref:ws-auth-funding-offers) page for further information.\n\nFunding offer inputs require you to run the authentication code along with additional code for the input. The authentication code can be found  on our [Authenticated Channels](doc:ws-auth) and the additional code for inputs can be found on the [Websocket Inputs](ref:ws-input) page."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "// Model\n[\n  0,\n  \"foc\",\n  null,\n  {\n    id: ID\n  }\n]\n\n// Examples\n[\n  0, \n  'foc', \n  null, \n  { \n    id: 12345\n  }\n]",
+            "language": "json",
+            "name": "Payload"
+          },
+          {
+            "code": "[\nCHANNEL_ID\nEVENT\n [\n MTS, //omitted for 'foc' event\n TYPE, //omitted for 'foc' event\n MESSAGE_ID, //omitted for 'foc' event\n null, //omitted for 'foc' event\n  [\n    ID,\n    SYMBOL,\n    MTS_CREATED,\n    MTS_UPDATED,\n    AMOUNT,\n    AMOUNT_ORIG,\n    OFFER_TYPE,\n    _PLACEHOLDER,\n    _PLACEHOLDER,\n    FLAGS,\n    OFFER_STATUS,\n    _PLACEHOLDER,\n    _PLACEHOLDER,\n    _PLACEHOLDER,\n    RATE,\n    PERIOD,\n    NOTIFY,\n    HIDDEN,\n    _PLACEHOLDER,\n    RENEW,\n    _PLACEHOLDER\n  ]\n CODE, //omitted for 'foc' event\n STATUS, //omitted for 'foc' event\n TEXT //omitted for 'foc' event\n ]\n]\n\n[0,\"foc\",[41238934,\"fUST\",1575293959000,1575294374000,500,500,\"LIMIT\",null,null,0,\"CANCELED\",null,null,null,0.02,2,0,0,null,0,null]]",
+            "language": "json",
+            "name": "Response"
+          }
+        ],
+        "sidebar": true
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Request Fields**\n\nName | Type | Description\n-- | -- | --\nid  |  int  |  Offer ID\n"
+    }
+  ]
+}

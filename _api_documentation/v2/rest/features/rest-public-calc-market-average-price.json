@@ -1,0 +1,11 @@
+{
+  "title": "Market Average Price",
+  "id": "rest-public-calc-market-average-price",
+  "description": "Calculate the average execution price for Trading or rate for Margin funding.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Stream Fields**\n\nFields | Type | Description\n--- | --- | ---\nPRICE_AVG | float | Average price for amount bought or sold given the current order book (Trading only)\nAMOUNT| float | Amount traded or taken/provided in funding\nRATE_AVG | float | Average rate for amount taken or provided given the current order book (Funding only)\n"
+    }
+  ]
+}

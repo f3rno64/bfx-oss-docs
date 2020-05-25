@@ -1,0 +1,11 @@
+{
+  "title": "Trades",
+  "id": "rest-auth-trades",
+  "description": "Retrieve your trades. Your most recent trades will be retrieved by default, but a timestamp can be used to retrieve time-specific data.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Fields**\n\nTerm | Type | Description\n-- | -- | --\nID  |  integer  |  Trade database id\nPAIR  |  string  |  Pair (BTCUSD, …)\nMTS_CREATE  |  integer  |  Execution timestamp\nORDER_ID  |  integer  |  Order id\nEXEC_AMOUNT  |  float  |  Positive means buy, negative means sell\nEXEC_PRICE  |  float  |  Execution price\nORDER_TYPE  |  string  |  Order type\nORDER_PRICE  |  float  |  Order price\nMAKER  |  int  |  1 if true, -1 if false\nFEE  |  float  |  Fee\nFEE_CURRENCY  |  string  |  Fee currency\n"
+    }
+  ]
+}

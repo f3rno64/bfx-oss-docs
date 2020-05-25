@@ -1,0 +1,6 @@
+{
+  "title": "Alert Set",
+  "id": "rest-auth-alert-set",
+  "description": "Sets up a price alert at the given value",
+  "elements": []
+}

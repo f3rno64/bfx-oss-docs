@@ -1,0 +1,19 @@
+{
+  "title": "Order Update",
+  "id": "rest-auth-order-update",
+  "description": "Update an existing order, can be used to update margin, exchange, and derivative orders.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Response Fields**\n\nTerm | Type | Description\n-- | -- | --\nMTS  |  int  |  Millisecond Time Stamp of the update\nTYPE  |  string  |  Purpose of notification ('on-req', 'oc-req', 'uca', 'fon-req', 'foc-req')\nMESSAGE_ID  |  int  |  unique ID of the message\nID  |  int  |  Order ID\nGID | int |  Group ID\nCID | int |  Client Order ID\nSYMBOL  |  string  |  Pair (tBTCUSD, …)\nMTS_CREATE | int | Millisecond timestamp of creation\nMTS_UPDATE | int | Millisecond timestamp of update\nAMOUNT  |  float  |  Positive means buy, negative means sell.\nAMOUNT_ORIG  |  float  |  Original amount\nTYPE  |  string  |  The type of the order: LIMIT, MARKET, STOP, STOP LIMIT, TRAILING STOP, EXCHANGE MARKET, EXCHANGE LIMIT, EXCHANGE STOP, EXCHANGE STOP LIMIT, EXCHANGE TRAILING STOP, FOK, EXCHANGE FOK, IOC, EXCHANGE IOC.\nTYPE_PREV  |  string  |  Previous order type\nMTS_TIF  |  int  |  Millisecond timestamp of Time-In-Force: automatic order cancellation\nORDER_STATUS  |  string  |  Order Status: ACTIVE, EXECUTED @ PRICE(AMOUNT) e.g. \"EXECUTED @ 107.6(-0.2)\", PARTIALLY FILLED @ PRICE(AMOUNT), INSUFFICIENT MARGIN was: PARTIALLY FILLED @ PRICE(AMOUNT), CANCELED, CANCELED was: PARTIALLY FILLED @ PRICE(AMOUNT), RSN_DUST (amount is less than 0.00000001), RSN_PAUSE (trading is paused / paused due to AMPL rebase event)\nPRICE  |  float  |  Price\nPRICE_AVG  |  float  |  Average price\nPRICE_TRAILING  |  float  |  The trailing price\nPRICE_AUX_LIMIT  |  float  |  Auxiliary Limit price (for STOP LIMIT)\nHIDDEN  |  int  |  0 if false, 1 if true\nPLACED_ID  |  int  |  If another order caused this order to be placed (OCO) this will be that other order's ID\nROUTING | string | indicates origin of action: BFX, ETHFX, API>BFX, API>ETHFX\nFLAGS | int | See https://docs.bitfinex.com/v2/docs/flag-values.\nMETA | json string | Additional meta information about the order ( $F7 = IS_POST_ONLY (0 if false, 1 if true), $F33 = Leverage (int))\nCODE  |  null or integer  | Work in progress\nSTATUS  |  string  |  Status of the notification; it may vary over time (SUCCESS, ERROR, FAILURE, ...)\nTEXT  |  string  |  Text of the notification"
+    },
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "info",
+        "title": "Multiple Flags",
+        "body": "The summation of flags may result in multiple flags. For example 4160 (64 + 4096) means hidden post only."
+      }
+    }
+  ]
+}

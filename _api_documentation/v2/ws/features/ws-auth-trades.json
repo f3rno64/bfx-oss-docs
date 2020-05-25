@@ -1,0 +1,29 @@
+{
+  "title": "Trades",
+  "id": "ws-auth-trades",
+  "description": "Receive updates for any trade events on your account.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "Subscribe to the account information channel to keep track of your trades. The account information channel will provide a feed of your trades for as long as the channel remains open. Any authenticated connection is automatically subscribed to the account information channel.\n\nExample code to open an authenticated connection can be found on our [Authenticated Channels Page](doc:ws-auth).\n\nTrade events are sent with CHAN_ID = 0 and can be identified by looking at the TYPE stream field. Trade events will use one of the following abbreviations: 'te' (trade executed) and 'tu' (trade execution update). The 'te' message is sent when a trade is executed while the 'tu' message is sent shortly after containing the trade id (ID) and additional updated fields."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "[\n  CHAN_ID, \n  TYPE, // 'te' \n  [\n    ID, \n    SYMBOL, \n    MTS_CREATE,\n    ORDER_ID, \n    EXEC_AMOUNT, \n    EXEC_PRICE, \n    ORDER_TYPE, \n    ORDER_PRICE, \n    MAKER,\n    PLACEHOLDER,\n    PLACEHOLDER,\n\t\tCID\n  ]\n]\n \n[0,\"te\",[402088407,\"tETHUST\",1574963975602,34938060782,-0.2,153.57,\"MARKET\",0,-1,null,null,0]]",
+            "language": "json",
+            "name": "Update (te)"
+          },
+          {
+            "code": "[\n  CHAN_ID, \n  TYPE // 'tu' \n  [\n    ID, \n    SYMBOL, \n    MTS_CREATE, \n    ORDER_ID, \n    EXEC_AMOUNT, \n    EXEC_PRICE, \n    ORDER_TYPE, \n    ORDER_PRICE, \n    MAKER, \n    FEE, \n    FEE_CURRENCY,\n  ]\n]\n  \n[0,\"tu\",[402088407,\"tETHUST\",1574963975602,34938060782,-0.2,153.57,\"MARKET\",0,-1,-0.061668,\"USD\"]]",
+            "language": "json",
+            "name": "Update (tu)"
+          }
+        ],
+        "sidebar": true
+      }
+    }
+  ]
+}

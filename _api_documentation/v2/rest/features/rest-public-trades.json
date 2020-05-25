@@ -1,0 +1,11 @@
+{
+  "title": "Trades",
+  "id": "rest-public-trades",
+  "description": "The trades endpoint allows the retrieval of past public trades and includes details such as price, size, and time. Optional parameters can be used to limit the number of results; you can specify a start and end timestamp, a limit, and a sorting method.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Response Details**\n\nFields | Type | Description\n--- | --- | ---\nID | int | ID of the trade\nMTS  |  int  |  millisecond time stamp\n±AMOUNT  |  float  |  How much was bought (positive) or sold (negative).\nPRICE  |  float  |  Price at which the trade was executed (trading tickers only)\nRATE | float | Rate at which funding transaction occurred (funding tickers only)\nPERIOD | int | Amount of time the funding transaction was for (funding tickers only)\n\nThe order that causes the trade (taker) determines whether a trade is logged as a buy or sell.\n"
+    }
+  ]
+}

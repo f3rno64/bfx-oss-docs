@@ -1,0 +1,11 @@
+{
+  "title": "Changelog",
+  "id": "rest-auth-audit-hist",
+  "description": "Retrieve account changelog.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "**Fields**\n\nTerm | Type | Description\n-- | -- | --\nMTS_CREATE |  int  | Millisecond timestamp of change\nLOG  |  int |  Log entry\nIP  |  string|  IP address for logged change\nUSER_AGENT | object | Browser info\n"
+    }
+  ]
+}

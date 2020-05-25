@@ -1,0 +1,24 @@
+{
+  "title": "Balance Info",
+  "id": "ws-auth-balance-info",
+  "description": "The Balance Info channel provides data on the total and net assets in your account.",
+  "elements": [
+    {
+      "type": "MARKDOWN",
+      "content": "Subscribe to the account information channel to keep track of your account balance. The account information channel will provide a feed of your balance for as long as the channel remains open. Any authenticated connection is automatically subscribed to the account information channel.\n\nExample code to open an authenticated connection can be found on our [Authenticated Channels Page](doc:ws-auth).\n\nBalance events are sent with CHAN_ID = 0 and can be identified by looking at the TYPE stream field. Balance update events can be recognised by the 'bu' (balance update) abbreviation."
+    },
+    {
+      "type": "CODE",
+      "content": {
+        "codes": [
+          {
+            "code": "[\n  CHAN_ID,\n  TYPE, //'bu'\n  [\n    AUM,\n    AUM_NET,\n    ...\n  ]\n]\n \n[0,\"bu\",[4131.85,4131.85]]  ",
+            "language": "json",
+            "name": "Update ('bu')"
+          }
+        ],
+        "sidebar": true
+      }
+    }
+  ]
+}

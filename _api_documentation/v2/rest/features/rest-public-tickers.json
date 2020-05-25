@@ -1,0 +1,19 @@
+{
+  "title": "Tickers",
+  "id": "rest-public-tickers",
+  "description": "The tickers endpoint provides a high level overview of the state of the market. It shows the current best bid and ask, the last traded price, as well as information on the daily volume and price movement over the last day. The endpoint can retrieve multiple tickers with a single query.",
+  "elements": [
+    {
+      "type": "CALLOUT",
+      "content": {
+        "type": "info",
+        "title": "Symbols",
+        "body": "A list of possible trading pairs can be retrieved from [Configs](ref:rest-public-conf) by calling [pub:list:pair:exchange](https://api-pub.bitfinex.com/v2/conf/pub:list:pair:exchange). The API uses the format \"t[Symbol]\" (i.e. tBTCUSD, tETHUSD, tBTCUST, ...).\n\nFor funding use format \"f[Symbol]\" (e.g. fUSD, fBTC, fETH, ...). A list of all possible symbols can be retrieved from [Configs](ref:rest-public-conf) by calling [pub:list:currency](https://api-pub.bitfinex.com/v2/conf/pub:list:currency). Please note that not all listed currencies can be provided as funding."
+      }
+    },
+    {
+      "type": "MARKDOWN",
+      "content": "**Response Details**\n\nFields | Type | Description\n--- | --- | ---\nSYMBOL | string | The symbol of the requested ticker data\nFRR  |  float  |  Flash Return Rate - average of all fixed rate funding over the last hour (funding tickers only)\nBID  |  float  |  Price of last highest bid\nBID_PERIOD  |  int  |  Bid period covered in days (funding tickers only)\nBID_SIZE  |  float  |  Sum of the 25 highest bid sizes\nASK  |  float  |  Price of last lowest ask\nASK_PERIOD  |  int  |  Ask period covered in days (funding tickers only)\nASK_SIZE  |  float  |  Sum of the 25 lowest ask sizes\nDAILY_CHANGE  |  float  |  Amount that the last price has changed since yesterday\nDAILY_CHANGE_RELATIVE  |  float  |  Relative price change since yesterday (*100 for percentage change)\nLAST_PRICE  |  float  |  Price of the last trade\nVOLUME  |  float  |  Daily volume\nHIGH  |  float  |  Daily high\nLOW  |  float  |  Daily low\nFRR_AMOUNT_AVAILABLE | float | The amount of funding that is available at the Flash Return Rate (funding tickers only)\n"
+    }
+  ]
+}
