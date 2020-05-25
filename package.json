@@ -2,12 +2,12 @@
   "name": "bfx-oss-docs",
   "version": "1.0.0",
   "description": "Official Bitfinex Documentation",
-  "main": "lib/index.js",
+  "main": "index.js",
   "engines": {
     "node": ">=14.2.0"
   },
   "homepage": "https://github.com/bitfinexcom/bfx-oss-docs#readme",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "contributors": [
     "Cris Mihalache <cris.m@bitfinex.com> (https://www.bitfinex.com)",
     "Paolo Ardoino <paolo@bitfinex.com> (https://www.bitfinex.com)",
@@ -43,7 +43,7 @@
     "serve-jsdoc": "./node_modules/.bin/http-server ./dist/jsdoc",
     "build-site": "yarn clean-site && node scripts/render.js",
     "build-bfx-jsdoc-assets": "cp ./jsdoc_assets/* ./dist/jsdoc/ -r",
-    "build-bfx-jsdoc-config": "node scripts/render_jsdoc_config.js",
+    "build-bfx-jsdoc-config": "node scripts/render_unified_jsdoc_config.js",
     "build-bfx-jsdoc-html": "./node_modules/.bin/jsdoc --pedantic --configure .jsdoc-merged.json --verbose",
     "build-bfx-jsdoc": "yarn build-bfx-jsdoc-config && yarn build-bfx-jsdoc-html && yarn build-bfx-jsdoc-assets",
     "build": "yarn build-bfx-jsdoc && yarn build-site",
@@ -96,6 +96,7 @@
     "nunjucks-highlight.js": "^0.0.5",
     "nunjucks-markdown": "^2.0.1",
     "sass": "^1.26.5",
+    "signale": "^1.4.0",
     "string": "^3.3.3",
     "stylus": "^0.54.7",
     "uslug": "^1.0.4"

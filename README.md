@@ -2,59 +2,53 @@
 
 > Heavily WIP
 
-## TODO
+### Configuring
 
-* roll own build system
-* extract core as static site generator global module
-* more, for now https://docs.bitfinex.com
-* CLI helper **(TODO)**
-
-## Features
-
-* No babel, webpack, gulp, grunt, etc
-* Generates minified HTML/CSS, fast & minimal
-* [markdown-it](https://www.npmjs.com/package/markdown-it) parser with support
-  for [plugins](https://www.npmjs.com/search?q=keywords:markdown-it-plugin)
-* [nunjucks](https://mozilla.github.io/nunjucks)-powered layouts
-* [stylus](https://stylus-lang.com/) for stylesheets
-* [highlight.js](https://highlightjs.org/) for static syntax highlighting with
-  over 91 themes.
-
-## Setup
-
-```bash
-yarn
-```
-
-### Configuration
-
-See the `lib/types/docs/index.js` for config file options. Values may also be
-provided via `package.json` on the `docs` key.
-
-### Folder Structure
-
-All site sources are stored in `lib` and the standalone distribution copy is in
-`dist`.
-
-* `lib/layouts` - [nunjucks](https://mozilla.github.io/nunjucks) layouts,
-  this directory is included by default on the `config.nunjucks.includes` array
-* `lib/widgets` - like `lib/layouts` but meant to contain markup for composable
-  compnents which can be used via nunjucks' `import`, `include`, `render`, and
-  other template manipulation helpers.
-* `lib/assets` - static files to be made available in the built distribution
-* `lib/styles` - [stylus](https://stylus-lang.com/) sources, compiled based on
-  the settings in `config.stylus`. For more information see `StylusOptions`
-* `lib/pages` - site source files to be processed by the configured template
-  engine, extending those in `lib/layouts`. Each file in this folder
-  corresponds to one page by default. Further routing can be controlled with
-  the `config.core.routing` map.
+For now, see `config.json` for the config structure.
 
 ### Building
 
 ```bash
-yarn build
-yarn serve
+yarn prepare
+yarn build-bfx-jsdoc
+yarn build-site
 ```
+
+or just
+
+```bash
+yarn dist
+```
+
+### Serving Locally
+
+* `yarn serve-site` to serve the built static site
+* `yarn serve-jsdoc` to serve the built unified JSDoc documentation
+
+### Building Unified JSDoc Documentation
+
+Generating the unified JSDoc documentation for all of Bitfinex's JavaScript
+projects is multi-step process:
+
+* `yarn build-bfx-jsdoc-config` to generate the JSDoc config file for all
+  projects (assuming `config.json` is correctly populated and submodules are
+  present)
+* `yarn build-bfx-jsdoc-html` to generate the unified documentation
+* `yarn build-bfx-jsdoc-assets` to copy static assets to the dist folder
+
+All of the above are available as `yarn build-bfx-jsdoc`, and can be cleaned up
+with `yarn clean-jsdoc`.
+
+### Building the Static Site
+
+Similarly, building the static site requires:
+
+* `yarn prepare-bfx-hf-chart` to build the `bfx-hf-chart` for inclusion in an
+  iframe from the assets folder
+* `yarn build-site` to render the site itself
+
+All of the above are available as `yarn build-site`, and can be cleaned up
+with `yarn clean-site`.
 
 ### Contributing
 
