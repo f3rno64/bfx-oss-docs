@@ -1,0 +1,26 @@
+#bfx-oss-docs-readmeio-wrapper {
+  background: #fff;
+  color: #000;
+
+  display: flex;
+  flex-direction: row;
+
+  #bfx-oss-docs-readmeio__sidebar {
+    flex: 1;
+    max-width: 200px;
+    border-right: 1px solid #aaa;
+    padding-right: 32px;
+    margin-right: 32px;
+  }
+
+  #bfx-oss-docs-readmeio__content {
+    width: 100%;
+    flex: 1;
+  }
+}
+
+#bfx-oss-docs-readmeio-header {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #eee;
+}

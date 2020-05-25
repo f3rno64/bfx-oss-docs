@@ -6,11 +6,13 @@
 {% endblock %}
 
 {% block body %}
-  {% include 'widgets/header_bar.njk' %}
+  <div id="bfx-oss-docs-home-wrapper">
+    {% include 'widgets/header_bar.njk' %}
 
-  <div id="bfx-oss-docs-content-wrapper">
-    {% block bfx_body %}{% endblock %}
+    <div id="bfx-oss-docs-content-wrapper">
+      {% block bfx_body %}{% endblock %}
+    </div>
+
+    {% include 'widgets/footer_bar.njk' %}
   </div>
-
-  {% include 'widgets/footer_bar.njk' %}
 {% endblock %}

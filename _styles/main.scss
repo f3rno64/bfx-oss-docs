@@ -9,6 +9,11 @@
 @import './pygments_themes/ayu/ayu';
 
 body {
+  margin: 0;
+}
+
+// TODO: Extract
+#bfx-oss-docs-home-wrapper {
   background: $bg-light;
   color: $fg;
   font-family: $font-body;
@@ -26,6 +31,8 @@ code {
   font-family: $font-code;
 }
 
+@import './readmeio.scss';
+
 @import './widgets/code.scss';
 @import './widgets/code_demo.scss';
 @import './widgets/content_wrapper.scss';
@@ -34,6 +41,7 @@ code {
 @import './widgets/logo_icon_row.scss';
 @import './widgets/readme.scss';
 @import './widgets/library_stats.scss';
+@import './widgets/readmeio_block.scss';
 
 @import './home/section.scss';
 @import './home/teaser.scss';
