@@ -6,6 +6,7 @@ const renderUnifiedJSDocConfig = require('./lib/jsdoc/render_unified_config')
 const verifyReadmeIOSrc = require('./lib/readmeio/verify_src')
 const renderV2APIDocumentation = require('./lib/readmeio/render_v2_api_documentation')
 const parseRIOMarkdown = require('./lib/readmeio/parse_markdown')
+const getMD = require('./lib/markdown_it')
 
 /**
  * Bitfinex documentation (static site generator & content)
@@ -23,5 +24,6 @@ module.exports = {
   renderUnifiedJSDocConfig,
   verifyReadmeIOSrc,
   renderV2APIDocumentation,
-  parseRIOMarkdown
+  parseRIOMarkdown,
+  getMD
 }

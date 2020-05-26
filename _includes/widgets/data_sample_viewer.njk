@@ -1,0 +1,27 @@
+<div class="bfx-oss-docs-data-sample-viewer">
+  <ul class="bfx-oss-docs-data-sample-viewer__header">
+    {% for sample in samples %}
+    <li
+      data-id="{{ sample.id }}"
+
+      {% if loop.index0 == 0 %}
+      class="active"
+      {% endif %}
+    >
+      <p>{{ sample.label }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="bfx-oss-docs-data-sample-viewer__container">
+    {% for sample in samples %}
+      <li
+        data-id="{{ sample.id }}"
+
+        {% if loop.index0 > 0 %}
+        style="display: none"
+        {% endif %}
+      }>{{ sample.html | safe }}</li>
+    {% endfor %}
+  </ul>
+</div>

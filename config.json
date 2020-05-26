@@ -2,7 +2,7 @@
   "output": {
     "staticSite": "./dist/site",
     "convertedRIOAPIDocs": "./_api_documentation",
-    "unifiedJSDocDist": "./dist/jsdoc",
+    "unifiedJSDocDist": "./dist/jsdoc.json",
     "unifiedJSDocConfig": "./.jsdoc-merged.json"
   },
 
@@ -52,7 +52,7 @@
     "plugins": {
       "markdown-it-emoji": {},
       "markdown-it-highlightjs": {
-        "auto": false,
+        "auto": true,
         "code": true
       }
     }
