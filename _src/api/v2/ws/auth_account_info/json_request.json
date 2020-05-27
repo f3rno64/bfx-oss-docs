@@ -1,0 +1,8 @@
+{
+    event: "auth",
+    apiKey: api_key,
+    authSig: signature,
+    authPayload: payload,
+    authNonce: +authNonce,
+    calc: 1
+}

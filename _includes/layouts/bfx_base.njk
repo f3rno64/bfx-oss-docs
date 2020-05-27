@@ -6,46 +6,53 @@
 {% endblock %}
 
 {% block body %}
-  <div id="bfx-oss-docs-wrapper">
-    <div id="bfx-oss-docs-sidebar">
-      <div id="bfx-oss-docs-sidebar__header">
-        <img src="/img/bfx-logo-bg-white.png" alt="Bitfinex" height="64">
-        <p>Documentation</p>
-      </div>
+<div id="bfx-oss-docs-side-bar">
+  <img
+    id="bfx-oss-docs-side-bar__header"
+    src="/img/bfx-logo-bg-white.png"
+    alt="Bitfinex"
+    height="64"
+  />
 
-      <ul id="bfx-oss-docs-sidebar__main-menu">
-        <li class="active">
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="#">API Overview</a>
-        </li>
-        <li>
-          <a href="/api_reference">API Reference</a>
-        </li>
-        <li>
-          <a href="#">Open Source Projects</a>
-        </li>
-      </ul>
+  <ul id="bfx-oss-docs-side-bar__main-menu">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="#">API Overview</a>
+    </li>
+    <li class="active">
+      <a href="/api_reference">API Reference</a>
+    </li>
+    <li>
+      <a href="#">Open Source Projects</a>
+    </li>
+  </ul>
 
-      {% block sidebar %}{% endblock %}
-    </div>
+  {% block sidebar %}{% endblock %}
+</div>
 
-    <div id="bfx-oss-docs-content-wrapper">
-      {% block content %}{% endblock %}
-
-      <div id="bfx-oss-docs-footer-bar">
-        <div id="bfx-oss-docs-footer-bar__container">
-          <p>Copyright © 2013-2020 iFinex Inc. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
+<div id="bfx-oss-docs-content">
+  <div id="bfx-oss-docs-header-bar">
+    <h2>Documentation</h2>
+    <h2>
+      {% block page_title %}{% endblock %}
+    </h2>
   </div>
 
+  {% block content %}{% endblock %}
 
-  <script type="text/javascript" src="/js/vendor/zepto.min.js"></script>
-  <script type="text/javascript" src="/js/vendor/lodash.min.js"></script>
-  <script type="text/javascript" src="/js/vendor/debug.min.js"></script>
-  <script type="text/javascript" src="/js/debug_init.js"></script>
-  {% block scripts %}{% endblock %}
+  <div id="bfx-oss-docs-footer-bar">
+    <div id="bfx-oss-docs-footer-bar__container">
+      <p>Copyright © 2013-2020 iFinex Inc. All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="/js/vendor/zepto.min.js"></script>
+<script type="text/javascript" src="/js/vendor/lodash.min.js"></script>
+<script type="text/javascript" src="/js/vendor/debug.min.js"></script>
+<script type="text/javascript" src="/js/debug_init.js"></script>
+{% block scripts %}{% endblock %}
 {% endblock %}

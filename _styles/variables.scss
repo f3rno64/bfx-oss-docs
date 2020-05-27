@@ -1,26 +1,54 @@
-// Color definitions
-$color-black: #222;
-$color-white: #fff;
-$color-bfx-green: #16b157;
-$color-bfx-green-light: #75b34f;
-$color-bfx-green-dark: #13944f;
+// Size definitions
+// TODO: Expand/refactor styles to use these
+$size-sidebar-width: 300px;
+$size-header-bar-height: 64px;
+$size-padding-large: 32px;
+$size-padding-small: 16px;
 
-// Font definitions
-$font-headers: 'Merriweather', serif;
-$font-body: 'Cabin', sans-serif;
-$font-code: 'IBM Plex Mono', monospace;
+$size-font-h2: 24px;
+$size-font-h6: 16px;
+
+$z-index-bottom: 1;
+$z-index-middle: 2;
+$z-index-top: 3;
+
+// Color definitions
+$color-black: #333;
+$color-white: #fff;
+$color-green: #16b157;
+$color-green-light: #75b34f;
+$color-green-dark: #007b39;
 
 // Global style definitions
+$color-bg: $color-white;
 $color-fg: $color-black;
 $color-border: #eee;
 $color-box-shadow: rgba(0, 0, 0, 0.05);
 
+// Font definitions
+$font-headers: 'Zilla Slab', serif;
+$font-body: 'Cabin', sans-serif;
+$font-code: 'IBM Plex Mono', monospace;
+
+// Base styles
+$color-fg-elm-a: $color-green-dark;
+
 // Sidebar
-$color-fg-sidebar-title: #666;
+$color-bg-sidebar: $color-bg;
+$color-fg-sidebar-title: #555;
 $color-fg-sidebar-links: #333;
-$color-fg-sidebar-menu-title: $color-bfx-green-dark;
+$color-fg-sidebar-sub-menu-title: $color-green-dark;
+$color-fg-sidebar-sub-menu-subtitle: #555;
 $color-border-sidebar: $color-border;
 $color-box-shadow-sidebar: $color-box-shadow;
+
+// Header bar
+$color-fg-header-bar: #555;
+$color-bg-header-bar: $color-bg;
+$color-box-shadow-header-bar: $color-box-shadow;
+
+// Footer bar
+$color-fg-footer-bar: #555;
 
 // API Reference
 $color-fg-api-ref: #555;
@@ -28,17 +56,17 @@ $color-border-api-ref: $color-border;
 
 // API Reference Document
 $color-border-api-ref-document: $color-border;
-$color-border-api-ref-document-title: $color-bfx-green-light;
-$color-box-shadow-api-ref-document: $color-box-shadow;
+$color-border-api-ref-document-title: $color-green-light;
 $color-border-api-ref-document-sidebar: $color-border;
+$color-bg-api-ref-document-p-code: rgba(0, 0, 0, 0.05);
 
 // API Reference Sample Viewer
 $color-bg-api-ref-sample-viewer: $color-white;
 $color-bg-api-ref-sample-viewer-header-title: #ccc;
 $color-fg-api-ref-sample-viewer-header-title: $color-black;
 $color-border-api-ref-sample-viewer-header-menu-item: $color-border;
-$color-border-api-ref-sample-viewer-header-menu-item-active: $color-bfx-green-light;
-$color-border-api-ref-sample-viewer-header-menu-item-hover: $color-bfx-green-dark;
+$color-border-api-ref-sample-viewer-header-menu-item-active: $color-green-light;
+$color-border-api-ref-sample-viewer-header-menu-item-hover: $color-green-dark;
 
 // Table
 $color-bg-table: #fff;

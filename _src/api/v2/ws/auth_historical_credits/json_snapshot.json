@@ -1,0 +1,32 @@
+[
+  CHAN_ID,
+  'hfcs',
+  [
+    [
+      ID,
+      SYMBOL,
+      SYMBOL,
+      MTS_CREATE,
+      MTS_UPDATE,
+      AMOUNT,
+      FLAGS,
+      STATUS,
+      _PLACEHOLDER,
+      _PLACEHOLDER,
+      _PLACEHOLDER,
+      RATE,
+      PERIOD,
+      MTS_OPENING,
+      MTS_LAST_PAYOUT,
+      NOTIFY,
+      HIDDEN,
+      _PLACEHOLDER,
+      RENEW,
+      RATE_REAL,
+      NO_CLOSE,
+      POSITION_PAIR,
+      ...
+    ],
+    ...
+  ]
+]

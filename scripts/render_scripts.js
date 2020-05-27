@@ -12,7 +12,7 @@ try {
   const { scripts = {}, output = {} } = config
   const { staticSite: staticSiteBuildPath } = output
   const { babelConfig = {} } = scripts
-  const outputPath = `${staticSiteBuildPath}/js`
+  const outputPath = `${__dirname}/../${staticSiteBuildPath}/js`
 
   if (_isEmpty(babelConfig)) {
     signale.error([
@@ -24,6 +24,11 @@ try {
   }
 
   signale.info(`Rendering scripts to ${outputPath}`)
+
+  if (!fs.existsSync(outputPath)) {
+    fs.mkdirSync(outputPath)
+    signale.info(`mkdir ${outputPath}`)
+  }
 
   const scriptBasePath = `${__dirname}/../_scripts`
   const scriptFileNames = fs.readdirSync(scriptBasePath)

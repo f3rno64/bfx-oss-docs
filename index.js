@@ -4,8 +4,9 @@ const loadConfig = require('./lib/config/load')
 const validateConfig = require('./lib/config/validate')
 const renderUnifiedJSDocConfig = require('./lib/jsdoc/render_unified_config')
 const verifyReadmeIOSrc = require('./lib/readmeio/verify_src')
-const renderV2APIDocumentation = require('./lib/readmeio/render_v2_api_documentation')
-const parseRIOMarkdown = require('./lib/readmeio/parse_markdown')
+const parseRIOAPIDocumentation = require('./lib/readmeio/parse_rio_api_documentation')
+const parseRIOMarkdown = require('./lib/readmeio/parse_rio_markdown')
+const rioDocumentToNative = require('./lib/rio_doc_to_native')
 const getMD = require('./lib/markdown_it')
 
 /**
@@ -23,7 +24,8 @@ module.exports = {
   validateConfig,
   renderUnifiedJSDocConfig,
   verifyReadmeIOSrc,
-  renderV2APIDocumentation,
+  parseRIOAPIDocumentation,
   parseRIOMarkdown,
+  rioDocumentToNative,
   getMD
 }

@@ -1,0 +1,13 @@
+[
+  0,
+  "calc",
+  null,
+  [
+    ["margin_base"],
+    ["margin_sym_tBTCUSD"],
+    ["position_tBTCUSD"],
+    ["wallet_margin_BTC"],
+    ["wallet_funding_USD"],
+    ["balance"]
+  ]
+]

@@ -1,0 +1,31 @@
+[
+  CHAN_ID,
+  'hfos',
+  [
+    [
+      ID,
+      SYMBOL,
+      MTS_CREATED,
+      MTS_UPDATED,
+      AMOUNT,
+      AMOUNT_ORIG,
+      TYPE,
+      _PLACEHOLDER,
+      _PLACEHOLDER,
+      FLAGS,
+      STATUS,
+      _PLACEHOLDER,
+      _PLACEHOLDER,
+      _PLACEHOLDER,
+      RATE,
+      PERIOD,
+      NOTIFY,
+      HIDDEN,
+      _PLACEHOLDER,
+      RENEW,
+      RATE_REAL,
+      ...
+    ],
+    ...
+  ]
+]

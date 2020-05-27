@@ -1,0 +1,7 @@
+// response-failure
+{  
+   "event":"auth",
+   "status":"FAIL",
+   "chanId":0,
+   "code":"<ERROR_CODE>"
+}

@@ -1,0 +1,36 @@
+[
+  0,
+  "n",
+  [
+    1575282446099,
+    "fon-req",
+    null,
+    null,
+    [
+      41238905,
+      null,
+      null,
+      null,
+      -1000,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      0.002,
+      2,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    null,
+    "SUCCESS",
+    "Submitting funding bid of 1000.0 USD at 0.2000 for 2 days."
+  ]
+]

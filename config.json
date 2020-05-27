@@ -2,8 +2,8 @@
   "output": {
     "staticSite": "./dist/site",
     "apiReferenceFN": "api_reference.html",
-    "convertedRIOAPIDocs": "./_api_documentation",
-    "unifiedJSDocDist": "./dist/jsdoc.json",
+    "convertedRIOAPIDocs": "./_src/api",
+    "unifiedJSDocDist": "./dist/jsdoc",
     "unifiedJSDocConfig": "./.jsdoc-merged.json"
   },
 
@@ -20,6 +20,7 @@
 
   "assets": {
     "img": "_assets/img",
+    "fonts": "_assets/fonts",
     "bfx-hf-chart": "node_modules/bfx-hf-chart/build",
 
     "css/highlightjs": "node_modules/highlight.js/styles",
@@ -160,11 +161,6 @@
           "path": "REST Authenticated Endpoints/",
           "pages": [
             "rest-auth-wallets.md",
-
-            {
-              "label": "Orders"
-            },
-
             "rest-auth-orders.md",
             "rest-auth-submit-order.md",
             "rest-auth-order-update.md",
@@ -175,11 +171,6 @@
             "rest-auth-order-trades.md",
             "rest-auth-trades.md",
             "rest-auth-ledgers.md",
-
-            {
-              "label": "Positions"
-            },
-
             "rest-auth-info-margin.md",
             "rest-auth-positions.md",
             "rest-auth-position-claim.md",
@@ -187,11 +178,6 @@
             "rest-auth-positions-snap.md",
             "rest-auth-positions-audit.md",
             "rest-auth-deriv-pos-collateral-set.md",
-
-            {
-              "label": "Margin Funding"
-            },
-
             "rest-auth-funding-offers.md",
             "rest-auth-submit-funding-offer.md",
             "rest-auth-cancel-funding-offer.md",
@@ -206,11 +192,6 @@
             "rest-auth-funding-credits-hist.md",
             "rest-auth-funding-trades-hist.md",
             "rest-auth-info-funding.md",
-
-            {
-              "label": "Account Actions"
-            },
-
             "rest-auth-info-user.md",
             "rest-auth-logins-hist.md",
             "rest-auth-audit-hist.md",

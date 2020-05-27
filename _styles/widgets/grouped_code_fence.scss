@@ -1,0 +1,53 @@
+@import '../variables.scss';
+
+// Taken & modified from https://github.com/LeetCode-OpenSource/markdown-it-grouped-code-fence/blob/master/playground/styled.ts
+.bfx-oss-docs-grouped-code-fence__container {
+  margin: 20px;
+  border: 1px solid #eee;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+
+.bfx-oss-docs-grouped-code-fence__navigation-bar {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+  width: 100%;
+  overflow: auto;
+
+  li {
+    display: inline;
+    line-height: 32px;
+    padding: 0 10px;
+    position: relative;
+
+    ~ li:before {
+      content: "";
+      height: 12px;
+      width: 1px;
+      background: #eee;
+      position: absolute;
+      left: 0px;
+      top: 50%;
+      transform: translate(-50% -50%);
+    }
+  }
+}
+
+.bfx-oss-docs-grouped-code-fence__fence-radio {
+  display: none;
+
+  &:not(:checked) + pre {
+    display: none;
+  }
+}
+
+.bfx-oss-docs-grouped-code-fence__label-radio {
+  display: none;
+
+  &:not(:checked) + label {
+    opacity: 0.5;
+  }
+}

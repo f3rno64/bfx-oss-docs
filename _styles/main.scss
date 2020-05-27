@@ -1,16 +1,4 @@
 @import './variables.scss';
-
-@import './fonts/cabin.scss';
-@import './fonts/merriweather.scss';
-@import './fonts/ibm_plex_mono.scss';
-
+@import './fonts.scss';
 @import './base.scss';
-@import './sidebar.scss';
-@import './content_wrapper.scss';
-@import './code.scss';
-@import './tables.scss';
-@import './api_reference.scss';
-
-@import './widgets/api_ref_document.scss';
-@import './widgets/api_ref_sample_viewer.scss';
-@import './widgets/callout.scss';
+@import './widgets.scss';

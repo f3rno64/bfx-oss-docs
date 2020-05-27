@@ -1,40 +1,6 @@
-@import './variables.scss';
-
-body {
-  margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-headers;
-  margin: 0;
-}
-
-p, a, input, button, textarea {
-  font-family: $font-body;
-}
-
-ul, ol {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-#bfx-oss-docs-wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-#bfx-oss-docs-footer-bar {
-  padding: 32px 0 16px 0;
-  width: 100%;
-
-  #bfx-oss-docs-footer-bar__container {
-    margin: 32px auto 0 auto;
-    padding-top: 24px;
-    text-align: center;
-
-    p {
-      font-size: 12px;
-    }
-  }
-}
+@import './base/reset.scss';
+@import './base/links.scss';
+@import './base/lists.scss';
+@import './base/tables.scss';
+@import './base/headers.scss';
+@import './base/code_wrapper.scss';

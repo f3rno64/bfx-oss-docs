@@ -1,0 +1,76 @@
+@import '../variables.scss';
+
+#bfx-oss-docs-side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: $z-index-top; // for box shadow overlap w/ header bar
+  width: $size-sidebar-width;
+  height: 100%;
+
+  box-shadow: 1px 0 3px 1px $color-box-shadow-sidebar;
+  background: $color-bg-sidebar;
+
+  #bfx-oss-docs-side-bar__header {
+    display: block;
+    margin: 0 auto;
+  }
+
+  #bfx-oss-docs-side-bar__main-menu,
+  .bfx-oss-docs-side-bar__sub-menu {
+    li {
+      padding: 8px 16px;
+      font-size: 14px;
+      border-left: 2px solid #eee;
+      margin: 0 16px;
+
+      &.active {
+        border-left-color: $color-green-dark;
+
+        a, p {
+          text-decoration: underline;
+        }
+      }
+
+      &:not(.bfx-oss-docs-side-bar__sub-menu-subtitle):hover {
+        a, p {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: $color-fg-sidebar-links;
+      }
+    }
+  }
+
+  .bfx-oss-docs-side-bar__sub-menu {
+    > h6:first-child,
+    .bfx-oss-docs-side-bar__sub-menu-subtitle p {
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    > h6:first-child {
+      color: $color-fg-sidebar-sub-menu-title;
+      padding: 16px;
+      text-transform: uppercase;
+      font-family: $font-body;
+    }
+
+    .bfx-oss-docs-side-bar__sub-menu-subtitle {
+      padding: 0;
+      border: none;
+
+      p {
+        padding: 0 8px 8px 0;
+        text-align: right;
+        color: $color-fg-sidebar-sub-menu-subtitle;
+      }
+    }
+  }
+}

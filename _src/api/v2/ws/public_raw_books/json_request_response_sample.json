@@ -1,0 +1,10 @@
+{
+  "event": "subscribed",
+  "channel": "book",
+  "chanId": 472778,
+  "symbol": "fUSD",
+  "prec": "R0",
+  "freq": "F0",
+  "len": "25",
+  "currency": "USD"
+}

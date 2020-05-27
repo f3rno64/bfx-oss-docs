@@ -1,10 +1,23 @@
 {% extends 'layouts/bfx_base.njk' %}
 {% from 'macros/widgets/api_ref_sample_viewer.njk' import apiRefSampleViewer %}
 
+{% block page_title %}
+API Reference
+{% endblock %}
+
 {% block sidebar %}
-<div id="bfx-oss-docs-sidebar__api-reference-menu">
-  <p>API Reference</p>
+<div
+  class="bfx-oss-docs-side-bar__sub-menu"
+  id="bfx-oss-docs-side-bar__api-reference-menu"
+>
+  <h6>API Reference</h6>
   <ul>
+    <li class="bfx-oss-docs-side-bar__sub-menu-subtitle">
+      <p>
+        WebSocket v2
+      </p>
+    </li>
+
     {% for id, document in documents %}
     <li>
       <a href="#">{{ document.title }}</a>
@@ -16,29 +29,23 @@
 
 {% block content %}
 <div id="bfx-oss-docs-api-reference">
-  <div id="bfx-oss-docs-api-reference__header">
-    <h2>API Reference</h2>
-  </div>
-
-  <div id="bfx-oss-docs-api-reference__content">
-    {% for id, document in documents %}
-    <div class="bfx-oss-docs-api-reference-document">
-      <div class="bfx-oss-docs-api-reference-document__content">
-        <div class="bfx-oss-docs-api-reference-document__header">
-          <h2>{{ document.title }}</h2>
-          <p>{{ document.subtitle }}</p>
-        </div>
-
-        <div class="bfx-oss-docs-api-reference-document__wrapper">
-          {{ document.html | safe }}
-        </div>
+  {% for id, document in documents %}
+  <div class="bfx-oss-docs-api-reference-document">
+    <div class="bfx-oss-docs-api-reference-document__content">
+      <div class="bfx-oss-docs-api-reference-document__header">
+        <h2>{{ document.title }}</h2>
+        <p>{{ document.subtitle }}</p>
       </div>
-      <div class="bfx-oss-docs-api-reference-document__sidebar">
-        {{ apiRefSampleViewer(document.samples, id) }}
+
+      <div class="bfx-oss-docs-api-reference-document__wrapper bfx-oss-docs-code-wrapper">
+        {{ document.html | safe }}
       </div>
     </div>
-    {% endfor %}
+    <div class="bfx-oss-docs-api-reference-document__sidebar">
+      {{ apiRefSampleViewer(document.samples, id) }}
+    </div>
   </div>
+  {% endfor %}
 </div>
 {% endblock %}
 

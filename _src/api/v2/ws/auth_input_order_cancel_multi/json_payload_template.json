@@ -1,0 +1,9 @@
+// Cancel multiple orders using Group ID
+[
+  0,
+  "oc_multi",
+  null,
+  {
+     "gid": [GID, 11, ...]
+  }
+]

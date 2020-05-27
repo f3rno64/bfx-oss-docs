@@ -1,0 +1,14 @@
+// Example
+[
+  0,
+  "on",
+  null,
+  {
+    "gid": 1,
+    "cid": 12345,
+    "type": "LIMIT",
+    "symbol": "tBTCUSD",
+    "amount": "1.0",
+    "price": "500"
+  }
+]
