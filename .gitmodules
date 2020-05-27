@@ -262,18 +262,3 @@
 	path = modules/wasteland
 	url = https://github.com/f3rno/wasteland.git
 	branch = feature-oss-docs
-[submodule "_assets/npm/highlight.js"]
-	path = _assets/npm/highlight.js
-	url = https://github.com/highlightjs/highlight.js
-[submodule "_assets/npm/svg-icon"]
-	path = _assets/npm/svg-icon
-	url = https://github.com/leungwensen/svg-icon
-[submodule "_assets/npm/bfx-hf-chart"]
-	path = _assets/npm/bfx-hf-chart
-	url = https://github.com/bitfinexcom/bfx-hf-chart.git
-[submodule "_assets/css/normalize.css"]
-	path = _assets/css/normalize.css
-	url = https://github.com/necolas/normalize.css
-[submodule "_assets/npm/zepto"]
-	path = _assets/npm/zepto
-	url = https://github.com/madrobby/zepto.git
