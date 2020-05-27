@@ -4,15 +4,16 @@ const fs = require('fs')
 const signale = require('signale')
 const babel = require('@babel/core')
 const _isEmpty = require('lodash/isEmpty')
-
 const { loadConfig } = require('../')
 
-const config = loadConfig('config.json')
-const { scripts = {}, output = {} } = config
-const { staticSite: staticSiteBuildPath } = output
-const { babelConfig = {} } = scripts
-
 try {
+  const startMTS = Date.now()
+  const config = loadConfig('config.json')
+  const { scripts = {}, output = {} } = config
+  const { staticSite: staticSiteBuildPath } = output
+  const { babelConfig = {} } = scripts
+  const outputPath = `${staticSiteBuildPath}/js`
+
   if (_isEmpty(babelConfig)) {
     signale.error([
       'No babel config object preset, cannot render; consider using the asset',
@@ -22,7 +23,8 @@ try {
     return
   }
 
-  const outputPath = `${staticSiteBuildPath}/js`
+  signale.info(`Rendering scripts to ${outputPath}`)
+
   const scriptBasePath = `${__dirname}/../_scripts`
   const scriptFileNames = fs.readdirSync(scriptBasePath)
 
@@ -39,10 +41,15 @@ try {
     const { code } = builtScript
 
     fs.writeFileSync(builtJSPath, code)
-    signale.success(`Rendered ${scriptFN} -> ${builtJSPath}`)
+
+    signale.info(`Rendered ${scriptName}`)
   })
 
-  signale.success(`Done! Rendered ${scriptFileNames.length} scripts`)
+  const duration = Date.now() - startMTS
+
+  signale.success(
+    `Rendered ${scriptFileNames.length} scripts in ${duration}ms`
+  )
 } catch (e) {
   signale.error('%s', e.stack)
 }

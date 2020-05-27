@@ -7,21 +7,27 @@ const browserify = require('browserify')
 const _isString = require('lodash/isString')
 const _isObject = require('lodash/isObject')
 const _isEmpty = require('lodash/isEmpty')
+const _last = require('lodash/last')
 const _keys = require('lodash/keys')
 const { loadConfig } = require('../')
 
-const config = loadConfig('config.json')
-const { assets = {}, output = {} } = config
-const { staticSite: staticSiteBuildPath } = output
-
-if (_isEmpty(assets)) {
-  signale.star('No assets to render')
-  return
-}
-
 try {
-  _keys(assets).forEach((dest) => {
+  const startMTS = Date.now()
+  const config = loadConfig('config.json')
+  const { assets = {}, output = {} } = config
+  const { staticSite: staticSiteBuildPath } = output
+  const assetDestinatinos = _keys(assets)
+
+  if (_isEmpty(assetDestinatinos)) {
+    signale.star('No assets to render')
+    return
+  }
+
+  signale.info(`Rendering assets to ${staticSiteBuildPath}`)
+
+  assetDestinatinos.forEach((dest) => {
     const asset = assets[dest]
+    const assetName = _last(dest.split('/'))
     const assetPath = _isObject(asset) ? asset.path : asset
     const assetOptions = _isObject(asset) ? asset : {}
 
@@ -62,8 +68,14 @@ try {
       b.bundle().pipe(destStream)
     }
 
-    signale.success(`Rendered ${dest} -> ${assetDestPath}`)
+    signale.info(`Rendered ${assetName}`)
   })
+
+  const duration = Date.now() - startMTS
+
+  signale.success(
+    `Rendered ${assetDestinatinos.length} assets in ${duration}ms`
+  )
 } catch (e) {
   signale.error('%s', e.message)
 }

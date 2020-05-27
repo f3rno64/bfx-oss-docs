@@ -1,7 +1,7 @@
 {
   "output": {
     "staticSite": "./dist/site",
-    "apiReference": "./dist/site/api_reference.html",
+    "apiReferenceFN": "api_reference.html",
     "convertedRIOAPIDocs": "./_api_documentation",
     "unifiedJSDocDist": "./dist/jsdoc.json",
     "unifiedJSDocConfig": "./.jsdoc-merged.json"
@@ -19,6 +19,11 @@
   },
 
   "assets": {
+    "img": "_assets/img",
+    "bfx-hf-chart": "node_modules/bfx-hf-chart/build",
+
+    "css/highlightjs": "node_modules/highlight.js/styles",
+    "css/normalize.css": "node_modules/normalize.css/normalize.css",
     "js/vendor/zepto.min.js": "node_modules/zepto/dist/zepto.min.js",
     "js/vendor/lodash.min.js": "node_modules/lodash/lodash.min.js",
     "js/vendor/debug.min.js": {
@@ -26,12 +31,7 @@
       "build": "browserify",
       "pathOnWindow": "debug",
       "baseDir": "node_modules/debug/src"
-    },
-
-    "css/highlightjs": "_assets/npm/highlight.js/src/styles",
-    "css/normalize.css": "_assets/css/normalize.css/normalize.css",
-    "bfx-hf-chart": "_assets/npm/bfx-hf-chart/build",
-    "img": "_assets/img"
+    }
   },
 
   "scripts": {
