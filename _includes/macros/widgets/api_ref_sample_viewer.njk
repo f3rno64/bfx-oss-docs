@@ -1,0 +1,37 @@
+{% macro apiRefSampleViewer(samples, sampleSetID) %}
+<div
+  class="bfx-oss-docs-api-reference-sample-viewer"
+  data-sample-set-id="{{ sampleSetID }}"
+>
+  <ul class="bfx-oss-docs-api-reference-sample-viewer__header">
+    {% for id, sample in samples %}
+    <li
+      data-sample-id="{{ id }}"
+
+      {% if loop.index0 == 0 %}
+      class="active"
+      {% endif %}
+    >
+      <p>{{ sample.label | safe }}</p>
+      <p>{{ sample.language }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="bfx-oss-docs-api-reference-sample-viewer__content">
+    {% for id, sample in samples %}
+      <li
+        data-sample-id="{{ id }}"
+
+        {% if loop.index0 == 0 %}
+        class="active"
+        {% endif %}
+      >
+        <div class="bfx-oss-docs-api-reference-sample-viewer__sample">
+          {{ sample.html | safe }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endmacro %}

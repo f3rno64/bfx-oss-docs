@@ -1,23 +1,58 @@
-// TODO: Refactor/standardize naming
-$bg-light: #273640;
-$bg-dark: #1b262d;
-$border: #19232a;
-$color-border-table: #d2d2d2;
-$fg: #a2a7aa;
+// Color definitions
+$color-black: #222;
+$color-white: #fff;
+$color-bfx-green: #16b157;
+$color-bfx-green-light: #75b34f;
+$color-bfx-green-dark: #13944f;
 
-$color-bg-callout-warning: #f9e7cd;
-$color-fg-callout-warning-title: #b57417;
-$color-fg-callout-warning-body: #333;
-$color-border-callout-warning: $color-fg-callout-warning-title;
-
-$bfx-green: #16b157;
-$bfx-green-light: #75b34f;
-$bfx-green-dark: #13944f;
-
-$text-title: #fff;
-$text-faded: #aaa;
-$content-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
-
+// Font definitions
 $font-headers: 'Merriweather', serif;
 $font-body: 'Cabin', sans-serif;
 $font-code: 'IBM Plex Mono', monospace;
+
+// Global style definitions
+$color-fg: $color-black;
+$color-border: #eee;
+$color-box-shadow: rgba(0, 0, 0, 0.05);
+
+// Sidebar
+$color-fg-sidebar-title: #666;
+$color-fg-sidebar-links: #333;
+$color-fg-sidebar-menu-title: $color-bfx-green-dark;
+$color-border-sidebar: $color-border;
+$color-box-shadow-sidebar: $color-box-shadow;
+
+// API Reference
+$color-fg-api-ref: #555;
+$color-border-api-ref: $color-border;
+
+// API Reference Document
+$color-border-api-ref-document: $color-border;
+$color-border-api-ref-document-title: $color-bfx-green-light;
+$color-box-shadow-api-ref-document: $color-box-shadow;
+$color-border-api-ref-document-sidebar: $color-border;
+
+// API Reference Sample Viewer
+$color-bg-api-ref-sample-viewer: $color-white;
+$color-bg-api-ref-sample-viewer-header-title: #ccc;
+$color-fg-api-ref-sample-viewer-header-title: $color-black;
+$color-border-api-ref-sample-viewer-header-menu-item: $color-border;
+$color-border-api-ref-sample-viewer-header-menu-item-active: $color-bfx-green-light;
+$color-border-api-ref-sample-viewer-header-menu-item-hover: $color-bfx-green-dark;
+
+// Table
+$color-bg-table: #fff;
+$color-border-table: #9ece81;
+
+// Callout
+$color-border-callout: rgba(0, 0, 0, 0.1);
+$color-box-shadow-callout: $color-box-shadow;
+
+$color-bg-callout-body: #fafafa;
+$color-fg-callout-header: $color-fg;
+$color-bg-callout-header: #ccc;
+$color-bg-callout-header-title: rgba(0, 0, 0, 0.5);
+
+$color-fg-callout-header-info: $color-white;
+$color-bg-callout-header-info: #5792ff;
+$color-bg-callout-body-info: #e1ecff;

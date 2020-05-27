@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+#bfx-oss-docs-api-reference__header {
+  padding: 32px;
+  color: $color-fg-api-ref;
+  border-bottom: 1px solid $color-border-api-ref;
+
+  h2 {
+    text-align: right;
+    width: 100%;
+
+    font-family: $font-body;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+}
+

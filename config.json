@@ -1,6 +1,7 @@
 {
   "output": {
     "staticSite": "./dist/site",
+    "apiReference": "./dist/site/api_reference.html",
     "convertedRIOAPIDocs": "./_api_documentation",
     "unifiedJSDocDist": "./dist/jsdoc.json",
     "unifiedJSDocConfig": "./.jsdoc-merged.json"
@@ -18,11 +19,38 @@
   },
 
   "assets": {
-    "svg": "_assets/svg",
-    "svg/svg-icons": "_assets/npm/svg-icon/dist/svg",
+    "js/vendor/zepto.min.js": "node_modules/zepto/dist/zepto.min.js",
+    "js/vendor/lodash.min.js": "node_modules/lodash/lodash.min.js",
+    "js/vendor/debug.min.js": {
+      "path": "node_modules/debug/src/browser.js",
+      "build": "browserify",
+      "pathOnWindow": "debug",
+      "baseDir": "node_modules/debug/src"
+    },
+
     "css/highlightjs": "_assets/npm/highlight.js/src/styles",
     "css/normalize.css": "_assets/css/normalize.css/normalize.css",
-    "bfx-hf-chart": "_assets/npm/bfx-hf-chart/build"
+    "bfx-hf-chart": "_assets/npm/bfx-hf-chart/build",
+    "img": "_assets/img"
+  },
+
+  "scripts": {
+    "babelConfig": {
+      "sourceMaps": "inline",
+      "sourceType": "script",
+      "compact": true,
+      "minified": true,
+      "comments": false,
+      "presets": [
+        ["@babel/preset-env", {
+          "targets": "> 0.25%, not dead"
+        }]
+      ],
+
+      "plugins": [
+        "@babel/plugin-proposal-object-rest-spread"
+      ]
+    }
   },
 
   "styles": {
@@ -45,8 +73,7 @@
     "options": {
       "html": true,
       "linkify": true,
-      "typographer": true,
-      "quotes": "'“”‘’'"
+      "typographer": true
     },
 
     "plugins": {

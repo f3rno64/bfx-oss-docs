@@ -1,0 +1,47 @@
+{% extends 'layouts/bfx_base.njk' %}
+{% from 'macros/widgets/api_ref_sample_viewer.njk' import apiRefSampleViewer %}
+
+{% block sidebar %}
+<div id="bfx-oss-docs-sidebar__api-reference-menu">
+  <p>API Reference</p>
+  <ul>
+    {% for id, document in documents %}
+    <li>
+      <a href="#">{{ document.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="bfx-oss-docs-api-reference">
+  <div id="bfx-oss-docs-api-reference__header">
+    <h2>API Reference</h2>
+  </div>
+
+  <div id="bfx-oss-docs-api-reference__content">
+    {% for id, document in documents %}
+    <div class="bfx-oss-docs-api-reference-document">
+      <div class="bfx-oss-docs-api-reference-document__content">
+        <div class="bfx-oss-docs-api-reference-document__header">
+          <h2>{{ document.title }}</h2>
+          <p>{{ document.subtitle }}</p>
+        </div>
+
+        <div class="bfx-oss-docs-api-reference-document__wrapper">
+          {{ document.html | safe }}
+        </div>
+      </div>
+      <div class="bfx-oss-docs-api-reference-document__sidebar">
+        {{ apiRefSampleViewer(document.samples, id) }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/js/api_ref_sample_viewer.js"></script>
+{% endblock %}

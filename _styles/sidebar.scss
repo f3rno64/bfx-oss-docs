@@ -1,0 +1,54 @@
+@import './variables.scss';
+
+#bfx-oss-docs-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  box-shadow: 1px 0 3px 1px $color-box-shadow-sidebar;
+
+  ul {
+    li {
+      padding: 8px 16px;
+      font-size: 14px;
+      border-left: 2px solid #eee;
+      margin: 0 16px;
+
+      &.active {
+        border-left-color: $color-bfx-green-dark;
+      }
+
+      a {
+        text-decoration: none;
+        color: $color-fg-sidebar-links;
+      }
+    }
+  }
+
+  #bfx-oss-docs-sidebar__header {
+    margin-bottom: 16px;
+    border-bottom: 1px solid $color-border-sidebar;
+
+    > img:first-child {
+      display: block;
+      margin: 0 auto 16px auto;
+    }
+
+    p {
+      font-size: 16px;
+      text-align: center;
+      font-weight: 300;
+      color: $color-fg-sidebar-title;
+    }
+  }
+
+  #bfx-oss-docs-sidebar__api-reference-menu {
+    margin-top: 16px;
+    border-top: 1px solid #eee;
+
+    p {
+      color: $color-fg-sidebar-menu-title;
+      padding-left: 16px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}

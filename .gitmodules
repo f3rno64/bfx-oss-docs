@@ -274,3 +274,6 @@
 [submodule "_assets/css/normalize.css"]
 	path = _assets/css/normalize.css
 	url = https://github.com/necolas/normalize.css
+[submodule "_assets/npm/zepto"]
+	path = _assets/npm/zepto
+	url = https://github.com/madrobby/zepto.git

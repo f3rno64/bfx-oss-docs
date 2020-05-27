@@ -4,41 +4,13 @@
 @import './fonts/merriweather.scss';
 @import './fonts/ibm_plex_mono.scss';
 
-body {
-  margin: 0;
-}
+@import './base.scss';
+@import './sidebar.scss';
+@import './content_wrapper.scss';
+@import './code.scss';
+@import './tables.scss';
+@import './api_reference.scss';
 
-// TODO: Extract
-#bfx-oss-docs-home-wrapper {
-  background: $bg-light;
-  color: $fg;
-  font-family: $font-body;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-headers;
-}
-
-p, a, input, button, textarea {
-  font-family: $font-body;
-}
-
-code {
-  font-family: $font-code;
-}
-
-@import './readmeio.scss';
-
-@import './widgets/code.scss';
-@import './widgets/code_demo.scss';
-@import './widgets/content_wrapper.scss';
-@import './widgets/footer_bar.scss';
-@import './widgets/header_bar.scss';
-@import './widgets/logo_icon_row.scss';
-@import './widgets/readme.scss';
-@import './widgets/library_stats.scss';
-@import './widgets/readmeio_block.scss';
-
-@import './home/section.scss';
-@import './home/teaser.scss';
-@import './home/blocks.scss';
+@import './widgets/api_ref_document.scss';
+@import './widgets/api_ref_sample_viewer.scss';
+@import './widgets/callout.scss';

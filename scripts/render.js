@@ -1,7 +1,6 @@
 'use strict'
 
 const fs = require('fs')
-const sass = require('sass')
 const _keys = require('lodash/keys')
 const _isEmpty = require('lodash/isEmpty')
 const _isObject = require('lodash/isObject')
@@ -71,17 +70,6 @@ pageFileNames.forEach(pageFileName => {
 
     fs.writeFileSync(dstPath, html)
   })
-})
-
-_keys(config.styles.sources).forEach((dest) => {
-  const res = sass.renderSync({
-    file: config.styles.sources[dest],
-    outFile: `${__dirname}/../${config.output.staticSite}/${dest}`,
-    ...(config.styles.config || {})
-  })
-
-  fs.writeFileSync(`${__dirname}/../${config.output.staticSite}/${dest}`, res.css.toString())
-  fs.writeFileSync(`${__dirname}/../${config.output.staticSite}/${dest}.map`, res.map.toString())
 })
 
 _keys(config.assets).forEach((dest) => {

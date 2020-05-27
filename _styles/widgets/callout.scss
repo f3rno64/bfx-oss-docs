@@ -1,0 +1,83 @@
+@import '../variables.scss';
+
+.bfx-oss-docs-callout {
+  margin: 32px 0 0 0;
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: row;
+
+  .bfx-oss-docs-callout__marker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 32px;
+    margin-right: 16px;
+
+    p {
+      margin: 0;
+      text-align: center;
+      font-size: 32px;
+      opacity: 0.7;
+    }
+  }
+
+  .bfx-oss-docs-callout__content {
+    flex: 1;
+    width: 100%;
+
+    border: 1px solid $color-border-callout;
+    box-shadow: 0 0 3px 1px $color-box-shadow-callout;
+  }
+
+  .bfx-oss-docs-callout__header {
+    color: $color-fg-callout-header;
+    background: $color-bg-callout-header;
+    display: flex;
+    flex-direction: row;
+
+    > * {
+      line-height: 24px;
+      padding: 4px 0;
+      margin: 0;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    p {
+      background: $color-bg-callout-header-title;
+    }
+
+    h4 {
+      opacity: 0.6;
+      font-family: $font-body;
+      font-weight: normal;
+      text-align: right;
+      text-transform: uppercase;
+
+      width: 100%;
+      flex: 1;
+    }
+  }
+
+  .bfx-oss-docs-callout__body {
+    background: $color-bg-callout-body;
+    padding: 16px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &.info {
+    .bfx-oss-docs-callout__header {
+      color: $color-fg-callout-header-info;
+      background: $color-bg-callout-header-info;
+    }
+
+    .bfx-oss-docs-callout__body {
+      background: $color-bg-callout-body-info;
+    }
+  }
+}

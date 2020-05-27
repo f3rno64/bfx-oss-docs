@@ -1,0 +1,39 @@
+@import './variables.scss';
+
+table {
+  width: 100%;
+  background: $color-bg-table;
+  border-spacing: 0;
+  font-size: 14px;
+
+  th, td {
+    font-family: $font-body;
+  }
+
+  th {
+    padding: 8px 4px;
+    border-top: 1px solid $color-border-table;
+    border-bottom: 1px solid $color-border-table;
+    border-right: 1px solid $color-border-table;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    &:first-child {
+      border-left: 1px solid $color-border-table;
+    }
+  }
+
+  thead, tr:nth-child(2n) {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  td {
+    padding: 8px 16px;
+    border-bottom: 1px solid $color-border-table;
+    border-right: 1px solid $color-border-table;
+
+    &:first-child {
+      border-left: 1px solid $color-border-table;
+    }
+  }
+}
