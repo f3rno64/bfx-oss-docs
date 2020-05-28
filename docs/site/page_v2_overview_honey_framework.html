@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/index.css"><link rel="stylesheet" type="text/css" href="/css/highlightjs/ir-black.css"><title></title></head><body><div id="bfx-oss-docs-side-bar"><img id="bfx-oss-docs-side-bar__header" src="/img/bfx-logo-bg-white.png" alt="Bitfinex" height="64"><ul id="bfx-oss-docs-side-bar__main-menu"><li><a href="/index.html">Home</a></li><li><a href="/page_v2_overview_introduction.html">API v2 Overview</a></li><li><a href="/page_v2_reference.html">API v2 Reference</a></li><li><a href="/page_v1_overview_introduction.html">API v1 Overview</a></li><li><a href="/page_v1_reference.html">API v1 Reference</a></li><li><a href="/page_oss_projects.html">Open Source Projects</a></li></ul><div class="bfx-oss-docs-side-bar__sub-menu" id="bfx-oss-docs-side-bar__api-reference-menu"><h6>Honey Framework</h6><ul><li><a href="/page_v2_overview_abbreviations_glossary.html">Abbreviation Glossary</a></li><li><a href="/page_v2_overview_changelog.html">Changelog</a></li><li><a href="/page_v2_overview_derivatives.html">API Derivatives Trading</a></li><li><a href="/page_v2_overview_flag_values.html">Flag Values</a></li><li><a href="/page_v2_overview_honey_framework.html">Honey Framework</a></li><li><a href="/page_v2_overview_introduction.html">Introduction</a></li><li><a href="/page_v2_overview_open_source_libraries.html">Open Source Libraries</a></li><li><a href="/page_v2_overview_requirements_and_limitations.html">Requirements and Limitations</a></li><li><a href="/page_v2_overview_rest_auth.html">Authenticated Endpoints</a></li><li><a href="/page_v2_overview_rest_general.html">General</a></li><li><a href="/page_v2_overview_rest_public.html">Public Endpoints</a></li><li><a href="/page_v2_overview_rest_reading_the_api_documentation.html">Reading the Documentation (REST)</a></li><li><a href="/page_v2_overview_showcase.html">Showcase</a></li><li><a href="/page_v2_overview_ui_goodies.html">UI Goodies</a></li><li><a href="/page_v2_overview_ws_auth.html">Authenticated Channels</a></li><li><a href="/page_v2_overview_ws_general.html">General</a></li><li><a href="/page_v2_overview_ws_public.html">Public Channels</a></li><li><a href="/page_v2_overview_ws_reading_the_documentation.html">Reading the Documentation (WS)</a></li></ul></div></div><div id="bfx-oss-docs-content"><div id="bfx-oss-docs-header-bar"><h2>Documentation</h2><h2>Honey Framework</h2></div><div class="bfx-oss-docs-content-wrapper"><div class="bfx-oss-docs-md-content bfx-oss-docs-code-wrapper"><p>The Bitfinex Honey Framework is a collection of libraries that provide functionality to automate trading operations. It is composed of two major components, <code>bfx-hf-algo</code> and <code>bfx-hf-strategy</code>, along with various other supporting libraries.</p><p>Two isolated systems are provided, one for developing algorithmic orders and another for trading strategies. While similar, they are separated by their use cases; algorithmic orders mirror the functionality of the standard atomic orders available on the Bitfinex platform, being submitted through the trading UI with preset parameters and executing to completion. Trading strategies on the other hand are meant to be run programatically and are long-lived, executing on the live markets until stopped.</p><p>To complement these systems, a trading indicator library with 40+ indicators is available as <code>bfx-hf-indicators</code>. The full list of Honey Framework libraries is below:</p><ul><li><a href="https://github.com/bitfinexcom/bfx-hf-algo"><code>bfx-hf-algo</code></a> - algorithmic orders implementation</li><li><a href="https://github.com/bitfinexcom/bfx-hf-algo-server"><code>bfx-hf-algo-server</code></a> - standalone server for executing algo orders from the Bitfinex UI</li><li><a href="https://github.com/bitfinexcom/bfx-hf-strategy"><code>bfx-hf-strategy</code></a> - trading strategy library</li><li><a href="https://github.com/bitfinexcom/bfx-hf-backtest"><code>bfx-hf-backtest</code></a> - utility library for running backtests on trading strategies</li><li><a href="https://github.com/bitfinexcom/bfx-hf-util"><code>bfx-hf-util</code></a> - general internal utility library</li><li><a href="https://github.com/bitfinexcom/bfx-hf-models"><code>bfx-hf-models</code></a> - DB models shared by all HF libraries</li></ul><p>The HF makes use of a custom Node.JS API implementation available at <a href="https://github.com/bitfinexcom/bfx-api-node-core"><code>bfx-api-node-core</code></a>, which is separate from the primary <code>bitfinex-api-node</code> library.</p><h2>Algorithmic Orders</h2><p>As part of the algorithmic order system, four algo orders are provided within <code>bfx-hf-algo</code>: <code>Accumulate/Distribute</code>, <code>TWAP</code>, <code>Iceberg</code>, and <code>Ping/Pong</code>. These orders can be either managed using <code>bfx-hf-algo</code> or submitted via the trading UI by using <code>bfx-hf-algo-server</code>.</p><h3>Managing Algo Orders via <code>bfx-hf-algo</code></h3><p>Algo orders are managed by a class named <code>AOHost</code>, which maintains a connection to the Bitfinex API and routes received events to all running algo orders, managing their reactions and handling order submission. To use, create an <code>AOHost</code> instance and call <code>startAO(id, args)</code>:</p><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {
+AOHost, PingPong, Iceberg, TWAP, AccumulateDistribute
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bfx-hf-algo'</span>)
+
+<span class="hljs-keyword">const</span> host = <span class="hljs-keyword">new</span> AOHost({
+<span class="hljs-attr">aos</span>: [PingPong, Iceberg, TWAP, AccumulateDistribute],
+<span class="hljs-attr">apiKey</span>: <span class="hljs-string">'...'</span>,
+<span class="hljs-attr">apiSecret</span>: <span class="hljs-string">'...'</span>,
+<span class="hljs-attr">wsURL</span>: <span class="hljs-string">'...'</span>,
+<span class="hljs-attr">restURL</span>: <span class="hljs-string">'...'</span>,
+})
+
+host.on(<span class="hljs-string">'ao:start'</span>, (instance) =&gt; {
+<span class="hljs-keyword">const</span> { state = {} } = instance
+<span class="hljs-keyword">const</span> { id, gid } = state
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'started AO %s [gid %s]'</span>, id, gid)
+})
+
+host.on(<span class="hljs-string">'ao:stop'</span>, (instance) =&gt; {
+<span class="hljs-keyword">const</span> { state = {} } = instance
+<span class="hljs-keyword">const</span> { id, gid } = state
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'stopped AO %s [gid %s]'</span>, id, gid)
+})
+
+host.on(<span class="hljs-string">'ws2:auth:error'</span>, (packet) =&gt; {
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'error authenticating: %j'</span>, packet)
+})
+
+host.on(<span class="hljs-string">'error'</span>, (err) =&gt; {
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'error: %s'</span>, err)
+})
+
+host.once(<span class="hljs-string">'ws2:auth:success'</span>, <span class="hljs-keyword">async</span> () =&gt; {
+
+<span class="hljs-comment">// Start an Iceberg order instance</span>
+<span class="hljs-keyword">const</span> gid = <span class="hljs-keyword">await</span> host.startAO(<span class="hljs-string">'bfx.iceberg'</span>, {
+<span class="hljs-attr">symbol</span>: <span class="hljs-string">'tBTCUSD'</span>,
+<span class="hljs-attr">price</span>: <span class="hljs-number">21000</span>,
+<span class="hljs-attr">amount</span>: <span class="hljs-number">-0.5</span>,
+<span class="hljs-attr">sliceAmount</span>: <span class="hljs-number">-0.1</span>,
+<span class="hljs-attr">excessAsHidden</span>: <span class="hljs-literal">true</span>,
+<span class="hljs-attr">orderType</span>: <span class="hljs-string">'LIMIT'</span>,
+<span class="hljs-attr">submitDelay</span>: <span class="hljs-number">150</span>,
+<span class="hljs-attr">cancelDelay</span>: <span class="hljs-number">150</span>,
+<span class="hljs-attr">_margin</span>: <span class="hljs-literal">false</span>,
+})
+
+<span class="hljs-comment">// later, host.stopAO(gid)</span>
+})
+</code></pre><h3>Algo Order Host</h3><p>The <code>AOHost</code> class provides a wrapper around the algo order system, and manages lifetime events/order execution. Internally it hosts a <code>Manager</code> instance from <code>bfx-api-node-core</code> for communication with the Bitfinex API, and listens for websocket stream events in order to update order state/trigger algo order events.</p><p>Execution is handled by an event system, with events being triggered by Bitfinex API websocket stream payloads, and the algo orders themselves.</p><p>The host must be instantiated with a valid API key/secret pair, and websocket/REST endpoints, along with an optional proxy agent. These parameters are the same as those passed to the <code>bfx-api-node-core</code> <code>Manager</code> constructor. Note that the <code>Manager</code> is instantiated with the dead-man-switch active (dms: 4).</p><p>To start/stop algo orders, <code>gid = startAO(id, args)</code> and <code>stopAO(gid)</code> methods are provided, with the generated group ID (<code>gid</code>) being the same as that used for all atomic orders created by the individual algo orders.</p><p>See the above usage example for instantiation</p><h2>Algo Order System</h2><p>Algorithmic orders are defined by an ID/Name pair, a set of meta functions describing the order, and a set of event handlers to be triggered during the orders lifetime/execution. A <code>defineAlgoOrder</code> helper is provided to construct the final AO definition object:</p><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> AO = defineAlgoOrder({
+<span class="hljs-attr">id</span>: <span class="hljs-string">'some.ao.identifier'</span>,
+<span class="hljs-attr">name</span>: <span class="hljs-string">'Descriptive AO Label'</span>,
+
+<span class="hljs-comment">// meta functions describing the order/execution environment</span>
+<span class="hljs-attr">meta</span>: {
+validateParams,  <span class="hljs-comment">// validates processed parameters</span>
+processParams,   <span class="hljs-comment">// prepares raw parameters for execution</span>
+declareEvents,   <span class="hljs-comment">// declares/hooks up custom internal event handlers</span>
+declareChannels, <span class="hljs-comment">// declares needed data channels, to be managed by the AO host</span>
+getUIDef,        <span class="hljs-comment">// returns the Bitfinex Order Form definition schema</span>
+genOrderLabel,   <span class="hljs-comment">// constructs a label for generated atomic orders</span>
+genPreview,      <span class="hljs-comment">// generates preview orders for rendering in the bfx UI</span>
+initState,       <span class="hljs-comment">// creates the initial AO state object</span>
+serialize,       <span class="hljs-comment">// serializes state for DB persistence</span>
+unserialize,     <span class="hljs-comment">// unserializes loaded DB states for execution</span>
+},
+
+<span class="hljs-attr">events</span>: {
+<span class="hljs-attr">self</span>: {
+<span class="hljs-comment">// internal events, bound in declareEvents()</span>
+},
+
+<span class="hljs-attr">life</span>: {
+start, <span class="hljs-comment">// triggered on execution start, should handle initialisation</span>
+stop,  <span class="hljs-comment">// triggered on execution stop, should handle teardown</span>
+},
+
+<span class="hljs-attr">orders</span>: {
+order_snapshot, <span class="hljs-comment">// triggered upon receival of an account order snapshot</span>
+order_new,      <span class="hljs-comment">// triggered when a new order is opened</span>
+order_update,   <span class="hljs-comment">// triggered when an order is updated</span>
+order_close,    <span class="hljs-comment">// triggered when an order is closed</span>
+order_fill,     <span class="hljs-comment">// triggered on any order fill (order new/update/close)</span>
+order_cancel,   <span class="hljs-comment">// triggered when an order is closed via cancellation</span>
+},
+
+<span class="hljs-attr">data</span>: {
+managedCandles, <span class="hljs-comment">// triggered by receipt of a managed candle dataset</span>
+managedBook,    <span class="hljs-comment">// triggered by receipt of a managed order book</span>
+notification,   <span class="hljs-comment">// triggered by receipt of a notification</span>
+candles,        <span class="hljs-comment">// triggered by receipt of candles</span>
+ticker,         <span class="hljs-comment">// triggered by receipt of a ticker</span>
+trades,         <span class="hljs-comment">// triggered by receipt of trades</span>
+book,           <span class="hljs-comment">// triggered by receipt of an order book snapshot/update</span>
+},
+
+<span class="hljs-attr">errors</span>: {
+minimum_size,   <span class="hljs-comment">// triggered when an order fails due to being below the</span>
+<span class="hljs-comment">// minimum size for its symbol; the AO may need to be stopped</span>
+}
+}
+})
+</code></pre><h3>AO Event Handlers &amp; Helpers</h3><p>All event handlers receive the same arguments: <code>(instance = {}, ...args)</code>. The instance contains two objects, <code>{ state = {}, h = {} }</code> with <code>state</code> being the current AO state, and <code>h</code> being a helper object.</p><p>The provided helpers are:</p><ul><li><code>debug(str, ...args)</code> - for logging information to the console, tagged by AO GID</li><li><code>emitSelf(eventName, ...args)</code> - triggers an event on the ‘self’ section</li><li><code>emitSelfAsync(eventName, ...args)</code> - same as <code>emitSelf</code> but operates on next tick</li><li><code>emit(eventName, ...args)</code> - raw event emitter, i.e. <code>emit('life:start')</code></li><li><code>emitAsync(eventName, ...args)</code> - same as <code>emit</code> but operates on next tick</li><li><code>notifyUI(level, message)</code> - generates and sends a notification which appears on the Bitfinex UI</li><li><code>cancelOrderWithDelay(state, delay, order)</code> - takes current algo state, delay in ms</li><li><code>cancelAllOrdersWithDelay(state, delay)</code> - cancels all active atomic orders on the AO state, delay in ms</li><li><code>submitOrderWithDelay(state, delay, order)</code> - takes current algo state, submits a new order, delay in ms</li><li><code>declareEvent(instance, host, eventName, path)</code> - declares an internal AO event, see section below</li><li><code>declareChannel(instance, host, channel, filter)</code> - declares a required data channel, see section below</li><li><code>updateState(instance, update)</code> - update the current state for an AO instance</li></ul><h3>Custom AO Event Handlers</h3><p>To declare custom events to be triggered by the <code>emitSelf</code> or <code>emitSelfAsync</code> helpers, use the <code>declareEvent</code> helper inside of the <code>declareEvents</code> meta method in order to register the event names on AO startup. For an example, see the <code>Iceberg</code> event definition handler:</p><pre><code class="hljs language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">instance = {}, host</span>) =&gt;</span> {
+<span class="hljs-keyword">const</span> { h = {} } = instance
+<span class="hljs-keyword">const</span> { declareEvent } = h
+
+<span class="hljs-comment">// All declared events are expected to be handled on the 'self' section, but can have any path/label</span>
+
+<span class="hljs-comment">// Map self:submit_order to the 'submit_order' handler</span>
+declareEvent(instance, host, <span class="hljs-string">'self:submit_order'</span>, <span class="hljs-string">'submit_order'</span>)
+
+<span class="hljs-comment">// Map self:interval_tick to the 'interval_tick' handler</span>
+declareEvent(instance, host, <span class="hljs-string">'self:interval_tick'</span>, <span class="hljs-string">'interval_tick'</span>)
+}
+</code></pre><p>Later, these events are triggered within other <code>Iceberg</code> event handlers, such as <code>submit_orders</code> within the <code>life:start</code> handler:</p><pre><code class="hljs language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-keyword">async</span> (instance = {}) =&gt; {
+<span class="hljs-keyword">const</span> { h = {} } = instance
+<span class="hljs-keyword">const</span> { emitSelf } = h
+
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-keyword">await</span> emitSelf(<span class="hljs-string">'submit_orders'</span>)
+}
+</code></pre><h3>Subscribing to Data Channels</h3><p>To subscribe to Bitfinex websocket API data channels, use the <code>declareChannel</code> helper within the <code>declareChannels()</code> meta method. Channel subscribe/unsubscribe calls will be handled automatically by the AO host during execution, with the relevant data being passed to the <code>data</code> section event handlers upon receival. For an example, see the <code>TWAP</code> channel declaration:</p><pre><code class="hljs language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-keyword">async</span> (instance = {}, host) =&gt; {
+<span class="hljs-keyword">const</span> { h = {}, state = {} } = instance
+<span class="hljs-keyword">const</span> { args = {} } = state
+<span class="hljs-keyword">const</span> { symbol, priceTarget } = args
+<span class="hljs-keyword">const</span> { declareChannel } = h
+
+<span class="hljs-keyword">if</span> (hasTradeTarget(args)) {
+<span class="hljs-keyword">await</span> declareChannel(instance, host, <span class="hljs-string">'trades'</span>, { symbol })
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (hasOBTarget(args)) {
+<span class="hljs-keyword">await</span> declareChannel(instance, host, <span class="hljs-string">'book'</span>, {
+symbol,
+<span class="hljs-attr">prec</span>: <span class="hljs-string">'R0'</span>,
+<span class="hljs-attr">len</span>: <span class="hljs-string">'25'</span>
+})
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`invalid price target <span class="hljs-subst">${priceTarget}</span>`</span>)
+}
+}
+</code></pre><h2>Trading Strategies</h2><p>Trading strategies consist of a set of position management methods and an architecture compatible with <code>bfx-hf-data-server</code> and <code>bfx-hf-backtest</code> for backtests on historical candle/trade data, which can be transitioned seamlessly to trading on the live markets.</p><p>Strategies written using this framework must define a set of update methods, called on each tick (with either a trade or a candle), along with a set of indicators which are automatically updated on each tick. The indicators are made available to the strategy methods, and can be queried to direct trading behavior.</p><h3>Defining a Strategy</h3><p>The <code>define</code> method is provided to construct a trading strategy from a set of indicators &amp; update methods. Strategies created with it can be used with <code>bfx-hf-backtest</code> or with the <code>exec</code> method to run on the live market. An example strategy follows below:</p><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { SYMBOLS, TIME_FRAMES } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bfx-hf-util'</span>)
+<span class="hljs-keyword">const</span> { EMA } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bfx-hf-indicators'</span>)
+
+HFS.define({
+<span class="hljs-attr">id</span>: <span class="hljs-string">'ema_cross'</span>,
+<span class="hljs-attr">name</span>: <span class="hljs-string">'ema_cross'</span>,
+<span class="hljs-attr">symbol</span>: SYMBOLS.BTC_USD,
+<span class="hljs-attr">tf</span>: TIME_FRAMES.ONE_MINUTE,
+
+<span class="hljs-attr">indicators</span>: {
+<span class="hljs-attr">emaL</span>: <span class="hljs-keyword">new</span> EMA([<span class="hljs-number">100</span>]),
+<span class="hljs-attr">emaS</span>: <span class="hljs-keyword">new</span> EMA([<span class="hljs-number">20</span>])
+},
+
+<span class="hljs-attr">onEnter</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./on_enter'</span>),
+<span class="hljs-attr">onUpdateLong</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./on_update_long'</span>),
+<span class="hljs-attr">onUpdateShort</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./on_update_short'</span>)
+})
+</code></pre><p>The above strategy defines two EMA indicators, <code>emaL</code> and <code>emaS</code>, with periods of 100 and 20 respectively, and 3 update methods; In total, 5 update methods are available:</p><ul><li><code>onEnter</code> - called when no position is open</li><li><code>onUpdateLong</code> - called when a long position is open</li><li><code>onUpdateShort</code> - called when a short position is open</li><li><code>onUpdate</code> - called when any position is open</li><li><code>onPriceUpdate</code> - called on every tick</li></ul><h3>Update Handlers</h3><p>All update handlers must be asynchronous, and receive the same arguments of <code>(state = {}, update = {})</code>. The update has the following fields:</p><ul><li><code>type</code> - ‘candle’ or ‘trade’, indicating which fields are available</li><li><code>mts</code> - timestamp, in ms</li><li><code>price</code> - candle or trade price (depends on <code>candlePrice</code> strategy setting)</li><li>for candles, <code>open</code>, <code>high</code>, <code>low</code>, <code>close</code>, and <code>vol</code> are provided</li></ul><p>Update handlers must return the next state object after performing any actions, or the current state object if no modifications were made.</p><p>The <code>state</code> object can be queried for historical candle data, indicators &amp; indicator values, open positions, and previous strategy trades. Various helpers are provided to query this data; for an example, see the EMA cross example <code>onEnter</code> handler below:</p><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> _get = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lodash/get'</span>)
+<span class="hljs-keyword">const</span> HFS = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bfx-hf-strategy'</span>)
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-keyword">async</span> (state = {}, update = {}) =&gt; {
+<span class="hljs-keyword">const</span> { price, mts } = update
+<span class="hljs-keyword">const</span> i = HFS.indicators(state)
+<span class="hljs-keyword">const</span> iv = HFS.indicatorValues(state)
+<span class="hljs-keyword">const</span> { emaS } = i <span class="hljs-comment">// full indicator object</span>
+<span class="hljs-keyword">const</span> l = iv.emaL
+<span class="hljs-keyword">const</span> s = iv.emaS
+
+<span class="hljs-comment">// Note that the default strategy symbol is used if no symbol is specified</span>
+<span class="hljs-keyword">if</span> (emaS.crossed(l)) {
+<span class="hljs-keyword">if</span> (s &gt; l) {
+<span class="hljs-keyword">return</span> HFS.openLongPositionMarket(state, {
+<span class="hljs-attr">mtsCreate</span>: mts,
+<span class="hljs-attr">amount</span>: <span class="hljs-number">1</span>,
+price
+})
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">return</span> HFS.openShortPositionMarket(state, {
+<span class="hljs-attr">mtsCreate</span>: mts,
+<span class="hljs-attr">amount</span>: <span class="hljs-number">1</span>,
+price
+})
+}
+}
+
+<span class="hljs-keyword">return</span> state
+}
+</code></pre><h3>Managing Positions</h3><p>Within the update handlers, several async helpers are available to open/update/close positions:</p><ul><li><code>openLongPositionMarket(state, args = {})</code></li><li><code>openLongPositionLimit(state, args = {})</code></li><li><code>openLongPosition(state, args = {})</code></li><li><code>openShortPositionMarket(state, args = {})</code></li><li><code>openShortPositionLimit(state, args = {})</code></li><li><code>openShortPosition(state, args = {})</code></li><li><code>openPosition(state, args = {})</code></li><li><code>updateLongPositionMarket(state, args = {})</code></li><li><code>updateLongPositionLimit(state, args = {})</code></li><li><code>updateLongPosition(state, args = {})</code></li><li><code>updateShortPositionMarket(state, args = {})</code></li><li><code>updateShortPositionLimit(state, args = {})</code></li><li><code>updateShortPosition(state, args = {})</code></li><li><code>updatePosition(state, args = {})</code></li><li><code>closePositionMarket(state, args = {})</code></li><li><code>closePositionLimit(state, args = {})</code></li><li><code>closePosition(state, args = {})</code></li></ul><p>The <code>price</code> and <code>mtsCreate</code> timestamp must both be provided to all update handlers, even those operating with MARKET orders, in order to record the price and timestamp during backtests. If these are not provided, backtests run via <code>bfx-hf-backtest</code> will fail.</p><h3>Executing on Live Markets</h3><p>To run a strategy against the live marketplace, attach a <code>WSv2</code> instance from <code>bitfinex-api-node</code> to the strategy object on <code>ws</code> and call the <code>exec</code> method to bind the Bitfinex API listeners to the various strategy update methods:</p><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> debug = <span class="hljs-built_in">require</span>(<span class="hljs-string">'debug'</span>)(<span class="hljs-string">'bfx:hf:strategy:example:exec'</span>)
+<span class="hljs-keyword">const</span> HFS = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bfx-hf-strategy'</span>)
+<span class="hljs-keyword">const</span> { SYMBOLS, TIME_FRAMES } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bfx-hf-util'</span>)
+<span class="hljs-keyword">const</span> { Manager } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bfx-api-node-core'</span>)
+<span class="hljs-keyword">const</span> WDPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bfx-api-node-plugin-wd'</span>)
+<span class="hljs-keyword">const</span> S = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./some/strategy'</span>)
+
+<span class="hljs-keyword">const</span> m = <span class="hljs-keyword">new</span> Manager({
+<span class="hljs-attr">plugins</span>: [WDPlugin({ <span class="hljs-comment">// automatically reconnect if the connection drops</span>
+<span class="hljs-attr">packetWDDelay</span>: <span class="hljs-number">30000</span>,
+})],
+
+<span class="hljs-attr">apiKey</span>: <span class="hljs-string">'...'</span>,
+<span class="hljs-attr">apiSecret</span>: <span class="hljs-string">'...'</span>,
+<span class="hljs-attr">transform</span>: <span class="hljs-literal">true</span>,
+})
+
+<span class="hljs-keyword">const</span> run = <span class="hljs-keyword">async</span> () =&gt; {
+<span class="hljs-keyword">const</span> strat = <span class="hljs-keyword">await</span> S({ <span class="hljs-comment">/* strategy arguments */</span> })
+
+m.onWS(<span class="hljs-string">'open'</span>, {}, (state = {}) =&gt; {
+debug(<span class="hljs-string">'open'</span>)
+})
+
+m.onceWS(<span class="hljs-string">'event:auth:success'</span>, {}, <span class="hljs-keyword">async</span> (authEvent, ws) =&gt; {
+debug(<span class="hljs-string">'authenticated'</span>)
+debug(<span class="hljs-string">'executing strategy...'</span>)
+
+strat.ws = ws <span class="hljs-comment">// attach websocket</span>
+
+<span class="hljs-keyword">await</span> HFS.exec(strat, m, {
+<span class="hljs-attr">symbol</span>: SYMBOLS.ETH_USD,
+<span class="hljs-attr">tf</span>: TIME_FRAMES.ONE_MINUTE,
+<span class="hljs-attr">includeTrades</span>: <span class="hljs-literal">true</span>,
+})
+})
+
+debug(<span class="hljs-string">'opening socket...'</span>)
+
+m.openWS()
+}
+
+<span class="hljs-keyword">try</span> {
+run()
+} <span class="hljs-keyword">catch</span> (err) {
+debug(<span class="hljs-string">'error: %s'</span>, err)
+}
+</code></pre><h2>Indicators</h2><p>Included with the HF is a library of +40 indicators, <a href="https://github.com/bitfinexcom/bfx-hf-indicators">bfx-hf-indicators</a> which are leveraged to create algo orders/trading strategies with complex behaviors that react to market movements in real time.</p><p>These indicators are packaged separately from the other components of the HF, and can be used independently in other projects. They support incremental updates, both from trade and candle data (depending on the indicator). All indicators provide the same set of base methods:</p><ul><li><code>reset()</code> - clears indicator values</li><li><code>update(value or candle)</code> - updates the current indicator value with a different data point</li><li><code>add(value or candle)</code> - adds a new data point/value to the indicator</li><li><code>l()</code> - returns the number of available indicator values</li><li><code>v()</code> - returns the current indicator value</li><li><code>prev(n = 1)</code> - returns the nth previous indicator value</li></ul><h4>Indicator Seeding</h4><p>All indicators have a seed period which should be respected before valid data can be obtained, which can be read via <code>i.getSeedPeriod()</code></p><h4>Indicator Data Types</h4><p>To query which type of data an indicator requires, <code>getDataType()</code> and <code>getDataKey()</code> are available. The data type can be either <code>'trade'</code>, <code>'candle'</code>, or <code>'*'</code> to signal that both are acceptable. For candle data, the data key will be either <code>'open</code>', <code>'high'</code>, <code>'low'</code>, or <code>'close'</code>.</p><h3>Indicator Metadata</h3><p>All indicators provide a set of meta values describing how they should be rendered on a chart. Specifically:</p><ul><li><code>Indicator.args</code> - an array describing the indicator arguments, with objects of the form { label, default }</li><li><code>Indicator.ui</code> - an object describing how to render the indicator, details below</li><li><code>Indicator.id</code> - the internal unique identifier for the indicator</li><li><code>Indicator.label</code> - the short, uppercase label for the indicator</li><li><code>Indicator.humanLabel</code> - the complete descriptive indicator label</li></ul><p>As an example, here is the metadata for bollinger bands:</p><pre><code class="hljs language-js">BollingerBands.id = <span class="hljs-string">'bbands'</span>
+BollingerBands.label = <span class="hljs-string">'BB'</span>
+BollingerBands.humanLabel = <span class="hljs-string">'Bollinger Bands'</span>
+BollingerBands.ui = {
+<span class="hljs-attr">position</span>: <span class="hljs-string">'overlay'</span>,
+<span class="hljs-attr">type</span>: <span class="hljs-string">'bbands'</span>
+}
+
+BollingerBands.args = [{
+<span class="hljs-attr">label</span>: <span class="hljs-string">'Period'</span>,
+<span class="hljs-attr">default</span>: <span class="hljs-number">20</span>,
+}, {
+<span class="hljs-attr">label</span>: <span class="hljs-string">'Multiplier'</span>,
+<span class="hljs-attr">default</span>: <span class="hljs-number">2</span>,
+}]
+</code></pre><h3>Indicator Rendering</h3><p>For each indicator, the <code>Indicator.ui</code> field contains an object describing how it should render on a chart, with <code>position</code> and <code>type</code> keys. Two positions are possible, <code>'external'</code> to be shown below a chart and <code>'overlay'</code> to be shown on top of candle data. Supported types are <code>'line'</code>, <code>'lines'</code>, <code>'bbands'</code>, <code>'rsi'</code>, and <code>'macd'</code>, with indicators of type <code>'lines'</code> having an extra <code>lines: [...]</code> field naming the indicator values that should be plotted.</p><p>For indicators with multiple values on each data point, such as Envelope, the <code>lines</code> keys should correspond to the keys on the indicator data points:</p><pre><code class="hljs language-js">Envelope.ui = {
+<span class="hljs-attr">position</span>: <span class="hljs-string">'overlay'</span>,
+<span class="hljs-attr">type</span>: <span class="hljs-string">'lines'</span>,
+<span class="hljs-attr">lines</span>: [<span class="hljs-string">'upper'</span>, <span class="hljs-string">'basis'</span>, <span class="hljs-string">'lower'</span>]
+}
+</code></pre><h3>Example Usage</h3><pre><code class="hljs language-js"><span class="hljs-keyword">const</span> { RSI } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bfx-hf-indicators'</span>)
+
+<span class="hljs-keyword">const</span> rsi = <span class="hljs-keyword">new</span> RSI([<span class="hljs-number">14</span>])
+
+rsi.add(<span class="hljs-number">14000</span>)
+rsi.add(<span class="hljs-number">14010</span>)
+rsi.add(<span class="hljs-number">14025</span>)
+rsi.add(<span class="hljs-number">14035</span>)
+<span class="hljs-comment">// ...</span>
+<span class="hljs-comment">// 8 more data points</span>
+<span class="hljs-comment">// ...</span>
+rsi.add(<span class="hljs-number">13998</span>)
+rsi.add(<span class="hljs-number">13952</span>)
+
+<span class="hljs-keyword">const</span> v = rsi.v() <span class="hljs-comment">// query current RSI(14) value</span>
+</code></pre></div></div><div id="bfx-oss-docs-footer-bar"><div id="bfx-oss-docs-footer-bar__container"><p>Copyright © 2013-2020 iFinex Inc. All rights reserved.</p></div></div></div><script type="text/javascript" src="/js/vendor/zepto.min.js"></script><script type="text/javascript" src="/js/vendor/lodash.min.js"></script><script type="text/javascript" src="/js/vendor/debug.min.js"></script><script type="text/javascript" src="/js/debug_init.js"></script></body></html>

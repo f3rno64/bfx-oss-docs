@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/index.css"><link rel="stylesheet" type="text/css" href="/css/highlightjs/ir-black.css"><title></title></head><body><div id="bfx-oss-docs-side-bar"><img id="bfx-oss-docs-side-bar__header" src="/img/bfx-logo-bg-white.png" alt="Bitfinex" height="64"><ul id="bfx-oss-docs-side-bar__main-menu"><li><a href="/index.html">Home</a></li><li><a href="/page_v2_overview_introduction.html">API v2 Overview</a></li><li><a href="/page_v2_reference.html">API v2 Reference</a></li><li><a href="/page_v1_overview_introduction.html">API v1 Overview</a></li><li><a href="/page_v1_reference.html">API v1 Reference</a></li><li><a href="/page_oss_projects.html">Open Source Projects</a></li></ul><div class="bfx-oss-docs-side-bar__sub-menu" id="bfx-oss-docs-side-bar__api-reference-menu"><h6>General</h6><ul><li><a href="/page_v1_overview_api_access.html">API Access</a></li><li><a href="/page_v1_overview_introduction.html">Introduction</a></li><li><a href="/page_v1_overview_open_source_libraries.html">Open Source Libraries</a></li><li><a href="/page_v1_overview_public_endpoints.html">Public Endpoints</a></li><li><a href="/page_v1_overview_readme.html">Readme</a></li><li><a href="/page_v1_overview_rest_auth.html">Authenticated Endpoints</a></li><li><a href="/page_v1_overview_rest_general.html">General</a></li><li><a href="/page_v1_overview_showcase.html">Showcase</a></li><li><a href="/page_v1_overview_ws_auth.html">Authenticated Channels</a></li><li><a href="/page_v1_overview_ws_general.html">General</a></li><li><a href="/page_v1_overview_ws_public.html">Public Channels</a></li></ul></div></div><div id="bfx-oss-docs-content"><div id="bfx-oss-docs-header-bar"><h2>Documentation</h2><h2>General</h2></div><div class="bfx-oss-docs-content-wrapper"><div class="bfx-oss-docs-md-content bfx-oss-docs-code-wrapper"><h3>Current Version</h3><p>Bitfinex Websocket API version is 1.1</p><h3>SSL Websocket Connection</h3><p>URL:</p><p>Channels that require authentication should use the domain: wss://api.bitfinex.com/</p><p>Public channels should use the domain: wss://api.bitfinex.com/</p><pre><code class="hljs language-text">// For public channels:
+wss://api.bitfinex.com/ws/1
+
+// For authenticated channels:
+wss://api.bitfinex.com/ws/1
+</code></pre><h3>Message encoding</h3><p>Each message sent and received via the Bitfinex’s websocket channel is encoded in JSON format</p><h3>Supported Pairs</h3><p>BTCUSD LTCUSD LTCBTC ETHUSD ETHBTC ETCBTC ETCUSD RRTUSD RRTBTC ZECUSD ZECBTC XMRUSD XMRBTC DSHUSD DSHBTC BTCEUR XRPUSD XRPBTC IOTUSD IOTBTC IOTETH EOSUSD EOSBTC EOSETH SANUSD SANBTC SANETH OMGUSD OMGBTC OMGETH BCHUSD BCHBTC BCHETH NEOUSD NEOBTC NEOETH ETPUSD ETPBTC ETPETH QTMUSD QTMBTC QTMETH AVTUSD AVTBTC AVTETH EDOUSD EDOBTC EDOETH BTGUSD BTGBTC DATUSD DATBTC DATETH QSHUSD QSHBTC QSHETH YYWUSD YYWBTC YYWETH GNTUSD GNTBTC GNTETH SNTUSD SNTBTC SNTETH IOTEUR BATUSD BATBTC BATETH MNAUSD MNABTC MNAETH FUNUSD FUNBTC FUNETH ZRXUSD ZRXBTC ZRXETH TNBUSD TNBBTC TNBETH SPKUSD SPKBTC SPKETH TRXUSD TRXBTC TRXETH RCNUSD RCNBTC RCNETH RLCUSD RLCBTC RLCETH AIDUSD AIDBTC AIDETH SNGUSD SNGBTC SNGETH REPUSD REPBTC REPETH ELFUSD ELFBTC ELFETH</p><p>the list is continuously growing to get the an up to date list you can query the symbols this endpoint: <a href="https://api.bitfinex.com/v1/symbols">https://api.bitfinex.com/v1/symbols</a></p><h3>Public Channels</h3><ul><li><strong>Book:</strong> order book feed</li><li><strong>Ticker:</strong> ticker feed</li><li><strong>Trades:</strong> trades feed</li></ul><h3>Authenticated Channels</h3><ul><li><strong>Account Information:</strong> account specific private data (positions, orders, executed trades, balances)</li></ul><h3>How to Connect</h3><p>Open up a websocket connection to the websocket URI.</p><div class="bfx-oss-docs-grouped-code-fence__container bfx-oss-docs-code-wrapper"><ul class="bfx-oss-docs-grouped-code-fence__navigation-bar"><li><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__label-radio" id="label-group-7-0" name="label-group-7" checked=""><label for="group-7-0" onclick="this.previousElementSibling.click()">javascript</label></li><li><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__label-radio" id="label-group-7-6" name="label-group-7"><label for="group-7-6" onclick="this.previousElementSibling.click()">go</label></li></ul><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__fence-radio" id="group-7-0" name="group-7" checked=""><pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> WebSocket = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ws'</span>)
+
+<span class="hljs-keyword">const</span> wss = <span class="hljs-keyword">new</span> WebSocket(<span class="hljs-string">'wss://api.bitfinex.com/ws/'</span>)
+wss.onmessage = <span class="hljs-function">(<span class="hljs-params">msg</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(msg.data)
+wss.onopen = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-comment">// API keys setup here (See "Authenticated Channels")</span>
+}
+</code></pre><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__fence-radio" id="group-7-6" name="group-7"><pre><code class="hljs language-go"><span class="hljs-keyword">import</span> ( <span class="hljs-string">"code.google.com/p/go.net/websocket"</span>)
+
+ws, err := websocket.Dial(<span class="hljs-string">"wss://api.bitfinex.com/ws"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"http://localhost/"</span>)
+<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+    <span class="hljs-keyword">return</span> err
+}
+
+</code></pre></div><h3>Error Codes</h3><p>In case of error, you receive a message containing the proper error code (<code>code</code> JSON field).</p><div class="bfx-oss-docs-callout danger"><div class="bfx-oss-docs-callout__marker"><p>!</p></div><div class="bfx-oss-docs-callout__content"><div class="bfx-oss-docs-callout__header"><p>Generic Error Codes</p><h6>danger</h6></div><div class="bfx-oss-docs-callout__body"><ul><li>10000 : Unknown event</li><li>10001 : Unknown pair</li></ul></div></div></div><h3>Info Messages</h3><pre><code class="hljs language-json">{
+<span class="hljs-attr">"event"</span>:<span class="hljs-string">"info"</span>,
+<span class="hljs-attr">"version"</span>: <span class="hljs-number">1</span>
+}
+</code></pre><p>Info messages are sent from the websocket server to notify the state of your connection. Right after connecting you receive an info message that contains the actual version of the websocket stream.</p><div class="bfx-oss-docs-callout info"><div class="bfx-oss-docs-callout__marker"><p>!</p></div><div class="bfx-oss-docs-callout__content"><div class="bfx-oss-docs-callout__header"><p>NOTE</p><h6>info</h6></div><div class="bfx-oss-docs-callout__body"><p>If you are developing/using a trading bot, please make sure to handle version number changes.</p></div></div></div><pre><code class="hljs language-json">{
+<span class="hljs-attr">"event"</span>:<span class="hljs-string">"info"</span>,
+<span class="hljs-attr">"code"</span>: <span class="hljs-string">"&lt;CODE&gt;"</span>,
+<span class="hljs-attr">"msg"</span>: <span class="hljs-string">"&lt;MSG&gt;"</span>
+}
+</code></pre><p>Websocket server sends other <code>info</code> messages to inform regarding relevant events.</p><div class="bfx-oss-docs-callout info"><div class="bfx-oss-docs-callout__marker"><p>!</p></div><div class="bfx-oss-docs-callout__content"><div class="bfx-oss-docs-callout__header"><p>Info Codes</p><h6>info</h6></div><div class="bfx-oss-docs-callout__body"><ul><li>20051 : Stop/Restart Websocket Server (please try to reconnect)</li><li>20060 : Refreshing data from the Trading Engine. Please pause any activity and resume after receiving the <code>info</code> message <code>20061</code> (it should take 10 seconds at most).</li><li>20061 : Done Refreshing data from the Trading Engine. You can resume normal activity. It is advised to unsubscribe/subscribe again all channels.</li></ul></div></div></div><div class="bfx-oss-docs-callout info"><div class="bfx-oss-docs-callout__marker"><p>!</p></div><div class="bfx-oss-docs-callout__content"><div class="bfx-oss-docs-callout__header"><p>NOTE</p><h6>info</h6></div><div class="bfx-oss-docs-callout__body"><p>Rely on <code>CODE</code> only to handle <code>info</code> events.</p></div></div></div><h3>Ping/Pong</h3><pre><code class="hljs language-json"><span class="hljs-comment">// request</span>
+{
+<span class="hljs-attr">"event"</span>:<span class="hljs-string">"ping"</span>
+}
+
+<span class="hljs-comment">// response</span>
+{
+<span class="hljs-attr">"event"</span>:<span class="hljs-string">"pong"</span>
+}
+</code></pre><p>Use <code>ping</code> message to test your connection to the websocket server.</p><h3>Subscribe to Channels</h3><pre><code class="hljs language-json"><span class="hljs-comment">// request</span>
+{
+<span class="hljs-attr">"event"</span>:<span class="hljs-string">"subscribe"</span>,
+<span class="hljs-attr">"channel"</span>:<span class="hljs-string">"CHANNEL_NAME"</span>
+}
+
+<span class="hljs-comment">// response</span>
+{
+<span class="hljs-attr">"event"</span>:<span class="hljs-string">"subscribed"</span>,
+<span class="hljs-attr">"channel"</span>:<span class="hljs-string">"CHANNEL_NAME"</span>,
+<span class="hljs-attr">"chanId"</span>:<span class="hljs-string">"&lt;CHANNEL_ID&gt;"</span>
+}
+
+<span class="hljs-comment">// response-failure</span>
+{
+<span class="hljs-attr">"event"</span>:<span class="hljs-string">"error"</span>,
+<span class="hljs-attr">"msg"</span>:<span class="hljs-string">"&lt;ERROR_MSG&gt;"</span>,
+<span class="hljs-attr">"code"</span>:<span class="hljs-string">"&lt;ERROR_CODE&gt;"</span>
+}
+</code></pre><p>To receive data from a channel you have to send a “subscribe” message first.</p><h3>Heartbeating</h3><pre><code class="hljs language-json">[<span class="hljs-string">"&lt;Chan Id&gt;"</span>, <span class="hljs-string">"hb"</span>]
+</code></pre><p>If there is no new message in the channel for 1 second, Websocket server will send you an heartbeat message in this format.</p><h3>Snapshot</h3><pre><code class="hljs language-json">[<span class="hljs-string">"&lt;Chan Id&gt;"</span>,
+[<span class="hljs-string">"&lt;Group of Update Messages&gt;"</span>,
+[<span class="hljs-string">"&lt;Update Message&gt;"</span>]
+]
+]
+</code></pre><p>Upon subscribing to a channel an initial snapshot is sent. Typically, the snapshot will have as its first item, the chanId, its second item will be an array of update messages (each of which is itself an array). So The array would have 3 levels.</p><h3>Update</h3><p>After receiving the snapshot, you will receive updates upon any change.</p><p>Channel ID’s allow you to keep track of the messages, they are static per session, you will receive both the CHANNEL_NAME and the CHANNEL_ID in the response to a subscription message.</p><div class="bfx-oss-docs-callout info"><div class="bfx-oss-docs-callout__marker"><p>!</p></div><div class="bfx-oss-docs-callout__content"><div class="bfx-oss-docs-callout__header"><p>undefined</p><h6>info</h6></div><div class="bfx-oss-docs-callout__body"><ul><li>CHANNEL_NAME: (string) channel name (book, trades, ticker)</li><li>CHANNEL_ID: (int) channel identifier. CHANNEL_ID is a numeric channel identifier that the developer can use to distinguish between updates for each subscribed channel.</li></ul></div></div></div><div class="bfx-oss-docs-callout danger"><div class="bfx-oss-docs-callout__marker"><p>!</p></div><div class="bfx-oss-docs-callout__content"><div class="bfx-oss-docs-callout__header"><p>Error Codes</p><h6>danger</h6></div><div class="bfx-oss-docs-callout__body"><ul><li>10300 : Subscription failed (generic)</li><li>10301 : Already subscribed</li></ul></div></div></div><h3>Unsubscribe to Channels</h3><pre><code class="hljs language-json"><span class="hljs-comment">// request</span>
+{
+<span class="hljs-attr">"event"</span>:<span class="hljs-string">"unsubscribe"</span>,
+<span class="hljs-attr">"chanId"</span>:<span class="hljs-string">"&lt;CHANNEL_ID&gt;"</span>
+}
+
+<span class="hljs-comment">// response</span>
+{
+<span class="hljs-attr">"event"</span>:<span class="hljs-string">"unsubscribed"</span>,
+<span class="hljs-attr">"status"</span>:<span class="hljs-string">"OK"</span>,
+<span class="hljs-attr">"chanId"</span>:<span class="hljs-string">"&lt;CHANNEL_ID&gt;"</span>
+}
+
+<span class="hljs-comment">// response-failure</span>
+{
+<span class="hljs-attr">"event"</span>:<span class="hljs-string">"error"</span>,
+<span class="hljs-attr">"msg"</span>:<span class="hljs-string">"&lt;ERROR_MSG&gt;"</span>,
+<span class="hljs-attr">"code"</span>:<span class="hljs-string">"&lt;ERROR_CODE&gt;"</span>
+}
+</code></pre><p>To stop receiving data from a channel you have to send a “unsubscribe” message.</p><div class="bfx-oss-docs-callout danger"><div class="bfx-oss-docs-callout__marker"><p>!</p></div><div class="bfx-oss-docs-callout__content"><div class="bfx-oss-docs-callout__header"><p>Error Codes</p><h6>danger</h6></div><div class="bfx-oss-docs-callout__body"><p>10400 : Unsubscription failed (generic) 10401 : Not subscribed</p></div></div></div></div></div><div id="bfx-oss-docs-footer-bar"><div id="bfx-oss-docs-footer-bar__container"><p>Copyright © 2013-2020 iFinex Inc. All rights reserved.</p></div></div></div><script type="text/javascript" src="/js/vendor/zepto.min.js"></script><script type="text/javascript" src="/js/vendor/lodash.min.js"></script><script type="text/javascript" src="/js/vendor/debug.min.js"></script><script type="text/javascript" src="/js/debug_init.js"></script></body></html>

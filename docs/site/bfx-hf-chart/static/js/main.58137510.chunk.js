@@ -1,0 +1,2 @@
+(this["webpackJsonpbfx-hf-chart"]=this["webpackJsonpbfx-hf-chart"]||[]).push([[0],{294:function(n,t,c){n.exports=c(673)},526:function(n,t){},528:function(n,t){},538:function(n,t){},540:function(n,t){},565:function(n,t){},566:function(n,t){},571:function(n,t){},573:function(n,t){},597:function(n,t){}},[[294,1,2]]]);
+//# sourceMappingURL=main.58137510.chunk.js.map

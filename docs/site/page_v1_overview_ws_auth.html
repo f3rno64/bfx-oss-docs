@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/index.css"><link rel="stylesheet" type="text/css" href="/css/highlightjs/ir-black.css"><title></title></head><body><div id="bfx-oss-docs-side-bar"><img id="bfx-oss-docs-side-bar__header" src="/img/bfx-logo-bg-white.png" alt="Bitfinex" height="64"><ul id="bfx-oss-docs-side-bar__main-menu"><li><a href="/index.html">Home</a></li><li><a href="/page_v2_overview_introduction.html">API v2 Overview</a></li><li><a href="/page_v2_reference.html">API v2 Reference</a></li><li><a href="/page_v1_overview_introduction.html">API v1 Overview</a></li><li><a href="/page_v1_reference.html">API v1 Reference</a></li><li><a href="/page_oss_projects.html">Open Source Projects</a></li></ul><div class="bfx-oss-docs-side-bar__sub-menu" id="bfx-oss-docs-side-bar__api-reference-menu"><h6>Authenticated Channels</h6><ul><li><a href="/page_v1_overview_api_access.html">API Access</a></li><li><a href="/page_v1_overview_introduction.html">Introduction</a></li><li><a href="/page_v1_overview_open_source_libraries.html">Open Source Libraries</a></li><li><a href="/page_v1_overview_public_endpoints.html">Public Endpoints</a></li><li><a href="/page_v1_overview_readme.html">Readme</a></li><li><a href="/page_v1_overview_rest_auth.html">Authenticated Endpoints</a></li><li><a href="/page_v1_overview_rest_general.html">General</a></li><li><a href="/page_v1_overview_showcase.html">Showcase</a></li><li><a href="/page_v1_overview_ws_auth.html">Authenticated Channels</a></li><li><a href="/page_v1_overview_ws_general.html">General</a></li><li><a href="/page_v1_overview_ws_public.html">Public Channels</a></li></ul></div></div><div id="bfx-oss-docs-content"><div id="bfx-oss-docs-header-bar"><h2>Documentation</h2><h2>Authenticated Channels</h2></div><div class="bfx-oss-docs-content-wrapper"><div class="bfx-oss-docs-md-content bfx-oss-docs-code-wrapper"><p>** Account Information **</p><p>This channel allows you to keep up to date with the status of your account. You can receive updates on your positions, your balances, your orders and your trades. Once your session is authenticated it remains so until the connection is disconnected/terminated/restarted.</p><p>Account info always uses chanId 0.</p><div class="bfx-oss-docs-callout info"><div class="bfx-oss-docs-callout__marker"><p>!</p></div><div class="bfx-oss-docs-callout__content"><div class="bfx-oss-docs-callout__header"><p>AUTH request message: authenticate for the private data stream</p><h6>info</h6></div><div class="bfx-oss-docs-callout__body"><p>API_KEY: (string) Bitfinex’s api key AUTH_SIGNATURE: (string) HMAC-sha384 signature</p></div></div></div><div class="bfx-oss-docs-grouped-code-fence__container bfx-oss-docs-code-wrapper"><ul class="bfx-oss-docs-grouped-code-fence__navigation-bar"><li><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__label-radio" id="label-group-6-0" name="label-group-6" checked=""><label for="group-6-0" onclick="this.previousElementSibling.click()">javascript</label></li><li><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__label-radio" id="label-group-6-6" name="label-group-6"><label for="group-6-6" onclick="this.previousElementSibling.click()">go</label></li><li><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__label-radio" id="label-group-6-12" name="label-group-6"><label for="group-6-12" onclick="this.previousElementSibling.click()">Request / Response</label></li><li><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__label-radio" id="label-group-6-18" name="label-group-6"><label for="group-6-18" onclick="this.previousElementSibling.click()">python</label></li></ul><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__fence-radio" id="group-6-0" name="group-6" checked=""><pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> crypto = <span class="hljs-built_in">require</span>(<span class="hljs-string">'crypto-js'</span>)
+
+<span class="hljs-keyword">const</span> apiKey = <span class="hljs-string">'&lt;Your API key here&gt;'</span>
+<span class="hljs-keyword">const</span> apiSecret = <span class="hljs-string">'&lt;Your API secret here&gt;'</span>
+
+<span class="hljs-keyword">const</span> authNonce = <span class="hljs-built_in">Date</span>.now() * <span class="hljs-number">1000</span>
+<span class="hljs-keyword">const</span> authPayload = <span class="hljs-string">'AUTH'</span> + authNonce
+<span class="hljs-keyword">const</span> authSig = crypto
+	.HmacSHA384(authPayload, apiSecret)
+	.toString(crypto.enc.Hex)
+
+<span class="hljs-keyword">const</span> payload = {
+  apiKey,
+  authSig,
+  authNonce,
+  authPayload,
+  <span class="hljs-attr">event</span>: <span class="hljs-string">'auth'</span>
+}
+
+w.send(<span class="hljs-built_in">JSON</span>.stringify(payload))
+
+</code></pre><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__fence-radio" id="group-6-6" name="group-6"><pre><code class="hljs language-go"><span class="hljs-keyword">package</span> main
+<span class="hljs-keyword">import</span> (
+	<span class="hljs-string">"fmt"</span>
+	<span class="hljs-string">"os"</span>
+	<span class="hljs-string">"github.com/bitfinexcom/bitfinex-api-go/v1"</span>
+)
+
+<span class="hljs-comment">// Set BFX_APIKEY and BFX_SECRET as :</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// export BFX_API_KEY=YOUR_API_KEY</span>
+<span class="hljs-comment">// export BFX_API_SECRET=YOUR_API_SECRET</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// you can obtain it from https://www.bitfinex.com/api</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+	key := os.Getenv(<span class="hljs-string">"BFX_API_KEY"</span>)
+	secret := os.Getenv(<span class="hljs-string">"BFX_API_SECRET"</span>)
+	client := bitfinex.NewClient().Auth(key, secret)
+
+  <span class="hljs-comment">// EXAMPLE: Sell 0.01BTC at $12.000</span>
+	<span class="hljs-comment">// data, err := client.Orders.Create(bitfinex.BTCUSD, -0.01, 12000, bitfinex.ORDER_TYPE_EXCHANGE_LIMIT)</span>
+
+	<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+		fmt.Println(<span class="hljs-string">"Error:"</span>, err)
+	} <span class="hljs-keyword">else</span> {
+		fmt.Println(<span class="hljs-string">"Response:"</span>, data)
+	}
+}
+</code></pre><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__fence-radio" id="group-6-12" name="group-6"><pre><code class="hljs language-text">// request
+{  
+   &quot;event&quot;:&quot;auth&quot;,
+   &quot;status&quot;:&quot;OK&quot;,
+   &quot;chanId&quot;:0,
+   &quot;userId&quot;:&quot;&lt;USER_ID&gt;&quot;
+}
+
+// response
+{  
+   &quot;event&quot;:&quot;auth&quot;,
+   &quot;status&quot;:&quot;OK&quot;,
+   &quot;chanId&quot;:0,
+   &quot;userId&quot;:&quot;&lt;USER_ID&gt;&quot;
+}
+
+// response-failure
+{  
+   &quot;event&quot;:&quot;auth&quot;,
+   &quot;status&quot;:&quot;FAIL&quot;,
+   &quot;chanId&quot;:0,
+   &quot;code&quot;:&quot;&lt;ERROR_CODE&gt;&quot;
+}
+</code></pre><input type="radio" style="display: none;" class="bfx-oss-docs-grouped-code-fence__fence-radio" id="group-6-18" name="group-6"><pre><code class="hljs language-python"><span class="hljs-keyword">import</span> hmac
+<span class="hljs-keyword">import</span> hashlib
+<span class="hljs-keyword">import</span> time
+
+nonce = int(time.time() * <span class="hljs-number">1000000</span>)
+auth_payload = <span class="hljs-string">'AUTH{}'</span>.format(nonce)
+signature = hmac.new(
+  API_SECRET.encode(),
+  msg = auth_payload.encode(),
+  digestmod = hashlib.sha384
+).hexdigest()
+
+payload = {
+  <span class="hljs-string">'apiKey'</span>: API_KEY,
+  <span class="hljs-string">'event'</span>: <span class="hljs-string">'auth'</span>,
+  <span class="hljs-string">'authPayload'</span>: auth_payload,
+  <span class="hljs-string">'authNonce'</span>: nonce,
+  <span class="hljs-string">'authSig'</span>: signature
+}
+
+ws.send(json.dumps(payload))
+</code></pre></div><ul><li><p><a href="/v1/reference#ws-auth-position-snapshot">Position Snapshot</a></p></li><li><p><a href="/v1/reference#ws-auth-wallet-snapshot">Wallet Snapshot</a></p></li><li><p><a href="/v1/reference#ws-auth-order-snapshot">Order Snapshots</a></p></li><li><p><a href="/v1/reference#ws-auth-trade-snapshot">Trade Snapshot</a></p></li><li><p><a href="/v1/reference#ws-auth-order-updates">Order Updates</a></p></li><li><p><a href="/v1/reference#ws-auth-position-updates">Position Updates</a></p></li><li><p><a href="/v1/reference#ws-auth-wallet-updates">Wallet Updates</a></p></li><li><p><a href="/v1/reference#ws-auth-executed-trades">Executed Trades</a></p></li><li><p><a href="/v1/reference#ws-auth-unauthentication">Unauthentication</a></p></li></ul></div></div><div id="bfx-oss-docs-footer-bar"><div id="bfx-oss-docs-footer-bar__container"><p>Copyright © 2013-2020 iFinex Inc. All rights reserved.</p></div></div></div><script type="text/javascript" src="/js/vendor/zepto.min.js"></script><script type="text/javascript" src="/js/vendor/lodash.min.js"></script><script type="text/javascript" src="/js/vendor/debug.min.js"></script><script type="text/javascript" src="/js/debug_init.js"></script></body></html>
