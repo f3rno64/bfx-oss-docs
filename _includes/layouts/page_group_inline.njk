@@ -21,7 +21,7 @@
 
     {% for id, page in pages %}
     <li>
-      <a href="/{{ filename }}#bfx-oss-docs-pgi-{{ id }}">{{ page.title }}</a>
+      <a href="{{ filename }}#bfx-oss-docs-pgi-{{ id }}">{{ page.title }}</a>
     </li>
     {% endfor %}
   </ul>
@@ -55,6 +55,6 @@
 
 {% if page.samples %}
 {% block scripts %}
-<script type="text/javascript" src="/js/api_ref_sample_viewer.js"></script>
+<script type="text/javascript" src="js/api_ref_sample_viewer.js"></script>
 {% endblock %}
 {% endif %}
