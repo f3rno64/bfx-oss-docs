@@ -1,10 +1,47 @@
 {
   "output": {
     "staticSite": "./dist/site",
-    "apiReferenceFN": "api_reference.html",
     "convertedRIOAPIDocs": "./_src/api",
     "unifiedJSDocDist": "./dist/jsdoc",
     "unifiedJSDocConfig": "./.jsdoc-merged.json"
+  },
+
+  "structure": {
+    "root": "./_src",
+    "sections": [{
+      "id": "home",
+      "type": "page",
+      "root": "./home",
+      "label": "Home",
+      "filename": "index.html"
+    }, {
+      "id": "v2_overview",
+      "type": "page-group",
+      "root": "./api/v2/overview",
+      "label": "API v2 Overview",
+      "groupIndex": "introduction"
+    }, {
+      "id": "v2_reference",
+      "type": "page-group-inline",
+      "root": "./api/v2/reference",
+      "label": "API v2 Reference"
+    }, {
+      "id": "v1_overview",
+      "type": "page-group",
+      "root": "./api/v1/overview",
+      "label": "API v1 Overview",
+      "groupIndex": "introduction"
+    }, {
+      "id": "v1_reference",
+      "type": "page-group-inline",
+      "root": "./api/v1/reference",
+      "label": "API v1 Reference"
+    }, {
+      "id": "oss_projects",
+      "type": "page",
+      "root": "./oss_projects",
+      "label": "Open Source Projects"
+    }]
   },
 
   "layouts": {
@@ -257,6 +294,116 @@
             "ws-auth-input-offer-new.md",
             "ws-auth-input-offer-cancel.md",
             "ws-auth-input-calc.md"
+          ]
+        }]
+      },
+
+      "v1": {
+        "path": "v1",
+        "overview": [{
+          "label": "Introduction",
+          "path": "Introduction/",
+          "pages": [
+            "introduction.md",
+            "open-source-libraries.md",
+            "api-access.md",
+            "readme.md",
+            "showcase.md"
+          ]
+        }, {
+          "label": "REST",
+          "path": "REST/",
+          "pages": [
+            "rest-general.md",
+            "public-endpoints.md",
+            "rest-auth.md"
+          ]
+        }, {
+          "label": "WebSocket",
+          "path": "WebSocket/",
+          "pages": [
+            "ws-general.md",
+            "ws-public.md",
+            "ws-auth.md"
+          ]
+        }],
+
+        "documentation": [{
+          "label": "REST Public Endpoints",
+          "path": "REST Public Endpoints/",
+          "pages": [
+            "rest-public-ticker.md",
+            "rest-public-stats.md",
+            "rest-public-fundingbook.md",
+            "rest-public-orderbook.md",
+            "rest-public-trades.md",
+            "rest-public-lends.md",
+            "rest-public-symbols.md",
+            "rest-public-symbol-details.md"
+          ]
+        }, {
+          "label": "REST Authenticated Endpoints",
+          "path": "REST Authenticated Endpoints/",
+          "pages": [
+            "rest-auth-account-info.md",
+            "rest-auth-fees.md",
+            "rest-auth-summary.md",
+            "rest-auth-deposit.md",
+            "auth-key-permissions.md",
+            "rest-auth-margin-information.md",
+            "rest-auth-wallet-balances.md",
+            "rest-auth-transfer-between-wallets.md",
+            "rest-auth-withdrawal.md",
+            "rest-auth-new-order.md",
+            "rest-auth-multiple-new-orders.md",
+            "rest-auth-cancel-order.md",
+            "rest-auth-cancel-multiple-orders.md",
+            "rest-auth-cancel-all-orders.md",
+            "rest-auth-replace-order.md",
+            "rest-auth-order-status.md",
+            "rest-auth-active-orders.md",
+            "rest-auth-orders-history.md",
+            "rest-auth-active-positions.md",
+            "rest-auth-claim-position.md",
+            "rest-auth-balance-history.md",
+            "rest-auth-deposit-withdrawal-history.md",
+            "rest-auth-past-trades.md",
+            "rest-auth-new-offer.md",
+            "rest-auth-cancel-offer.md",
+            "rest-auth-offer-status.md",
+            "rest-auth-active-credits.md",
+            "rest-auth-offers.md",
+            "rest-auth-offers-hist.md",
+            "rest-auth-mytrades-funding.md",
+            "rest-auth-active-funding-used-in-a-margin-position.md",
+            "rest-auth-active-funding-not-used-in-a-margin-position.md",
+            "rest-auth-total-taken-funds.md",
+            "rest-auth-close-margin-funding.md",
+            "basket-manage.md",
+            "close-position.md"
+          ]
+        }, {
+          "label": "WebSocket Public Channels",
+          "path": "Websocket Public Channels/",
+          "pages": [
+            "ws-public-order-books.md",
+            "ws-public-raw-order-books.md",
+            "ws-public-trades.md",
+            "ws-public-ticker.md"
+          ]
+        }, {
+          "label": "WebSocket Authenticated Channels",
+          "path": "Websocket Authenticated Channels",
+          "pages": [
+            "ws-auth-position-snapshot.md",
+            "ws-auth-wallet-snapshot.md",
+            "ws-auth-order-snapshots.md",
+            "ws-auth-trade-snapshots.md",
+            "ws-auth-order-updates.md",
+            "ws-auth-position-updates.md",
+            "ws-auth-wallet-updates.md",
+            "ws-auth-executed-trades.md",
+            "ws-auth-unauthentication.md"
           ]
         }]
       }

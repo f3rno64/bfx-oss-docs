@@ -6,6 +6,24 @@
 
 For now, see `config.json` for the config structure.
 
+#### RIO Export Parser Notes
+Currently `[block:parameters]` blocks are not converted/rendered in the new
+native source file format, as matching the readme.io output (table w/ cells
+containing markdown) is painful to author. We need a better solution for
+authoring & rendering such data.
+
+TBD: Given that there are few occurences of these blocks, potentially replace
+them entirely. 
+
+#### RIO Conversion Notes
+For now, the `_src` directory is transient as it is re-generated when RIO
+export sources are converted. As such, site structure configuration is
+currently in `config.json`.
+
+As `config.json` is meant for the static site generator, the structure
+definition there will be moved to `_src/structure.json` after RIO migration is
+complete.
+
 ### Building
 
 ```bash

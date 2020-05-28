@@ -4,12 +4,30 @@ const CONFIG_FILENAME = 'config.json'
 
 const fs = require('fs')
 const signale = require('signale')
-const _uniq = require('lodash/uniq')
+const _keys = require('lodash/keys')
 const _values = require('lodash/values')
-const _includes = require('lodash/includes')
 const {
-  loadConfig, parseRIOAPIDocumentation, rioDocumentToNative,
+  loadConfig, parseRIOData, rioDocumentToNative
 } = require('../')
+
+const mkdir = (path) => {
+  fs.mkdirSync(path)
+  signale.success(`mkdir ${path}`)
+}
+
+const renderPageSet = (set, basePath) => {
+  set.forEach((pageData) => {
+    const { files, slug } = pageData
+    const pagePath = `${basePath}/${slug}`
+
+    mkdir(pagePath)
+
+    files.forEach(({ filename, content }) => {
+      fs.writeFileSync(`${pagePath}/${filename}`, content)
+      signale.success(`Rendered ${filename}`)
+    })
+  })
+}
 
 try {
   signale.warn('SKIPPING v1 SOURCES!')
@@ -17,74 +35,44 @@ try {
 
   const config = loadConfig(CONFIG_FILENAME)
   const { output } = config
-  const { convertedRIOAPIDocs, apiReferenceFN } = output
+  const { convertedRIOAPIDocs } = output
   const basePath = `${__dirname}/../${convertedRIOAPIDocs}`
 
   signale.info(`converting rio sources to native in ${convertedRIOAPIDocs}`)
 
-  const version = 2
-  const data = parseRIOAPIDocumentation(`v${version}`, config)
-  const { documentation /*, overview */ } = data
-  const endpointDocs = _values(documentation).map(rioDocumentToNative)
+  const data = parseRIOData(config)
+  const versions = _keys(data)
 
-  // TODO: Hardcoded for now
-  const versions = [version]
-  const types = _uniq(endpointDocs.map(({ id }) => id.split('_')[0]))
-
-  // Cleanup existing docs
   versions.forEach((v) => {
-    const path = `${basePath}/v${v}`
+    const path = `${basePath}/${v}`
+    const overviewPath = `${path}/overview`
+    const referencePath = `${path}/reference`
 
-    try {
-      fs.statSync(path)
+    // Clean existing sources
+    if (fs.existsSync(path)) {
       fs.rmdirSync(path, { recursive: true })
-      signale.info(`Removed ${path}`)
-    } catch (e) {
-      signale.info(`${path} clean (${e.message})`)
+      signale.info(`Cleaned ${path}`)
     }
-  })
 
-  // Create base folder structure
-  versions.forEach((v) => {
-    const versionPath = `${basePath}/v${v}`
+    // Create folder structure
+    mkdir(path)
+    mkdir(overviewPath)
+    mkdir(referencePath)
 
-    fs.mkdirSync(versionPath)
-    signale.success(`mkdir ${versionPath}`)
+    // Render native sources
+    const {
+      overviewPages,
+      documentationPages
+    } = data[v]
 
-    types.forEach((type) => {
-      const typePath = `${versionPath}/${type}`
+    const nativeDocs = _values(documentationPages).map(rioDocumentToNative)
+    const nativeOverview = _values(overviewPages).map(rioDocumentToNative)
 
-      fs.mkdirSync(typePath)
-      signale.success(`mkdir ${typePath}`)
-    })
-  })
+    renderPageSet(nativeDocs, referencePath)
+    signale.success(`Rendered ${v} API reference sources`)
 
-  // TODO: Generate sidebar menu here as well
-  const sidebarLinks = []
-
-  // TODO: Refactor, for now cleanup is for multiple versions/types but only
-  // v2 is parsed/rendered
-  endpointDocs.forEach((endpointDocumentation) => {
-    const { id, title, files } = endpointDocumentation
-    const type = _includes(id, 'rest_') ? 'rest' : 'ws'
-    const endpointDocFolder = id.replace(`${type}_`, '')
-    const endpointDocPath = `${basePath}/v2/${type}/${endpointDocFolder}`
-
-    fs.mkdirSync(endpointDocPath)
-    signale.info(`mkdir ${endpointDocPath}`)
-
-    sidebarLinks.push({
-      id,
-      label: title,
-      path: `/${apiReferenceFN}.html#${id}`
-    })
-
-    files.forEach(({ filename, content }) => {
-      const filePath = `${endpointDocPath}/${filename}`
-
-      fs.writeFileSync(filePath, content)
-      signale.success(`Rendered v2/${type}/${filename}`)
-    })
+    renderPageSet(nativeOverview, overviewPath)
+    signale.success(`Rendered ${v} API overview sources`)
   })
 } catch (e) {
   signale.error('%s', e.stack)

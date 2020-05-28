@@ -1,0 +1,18 @@
+[
+  CHAN_ID, 
+  TYPE, // 'te' 
+  [
+    ID, 
+    SYMBOL, 
+    MTS_CREATE,
+    ORDER_ID, 
+    EXEC_AMOUNT, 
+    EXEC_PRICE, 
+    ORDER_TYPE, 
+    ORDER_PRICE, 
+    MAKER,
+    PLACEHOLDER,
+    PLACEHOLDER,
+		CID
+  ]
+]

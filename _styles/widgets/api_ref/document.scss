@@ -17,33 +17,9 @@
   }
 
   .bfx-oss-docs-api-reference-document__content {
-    padding: 32px;
+    border-bottom: 1px solid $color-border-api-ref-document;
     width: 100%;
     flex: 1;
-
-    border-bottom: 1px solid $color-border-api-ref-document;
-
-    .bfx-oss-docs-api-reference-document__header,
-    .bfx-oss-docs-api-reference-document__wrapper {
-      p {
-        max-width: 80%;
-        font-size: 16px;
-        line-height: 1.5;
-
-        > code {
-          font-size: 14px;
-          padding: 2px 4px;
-          background: $color-bg-api-ref-document-p-code;
-        }
-
-        & > strong:first-child:last-child {
-          display: block;
-          margin-top: 32px;
-          font-size: 20px;
-          font-weight: normal;
-        }
-      }
-    }
 
     .bfx-oss-docs-api-reference-document__header {
       h2 {
@@ -52,12 +28,6 @@
         padding-bottom: 8px;
         margin-bottom: 8px;
         border-bottom: 1px solid $color-border-api-ref-document-title;
-      }
-    }
-
-    .bfx-oss-docs-api-reference-document__wrapper {
-      > pre > code {
-        padding: 16px;
       }
     }
   }

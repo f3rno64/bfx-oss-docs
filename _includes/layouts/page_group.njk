@@ -1,0 +1,29 @@
+{% extends 'layouts/bfx_base.njk' %}
+
+{% block page_title %}
+{{ data.title }}
+{% endblock %}
+
+{% block sidebar %}
+<div
+  class="bfx-oss-docs-side-bar__sub-menu"
+  id="bfx-oss-docs-side-bar__api-reference-menu"
+>
+  <h6>{{ data.title }}</h6>
+  <ul>
+    {% for item in sidebarMenuData %}
+    <li>
+      <a href="/{{ item.href }}">{{ item.label }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class='bfx-oss-docs-content-wrapper'>
+  <div class="bfx-oss-docs-md-content bfx-oss-docs-code-wrapper">
+    {{ html | safe }}
+  </div>
+</div>
+{% endblock %}

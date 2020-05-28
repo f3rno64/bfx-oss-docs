@@ -1,0 +1,11 @@
+// Cancel multiple orders by Internal Order ID
+[
+  0,
+  "oc_multi",
+  null,
+  {
+    "id": [ID, 1234, ...]
+  }
+]
+
+// Cancel multiple orders using Client Order ID and order creation date

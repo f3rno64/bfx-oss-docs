@@ -1,0 +1,7 @@
+// request
+{
+   "event":"subscribe",
+   "channel":"book",
+   "pair":"<PAIR>",
+   "prec":"R0"
+}

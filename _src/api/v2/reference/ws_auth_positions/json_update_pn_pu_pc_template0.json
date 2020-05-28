@@ -1,0 +1,26 @@
+[
+  CHAN_ID, 
+  TYPE, // <‘pn’, ’pu’, ‘pc’>
+  [
+      SYMBOL, 
+      STATUS, 
+      AMOUNT, 
+      BASE_PRICE, 
+      MARGIN_FUNDING, 
+      MARGIN_FUNDING_TYPE,
+      PL,
+      PL_PERC,
+      PRICE_LIQ,
+      LEVERAGE,
+      FLAG,
+      POSITION_ID,
+      MTS_CREATE,
+      MTS_UPDATE,
+      PLACEHOLDER,
+      TYPE,
+      PLACEHOLDER,
+      COLLATERAL,
+      COLLATERAL_MIN,
+      META
+  ]
+]

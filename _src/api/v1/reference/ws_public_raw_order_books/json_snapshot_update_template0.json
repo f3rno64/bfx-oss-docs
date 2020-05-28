@@ -1,0 +1,14 @@
+// snapshot
+[
+   "<CHANNEL_ID>",
+   [
+      [
+         "<ORD_ID>",
+         "<PRICE>",
+         "<AMOUNT>"
+      ],
+      [
+         "..."
+      ]
+   ]
+]

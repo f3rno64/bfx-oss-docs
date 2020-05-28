@@ -1,0 +1,12 @@
+[
+   0,
+   "ws",
+   [
+      [
+         "<WLT_NAME>",
+         "<WLT_CURRENCY>",
+         "<WLT_BALANCE>",
+         "<WLT_INTEREST_UNSETTLED>"
+      ]
+   ]
+]

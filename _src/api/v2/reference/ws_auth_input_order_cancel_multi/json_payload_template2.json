@@ -1,0 +1,23 @@
+// Cancel multiple orders using Client Order ID and order creation date
+[
+  0,
+  "oc_multi",
+  null,
+  {
+    "cid": [
+      [ID, CID_DATE],
+      [234, "2016-12-05"],
+      ...
+    ]
+  }
+]
+
+// Cancel multiple orders using Group ID
+[
+  0,
+  "oc_multi",
+  null,
+  {
+     "gid": [GID, 11, ...]
+  }
+]

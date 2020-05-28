@@ -1,0 +1,12 @@
+// Model
+[
+  0,
+  "ox_multi",
+  null,
+  [
+    [OPERATION, {}],
+    [OPERATION, {}],
+    [OPERATION, {}],
+    ...
+  ]
+]

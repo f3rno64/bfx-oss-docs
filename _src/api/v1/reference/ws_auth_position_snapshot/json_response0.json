@@ -1,0 +1,17 @@
+[  
+   0,
+   "ps",
+   [  
+      [  
+         "<POS_PAIR>",
+         "<POS_STATUS>",
+         "<POS_AMOUNT>",
+         "<POS_BASE_PRICE>",
+         "<POS_MARGIN_FUNDING>",
+         "<POS_MARGIN_FUNDING_TYPE>"
+      ],
+      [  
+         "..."
+      ]
+   ]
+]

@@ -1,0 +1,11 @@
+[433290,[[34753002978,7294.7,1.54340371]]]  
+  
+// on funding currencies (ex. fUSD)
+[
+  CHANNEL_ID,
+  [
+    [
+      OFFER_ID,
+      PERIOD,
+      RATE,
+      AMOUNT

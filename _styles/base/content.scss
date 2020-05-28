@@ -1,0 +1,35 @@
+@import '../variables.scss';
+
+#bfx-oss-docs-content {
+  padding-left: $size-sidebar-width;
+  padding-top: $size-header-bar-height;
+}
+
+.bfx-oss-docs-content-wrapper {
+  padding: 32px;
+}
+
+.bfx-oss-docs-md-content {
+  p {
+    max-width: 80%;
+    font-size: 16px;
+    line-height: 1.5;
+
+    > code {
+      font-size: 14px;
+      padding: 2px 4px;
+      background: $color-bg-api-ref-document-p-code;
+    }
+
+    & > strong:first-child:last-child {
+      display: block;
+      margin-top: 32px;
+      font-size: 20px;
+      font-weight: normal;
+    }
+  }
+
+  > pre > code {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,8 @@
+// request
+{
+  event: "subscribe",
+  channel: "book",
+  prec: "R0",
+  symbol: SYMBOL,
+  len: LENGTH
+}

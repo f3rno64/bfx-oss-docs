@@ -1,0 +1,15 @@
+[
+  CHAN_ID, 
+  TYPE, //'ws'
+  [
+    [
+      WALLET_TYPE, 
+      CURRENCY, 
+      BALANCE, 
+      UNSETTLED_INTEREST,
+      BALANCE_AVAILABLE,
+      ...
+    ], 
+    ...
+  ]
+]

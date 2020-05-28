@@ -1,0 +1,19 @@
+// updates
+[
+   "<CHANNEL_ID>",
+   "te",
+   "<SEQ>",
+   "<TIMESTAMP>",
+   "<PRICE>",
+   "<AMOUNT>"
+]
+
+[
+   "<CHANNEL_ID>",
+   "tu",
+   "<SEQ>",
+   "<ID>",
+   "<TIMESTAMP>",
+   "<PRICE>",
+   "<AMOUNT>"
+]

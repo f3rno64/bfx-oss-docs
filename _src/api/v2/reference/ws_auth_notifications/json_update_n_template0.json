@@ -1,0 +1,15 @@
+[
+  CHAN_ID, 
+  TYPE, //'n' 
+  [
+    MTS, 
+    TYPE, 
+    MESSAGE_ID, 
+    null, 
+      NOTIFY_INFO // NOTIFY_INFO comes as an array or object and differs per notification  
+    CODE, 
+    STATUS, 
+    TEXT,
+    ...
+  ]
+]

@@ -1,0 +1,15 @@
+// snapshot
+[  
+   "<CHANNEL_ID>",
+   [  
+      [  
+         "<SEQ> OR <ID>",
+         "<TIMESTAMP>",
+         "<PRICE>",
+         "<AMOUNT>"
+      ],
+      [  
+         "..."
+      ]
+   ]
+]

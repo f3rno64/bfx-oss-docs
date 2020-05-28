@@ -1,0 +1,16 @@
+// margin base calc
+[
+  CHAN_ID,
+  TYPE, // 'miu'
+  [
+    'base',
+    [
+      USER_PL, 
+      USER_SWAPS, 
+      MARGIN_BALANCE, 
+      MARGIN_NET,
+      MARGIN_REQUIRED
+      ...
+    ]
+   ]
+]

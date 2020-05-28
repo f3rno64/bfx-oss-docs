@@ -1,0 +1,15 @@
+[
+  CHAN_ID,
+  TYPE // 'fte', 'ftu'
+  [
+    ID,
+    CURRENCY,
+    MTS_CREATE,
+    OFFER_ID,
+    AMOUNT,
+    RATE,
+    PERIOD,
+    MAKER,
+    ...
+  ]
+]

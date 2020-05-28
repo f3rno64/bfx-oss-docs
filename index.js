@@ -4,14 +4,19 @@ const loadConfig = require('./lib/config/load')
 const validateConfig = require('./lib/config/validate')
 const renderUnifiedJSDocConfig = require('./lib/jsdoc/render_unified_config')
 const verifyReadmeIOSrc = require('./lib/readmeio/verify_src')
-const parseRIOAPIDocumentation = require('./lib/readmeio/parse_rio_api_documentation')
-const parseRIOMarkdown = require('./lib/readmeio/parse_rio_markdown')
+const parseRIOData = require('./lib/readmeio/parse_data')
+const parseRIOMarkdown = require('./lib/readmeio/parse_markdown')
 const rioDocumentToNative = require('./lib/rio_doc_to_native')
 const getMD = require('./lib/markdown_it')
+const SECTION_TYPES = require('./lib/render/section_types')
+const renderPage = require('./lib/render/page')
+const renderPageGroup = require('./lib/render/page_group')
+const renderPageGroupInline = require('./lib/render/page_group_inline')
 
 /**
  * Bitfinex documentation (static site generator & content)
  *
+ * @todo organize exports once structure finalized
  * @todo extract static site generator as own module
  * @todo describe
  *
@@ -20,12 +25,16 @@ const getMD = require('./lib/markdown_it')
  */
 
 module.exports = {
+  SECTION_TYPES,
   loadConfig,
   validateConfig,
   renderUnifiedJSDocConfig,
   verifyReadmeIOSrc,
-  parseRIOAPIDocumentation,
+  parseRIOData,
   parseRIOMarkdown,
   rioDocumentToNative,
+  renderPage,
+  renderPageGroup,
+  renderPageGroupInline,
   getMD
 }

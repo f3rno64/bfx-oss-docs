@@ -1,0 +1,9 @@
+// Cancel all orders
+[
+  0,
+  "oc_multi",
+  null,
+  {
+    "all": 1
+  }
+]

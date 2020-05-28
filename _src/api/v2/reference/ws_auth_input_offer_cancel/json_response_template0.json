@@ -1,0 +1,36 @@
+[
+CHANNEL_ID
+EVENT
+ [
+ MTS, //omitted for 'foc' event
+ TYPE, //omitted for 'foc' event
+ MESSAGE_ID, //omitted for 'foc' event
+ null, //omitted for 'foc' event
+  [
+    ID,
+    SYMBOL,
+    MTS_CREATED,
+    MTS_UPDATED,
+    AMOUNT,
+    AMOUNT_ORIG,
+    OFFER_TYPE,
+    _PLACEHOLDER,
+    _PLACEHOLDER,
+    FLAGS,
+    OFFER_STATUS,
+    _PLACEHOLDER,
+    _PLACEHOLDER,
+    _PLACEHOLDER,
+    RATE,
+    PERIOD,
+    NOTIFY,
+    HIDDEN,
+    _PLACEHOLDER,
+    RENEW,
+    _PLACEHOLDER
+  ]
+ CODE, //omitted for 'foc' event
+ STATUS, //omitted for 'foc' event
+ TEXT //omitted for 'foc' event
+ ]
+]

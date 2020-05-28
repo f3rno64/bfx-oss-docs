@@ -15,18 +15,11 @@
   />
 
   <ul id="bfx-oss-docs-side-bar__main-menu">
+    {% for entry in menuData %}
     <li>
-      <a href="/">Home</a>
+      <a href="/{{ entry.href }}">{{ entry.label }}</a>
     </li>
-    <li>
-      <a href="#">API Overview</a>
-    </li>
-    <li class="active">
-      <a href="/api_reference">API Reference</a>
-    </li>
-    <li>
-      <a href="#">Open Source Projects</a>
-    </li>
+    {% endfor %}
   </ul>
 
   {% block sidebar %}{% endblock %}

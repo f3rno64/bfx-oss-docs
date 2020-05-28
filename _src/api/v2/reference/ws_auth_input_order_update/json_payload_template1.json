@@ -1,0 +1,20 @@
+// Increase the remaining amount by 0.1
+[
+  0, 
+  'ou', 
+  null, 
+  { 
+    id: 1149698545, 
+    delta: '0.1', 
+    price: '6500' 
+  }
+]
+    
+// Change both price parameters of a stop limit order and set it to hidden
+[
+  0, 
+  'ou', 
+  null, 
+  { 
+    id: 1149698545, 
+    delta: '0.1',

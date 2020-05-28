@@ -1,0 +1,6 @@
+// request
+{
+  "event": "subscribe",
+  "channel": "trades",
+  "pair": "BTCUSD"
+}

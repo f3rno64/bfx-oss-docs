@@ -1,0 +1,32 @@
+// Move the order to group `123`
+[
+  0, 
+  'ou', 
+  null, 
+  { 
+    id: 1149698545, 
+    gid: 123 
+  }
+]
+    
+// set trailing price delta to 45
+[
+  0, 
+  'ou', 
+  null, 
+  { 
+    id: 1149698545, 
+    price_trailing: '45' 
+  }
+]
+
+// set order expiration date
+[
+  0, 
+  'ou', 
+  null, 
+  { 
+    id: 1149698545, 
+    tif: '2020-06-30' 
+  }
+]

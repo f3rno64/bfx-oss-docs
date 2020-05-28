@@ -1,0 +1,12 @@
+// on trading pairs (ex. tBTCUSD)
+[
+  CHANNEL_ID,
+  [
+    [
+      ORDER_ID,
+      PRICE,
+      AMOUNT
+    ],
+    ...
+  ]
+]
