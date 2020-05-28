@@ -1,6 +1,0 @@
-{
-  "title": "User Settings Delete",
-  "id": "rest-auth-settings-del",
-  "description": "Allows you to delete custom settings.",
-  "elements": []
-}

@@ -1,6 +1,0 @@
-{
-  "title": "Cancel Order",
-  "id": "rest-auth-cancel-order",
-  "description": "Cancel an existing order, can be used to cancel margin, exchange, and derivative orders. \n\nYou can cancel the order by the Internal Order ID or using a Client Order ID (supplied by you). The Client Order ID is unique per day, so you also have to provide the date of the order as a date string in this format YYYY-MM-DD.",
-  "elements": []
-}
