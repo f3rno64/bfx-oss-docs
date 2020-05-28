@@ -6,6 +6,17 @@
 
 For now, see `config.json` for the config structure.
 
+#### RIO Export Conversion Note
+
+The `/data` folder exists for automated readme.io export conversion. To use,
+create an export and extract the contents into `/data/readmeio`, then run
+`yarn convert-rio-data` to generate native markdown files in the configured
+source path (currently `_src`)
+
+**NOTE**: This will clean the source path, overwriting it entirely. RIO export
+conversion should only be done during migration, after which the relevant logic
+will be removed or transferred to a different repo.
+
 #### RIO Export Parser Notes
 Currently `[block:parameters]` blocks are not converted/rendered in the new
 native source file format, as matching the readme.io output (table w/ cells
