@@ -10,6 +10,10 @@
 }
 
 .bfx-oss-docs-md-content {
+  p > img {
+    max-width: 100%;
+  }
+
   p {
     max-width: 80%;
     font-size: 16px;

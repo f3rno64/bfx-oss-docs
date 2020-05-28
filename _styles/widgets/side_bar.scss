@@ -12,6 +12,8 @@
   box-shadow: 1px 0 3px 1px $color-box-shadow-sidebar;
   background: $color-bg-sidebar;
 
+  overflow-y: scroll;
+
   #bfx-oss-docs-side-bar__header {
     display: block;
     margin: 0 auto;

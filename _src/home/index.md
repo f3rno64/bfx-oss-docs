@@ -2,5 +2,6 @@
 id: home
 title: Home
 ---
-# Placeholder
-**TODO**
+### Bitfinex Documentation
+
+This page needs to be written. For now, check out the links in the sidebar.
