@@ -38,7 +38,7 @@
     "clean": "yarn clean-jsdoc && yarn clean-site",
     "clean-jsdoc": "rm -rf ./dist/jsdoc/* && touch ./dist/jsdoc/.keep",
     "clean-site": "rm -rf ./dist/site/* && touch ./dist/site/.keep",
-    "init": "yarn init-submodules && yarn init-bfx-hf-chart && yarn init-zepto",
+    "init-repo": "yarn init-submodules && yarn init-bfx-hf-chart && yarn init-zepto",
     "init-submodules": "git submodule init && git submodule update",
     "init-bfx-hf-chart": "cd node_modules/bfx-hf-chart && yarn install && yarn cra-build",
     "init-zepto": "cd _assets/npm/zepto && npm i && npm run dist",
@@ -54,7 +54,7 @@
     "build-bfx-jsdoc-html": "./node_modules/.bin/jsdoc --pedantic --configure .jsdoc-merged.json --verbose",
     "build-bfx-jsdoc": "yarn build-bfx-jsdoc-config && yarn build-bfx-jsdoc-html && yarn build-bfx-jsdoc-assets",
     "build": "yarn build-bfx-jsdoc && yarn build-site",
-    "dist": "yarn clean && yarn init && yarn build"
+    "dist": "yarn clean && yarn init-repo && yarn build"
   },
   "dependencies": {
     "@babel/core": "^7.10.0",
