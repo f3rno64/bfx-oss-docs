@@ -14,6 +14,11 @@
       "label": "Home",
       "filename": "index.html"
     }, {
+      "id": "md_render_test",
+      "type": "page",
+      "root": "./md_render_test",
+      "label": "Markdown Render Test"
+    }, {
       "id": "oss_projects",
       "type": "page",
       "root": "./oss_projects",
@@ -35,10 +40,10 @@
   "assets": {
     "img": "_assets/img",
     "fonts": "_assets/fonts",
-    "bfx-hf-chart": "node_modules/bfx-hf-chart/build",
-
     "css/highlightjs": "node_modules/highlight.js/styles",
     "css/normalize.css": "node_modules/normalize.css/normalize.css",
+    "css/perfect-scrollbar.css": "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+    "js/vendor/perfect-scrollbar.min.js": "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
     "js/vendor/zepto.min.js": "node_modules/zepto/dist/zepto.min.js",
     "js/vendor/lodash.min.js": "node_modules/lodash/lodash.min.js",
     "js/vendor/debug.min.js": {
@@ -84,20 +89,9 @@
   },
 
   "markdown": {
-    "parser": "markdown-it",
-    "options": {
-      "html": true,
-      "linkify": true,
-      "typographer": true
-    },
-
-    "plugins": {
-      "markdown-it-emoji": {},
-      "markdown-it-highlightjs": {
-        "auto": true,
-        "code": true
-      }
-    }
+    "html": true,
+    "linkify": true,
+    "typographer": true
   },
 
   "unifiedJSDoc": {

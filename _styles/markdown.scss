@@ -1,0 +1,74 @@
+@import './variables.scss';
+
+.bfx-oss-docs-md-content {
+  ol {
+    list-style-type: decimal;
+  }
+
+  ol, ul ul {
+    margin-left: 16px;
+  }
+
+  > ol, > ul {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .contains-task-list li {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1, h2, h3 {
+    margin: 24px 0;
+  }
+
+  h4, h5, h6 {
+    margin: 16px 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .header-anchor {
+      margin-right: 8px;
+      font-weight: normal;
+      opacity: 0.75;
+    }
+  }
+
+  p {
+    max-width: 80%;
+    font-size: 16px;
+    line-height: 1.5;
+
+    > img {
+      max-width: 100%;
+    }
+
+    > code {
+      font-size: 14px;
+      padding: 2px 4px;
+      background: $color-bg-api-ref-document-p-code;
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid #ccc;
+    margin: 0 0 0 16px;
+    padding-left: 8px;
+
+    blockquote {
+      margin-left: 8px;
+    }
+  }
+}
+
+@import './markdown/toc.scss';
+@import './markdown/callout.scss';
+@import './markdown/collapsible.scss';

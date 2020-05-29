@@ -1,9 +1,17 @@
 @import '../variables.scss';
 
-.bfx-oss-docs-code-wrapper > pre {
-  font-family: $font-code;
-  white-space: break-spaces;
-  margin: 0;
-  font-size: 12px;
-  line-height: 1.3;
+.bfx-oss-docs-code-wrapper {
+  pre {
+    font-family: $font-code;
+    font-size: 12px;
+    line-height: 1.3;
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    code {
+      padding: 16px;
+      border-radius: 4px;
+      box-shadow: 0 0 4px 2px $color-box-shadow-md-code-wrapper;
+    }
+  }
 }

@@ -1,0 +1,117 @@
+@import '../variables.scss';
+
+// From RIO, types are 'info', 'warning', 'danger', 'success'
+.bfx-oss-docs-md-callout {
+  margin: 32px 0 0 0;
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: row;
+
+  .bfx-oss-docs-md-callout__marker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 32px;
+    margin-right: 16px;
+
+    > p {
+      margin: 0;
+      text-align: center;
+      font-size: 32px !important;
+      opacity: 0.7;
+    }
+  }
+
+  .bfx-oss-docs-md-callout__content {
+    flex: 1;
+    width: 100%;
+
+    border: 1px solid $color-border-md-callout;
+    box-shadow: 0 0 3px 1px $color-box-shadow-md-callout;
+  }
+
+  .bfx-oss-docs-md-callout__header {
+    color: $color-fg-md-callout-header;
+    background: $color-bg-md-callout-header;
+    display: flex;
+    flex-direction: row;
+
+    > * {
+      line-height: 24px;
+      padding: 4px 0;
+      margin: 0;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    p {
+      background: $color-bg-md-callout-header-title;
+    }
+
+    h4 {
+      opacity: 0.6;
+      font-family: $font-body;
+      font-weight: normal;
+      text-align: right;
+      text-transform: uppercase;
+
+      width: 100%;
+      flex: 1;
+    }
+  }
+
+  .bfx-oss-docs-md-callout__body {
+    background: $color-bg-md-callout-body;
+    padding: 16px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &.info {
+    .bfx-oss-docs-md-callout__header {
+      color: $color-fg-md-callout-header-info;
+      background: $color-bg-md-callout-header-info;
+    }
+
+    .bfx-oss-docs-md-callout__body {
+      background: $color-bg-md-callout-body-info;
+    }
+  }
+
+  &.success {
+    .bfx-oss-docs-md-callout__header {
+      color: $color-fg-md-callout-header-success;
+      background: $color-bg-md-callout-header-success;
+    }
+
+    .bfx-oss-docs-md-callout__body {
+      background: $color-bg-md-callout-body-success;
+    }
+  }
+
+  &.warning {
+    .bfx-oss-docs-md-callout__header {
+      color: $color-fg-md-callout-header-warning;
+      background: $color-bg-md-callout-header-warning;
+    }
+
+    .bfx-oss-docs-md-callout__body {
+      background: $color-bg-md-callout-body-warning;
+    }
+  }
+
+  &.danger {
+    .bfx-oss-docs-md-callout__header {
+      color: $color-fg-md-callout-header-danger;
+      background: $color-bg-md-callout-header-danger;
+    }
+
+    .bfx-oss-docs-md-callout__body {
+      background: $color-bg-md-callout-body-danger;
+    }
+  }
+}

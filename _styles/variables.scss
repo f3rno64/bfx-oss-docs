@@ -6,7 +6,6 @@ $size-padding-large: 32px;
 $size-padding-small: 16px;
 
 $size-font-h2: 24px;
-$size-font-h6: 16px;
 
 $z-index-bottom: 1;
 $z-index-middle: 2;
@@ -49,6 +48,7 @@ $color-box-shadow-header-bar: $color-box-shadow;
 
 // Footer bar
 $color-fg-footer-bar: #555;
+$color-border-footer-bar: $color-border;
 
 // API Reference
 $color-fg-api-ref: #555;
@@ -68,19 +68,35 @@ $color-border-api-ref-sample-viewer-header-menu-item: $color-border;
 $color-border-api-ref-sample-viewer-header-menu-item-active: $color-green-light;
 $color-border-api-ref-sample-viewer-header-menu-item-hover: $color-green-dark;
 
+// Markdown
+$color-border-md-toc: $color-green-dark;
+$color-box-shadow-md-code-wrapper: rgba(0, 0, 0, 0.2);
+
 // Table
 $color-bg-table: #fff;
 $color-border-table: #9ece81;
 
 // Callout
-$color-border-callout: rgba(0, 0, 0, 0.1);
-$color-box-shadow-callout: $color-box-shadow;
+$color-border-md-callout: rgba(0, 0, 0, 0.1);
+$color-box-shadow-md-callout: $color-box-shadow;
 
-$color-bg-callout-body: #fafafa;
-$color-fg-callout-header: $color-fg;
-$color-bg-callout-header: #ccc;
-$color-bg-callout-header-title: rgba(0, 0, 0, 0.5);
+$color-bg-md-callout-body: #fafafa;
+$color-fg-md-callout-header: $color-fg;
+$color-bg-md-callout-header: #ccc;
+$color-bg-md-callout-header-title: rgba(0, 0, 0, 0.5);
 
-$color-fg-callout-header-info: $color-white;
-$color-bg-callout-header-info: #5792ff;
-$color-bg-callout-body-info: #e1ecff;
+$color-fg-md-callout-header-info: $color-white;
+$color-bg-md-callout-header-info: #5792ff;
+$color-bg-md-callout-body-info: #e1ecff;
+
+$color-fg-md-callout-header-warning: $color-white;
+$color-bg-md-callout-header-warning: #ffa657;
+$color-bg-md-callout-body-warning: #ffe2c8;
+
+$color-fg-md-callout-header-danger: $color-white;
+$color-bg-md-callout-header-danger: #ff5757;
+$color-bg-md-callout-body-danger: #ffc3c3;
+
+$color-fg-md-callout-header-success: $color-white;
+$color-bg-md-callout-header-success: #01b321;
+$color-bg-md-callout-body-success: #c7ffd1;
