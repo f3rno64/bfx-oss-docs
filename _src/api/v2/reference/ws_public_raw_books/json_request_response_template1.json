@@ -1,9 +1,0 @@
-{"event":"subscribed","channel":"book","chanId":433290,"symbol":"tBTCUSD","prec":"R0","freq":"F0","len":"25","pair":"BTCUSD"}
-
-// response
-{
-  event: "subscribed",
-  channel: "book",
-  chanId: CHANNEL_ID,
-  symbol: SYMBOL,
-  pre

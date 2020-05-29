@@ -19,5 +19,3 @@ tmp.sh
 !./dist/site/.keep
 dist/site
 dist/jsdoc
-!./data/.keep
-data/readmeio

@@ -1,9 +1,0 @@
-[
-  CHAN_ID,
-  TYPE, //'bu'
-  [
-    AUM,
-    AUM_NET,
-    ...
-  ]
-]

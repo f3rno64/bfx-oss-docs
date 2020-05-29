@@ -1,5 +1,0 @@
-{ event: 'auth',
-  status: 'OK',
-  chanId: 0,
-  userId: 269312,
-  caps: '{"orders": {"read": "1", "write": "0"}, "account": {"read": "1", "write": "0"}, "funding": {"read": "1", "write": "1"}, "history": {"read": "1", "write": "0"}, "wallets": {"read": "1", "write": "1"}, "withdraw": {"read": "0", "write": "1"}, "positions": {"read": "1", "write": "1"}}' }
