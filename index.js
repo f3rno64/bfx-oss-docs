@@ -8,6 +8,7 @@ const SECTION_TYPES = require('./lib/render/section_types')
 const renderPage = require('./lib/render/page')
 const renderPageGroup = require('./lib/render/page_group')
 const renderPageGroupInline = require('./lib/render/page_group_inline')
+const renderAPIDocs = require('./lib/render/api_docs')
 
 /**
  * Bitfinex documentation (static site generator & content)
@@ -28,5 +29,6 @@ module.exports = {
   renderPage,
   renderPageGroup,
   renderPageGroupInline,
+  renderAPIDocs,
   getMD
 }

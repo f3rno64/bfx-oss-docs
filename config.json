@@ -1,35 +1,41 @@
 {
   "output": {
-    "staticSite": "./dist/site",
-    "unifiedJSDocDist": "./dist/jsdoc",
-    "unifiedJSDocConfig": "./.jsdoc-merged.json"
+    "staticSite": "dist/site",
+    "unifiedJSDocDist": "dist/jsdoc",
+    "unifiedJSDocDistJSON": ".jsdoc-data.json",
+    "unifiedJSDocConfig": ".jsdoc-merged.json"
   },
 
   "structure": {
-    "root": "./_src",
+    "root": "_src",
     "sections": [{
       "id": "home",
       "type": "page",
-      "root": "./home",
+      "root": "home",
       "label": "Home",
       "filename": "index.html"
     }, {
       "id": "md_render_test",
       "type": "page",
-      "root": "./md_render_test",
+      "root": "md_render_test",
       "label": "Markdown Render Test"
     }, {
       "id": "oss_projects",
       "type": "page",
-      "root": "./oss_projects",
+      "root": "oss_projects",
       "label": "Open Source Projects"
+    }, {
+      "id": "js_module_docs",
+      "type": "api-docs",
+      "language": "js",
+      "root": "../dist/jsdoc/.jsdoc-data.json",
+      "label": "JS Module Docs"
     }]
   },
 
   "layouts": {
     "engine": "nunjucks",
-    "includePath": "_includes",
-    "pagesPath": "_pages",
+    "includePath": "_templates",
     "options": {
       "autoescape": false,
       "throwOnUndefined": true,
@@ -109,6 +115,10 @@
 
   "projects": {
     "path": "./modules",
+    "go": [
+      "bitfinex-api-go",
+      "bfxfixgw"
+    ],
     "js": [
       "bitfinex-api-node",
       "bfx-api-mock-srv",

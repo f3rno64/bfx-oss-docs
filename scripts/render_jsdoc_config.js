@@ -14,6 +14,7 @@ const CONFIG_FILENAME = 'config.json'
 const fs = require('fs')
 const signale = require('signale')
 const { loadConfig, renderUnifiedJSDocConfig } = require('../')
+const asJSON = process.argv[2] === 'json'
 
 try {
   signale.success('starting render of unified JSDoc config file...')
@@ -21,7 +22,7 @@ try {
   const config = loadConfig(CONFIG_FILENAME)
 
   signale.info('rendering unified JSDoc config file...')
-  const unifiedJSDocConfig = renderUnifiedJSDocConfig(config)
+  const unifiedJSDocConfig = renderUnifiedJSDocConfig(config, asJSON)
 
   unifiedJSDocConfig.source.include.forEach(includePath => (
     signale.success('including %s', includePath)

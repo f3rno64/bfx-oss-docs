@@ -1,0 +1,23 @@
+{% extends 'layouts/bfx_base.njk' %}
+
+{% block page_title %}
+JS Module Docs
+{% endblock %}
+
+{% block content %}
+<div id='bfx-oss-docs-content-wrapper'>
+  <div class="bfx-oss-docs-md-content bfx-oss-docs-code-wrapper bfx-oss-docs-api-docs-wrapper">
+    {% for module in modules %}
+    <div class="bfx-oss-docs-api-docs-module">
+      <div class="bfx-oss-docs-api-docs-module__header">
+        <h1>{{ module.name }}</h1>
+        <p>{{ module.license }}</p>
+      </div>
+      <div class="bfx-oss-docs-api-docs-module__description">
+        {{ module.description | safe }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

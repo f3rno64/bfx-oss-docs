@@ -262,3 +262,7 @@
 	path = modules/wasteland
 	url = https://github.com/f3rno/wasteland.git
 	branch = feature-oss-docs
+[submodule "modules/bfxfixgw"]
+	path = modules/bfxfixgw
+	url = git@github.com:f3rno/bfxfixgw.git
+	branch = feature-oss-docs
