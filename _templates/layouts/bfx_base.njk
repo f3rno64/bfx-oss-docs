@@ -17,7 +17,11 @@
 
   <ul id="bfx-oss-docs-side-bar__main-menu">
     {% for entry in menuData %}
-    <li>
+    <li
+      {% if entry.active %}
+      class="active"
+      {% endif %}
+    >
       <a href="{{ entry.href }}">{{ entry.label }}</a>
     </li>
     {% endfor %}

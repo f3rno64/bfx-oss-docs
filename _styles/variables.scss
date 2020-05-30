@@ -1,9 +1,11 @@
 // Size definitions
 // TODO: Expand/refactor styles to use these
-$size-sidebar-width: 300px;
-$size-header-bar-height: 64px;
 $size-padding-large: 32px;
 $size-padding-small: 16px;
+
+$size-sidebar-width: 300px;
+$size-header-bar-height: 64px;
+$size-api-docs-index-width: 400px;
 
 $size-font-h2: 24px;
 
@@ -67,6 +69,14 @@ $color-fg-api-ref-sample-viewer-header-title: $color-black;
 $color-border-api-ref-sample-viewer-header-menu-item: $color-border;
 $color-border-api-ref-sample-viewer-header-menu-item-active: $color-green-light;
 $color-border-api-ref-sample-viewer-header-menu-item-hover: $color-green-dark;
+
+// API Docs Index
+$color-border-api-docs-index: #00401e;
+$color-border-api-docs-index-section: #ccc;
+$color-bg-api-docs-index-code: rgba(0, 0, 0, 0.05);
+$color-fg-api-docs-index-link: $color-border-api-docs-index;
+$color-bg-api-docs-index-content-in-view: $color-border-api-docs-index;
+$color-fg-api-docs-index-content-in-view: #fff;
 
 // Markdown
 $color-border-md-toc: $color-green-dark;

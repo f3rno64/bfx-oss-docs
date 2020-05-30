@@ -1,0 +1,80 @@
+@import '../variables.scss';
+
+#bfx-oss-docs-api-docs-index {
+  position: fixed;
+  top: $size-header-bar-height;
+  left: $size-sidebar-width;
+
+  height: calc(100% - #{$size-header-bar-height});
+  width: $size-api-docs-index-width;
+
+  border-right: 2px solid $color-border-api-docs-index;
+
+  #bfx-oss-docs-api-docs-index__inner {
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+
+    a {
+      color: $color-fg-api-docs-index-link;
+    }
+
+    li.content-in-view-outer.bfx-oss-docs-api-docs-index-section {
+      border-top-width: 8px;
+      border-top-color: $color-bg-api-docs-index-content-in-view;
+    }
+
+    li.content-in-view-link {
+      font-weight: bold;
+      padding: 2px 16px 2px 64px;
+      margin: 8px 0 8px -64px;
+      width: 100%;
+
+      background: $color-bg-api-docs-index-content-in-view;
+
+      &, a, code {
+        color: $color-fg-api-docs-index-content-in-view;
+      }
+    }
+
+    code {
+      font-size: 12px;
+      background: $color-bg-api-docs-index-code;
+      padding: 0px 4px;
+    }
+
+    ul ul {
+      margin-left: 0;
+
+      ul {
+        margin-left: 16px;
+      }
+    }
+
+    ul li em:first-child {
+      margin-top: 8px;
+      display: block;
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    > ul > li {
+      > a:first-child {
+        font-size: 16px;
+        text-align: center;
+        display: block;
+      }
+
+      > ul > li > em:first-child {
+        ~ ul > li:not(:last-child) > ul {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    .bfx-oss-docs-api-docs-index-section {
+      border-top: 1px solid $color-border-api-docs-index-section;
+      padding-top: 8px;
+    }
+  }
+}

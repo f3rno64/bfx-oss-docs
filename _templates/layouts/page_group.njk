@@ -9,10 +9,14 @@
   class="bfx-oss-docs-side-bar__sub-menu"
   id="bfx-oss-docs-side-bar__api-reference-menu"
 >
-  <h6>{{ data.title }}</h6>
+  <h6>{{ sidebarMenuTitle }}</h6>
   <ul>
     {% for item in sidebarMenuData %}
-    <li>
+    <li
+      {% if item.href === fn %}
+      class="active"
+      {% endif %}
+    >
       <a href="/{{ item.href }}">{{ item.label }}</a>
     </li>
     {% endfor %}
@@ -21,7 +25,13 @@
 {% endblock %}
 
 {% block content %}
-<div id='bfx-oss-docs-content-wrapper'>
+<div
+  id="bfx-oss-docs-content-wrapper"
+
+  {% if contentType %}
+  class="bfx-oss-docs-content-type-{{ contentType }}"
+  {% endif %}
+>
   <div class="bfx-oss-docs-md-content bfx-oss-docs-code-wrapper">
     {{ html | safe }}
   </div>

@@ -25,11 +25,54 @@
       "root": "oss_projects",
       "label": "Open Source Projects"
     }, {
-      "id": "js_module_docs",
-      "type": "api-docs",
-      "language": "js",
-      "root": "../dist/jsdoc/.jsdoc-data.json",
-      "label": "JS Module Docs"
+      "id": "rb_module_bitfinex_api_rb_docs",
+      "type": "page",
+      "root": "../modules/bitfinex-api-rb/docs",
+      "path": "readme.md",
+      "label": "bitfinex-api-rb"
+    }, {
+      "id": "jsdoc_modules",
+      "type": "page-group",
+      "contentType": "api-docs",
+      "root": "api_docs",
+      "label": "Node.JS Libraries",
+      "group": [{
+        "index": true,
+        "id": "bitfinex-api-node",
+        "path": "bitfinex-api-node.md",
+        "data": {
+          "title": "bitfinex-api-node",
+          "menuTitle": "bitfinex-api-node"
+        }
+      }]
+    }, {
+      "id": "py_module_bitfinex_api_py_docs",
+      "type": "page-group",
+      "root": "../modules/bitfinex-api-py/docs",
+      "label": "bitfinex-api-py",
+      "group": [{
+        "index": true,
+        "id": "readme",
+        "path": "../README.md",
+        "data": {
+          "title": "Python Client README",
+          "menuTitle": "README"
+        }
+      }, {
+        "id": "rest_v2",
+        "path": "rest_v2.md",
+        "data": {
+          "title": "Python REST v2 Client",
+          "menuTitle": "RESTv2 Client"
+        }
+      }, {
+        "id": "ws_v2",
+        "path": "ws_v2.md",
+        "data": {
+          "title": "Python WS v2 Client",
+          "menuTitle": "WSv2 Client"
+        }
+      }]
     }]
   },
 
@@ -101,20 +144,16 @@
   },
 
   "unifiedJSDoc": {
-    "entryForbidden": [
-      "dist",
-      "build"
-    ],
-
-    "entryFallbacks": [
+    "include": [
+      "README.md",
       "index.js",
-      "lib/index.js",
-      "src/index.js"
+      "lib",
+      "src"
     ]
   },
 
   "projects": {
-    "path": "./modules",
+    "root": "modules",
     "go": [
       "bitfinex-api-go",
       "bfxfixgw"
