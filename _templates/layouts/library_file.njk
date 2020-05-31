@@ -25,6 +25,12 @@
       <a href="/{{ p.fn }}">
         {% if p.language === 'js' %}
         <img src="/svg/icons/nodejs_small.svg" />
+        {% elseif p.language === 'rb' %}
+        <img src="/svg/icons/ruby.svg" />
+        {% elseif p.language === 'py' %}
+        <img src="/svg/icons/python.svg" />
+        {% elseif p.language === 'go' %}
+        <img src="/svg/icons/go.svg" />
         {% endif %}
 
         <p>{{ p.library }}</p>

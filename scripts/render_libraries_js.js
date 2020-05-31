@@ -68,6 +68,7 @@ const run = async () => {
   const { root: srcRootDir } = structure
   const { root } = projects
 
+  // TODO: Refactor to use 'js' projects array, drop unified config entirely
   const srcRoot = path.join(__dirname, '../', `/${srcRootDir}/api_docs`)
   const jsdocConfigSrc = fs.readFileSync(`${__dirname}/../${unifiedJSDocConfig}`)
   const jsdocConfig = JSON.parse(jsdocConfigSrc)
@@ -184,8 +185,6 @@ const run = async () => {
               '---',
               `title: "${tutorialName}"`,
               `menuTitle: "${tutorialName}"`,
-              `project: "${project}"`,
-              'tutorial: true',
               '---',
               tutorialRaw
             ].join('\n')
