@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 [![Build Status](https://travis-ci.org/bitfinexcom/sunbeam.svg?branch=master)](https://travis-ci.org/bitfinexcom/sunbeam)
 
 # Sunbeam

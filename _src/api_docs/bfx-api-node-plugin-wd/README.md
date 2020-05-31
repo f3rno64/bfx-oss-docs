@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # Bitfinex Packet Watch-dog Plugin for the Node.JS API
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-api-node-plugin-wd.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-api-node-plugin-wd)

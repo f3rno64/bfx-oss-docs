@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # Bitfinex WSv1 Reference Implementation for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-api-node-ws1.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-api-node-ws1)

@@ -28,8 +28,10 @@
       })
     }
 
+    const indexText = $('#bfx-oss-docs-api-docs-index').text()
+
     // Hide api doc index if empty
-    if ($('#bfx-oss-docs-api-docs-index').text() === '') {
+    if (indexText === null || indexText === '') {
       $('#bfx-oss-docs-content-wrapper').addClass('no-api-doc-index')
 
     // otherwise highlight links when content scrolls into view

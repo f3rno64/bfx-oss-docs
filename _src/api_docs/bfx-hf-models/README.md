@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 ## Bitfinex Honey Framework Database System for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-models.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-models)

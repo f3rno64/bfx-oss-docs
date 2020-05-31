@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # grenache-browser-http
 
 <img src="logo.png" width="15%" />

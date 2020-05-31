@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # caron
 
 Atomic Job enqueuer from Redis lists to popular Job Queues (Sidekiq, Bull, ...)

@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # Bitfinex Managed Order Book Checksum Plugin for the Node.JS API
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-api-node-plugin-ob-cs.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-api-node-plugin-ob-cs)

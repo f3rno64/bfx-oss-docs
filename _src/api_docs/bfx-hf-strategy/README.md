@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 ## Bitfinex Honey Framework Trading Strategy Library for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-strategy.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-strategy)

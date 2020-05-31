@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 ## Bitfinex Honey Framework DB Adapter Template for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-models-adapter-template.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-models-adapter-template)

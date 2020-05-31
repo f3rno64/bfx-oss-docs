@@ -11,7 +11,7 @@
 
     {% block head %}{% endblock %}
 
-    <title>{{ page_title }}</title>
+    <title>{% block page_title %}{% endblock %}</title>
   </head>
   <body>
     <div id="bfx-oss-docs-side-bar">
@@ -42,7 +42,7 @@
 
     <div id="bfx-oss-docs-content">
       <div id="bfx-oss-docs-header-bar">
-        <h2>{% block page_title %}{% endblock %}</h2>
+        {% block header %}{% endblock %}
       </div>
 
       {% block content %}{% endblock %}

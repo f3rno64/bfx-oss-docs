@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # eos-name-verify
 
 Small module to verify EOS Standard Account Names.

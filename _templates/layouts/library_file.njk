@@ -1,7 +1,12 @@
 {% extends 'layouts/base.njk' %}
 
 {% block page_title %}
-{{ page.data.menuTitle }}
+{{ page.data.menuTitle }} | {{ page.library }}
+{% endblock %}
+
+{% block header %}
+<h2>{{ page.data.menuTitle }}</h2>
+<h2>{{ page.library }}</h2>
 {% endblock %}
 
 {% block sidebar %}
@@ -9,12 +14,11 @@
   class="bfx-oss-docs-side-bar__sub-menu"
   id="bfx-oss-docs-side-bar__api-reference-menu"
 >
-  <h6>Libraries</h6>
   <ul>
     {% for p in pages %}
-    {% if p.index or p.fn === page.fn %}
+    {% if p.index %}
     <li
-      {% if p.fn === page.fn %}
+      {% if p.library === page.library %}
       class="active"
       {% endif %}
     >
@@ -23,13 +27,13 @@
         <img src="/svg/icons/nodejs_small.svg" />
         {% endif %}
 
-        <p>{{ p.data.menuTitle }}</p>
+        <p>{{ p.library }}</p>
       </a>
 
-      {% if p.fn === page.fn %}
+      {% if p.library === page.library %}
         <ul>
           {% for child in pages %}
-          {% if child.library === page.library }
+          {% if child.library === page.library %}
           <li
             {% if child.fn === page.fn %}
             class="active"
@@ -37,10 +41,12 @@
           >
             <a href="{{ child.fn }}"><p>- {{ child.data.menuTitle }}</p></a>
           </li>
+          {% endif %}
           {% endfor %}
         </ul>
       {% endif %}
     </li>
+    {% endif %}
     {% endfor %}
   </ul>
 </div>

@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # grenache-nodejs-ws-tls
 
 <img src="logo.png" width="15%" />

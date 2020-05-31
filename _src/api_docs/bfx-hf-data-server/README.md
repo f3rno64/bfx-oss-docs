@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 ## Bitfinex Honey Framework Data Server for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-data-server.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-data-server)

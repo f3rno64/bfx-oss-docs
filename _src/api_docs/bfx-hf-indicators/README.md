@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 ## Bitfinex Indicator Library for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-indicators.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-indicators)

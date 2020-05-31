@@ -86,32 +86,6 @@
   }
 
   .bfx-oss-docs-side-bar__sub-menu {
-    margin-top: 8px;
-
-    > h6:first-child,
-    .bfx-oss-docs-side-bar__sub-menu-subtitle p {
-      font-size: 14px;
-      font-weight: normal;
-      margin: 0;
-    }
-
-    > h6:first-child {
-      color: $color-fg-sidebar-sub-menu-title;
-      padding: 16px;
-      font-family: $font-body;
-    }
-
-    .bfx-oss-docs-side-bar__sub-menu-subtitle {
-      padding: 0;
-      border: none;
-
-      p {
-        padding: 8px 8px 8px 0;
-        text-align: right;
-        color: $color-fg-sidebar-sub-menu-subtitle;
-      }
-    }
-
     ul ul {
       margin: 0 0 16px 16px;
 

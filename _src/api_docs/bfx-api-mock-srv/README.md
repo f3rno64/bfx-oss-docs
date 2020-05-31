@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # Bitfinex API Mock Server
 
 This repo hosts mock servers for the WSv2 and RESTv2 Bitfinex APIs, and is intended for testing the Bitfinex API libraries.

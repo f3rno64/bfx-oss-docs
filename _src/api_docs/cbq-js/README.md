@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # cbq-js
 
 A simple callback based queue in JS

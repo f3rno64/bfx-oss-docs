@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # [Grenache](https://github.com/bitfinexcom/grenache) Node.JS HTTP implementation
 
 <img src="logo.png" width="15%" />

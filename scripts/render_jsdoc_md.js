@@ -131,11 +131,17 @@ const run = async () => {
 
     // Grab readme as index if possible
     if (fs.existsSync(readmePath)) {
-      const readme = fs.readFileSync(readmePath, 'utf-8')
+      const readmeMD = fs.readFileSync(readmePath, 'utf-8')
+      const readme = [
+        '---',
+        'title: "README"',
+        'menuTitle: "README"',
+        '---',
+        readmeMD
+      ].join('\n')
+
       writeProjectFile(readme, PROJECT_README_FN)
     }
-
-    writeProjectFile(JSON.stringify(projectConfig), PROJECT_CONFIG_FN)
 
     // Write API Reference (fallback index if no readme)
     const data = await jsdoc2md.getTemplateData({ files })
@@ -188,6 +194,8 @@ const run = async () => {
           })
       }
     }
+
+    writeProjectFile(JSON.stringify(projectConfig), PROJECT_CONFIG_FN)
   })
 
   const duration = Date.now() - startMTS

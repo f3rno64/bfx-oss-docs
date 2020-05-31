@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # lib-js-util-math
 
 The lib includes the utilities depicted below:

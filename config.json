@@ -28,57 +28,7 @@
       "id": "libraries",
       "type": "libraries",
       "root": "api_docs",
-      "label": "Libraries",
-      "libraries": [
-        "bitfinex-api-node",
-        "bfx-api-mock-srv",
-        "bfx-api-node-core",
-        "bfx-api-node-models",
-        "bfx-api-node-plugin-example",
-        "bfx-api-node-plugin-managed-candles",
-        "bfx-api-node-plugin-managed-ob",
-        "bfx-api-node-plugin-ob-checksum",
-        "bfx-api-node-plugin-seq-audit",
-        "bfx-api-node-plugin-wd",
-        "bfx-api-node-rest",
-        "bfx-api-node-util",
-        "bfx-api-node-ws1",
-        "bfx-hf-backtest",
-        "bfx-hf-chart",
-        "bfx-hf-data-server",
-        "bfx-hf-ext-plugin-bitfinex",
-        "bfx-hf-ext-plugin-dummy",
-        "bfx-hf-indicators",
-        "bfx-hf-models",
-        "bfx-hf-models-adapter-lowdb",
-        "bfx-hf-models-adapter-sql",
-        "bfx-hf-models-adapter-template",
-        "bfx-hf-algo",
-        "bfx-hf-server",
-        "bfx-hf-strategy",
-        "bfx-hf-strategy-exec",
-        "bfx-hf-ui-config",
-        "bfx-hf-util",
-        "bfx-ws2-api-audit",
-        "cbq-js",
-        "caron",
-        "eos-name-verify",
-        "grenache-browser-http",
-        "grenache-grape",
-        "grenache-nodejs-base",
-        "grenache-nodejs-http",
-        "grenache-nodejs-link",
-        "grenache-nodejs-utp",
-        "grenache-nodejs-ws",
-        "grenache-nodejs-ws-tls",
-        "lib-js-util-currencies",
-        "lib-js-util-math",
-        "lib-js-util-number",
-        "lib-js-util-symbol",
-        "smidgen",
-        "sunbeam",
-        "wasteland"
-      ]
+      "label": "Libraries"
     }]
   },
 
@@ -163,10 +113,19 @@
 
   "projects": {
     "root": "modules",
+    "rb": [
+      "bitfinex-api-rb"
+    ],
+
+    "py": [
+      "bitfinex-api-py"
+    ],
+
     "go": [
       "bitfinex-api-go",
       "bfxfixgw"
     ],
+
     "js": [
       "bitfinex-api-node",
       "bfx-api-mock-srv",

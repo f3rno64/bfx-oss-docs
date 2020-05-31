@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # Bitfinex Modular WSv2 API Library for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-api-node-core.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-api-node-core)

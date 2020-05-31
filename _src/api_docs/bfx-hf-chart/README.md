@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 ## Bitfinex Honey Framework Financial Charting Library for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-chart.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-chart)

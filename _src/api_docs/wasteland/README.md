@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # wasteland
 
 Wasteland is a modular data layer for [storing data in DHT](http://www.bittorrent.org/beps/bep_0044.html) and other backends. Storage adapters are pluggable, right now Grenache (DHT) and in-memory backends are included.

@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # grenache-nodejs-link
 
 <img src="logo.png" width="15%" />

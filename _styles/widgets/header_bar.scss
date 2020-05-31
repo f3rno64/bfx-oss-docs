@@ -5,10 +5,10 @@
   top: 0;
   left: $size-sidebar-width;
 
-  padding: 0 32px 0 0;
+  padding: 0 32px 0 32px;
   line-height: $size-header-bar-height;
   height: $size-header-bar-height - 1px;
-  width: calc(100% - 32px - #{$size-sidebar-width});
+  width: calc(100% - 64px - #{$size-sidebar-width});
 
   color: $color-fg-header-bar;
   background: $color-bg-header-bar;
@@ -16,10 +16,16 @@
 
   z-index: $z-index-middle; // sidebar is top, due to box shadow
 
+  display: flex;
+  flex-direction: row;
+
   h2 {
     width: 100%;
     font-weight: normal;
     font-size: 20px;
-    text-align: right;
+
+    &:last-child:not(:first-child) {
+      text-align: right;
+    }
   }
 }

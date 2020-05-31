@@ -1,3 +1,7 @@
+---
+title: "README"
+menuTitle: "README"
+---
 # bfx-hf-ui-config
 
 This library gives a set of configs, which can be used in all `bfx-hf-*` services. Any config in `bfx-hf-ui-config` contain predefined default values
