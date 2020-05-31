@@ -25,54 +25,60 @@
       "root": "oss_projects",
       "label": "Open Source Projects"
     }, {
-      "id": "rb_module_bitfinex_api_rb_docs",
-      "type": "page",
-      "root": "../modules/bitfinex-api-rb/docs",
-      "path": "readme.md",
-      "label": "bitfinex-api-rb"
-    }, {
-      "id": "jsdoc_modules",
-      "type": "page-group",
-      "contentType": "api-docs",
+      "id": "libraries",
+      "type": "libraries",
       "root": "api_docs",
-      "label": "Node.JS Libraries",
-      "group": [{
-        "index": true,
-        "id": "bitfinex-api-node",
-        "path": "bitfinex-api-node.md",
-        "data": {
-          "title": "bitfinex-api-node",
-          "menuTitle": "bitfinex-api-node"
-        }
-      }]
-    }, {
-      "id": "py_module_bitfinex_api_py_docs",
-      "type": "page-group",
-      "root": "../modules/bitfinex-api-py/docs",
-      "label": "bitfinex-api-py",
-      "group": [{
-        "index": true,
-        "id": "readme",
-        "path": "../README.md",
-        "data": {
-          "title": "Python Client README",
-          "menuTitle": "README"
-        }
-      }, {
-        "id": "rest_v2",
-        "path": "rest_v2.md",
-        "data": {
-          "title": "Python REST v2 Client",
-          "menuTitle": "RESTv2 Client"
-        }
-      }, {
-        "id": "ws_v2",
-        "path": "ws_v2.md",
-        "data": {
-          "title": "Python WS v2 Client",
-          "menuTitle": "WSv2 Client"
-        }
-      }]
+      "label": "Libraries",
+      "libraries": [
+        "bitfinex-api-node",
+        "bfx-api-mock-srv",
+        "bfx-api-node-core",
+        "bfx-api-node-models",
+        "bfx-api-node-plugin-example",
+        "bfx-api-node-plugin-managed-candles",
+        "bfx-api-node-plugin-managed-ob",
+        "bfx-api-node-plugin-ob-checksum",
+        "bfx-api-node-plugin-seq-audit",
+        "bfx-api-node-plugin-wd",
+        "bfx-api-node-rest",
+        "bfx-api-node-util",
+        "bfx-api-node-ws1",
+        "bfx-hf-backtest",
+        "bfx-hf-chart",
+        "bfx-hf-data-server",
+        "bfx-hf-ext-plugin-bitfinex",
+        "bfx-hf-ext-plugin-dummy",
+        "bfx-hf-indicators",
+        "bfx-hf-models",
+        "bfx-hf-models-adapter-lowdb",
+        "bfx-hf-models-adapter-sql",
+        "bfx-hf-models-adapter-template",
+        "bfx-hf-algo",
+        "bfx-hf-server",
+        "bfx-hf-strategy",
+        "bfx-hf-strategy-exec",
+        "bfx-hf-ui-config",
+        "bfx-hf-util",
+        "bfx-ws2-api-audit",
+        "cbq-js",
+        "caron",
+        "eos-name-verify",
+        "grenache-browser-http",
+        "grenache-grape",
+        "grenache-nodejs-base",
+        "grenache-nodejs-http",
+        "grenache-nodejs-link",
+        "grenache-nodejs-utp",
+        "grenache-nodejs-ws",
+        "grenache-nodejs-ws-tls",
+        "lib-js-util-currencies",
+        "lib-js-util-math",
+        "lib-js-util-number",
+        "lib-js-util-symbol",
+        "smidgen",
+        "sunbeam",
+        "wasteland"
+      ]
     }]
   },
 
@@ -89,6 +95,7 @@
   "assets": {
     "img": "_assets/img",
     "fonts": "_assets/fonts",
+    "svg/icons": "node_modules/svg-icon/dist/svg/dev",
     "css/highlightjs": "node_modules/highlight.js/styles",
     "css/normalize.css": "node_modules/normalize.css/normalize.css",
     "css/perfect-scrollbar.css": "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
@@ -98,8 +105,10 @@
     "js/vendor/debug.min.js": {
       "path": "node_modules/debug/src/browser.js",
       "build": "browserify",
-      "pathOnWindow": "debug",
-      "baseDir": "node_modules/debug/src"
+      "options": {
+        "standalone": "debug",
+        "baseDir": "node_modules/debug/src"
+      }
     }
   },
 

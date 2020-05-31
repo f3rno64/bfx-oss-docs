@@ -1,17 +1,21 @@
 @import '../variables.scss';
 
+.no-api-doc-index #bfx-oss-docs-api-docs-index {
+  display: none;
+}
+
 #bfx-oss-docs-api-docs-index {
   position: fixed;
   top: $size-header-bar-height;
   left: $size-sidebar-width;
 
   height: calc(100% - #{$size-header-bar-height});
-  width: $size-api-docs-index-width;
+  width: $size-api-docs-index-width - 1px;
 
-  border-right: 2px solid $color-border-api-docs-index;
+  border-right: 1px solid $color-border-layout;
 
   #bfx-oss-docs-api-docs-index__inner {
-    padding: 16px;
+    padding: 0 16px 16px 16px;
     font-size: 14px;
     line-height: 1.5;
 
@@ -31,10 +35,6 @@
       width: 100%;
 
       background: $color-bg-api-docs-index-content-in-view;
-
-      &, a, code {
-        color: $color-fg-api-docs-index-content-in-view;
-      }
     }
 
     code {
@@ -58,11 +58,21 @@
       font-weight: bold;
     }
 
+    > ul:first-child > li:first-child > a:first-child {
+      padding-top: 16px;
+    }
+
     > ul > li {
       > a:first-child {
+        padding-top: 32px;
         font-size: 16px;
         text-align: center;
         display: block;
+
+        + ul > li:first-child > a:first-child {
+          margin-top: 16px;
+          display: inline-block;
+        }
       }
 
       > ul > li > em:first-child {
@@ -70,11 +80,6 @@
           margin-bottom: 16px;
         }
       }
-    }
-
-    .bfx-oss-docs-api-docs-index-section {
-      border-top: 1px solid $color-border-api-docs-index-section;
-      padding-top: 8px;
     }
   }
 }

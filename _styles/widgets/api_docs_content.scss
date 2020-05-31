@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+#bfx-oss-docs-content-wrapper.bfx-oss-docs-content-type-api-docs {
+  &:not(.no-api-doc-index) {
+    padding-left: $size-api-docs-index-width + 32px;
+  }
+
+  .bfx-oss-docs-md-content {
+    > p > a[id]:empty, .header-anchor:before {
+      display: block;
+      position: relative;
+      top: -$size-header-bar-height;
+      visibility: hidden;
+    }
+
+    // Example header
+    table + p > strong:first-child:last-child {
+      margin-top: 32px;
+      display: block;
+    }
+
+    // Internal class structure
+    > p + ul > li:first-child:last-child {
+      font-size: 14px;
+      line-height: 1.5;
+
+      a {
+        color: $color-fg-api-docs-index-link;
+      }
+
+      > ul > li {
+        &:not(:first-child) {
+          margin-top: 8px;
+          padding-top: 8px;
+        }
+
+        > em:first-child {
+          font-style: normal;
+          font-weight: bold;
+
+          ~ ul > li:not(:last-child) > ul {
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+}

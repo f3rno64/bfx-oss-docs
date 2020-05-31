@@ -5,12 +5,62 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlightjs/night-owl.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
 
     {% block head %}{% endblock %}
 
     <title>{{ page_title }}</title>
   </head>
   <body>
-    {% block body %}{% endblock %}
+    <div id="bfx-oss-docs-side-bar">
+      <div id="bfx-oss-docs-side-bar__header">
+        <img
+          src="img/bfx-logo-bg-white.png"
+          alt="Bitfinex"
+          height="63"
+        />
+      </div>
+
+      <ul id="bfx-oss-docs-side-bar__main-menu">
+        {% for entry in menuData %}
+        <li
+          {% if entry.fn === page.fn %}
+          class="active"
+          {% endif %}
+        >
+          <a href="{{ entry.fn }}">
+            <p>{{ entry.label }}</p>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {% block sidebar %}{% endblock %}
+    </div>
+
+    <div id="bfx-oss-docs-content">
+      <div id="bfx-oss-docs-header-bar">
+        <h2>{% block page_title %}{% endblock %}</h2>
+      </div>
+
+      {% block content %}{% endblock %}
+
+      <!--
+      <div id="bfx-oss-docs-footer-bar">
+        <div id="bfx-oss-docs-footer-bar__container">
+          <p>Copyright © 2013-2020 iFinex Inc. All rights reserved.</p>
+        </div>
+      </div>
+      -->
+    </div>
+
+    <script type="text/javascript" src="js/vendor/debug.min.js"></script>
+    <script type="text/javascript" src="js/vendor/lodash.min.js"></script>
+    <script type="text/javascript" src="js/vendor/zepto.min.js"></script>
+    <script type="text/javascript" src="js/vendor/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    {% block scripts %}{% endblock %}
   </body>
 </html>

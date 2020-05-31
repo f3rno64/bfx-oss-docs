@@ -3,8 +3,7 @@
 const PI = require('p-iteration')
 const signale = require('signale')
 const {
-  SECTION_TYPES, loadConfig, renderPage, renderPageGroup,
-  renderPageGroupInline, renderAPIDocs
+  SECTION_TYPES, loadConfig, renderPage, renderLibraries
 } = require('../')
 
 const run = async () => {
@@ -22,18 +21,8 @@ const run = async () => {
         break
       }
 
-      case SECTION_TYPES.PAGE_GROUP: {
-        await renderPageGroup(section, config)
-        break
-      }
-
-      case SECTION_TYPES.PAGE_GROUP_INLINE: {
-        await renderPageGroupInline(section, config)
-        break
-      }
-
-      case SECTION_TYPES.API_DOCS: {
-        await renderAPIDocs(section, config)
+      case SECTION_TYPES.LIBRARIES: {
+        await renderLibraries(section, config)
         break
       }
 

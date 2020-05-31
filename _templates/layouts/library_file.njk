@@ -1,0 +1,58 @@
+{% extends 'layouts/base.njk' %}
+
+{% block page_title %}
+{{ page.data.menuTitle }}
+{% endblock %}
+
+{% block sidebar %}
+<div
+  class="bfx-oss-docs-side-bar__sub-menu"
+  id="bfx-oss-docs-side-bar__api-reference-menu"
+>
+  <h6>Libraries</h6>
+  <ul>
+    {% for p in pages %}
+    {% if p.index or p.fn === page.fn %}
+    <li
+      {% if p.fn === page.fn %}
+      class="active"
+      {% endif %}
+    >
+      <a href="/{{ p.fn }}">
+        {% if p.language === 'js' %}
+        <img src="/svg/icons/nodejs_small.svg" />
+        {% endif %}
+
+        <p>{{ p.data.menuTitle }}</p>
+      </a>
+
+      {% if p.fn === page.fn %}
+        <ul>
+          {% for child in pages %}
+          {% if child.library === page.library }
+          <li
+            {% if child.fn === page.fn %}
+            class="active"
+            {% endif %}
+          >
+            <a href="{{ child.fn }}"><p>- {{ child.data.menuTitle }}</p></a>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<div
+  id="bfx-oss-docs-content-wrapper"
+  class="bfx-oss-docs-content-type-api-docs"
+>
+  <div class="bfx-oss-docs-md-content bfx-oss-docs-code-wrapper">
+    {{ page.html | safe }}
+  </div>
+</div>
+{% endblock %}

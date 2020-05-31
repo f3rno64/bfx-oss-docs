@@ -7,8 +7,6 @@ $size-sidebar-width: 300px;
 $size-header-bar-height: 64px;
 $size-api-docs-index-width: 400px;
 
-$size-font-h2: 24px;
-
 $z-index-bottom: 1;
 $z-index-middle: 2;
 $z-index-top: 3;
@@ -24,12 +22,14 @@ $color-green-dark: #007b39;
 $color-bg: $color-white;
 $color-fg: $color-black;
 $color-border: #eee;
+$color-border-layout: $color-green-dark;
 $color-box-shadow: rgba(0, 0, 0, 0.05);
 
 // Font definitions
-$font-headers: 'Zilla Slab', serif;
+// $font-headers: 'Zilla Slab', serif;
 $font-body: 'Cabin', sans-serif;
 $font-code: 'IBM Plex Mono', monospace;
+$font-headers: $font-code;
 
 // Base styles
 $color-fg-elm-a: $color-green-dark;
@@ -40,13 +40,10 @@ $color-fg-sidebar-title: #555;
 $color-fg-sidebar-links: #333;
 $color-fg-sidebar-sub-menu-title: $color-green-dark;
 $color-fg-sidebar-sub-menu-subtitle: #555;
-$color-border-sidebar: $color-border;
-$color-box-shadow-sidebar: $color-box-shadow;
 
 // Header bar
-$color-fg-header-bar: #555;
+$color-fg-header-bar: #003a1b;
 $color-bg-header-bar: $color-bg;
-$color-box-shadow-header-bar: $color-box-shadow;
 
 // Footer bar
 $color-fg-footer-bar: #555;
@@ -71,16 +68,16 @@ $color-border-api-ref-sample-viewer-header-menu-item-active: $color-green-light;
 $color-border-api-ref-sample-viewer-header-menu-item-hover: $color-green-dark;
 
 // API Docs Index
-$color-border-api-docs-index: #00401e;
-$color-border-api-docs-index-section: #ccc;
+$color-content-api-docs-index: #00401e;
 $color-bg-api-docs-index-code: rgba(0, 0, 0, 0.05);
-$color-fg-api-docs-index-link: $color-border-api-docs-index;
-$color-bg-api-docs-index-content-in-view: $color-border-api-docs-index;
-$color-fg-api-docs-index-content-in-view: #fff;
+$color-fg-api-docs-index-link: $color-content-api-docs-index;
+$color-bg-api-docs-index-content-in-view: rgba(0, 0, 0, 0.1);
+
+// API Docs Content
+$color-hr-api-docs-content: $color-content-api-docs-index;
 
 // Markdown
 $color-border-md-toc: $color-green-dark;
-$color-box-shadow-md-code-wrapper: rgba(0, 0, 0, 0.2);
 
 // Table
 $color-bg-table: #fff;

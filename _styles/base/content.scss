@@ -1,23 +1,11 @@
 @import '../variables.scss';
 
 #bfx-oss-docs-content {
-  padding-left: $size-sidebar-width;
-  padding-top: $size-header-bar-height;
+  margin-left: $size-sidebar-width;
+  margin-top: $size-header-bar-height;
+  border-left: 1px solid $color-border-layout;
 }
 
 #bfx-oss-docs-content-wrapper {
   padding: 32px;
-
-  &.bfx-oss-docs-content-type-api-docs {
-    padding-left: $size-api-docs-index-width + 32px;
-
-    .bfx-oss-docs-md-content {
-      > p > a[id]:empty {
-        display: block;
-        position: relative;
-        top: -$size-header-bar-height;
-        visibility: hidden;
-      }
-    }
-  }
 }

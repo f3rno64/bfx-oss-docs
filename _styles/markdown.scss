@@ -1,4 +1,8 @@
 @import './variables.scss';
+@import './markdown/toc.scss';
+@import './markdown/headers.scss';
+@import './markdown/callout.scss';
+@import './markdown/collapsible.scss';
 
 .bfx-oss-docs-md-content {
   ol {
@@ -14,32 +18,26 @@
     margin-bottom: 8px;
   }
 
-  .contains-task-list li {
-    margin-bottom: 8px;
+  > ul {
+    list-style-type: disc;
+    margin: 0 0 0 16px;
+  }
 
-    &:last-child {
-      margin-bottom: 0;
+  .contains-task-list {
+    margin-bottom: 32px;
+
+    li {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
-  h1, h2, h3 {
-    margin: 24px 0;
-  }
-
-  h4, h5, h6 {
-    margin: 16px 0;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    &:first-of-type {
-      margin-top: 0;
-    }
-
-    .header-anchor {
-      margin-right: 8px;
-      font-weight: normal;
-      opacity: 0.75;
-    }
+  hr {
+    margin: 64px 0 32px 0;
+    border-color: $color-hr-api-docs-content;
   }
 
   p {
@@ -55,12 +53,13 @@
     > img {
       max-width: 100%;
     }
+  }
 
-    > code {
-      font-size: 14px;
-      padding: 2px 4px;
-      background: $color-bg-api-ref-document-p-code;
-    }
+  > p > code, li > code, a > code  {
+    font-family: $font-code;
+    font-size: 14px;
+    padding: 0 4px;
+    background: $color-bg-api-ref-document-p-code;
   }
 
   blockquote {
@@ -73,7 +72,3 @@
     }
   }
 }
-
-@import './markdown/toc.scss';
-@import './markdown/callout.scss';
-@import './markdown/collapsible.scss';

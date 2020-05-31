@@ -6,9 +6,7 @@ const renderUnifiedJSDocConfig = require('./lib/jsdoc/render_unified_config')
 const getMD = require('./lib/markdown_it')
 const SECTION_TYPES = require('./lib/render/section_types')
 const renderPage = require('./lib/render/page')
-const renderPageGroup = require('./lib/render/page_group')
-const renderPageGroupInline = require('./lib/render/page_group_inline')
-const renderAPIDocs = require('./lib/render/api_docs')
+const renderLibraries = require('./lib/render/libraries')
 
 /**
  * Bitfinex documentation (static site generator & content)
@@ -27,8 +25,6 @@ module.exports = {
   validateConfig,
   renderUnifiedJSDocConfig,
   renderPage,
-  renderPageGroup,
-  renderPageGroupInline,
-  renderAPIDocs,
+  renderLibraries,
   getMD
 }

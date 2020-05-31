@@ -1,0 +1,60 @@
+@import '../variables.scss';
+
+.bfx-oss-docs-md-content {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+
+    code {
+      font-family: $font-headers;
+      font-size: inherit;
+    }
+
+    .header-anchor {
+      margin-right: 0;
+      opacity: 0.75;
+    }
+  }
+
+  h1, h2, h3 {
+    margin: 24px 0;
+  }
+
+  h4, h5, h6 {
+    margin: 16px 0;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 32px 0 16px 0;
+  }
+
+  // Not in generated output, usually only README
+  h3 {
+    margin-top: 32px;
+  }
+
+  h4 {
+    font-size: 16px;
+    margin-top: 32px;
+  }
+
+  .bfx-oss-docs-empty:first-child,
+  #bfx-oss-docs-api-docs-index + .bfx-oss-docs-empty {
+    + h1, + h2, + h3, + h4, + hh5, + h6 {
+      margin-top: 0 !important;
+    }
+  }
+
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
+    margin-top: 0 !important;
+  }
+}

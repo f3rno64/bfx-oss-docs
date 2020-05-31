@@ -5,51 +5,89 @@
   top: 0;
   left: 0;
 
-  z-index: $z-index-top; // for box shadow overlap w/ header bar
   width: $size-sidebar-width;
-  height: 100%;
+  height: calc(100% - #{$size-header-bar-height} - 32px);
 
-  box-shadow: 1px 0 3px 1px $color-box-shadow-sidebar;
+  padding-top: $size-header-bar-height + 16px;
+  padding-bottom: 16px;
+
   background: $color-bg-sidebar;
-
   overflow-y: scroll;
 
   #bfx-oss-docs-side-bar__header {
-    display: block;
-    margin: 0 auto;
+    z-index: $z-index-top;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: $size-sidebar-width;
+    border-bottom: 1px solid $color-border-layout;
+    background: $color-bg;
+
+    img {
+      margin-left: 16px;
+      display: block;
+    }
   }
 
   #bfx-oss-docs-side-bar__main-menu,
   .bfx-oss-docs-side-bar__sub-menu {
     li {
-      padding: 8px 16px;
-      font-size: 14px;
-      border-left: 2px solid #eee;
       margin: 0 16px;
+      opacity: 0.6;
 
       &.active {
-        border-left-color: $color-green-dark;
+        opacity: 1;
 
-        a, p {
+        > a {
           text-decoration: underline;
         }
       }
 
       &:not(.bfx-oss-docs-side-bar__sub-menu-subtitle):hover {
-        a, p {
+        opacity: 1;
+
+        > a {
           text-decoration: underline;
           cursor: pointer;
         }
       }
 
       a {
+        height: 32px;
+        line-height: 32px;
+        font-size: 14px;
+        display: inline-block;
+
         text-decoration: none;
         color: $color-fg-sidebar-links;
+
+        > * {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        img {
+          height: 24px;
+          width: 24px;
+          margin-right: 8px;
+        }
+
+        p {
+          margin: 0;
+
+          &:first-child:last-child {
+            margin-left: 32px;
+          }
+        }
       }
     }
   }
 
   .bfx-oss-docs-side-bar__sub-menu {
+    margin-top: 8px;
+
     > h6:first-child,
     .bfx-oss-docs-side-bar__sub-menu-subtitle p {
       font-size: 14px;
@@ -71,6 +109,14 @@
         padding: 8px 8px 8px 0;
         text-align: right;
         color: $color-fg-sidebar-sub-menu-subtitle;
+      }
+    }
+
+    ul ul {
+      margin: 0 0 16px 16px;
+
+      p {
+        margin-left: 0 !important;
       }
     }
   }

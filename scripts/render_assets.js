@@ -1,6 +1,7 @@
 'use strict'
 
 const fs = require('fs')
+const path = require('path')
 const fsExtra = require('fs-extra')
 const signale = require('signale')
 const browserify = require('browserify')
@@ -16,16 +17,16 @@ try {
   const config = loadConfig('config.json')
   const { assets = {}, output = {} } = config
   const { staticSite: staticSiteBuildPath } = output
-  const assetDestinatinos = _keys(assets)
+  const assetDestinations = _keys(assets)
 
-  if (_isEmpty(assetDestinatinos)) {
+  if (_isEmpty(assetDestinations)) {
     signale.star('No assets to render')
     return
   }
 
   signale.info(`Rendering assets to ${staticSiteBuildPath}`)
 
-  assetDestinatinos.forEach((dest) => {
+  assetDestinations.forEach((dest) => {
     const asset = assets[dest]
     const assetName = _last(dest.split('/'))
     const assetPath = _isObject(asset) ? asset.path : asset
@@ -35,35 +36,25 @@ try {
       throw new Error(`No path found for ${dest}`)
     }
 
-    const assetSrcPath = `${__dirname}/../${assetPath}`
-    const assetDestPath = `${__dirname}/../${staticSiteBuildPath}/${dest}`
+    const assetSrcPath = path.join(__dirname, '../', assetPath)
+    const assetDestPath = path.join(__dirname, '../', staticSiteBuildPath, dest)
+    const assetDestDir = path.dirname(assetDestPath)
+
+    if (!fs.existsSync(assetDestDir)) {
+      fs.mkdirSync(assetDestDir, { recursive: true })
+    }
 
     if (_isEmpty(assetOptions)) {
       fsExtra.copySync(assetSrcPath, assetDestPath, { overwrite: true })
     } else {
-      const { build, pathOnWindow, baseDir } = assetOptions
+      const { build, options: buildOptions } = assetOptions
 
       if (build !== 'browserify') {
         throw new Error(`Unknown asset build type for ${dest}: ${build}`)
       }
 
-      if (!_isString(pathOnWindow) || _isEmpty(pathOnWindow)) {
-        throw new Error(
-          `Asset ${dest} requires build but no window path configured`
-        )
-      }
-
-      if (!_isString(baseDir) || _isEmpty(baseDir)) {
-        throw new Error(
-          `Asset ${dest} requires build but no baseDir configured`
-        )
-      }
-
       const destStream = fs.createWriteStream(assetDestPath)
-      const b = browserify(assetSrcPath, {
-        standalone: pathOnWindow,
-        basedir: baseDir
-      })
+      const b = browserify(assetSrcPath, buildOptions)
 
       b.bundle().pipe(destStream)
     }
@@ -74,7 +65,7 @@ try {
   const duration = Date.now() - startMTS
 
   signale.success(
-    `Rendered ${assetDestinatinos.length} assets in ${duration}ms`
+    `Rendered ${assetDestinations.length} assets in ${duration}ms`
   )
 } catch (e) {
   signale.error('%s', e.message)

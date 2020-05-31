@@ -5,28 +5,21 @@
   top: 0;
   left: $size-sidebar-width;
 
-  padding: 0 32px;
+  padding: 0 32px 0 0;
   line-height: $size-header-bar-height;
-  height: $size-header-bar-height;
-  width: calc(100% - 64px - #{$size-sidebar-width});
+  height: $size-header-bar-height - 1px;
+  width: calc(100% - 32px - #{$size-sidebar-width});
 
   color: $color-fg-header-bar;
   background: $color-bg-header-bar;
-  box-shadow: 0 1px 3px 1px $color-box-shadow-header-bar;
-
-  display: flex;
-  flex-direction: row;
+  border-bottom: 1px solid $color-border-layout;
 
   z-index: $z-index-middle; // sidebar is top, due to box shadow
 
   h2 {
-    font-weight: normal;
-    font-size: 24px;
     width: 100%;
-    flex: 1;
-
-    &:last-child {
-      text-align: right;
-    }
+    font-weight: normal;
+    font-size: 20px;
+    text-align: right;
   }
 }
