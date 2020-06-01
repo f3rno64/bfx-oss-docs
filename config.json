@@ -112,7 +112,9 @@
     ],
 
     "py": [
-      "bitfinex-api-py"
+      "bitfinex-api-py",
+      "bfx-hf-strategy-py",
+      "bfx-hf-indicators-py"
     ],
 
     "go": [
