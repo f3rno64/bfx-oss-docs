@@ -1,0 +1,473 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="css/normalize.css"><link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.css"><link rel="stylesheet" type="text/css" href="css/highlightjs/night-owl.css"><link rel="stylesheet" type="text/css" href="index.css"><title>v1 | bitfinex-api-go</title></head><body><div id="bfx-oss-docs-side-bar"><div id="bfx-oss-docs-side-bar__header"><img src="img/bfx-logo-bg-white.png" alt="Bitfinex" height="63"></div><ul><li><a href="index.html"><p>Home</p></a></li><li><a href="page_md_render_test.html"><p>Markdown Render Test</p></a></li><li><a href="/page_libraries_bitfinex_api_py_README.html"><img src="/svg/icons/python.svg"><p>bitfinex-api-py</p></a></li><li class="active"><a href="/page_libraries_bitfinex_api_go_README.html"><img src="/svg/icons/go.svg"><p>bitfinex-api-go</p></a><ul><li><a href="page_libraries_bitfinex_api_go_README.html"><p>- README</p></a></li><li><a href="page_libraries_bitfinex_api_go_rest_v2.html"><p>- rest_v2</p></a></li><li class="active"><a href="page_libraries_bitfinex_api_go_v1.html"><p>- v1</p></a></li><li><a href="page_libraries_bitfinex_api_go_ws_v2.html"><p>- ws_v2</p></a></li></ul></li><li><a href="/page_libraries_bfxfixgw_README.html"><img src="/svg/icons/go.svg"><p>bfxfixgw</p></a></li><li><a href="/page_libraries_bitfinex_api_rb_README.html"><img src="/svg/icons/ruby.svg"><p>bitfinex-api-rb</p></a></li><li><a href="/page_libraries_bitfinex_api_node_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bitfinex-api-node</p></a></li><li><a href="/page_libraries_bfx_api_mock_srv_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-mock-srv</p></a></li><li><a href="/page_libraries_bfx_api_node_core_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-core</p></a></li><li><a href="/page_libraries_bfx_api_node_models_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-models</p></a></li><li><a href="/page_libraries_bfx_api_node_plugin_example_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-plugin-example</p></a></li><li><a href="/page_libraries_bfx_api_node_plugin_managed_candles_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-plugin-managed-candles</p></a></li><li><a href="/page_libraries_bfx_api_node_plugin_managed_ob_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-plugin-managed-ob</p></a></li><li><a href="/page_libraries_bfx_api_node_plugin_ob_checksum_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-plugin-ob-checksum</p></a></li><li><a href="/page_libraries_bfx_api_node_plugin_seq_audit_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-plugin-seq-audit</p></a></li><li><a href="/page_libraries_bfx_api_node_plugin_wd_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-plugin-wd</p></a></li><li><a href="/page_libraries_bfx_api_node_rest_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-rest</p></a></li><li><a href="/page_libraries_bfx_api_node_util_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-util</p></a></li><li><a href="/page_libraries_bfx_api_node_ws1_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-api-node-ws1</p></a></li><li><a href="/page_libraries_bfx_hf_backtest_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-backtest</p></a></li><li><a href="/page_libraries_bfx_hf_chart_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-chart</p></a></li><li><a href="/page_libraries_bfx_hf_data_server_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-data-server</p></a></li><li><a href="/page_libraries_bfx_hf_ext_plugin_bitfinex_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-ext-plugin-bitfinex</p></a></li><li><a href="/page_libraries_bfx_hf_ext_plugin_dummy_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-ext-plugin-dummy</p></a></li><li><a href="/page_libraries_bfx_hf_indicators_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-indicators</p></a></li><li><a href="/page_libraries_bfx_hf_models_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-models</p></a></li><li><a href="/page_libraries_bfx_hf_models_adapter_lowdb_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-models-adapter-lowdb</p></a></li><li><a href="/page_libraries_bfx_hf_models_adapter_sql_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-models-adapter-sql</p></a></li><li><a href="/page_libraries_bfx_hf_models_adapter_template_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-models-adapter-template</p></a></li><li><a href="/page_libraries_bfx_hf_algo_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-algo</p></a></li><li><a href="/page_libraries_bfx_hf_server_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-server</p></a></li><li><a href="/page_libraries_bfx_hf_strategy_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-strategy</p></a></li><li><a href="/page_libraries_bfx_hf_strategy_exec_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-strategy-exec</p></a></li><li><a href="/page_libraries_bfx_hf_ui_config_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-ui-config</p></a></li><li><a href="/page_libraries_bfx_hf_util_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-hf-util</p></a></li><li><a href="/page_libraries_bfx_ws2_api_audit_README.html"><img src="/svg/icons/nodejs_small.svg"><p>bfx-ws2-api-audit</p></a></li><li><a href="/page_libraries_cbq_js_README.html"><img src="/svg/icons/nodejs_small.svg"><p>cbq-js</p></a></li><li><a href="/page_libraries_caron_README.html"><img src="/svg/icons/nodejs_small.svg"><p>caron</p></a></li><li><a href="/page_libraries_eos_name_verify_README.html"><img src="/svg/icons/nodejs_small.svg"><p>eos-name-verify</p></a></li><li><a href="/page_libraries_grenache_browser_http_README.html"><img src="/svg/icons/nodejs_small.svg"><p>grenache-browser-http</p></a></li><li><a href="/page_libraries_grenache_grape_README.html"><img src="/svg/icons/nodejs_small.svg"><p>grenache-grape</p></a></li><li><a href="/page_libraries_grenache_nodejs_base_README.html"><img src="/svg/icons/nodejs_small.svg"><p>grenache-nodejs-base</p></a></li><li><a href="/page_libraries_grenache_nodejs_http_README.html"><img src="/svg/icons/nodejs_small.svg"><p>grenache-nodejs-http</p></a></li><li><a href="/page_libraries_grenache_nodejs_link_README.html"><img src="/svg/icons/nodejs_small.svg"><p>grenache-nodejs-link</p></a></li><li><a href="/page_libraries_grenache_nodejs_utp_README.html"><img src="/svg/icons/nodejs_small.svg"><p>grenache-nodejs-utp</p></a></li><li><a href="/page_libraries_grenache_nodejs_ws_README.html"><img src="/svg/icons/nodejs_small.svg"><p>grenache-nodejs-ws</p></a></li><li><a href="/page_libraries_grenache_nodejs_ws_tls_README.html"><img src="/svg/icons/nodejs_small.svg"><p>grenache-nodejs-ws-tls</p></a></li><li><a href="/page_libraries_lib_js_util_currencies_README.html"><img src="/svg/icons/nodejs_small.svg"><p>lib-js-util-currencies</p></a></li><li><a href="/page_libraries_lib_js_util_math_README.html"><img src="/svg/icons/nodejs_small.svg"><p>lib-js-util-math</p></a></li><li><a href="/page_libraries_lib_js_util_number_README.html"><img src="/svg/icons/nodejs_small.svg"><p>lib-js-util-number</p></a></li><li><a href="/page_libraries_lib_js_util_symbol_README.html"><img src="/svg/icons/nodejs_small.svg"><p>lib-js-util-symbol</p></a></li><li><a href="/page_libraries_smidgen_README.html"><img src="/svg/icons/nodejs_small.svg"><p>smidgen</p></a></li><li><a href="/page_libraries_sunbeam_README.html"><img src="/svg/icons/nodejs_small.svg"><p>sunbeam</p></a></li><li><a href="/page_libraries_wasteland_README.html"><img src="/svg/icons/nodejs_small.svg"><p>wasteland</p></a></li></ul></div><div id="bfx-oss-docs-content"><div id="bfx-oss-docs-header-bar"><h2>v1</h2><h2>bitfinex-api-go</h2></div><div id="bfx-oss-docs-content-wrapper" class="bfx-oss-docs-content-type-api-docs"><div class="bfx-oss-docs-md-content bfx-oss-docs-code-wrapper"><div id="bfx-oss-docs-api-docs-index"><div id="bfx-oss-docs-api-docs-index__inner"><nav class="bfx-oss-docs-md-toc"><ol><li><a href="#bitfinex">bitfinex</a><ol><li><a href="#usage">Usage</a><ol><li><a href="#type-accountinfo">type AccountInfo</a></li><li><a href="#type-accountpairfee">type AccountPairFee</a></li><li><a href="#type-accountservice">type AccountService</a></li><li><a href="#func-(*accountservice)-info">func (*AccountService) Info</a></li><li><a href="#func-(*accountservice)-keypermission">func (*AccountService) KeyPermission</a></li><li><a href="#func-(*accountservice)-summary">func (*AccountService) Summary</a></li><li><a href="#type-activeoffer">type ActiveOffer</a></li><li><a href="#type-balance">type Balance</a></li><li><a href="#type-balancesservice">type BalancesService</a></li><li><a href="#func-(*balancesservice)-all">func (*BalancesService) All</a></li><li><a href="#type-bankaccount">type BankAccount</a></li><li><a href="#type-client">type Client</a></li><li><a href="#func-newclient">func NewClient</a></li><li><a href="#func-(*client)-auth">func (*Client) Auth</a></li><li><a href="#type-credit">type Credit</a></li><li><a href="#type-creditsservice">type CreditsService</a></li><li><a href="#func-(*creditsservice)-all">func (*CreditsService) All</a></li><li><a href="#type-depositresponse">type DepositResponse</a></li><li><a href="#func-(*depositresponse)-success">func (*DepositResponse) Success</a></li><li><a href="#type-depositservice">type DepositService</a></li><li><a href="#func-(*depositservice)-new">func (*DepositService) New</a></li><li><a href="#type-errorresponse">type ErrorResponse</a></li><li><a href="#func-(*errorresponse)-error">func (*ErrorResponse) Error</a></li><li><a href="#type-historyservice">type HistoryService</a></li><li><a href="#func-(*historyservice)-balance">func (*HistoryService) Balance</a></li><li><a href="#func-(*historyservice)-movements">func (*HistoryService) Movements</a></li><li><a href="#func-(*historyservice)-trades">func (*HistoryService) Trades</a></li><li><a href="#type-keyperm">type KeyPerm</a></li><li><a href="#type-lend">type Lend</a></li><li><a href="#func-(*lend)-parsetime">func (*Lend) ParseTime</a></li><li><a href="#type-lendbook">type Lendbook</a></li><li><a href="#type-lendbookservice">type LendbookService</a></li><li><a href="#func-(*lendbookservice)-get">func (*LendbookService) Get</a></li><li><a href="#func-(*lendbookservice)-lends">func (*LendbookService) Lends</a></li><li><a href="#type-lends">type Lends</a></li><li><a href="#func-(*lends)-time">func (*Lends) Time</a></li><li><a href="#type-marginfundingservice">type MarginFundingService</a></li><li><a href="#func-(*marginfundingservice)-cancel">func (*MarginFundingService) Cancel</a></li><li><a href="#func-(*marginfundingservice)-credits">func (*MarginFundingService) Credits</a></li><li><a href="#func-(*marginfundingservice)-newlend">func (*MarginFundingService) NewLend</a></li><li><a href="#func-(*marginfundingservice)-newloan">func (*MarginFundingService) NewLoan</a></li><li><a href="#func-(*marginfundingservice)-offers">func (*MarginFundingService) Offers</a></li><li><a href="#func-(*marginfundingservice)-status">func (*MarginFundingService) Status</a></li><li><a href="#type-margininfo">type MarginInfo</a></li><li><a href="#type-margininfoservice">type MarginInfoService</a></li><li><a href="#func-(*margininfoservice)-all">func (*MarginInfoService) All</a></li><li><a href="#type-marginlimit">type MarginLimit</a></li><li><a href="#type-marginoffer">type MarginOffer</a></li><li><a href="#type-movement">type Movement</a></li><li><a href="#type-multipleorderresponse">type MultipleOrderResponse</a></li><li><a href="#type-offer">type Offer</a></li><li><a href="#type-offersservice">type OffersService</a></li><li><a href="#func-(*offersservice)-cancel">func (*OffersService) Cancel</a></li><li><a href="#func-(*offersservice)-new">func (*OffersService) New</a></li><li><a href="#func-(*offersservice)-status">func (*OffersService) Status</a></li><li><a href="#type-order">type Order</a></li><li><a href="#type-orderbook">type OrderBook</a></li><li><a href="#type-orderbookentry">type OrderBookEntry</a></li><li><a href="#func-(*orderbookentry)-parsetime">func (*OrderBookEntry) ParseTime</a></li><li><a href="#type-orderbookservice">type OrderBookService</a></li><li><a href="#func-(*orderbookservice)-get">func (*OrderBookService) Get</a></li><li><a href="#type-orderservice">type OrderService</a></li><li><a href="#func-(*orderservice)-all">func (*OrderService) All</a></li><li><a href="#func-(*orderservice)-cancel">func (*OrderService) Cancel</a></li><li><a href="#func-(*orderservice)-cancelall">func (*OrderService) CancelAll</a></li><li><a href="#func-(*orderservice)-cancelmulti">func (*OrderService) CancelMulti</a></li><li><a href="#func-(*orderservice)-create">func (*OrderService) Create</a></li><li><a href="#func-(*orderservice)-createmulti">func (*OrderService) CreateMulti</a></li><li><a href="#func-(*orderservice)-replace">func (*OrderService) Replace</a></li><li><a href="#func-(*orderservice)-status">func (*OrderService) Status</a></li><li><a href="#type-pair">type Pair</a></li><li><a href="#type-pairsservice">type PairsService</a></li><li><a href="#func-(*pairsservice)-all">func (*PairsService) All</a></li><li><a href="#func-(*pairsservice)-alldetailed">func (*PairsService) AllDetailed</a></li><li><a href="#type-pasttrade">type PastTrade</a></li><li><a href="#type-permissions">type Permissions</a></li><li><a href="#type-position">type Position</a></li><li><a href="#func-(*position)-parsetime">func (*Position) ParseTime</a></li><li><a href="#type-positionsservice">type PositionsService</a></li><li><a href="#func-(*positionsservice)-all">func (*PositionsService) All</a></li><li><a href="#func-(*positionsservice)-claim">func (*PositionsService) Claim</a></li><li><a href="#type-response">type Response</a></li><li><a href="#func-(*response)-string">func (*Response) String</a></li><li><a href="#type-stats">type Stats</a></li><li><a href="#type-statsservice">type StatsService</a></li><li><a href="#func-(*statsservice)-all">func (*StatsService) All</a></li><li><a href="#type-submitorder">type SubmitOrder</a></li><li><a href="#type-summary">type Summary</a></li><li><a href="#type-summaryprofit">type SummaryProfit</a></li><li><a href="#type-summaryvolume">type SummaryVolume</a></li><li><a href="#type-termdata">type TermData</a></li><li><a href="#func-(*termdata)-haserror">func (*TermData) HasError</a></li><li><a href="#type-tick">type Tick</a></li><li><a href="#func-(*tick)-parsetime">func (*Tick) ParseTime</a></li><li><a href="#type-tickerservice">type TickerService</a></li><li><a href="#func-(*tickerservice)-get">func (*TickerService) Get</a></li><li><a href="#type-trade">type Trade</a></li><li><a href="#func-(*trade)-time">func (*Trade) Time</a></li><li><a href="#type-tradesservice">type TradesService</a></li><li><a href="#func-(*tradesservice)-all">func (*TradesService) All</a></li><li><a href="#type-transferstatus">type TransferStatus</a></li><li><a href="#type-walletbalance">type WalletBalance</a></li><li><a href="#type-walletservice">type WalletService</a></li><li><a href="#func-(*walletservice)-transfer">func (*WalletService) Transfer</a></li><li><a href="#func-(*walletservice)-withdrawcrypto">func (*WalletService) WithdrawCrypto</a></li><li><a href="#func-(*walletservice)-withdrawwire">func (*WalletService) WithdrawWire</a></li><li><a href="#type-websocketservice">type WebSocketService</a></li><li><a href="#func-newwebsocketservice">func NewWebSocketService</a></li><li><a href="#func-(*websocketservice)-addsubscribe">func (*WebSocketService) AddSubscribe</a></li><li><a href="#func-(*websocketservice)-clearsubscriptions">func (*WebSocketService) ClearSubscriptions</a></li><li><a href="#func-(*websocketservice)-close">func (*WebSocketService) Close</a></li><li><a href="#func-(*websocketservice)-connect">func (*WebSocketService) Connect</a></li><li><a href="#func-(*websocketservice)-connectprivate">func (*WebSocketService) ConnectPrivate</a></li><li><a href="#func-(*websocketservice)-subscribe">func (*WebSocketService) Subscribe</a></li><li><a href="#type-withdrawstatus">type WithdrawStatus</a></li></ol></li></ol></li></ol></nav></div></div><h1 id="bitfinex"><a class="header-anchor" href="#bitfinex">§</a> bitfinex</h1><p>– import “<a href="http://github.com/bitfinexcom/bitfinex-api-go/v1">github.com/bitfinexcom/bitfinex-api-go/v1</a>”</p><p>Package bitfinex is the official client to access to <a href="http://bitfinex.com">bitfinex.com</a> API</p><h2 id="usage"><a class="header-anchor" href="#usage">§</a> Usage</h2><pre><code class="hljs language-go"><span class="hljs-keyword">const</span> (
+	<span class="hljs-comment">// BaseURL is the v1 REST endpoint.</span>
+	BaseURL = <span class="hljs-string">"https://api.bitfinex.com/v1/"</span>
+	<span class="hljs-comment">// WebSocketURL the v1 Websocket endpoint.</span>
+	WebSocketURL = <span class="hljs-string">"wss://api-pub.bitfinex.com/ws/"</span>
+)
+</code></pre><pre><code class="hljs language-go"><span class="hljs-keyword">const</span> (
+	LEND = <span class="hljs-string">"lend"</span>
+	LOAN = <span class="hljs-string">"loan"</span>
+)
+</code></pre><pre><code class="hljs language-go"><span class="hljs-keyword">const</span> (
+	OrderTypeMarket               = <span class="hljs-string">"market"</span>
+	OrderTypeLimit                = <span class="hljs-string">"limit"</span>
+	OrderTypeStop                 = <span class="hljs-string">"stop"</span>
+	OrderTypeTrailingStop         = <span class="hljs-string">"trailing-stop"</span>
+	OrderTypeFillOrKill           = <span class="hljs-string">"fill-or-kill"</span>
+	OrderTypeExchangeMarket       = <span class="hljs-string">"exchange market"</span>
+	OrderTypeExchangeLimit        = <span class="hljs-string">"exchange limit"</span>
+	OrderTypeExchangeStop         = <span class="hljs-string">"exchange stop"</span>
+	OrderTypeExchangeTrailingStop = <span class="hljs-string">"exchange trailing-stop"</span>
+	OrderTypeExchangeFillOrKill   = <span class="hljs-string">"exchange fill-or-kill"</span>
+)
+</code></pre><p>Order types that the API can return.</p><pre><code class="hljs language-go"><span class="hljs-keyword">const</span> (
+	WALLET_TRADING  = <span class="hljs-string">"trading"</span>
+	WALLET_EXCHANGE = <span class="hljs-string">"exchange"</span>
+	WALLET_DEPOSIT  = <span class="hljs-string">"deposit"</span>
+)
+</code></pre><pre><code class="hljs language-go"><span class="hljs-keyword">const</span> (
+	<span class="hljs-comment">// Pairs</span>
+	BTCUSD = <span class="hljs-string">"BTCUSD"</span>
+	LTCUSD = <span class="hljs-string">"LTCUSD"</span>
+	LTCBTC = <span class="hljs-string">"LTCBTC"</span>
+	ETHUSD = <span class="hljs-string">"ETHUSD"</span>
+	ETHBTC = <span class="hljs-string">"ETHBTC"</span>
+	ETCUSD = <span class="hljs-string">"ETCUSD"</span>
+	ETCBTC = <span class="hljs-string">"ETCBTC"</span>
+	BFXUSD = <span class="hljs-string">"BFXUSD"</span>
+	BFXBTC = <span class="hljs-string">"BFXBTC"</span>
+	ZECUSD = <span class="hljs-string">"ZECUSD"</span>
+	ZECBTC = <span class="hljs-string">"ZECBTC"</span>
+	XMRUSD = <span class="hljs-string">"XMRUSD"</span>
+	XMRBTC = <span class="hljs-string">"XMRBTC"</span>
+	RRTUSD = <span class="hljs-string">"RRTUSD"</span>
+	RRTBTC = <span class="hljs-string">"RRTBTC"</span>
+	XRPUSD = <span class="hljs-string">"XRPUSD"</span>
+	XRPBTC = <span class="hljs-string">"XRPBTC"</span>
+	EOSETH = <span class="hljs-string">"EOSETH"</span>
+	EOSUSD = <span class="hljs-string">"EOSUSD"</span>
+	EOSBTC = <span class="hljs-string">"EOSBTC"</span>
+	IOTUSD = <span class="hljs-string">"IOTUSD"</span>
+	IOTBTC = <span class="hljs-string">"IOTBTC"</span>
+	IOTETH = <span class="hljs-string">"IOTETH"</span>
+	BCCBTC = <span class="hljs-string">"BCCBTC"</span>
+	BCUBTC = <span class="hljs-string">"BCUBTC"</span>
+	BCCUSD = <span class="hljs-string">"BCCUSD"</span>
+	BCUUSD = <span class="hljs-string">"BCUUSD"</span>
+
+	<span class="hljs-comment">// Channels</span>
+	ChanBook   = <span class="hljs-string">"book"</span>
+	ChanTrade  = <span class="hljs-string">"trades"</span>
+	ChanTicker = <span class="hljs-string">"ticker"</span>
+)
+</code></pre><p>Pairs available</p><h4 id="type-accountinfo"><a class="header-anchor" href="#type-accountinfo">§</a> type AccountInfo</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> AccountInfo <span class="hljs-keyword">struct</span> {
+	MakerFees <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"maker_fees,string"`</span>
+	TakerFees <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"taker_fees,string"`</span>
+	Fees      []AccountPairFee
+}
+</code></pre><h4 id="type-accountpairfee"><a class="header-anchor" href="#type-accountpairfee">§</a> type AccountPairFee</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> AccountPairFee <span class="hljs-keyword">struct</span> {
+	Pair      <span class="hljs-keyword">string</span>
+	MakerFees <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"maker_fees,string"`</span>
+	TakerFees <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"taker_fees,string"`</span>
+}
+</code></pre><h4 id="type-accountservice"><a class="header-anchor" href="#type-accountservice">§</a> type AccountService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> AccountService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*accountservice)-info"><a class="header-anchor" href="#func-(*accountservice)-info">§</a> func (*AccountService) Info</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(a *AccountService)</span> <span class="hljs-title">Info</span><span class="hljs-params">()</span> <span class="hljs-params">(AccountInfo, error)</span></span>
+</code></pre><p>GET account_infos</p><h4 id="func-(*accountservice)-keypermission"><a class="header-anchor" href="#func-(*accountservice)-keypermission">§</a> func (*AccountService) KeyPermission</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(a *AccountService)</span> <span class="hljs-title">KeyPermission</span><span class="hljs-params">()</span> <span class="hljs-params">(Permissions, error)</span></span>
+</code></pre><h4 id="func-(*accountservice)-summary"><a class="header-anchor" href="#func-(*accountservice)-summary">§</a> func (*AccountService) Summary</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(a *AccountService)</span> <span class="hljs-title">Summary</span><span class="hljs-params">()</span> <span class="hljs-params">(Summary, error)</span></span>
+</code></pre><h4 id="type-activeoffer"><a class="header-anchor" href="#type-activeoffer">§</a> type ActiveOffer</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> ActiveOffer <span class="hljs-keyword">struct</span> {
+	ID              <span class="hljs-keyword">int64</span>
+	Currency        <span class="hljs-keyword">string</span>
+	Rate            <span class="hljs-keyword">string</span>
+	Period          <span class="hljs-keyword">int</span>
+	Direction       <span class="hljs-keyword">string</span>
+	Timestamp       <span class="hljs-keyword">string</span>
+	IsLive          <span class="hljs-keyword">bool</span>   <span class="hljs-string">`json:"is_live"`</span>
+	IsCancelled     <span class="hljs-keyword">bool</span>   <span class="hljs-string">`json:"is_cancelled"`</span>
+	OriginalAmount  <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"original_amount"`</span>
+	RemainingAmount <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"remaining_amount"`</span>
+	ExecutedAmount  <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"executed_amount"`</span>
+}
+</code></pre><h4 id="type-balance"><a class="header-anchor" href="#type-balance">§</a> type Balance</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Balance <span class="hljs-keyword">struct</span> {
+	Currency    <span class="hljs-keyword">string</span>
+	Amount      <span class="hljs-keyword">string</span>
+	Balance     <span class="hljs-keyword">string</span>
+	Description <span class="hljs-keyword">string</span>
+	Timestamp   <span class="hljs-keyword">string</span>
+}
+</code></pre><h4 id="type-balancesservice"><a class="header-anchor" href="#type-balancesservice">§</a> type BalancesService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> BalancesService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*balancesservice)-all"><a class="header-anchor" href="#func-(*balancesservice)-all">§</a> func (*BalancesService) All</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(b *BalancesService)</span> <span class="hljs-title">All</span><span class="hljs-params">()</span> <span class="hljs-params">([]WalletBalance, error)</span></span>
+</code></pre><p>GET balances</p><h4 id="type-bankaccount"><a class="header-anchor" href="#type-bankaccount">§</a> type BankAccount</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> BankAccount <span class="hljs-keyword">struct</span> {
+	AccountName   <span class="hljs-keyword">string</span> <span class="hljs-comment">// Account name</span>
+	AccountNumber <span class="hljs-keyword">string</span> <span class="hljs-comment">// Account number or IBAN</span>
+	BankName      <span class="hljs-keyword">string</span> <span class="hljs-comment">// Bank Name</span>
+	BankAddress   <span class="hljs-keyword">string</span> <span class="hljs-comment">// Bank Address</span>
+	BankCity      <span class="hljs-keyword">string</span> <span class="hljs-comment">// Bank City</span>
+	BankCountry   <span class="hljs-keyword">string</span> <span class="hljs-comment">// Bank Country</span>
+	SwiftCode     <span class="hljs-keyword">string</span> <span class="hljs-comment">// SWIFT Code</span>
+}
+</code></pre><h4 id="type-client"><a class="header-anchor" href="#type-client">§</a> type Client</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Client <span class="hljs-keyword">struct</span> {
+	<span class="hljs-comment">// Base URL for API requests.</span>
+	BaseURL                *url.URL
+	WebSocketURL           <span class="hljs-keyword">string</span>
+	WebSocketTLSSkipVerify <span class="hljs-keyword">bool</span>
+
+	<span class="hljs-comment">// Auth data</span>
+	APIKey    <span class="hljs-keyword">string</span>
+	APISecret <span class="hljs-keyword">string</span>
+
+	<span class="hljs-comment">// Services</span>
+	Pairs         *PairsService
+	Stats         *StatsService
+	Ticker        *TickerService
+	Account       *AccountService
+	Balances      *BalancesService
+	Offers        *OffersService
+	Credits       *CreditsService
+	Deposit       *DepositService
+	Lendbook      *LendbookService
+	MarginInfo    *MarginInfoService
+	MarginFunding *MarginFundingService
+	OrderBook     *OrderBookService
+	Orders        *OrderService
+	Trades        *TradesService
+	Positions     *PositionsService
+	History       *HistoryService
+	WebSocket     *WebSocketService
+	Wallet        *WalletService
+}
+</code></pre><p>Client manages all the communication with the Bitfinex API.</p><h4 id="func-newclient"><a class="header-anchor" href="#func-newclient">§</a> func NewClient</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewClient</span><span class="hljs-params">()</span> *<span class="hljs-title">Client</span></span>
+</code></pre><p>NewClient creates new <a href="http://Bitfinex.com">Bitfinex.com</a> API client.</p><h4 id="func-(*client)-auth"><a class="header-anchor" href="#func-(*client)-auth">§</a> func (*Client) Auth</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c *Client)</span> <span class="hljs-title">Auth</span><span class="hljs-params">(key <span class="hljs-keyword">string</span>, secret <span class="hljs-keyword">string</span>)</span> *<span class="hljs-title">Client</span></span>
+</code></pre><p>Auth sets api key and secret for usage is requests that requires authentication.</p><h4 id="type-credit"><a class="header-anchor" href="#type-credit">§</a> type Credit</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Credit <span class="hljs-keyword">struct</span> {
+	Id        <span class="hljs-keyword">int</span>
+	Currency  <span class="hljs-keyword">string</span>
+	Status    <span class="hljs-keyword">string</span>
+	Rate      <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:",string"`</span>
+	Period    <span class="hljs-keyword">float64</span>
+	Amount    <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:",string"`</span>
+	Timestamp <span class="hljs-keyword">string</span>
+}
+</code></pre><h4 id="type-creditsservice"><a class="header-anchor" href="#type-creditsservice">§</a> type CreditsService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> CreditsService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*creditsservice)-all"><a class="header-anchor" href="#func-(*creditsservice)-all">§</a> func (*CreditsService) All</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c *CreditsService)</span> <span class="hljs-title">All</span><span class="hljs-params">()</span> <span class="hljs-params">([]Credit, error)</span></span>
+</code></pre><p>Returns an array of Credit</p><h4 id="type-depositresponse"><a class="header-anchor" href="#type-depositresponse">§</a> type DepositResponse</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> DepositResponse <span class="hljs-keyword">struct</span> {
+	Result   <span class="hljs-keyword">string</span>
+	Method   <span class="hljs-keyword">string</span>
+	Currency <span class="hljs-keyword">string</span>
+	Address  <span class="hljs-keyword">string</span>
+}
+</code></pre><h4 id="func-(*depositresponse)-success"><a class="header-anchor" href="#func-(*depositresponse)-success">§</a> func (*DepositResponse) Success</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(d *DepositResponse)</span> <span class="hljs-title">Success</span><span class="hljs-params">()</span> <span class="hljs-params">(<span class="hljs-keyword">bool</span>, error)</span></span>
+</code></pre><h4 id="type-depositservice"><a class="header-anchor" href="#type-depositservice">§</a> type DepositService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> DepositService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*depositservice)-new"><a class="header-anchor" href="#func-(*depositservice)-new">§</a> func (*DepositService) New</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *DepositService)</span> <span class="hljs-title">New</span><span class="hljs-params">(method, walletName <span class="hljs-keyword">string</span>, renew <span class="hljs-keyword">int</span>)</span> <span class="hljs-params">(DepositResponse, error)</span></span>
+</code></pre><h4 id="type-errorresponse"><a class="header-anchor" href="#type-errorresponse">§</a> type ErrorResponse</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> ErrorResponse <span class="hljs-keyword">struct</span> {
+	Response *Response
+	Message  <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"message"`</span>
+}
+</code></pre><p>ErrorResponse is the custom error type that is returned if the API returns an error.</p><h4 id="func-(*errorresponse)-error"><a class="header-anchor" href="#func-(*errorresponse)-error">§</a> func (*ErrorResponse) Error</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(r *ErrorResponse)</span> <span class="hljs-title">Error</span><span class="hljs-params">()</span> <span class="hljs-title">string</span></span>
+</code></pre><h4 id="type-historyservice"><a class="header-anchor" href="#type-historyservice">§</a> type HistoryService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> HistoryService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*historyservice)-balance"><a class="header-anchor" href="#func-(*historyservice)-balance">§</a> func (*HistoryService) Balance</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *HistoryService)</span> <span class="hljs-title">Balance</span><span class="hljs-params">(currency, wallet <span class="hljs-keyword">string</span>, since, until time.Time, limit <span class="hljs-keyword">int</span>)</span> <span class="hljs-params">([]Balance, error)</span></span>
+</code></pre><h4 id="func-(*historyservice)-movements"><a class="header-anchor" href="#func-(*historyservice)-movements">§</a> func (*HistoryService) Movements</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *HistoryService)</span> <span class="hljs-title">Movements</span><span class="hljs-params">(currency, method <span class="hljs-keyword">string</span>, since, until time.Time, limit <span class="hljs-keyword">int</span>)</span> <span class="hljs-params">([]Movement, error)</span></span>
+</code></pre><h4 id="func-(*historyservice)-trades"><a class="header-anchor" href="#func-(*historyservice)-trades">§</a> func (*HistoryService) Trades</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *HistoryService)</span> <span class="hljs-title">Trades</span><span class="hljs-params">(pair <span class="hljs-keyword">string</span>, since, until time.Time, limit <span class="hljs-keyword">int</span>, reverse <span class="hljs-keyword">bool</span>)</span> <span class="hljs-params">([]PastTrade, error)</span></span>
+</code></pre><h4 id="type-keyperm"><a class="header-anchor" href="#type-keyperm">§</a> type KeyPerm</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> KeyPerm <span class="hljs-keyword">struct</span> {
+	Read  <span class="hljs-keyword">bool</span>
+	Write <span class="hljs-keyword">bool</span>
+}
+</code></pre><h4 id="type-lend"><a class="header-anchor" href="#type-lend">§</a> type Lend</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Lend <span class="hljs-keyword">struct</span> {
+	Rate      <span class="hljs-keyword">string</span>
+	Amount    <span class="hljs-keyword">string</span>
+	Period    <span class="hljs-keyword">int</span>
+	Timestamp <span class="hljs-keyword">string</span>
+	Frr       <span class="hljs-keyword">string</span>
+}
+</code></pre><h4 id="func-(*lend)-parsetime"><a class="header-anchor" href="#func-(*lend)-parsetime">§</a> func (*Lend) ParseTime</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(el *Lend)</span> <span class="hljs-title">ParseTime</span><span class="hljs-params">()</span> <span class="hljs-params">(*time.Time, error)</span></span>
+</code></pre><h4 id="type-lendbook"><a class="header-anchor" href="#type-lendbook">§</a> type Lendbook</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Lendbook <span class="hljs-keyword">struct</span> {
+	Bids []Lend
+	Asks []Lend
+}
+</code></pre><h4 id="type-lendbookservice"><a class="header-anchor" href="#type-lendbookservice">§</a> type LendbookService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> LendbookService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*lendbookservice)-get"><a class="header-anchor" href="#func-(*lendbookservice)-get">§</a> func (*LendbookService) Get</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *LendbookService)</span> <span class="hljs-title">Get</span><span class="hljs-params">(currency <span class="hljs-keyword">string</span>, limitBids, limitAsks <span class="hljs-keyword">int</span>)</span> <span class="hljs-params">(Lendbook, error)</span></span>
+</code></pre><p>GET /lendbook/:currency</p><h4 id="func-(*lendbookservice)-lends"><a class="header-anchor" href="#func-(*lendbookservice)-lends">§</a> func (*LendbookService) Lends</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *LendbookService)</span> <span class="hljs-title">Lends</span><span class="hljs-params">(currency <span class="hljs-keyword">string</span>)</span> <span class="hljs-params">([]Lends, error)</span></span>
+</code></pre><p>GET /lends/:currency</p><h4 id="type-lends"><a class="header-anchor" href="#type-lends">§</a> type Lends</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Lends <span class="hljs-keyword">struct</span> {
+	Rate       <span class="hljs-keyword">string</span>
+	AmountLent <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"amount_lent"`</span>
+	AmountUsed <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"amount_used"`</span>
+	Timestamp  <span class="hljs-keyword">int64</span>
+}
+</code></pre><h4 id="func-(*lends)-time"><a class="header-anchor" href="#func-(*lends)-time">§</a> func (*Lends) Time</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(el *Lends)</span> <span class="hljs-title">Time</span><span class="hljs-params">()</span> *<span class="hljs-title">time</span>.<span class="hljs-title">Time</span></span>
+</code></pre><h4 id="type-marginfundingservice"><a class="header-anchor" href="#type-marginfundingservice">§</a> type MarginFundingService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> MarginFundingService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*marginfundingservice)-cancel"><a class="header-anchor" href="#func-(*marginfundingservice)-cancel">§</a> func (*MarginFundingService) Cancel</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *MarginFundingService)</span> <span class="hljs-title">Cancel</span><span class="hljs-params">(offerId <span class="hljs-keyword">int64</span>)</span> <span class="hljs-params">(MarginOffer, error)</span></span>
+</code></pre><h4 id="func-(*marginfundingservice)-credits"><a class="header-anchor" href="#func-(*marginfundingservice)-credits">§</a> func (*MarginFundingService) Credits</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *MarginFundingService)</span> <span class="hljs-title">Credits</span><span class="hljs-params">()</span> <span class="hljs-params">([]ActiveOffer, error)</span></span>
+</code></pre><h4 id="func-(*marginfundingservice)-newlend"><a class="header-anchor" href="#func-(*marginfundingservice)-newlend">§</a> func (*MarginFundingService) NewLend</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *MarginFundingService)</span> <span class="hljs-title">NewLend</span><span class="hljs-params">(currency <span class="hljs-keyword">string</span>, amount, rate <span class="hljs-keyword">float64</span>, period <span class="hljs-keyword">int</span>)</span> <span class="hljs-params">(MarginOffer, error)</span></span>
+</code></pre><h4 id="func-(*marginfundingservice)-newloan"><a class="header-anchor" href="#func-(*marginfundingservice)-newloan">§</a> func (*MarginFundingService) NewLoan</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *MarginFundingService)</span> <span class="hljs-title">NewLoan</span><span class="hljs-params">(currency <span class="hljs-keyword">string</span>, amount, rate <span class="hljs-keyword">float64</span>, period <span class="hljs-keyword">int</span>)</span> <span class="hljs-params">(MarginOffer, error)</span></span>
+</code></pre><h4 id="func-(*marginfundingservice)-offers"><a class="header-anchor" href="#func-(*marginfundingservice)-offers">§</a> func (*MarginFundingService) Offers</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *MarginFundingService)</span> <span class="hljs-title">Offers</span><span class="hljs-params">()</span> <span class="hljs-params">([]ActiveOffer, error)</span></span>
+</code></pre><h4 id="func-(*marginfundingservice)-status"><a class="header-anchor" href="#func-(*marginfundingservice)-status">§</a> func (*MarginFundingService) Status</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *MarginFundingService)</span> <span class="hljs-title">Status</span><span class="hljs-params">(offerId <span class="hljs-keyword">int64</span>)</span> <span class="hljs-params">(MarginOffer, error)</span></span>
+</code></pre><h4 id="type-margininfo"><a class="header-anchor" href="#type-margininfo">§</a> type MarginInfo</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> MarginInfo <span class="hljs-keyword">struct</span> {
+	MarginBalance     <span class="hljs-keyword">float64</span>       <span class="hljs-string">`json:"margin_balance,string"`</span>
+	TradableBalance   <span class="hljs-keyword">float64</span>       <span class="hljs-string">`json:"tradable_balance,string"`</span>
+	UnrealizedPl      <span class="hljs-keyword">float64</span>       <span class="hljs-string">`json:"unrealized_pl,string"`</span>
+	UnrealizedSwap    <span class="hljs-keyword">float64</span>       <span class="hljs-string">`json:"unrealized_swap,string"`</span>
+	NetValue          <span class="hljs-keyword">float64</span>       <span class="hljs-string">`json:"net_value,string"`</span>
+	RequiredMargin    <span class="hljs-keyword">float64</span>       <span class="hljs-string">`json:"required_margin,string"`</span>
+	Leverage          <span class="hljs-keyword">float64</span>       <span class="hljs-string">`json:"leverage,string"`</span>
+	MarginRequirement <span class="hljs-keyword">float64</span>       <span class="hljs-string">`json:"margin_requirement,string"`</span>
+	MarginLimits      []MarginLimit <span class="hljs-string">`json:"margin_limits,string"`</span>
+	Message           <span class="hljs-keyword">string</span>        <span class="hljs-string">`json:"message"`</span>
+}
+</code></pre><h4 id="type-margininfoservice"><a class="header-anchor" href="#type-margininfoservice">§</a> type MarginInfoService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> MarginInfoService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*margininfoservice)-all"><a class="header-anchor" href="#func-(*margininfoservice)-all">§</a> func (*MarginInfoService) All</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *MarginInfoService)</span> <span class="hljs-title">All</span><span class="hljs-params">()</span> <span class="hljs-params">([]MarginInfo, error)</span></span>
+</code></pre><p>GET /margin_infos</p><h4 id="type-marginlimit"><a class="header-anchor" href="#type-marginlimit">§</a> type MarginLimit</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> MarginLimit <span class="hljs-keyword">struct</span> {
+	OnPair            <span class="hljs-keyword">string</span>  <span class="hljs-string">`json:"on_pair"`</span>
+	InitialMargin     <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"initial_margin,string"`</span>
+	MarginRequirement <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"margin_requirement,string"`</span>
+	TradableBalance   <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"tradable_balance,string"`</span>
+}
+</code></pre><h4 id="type-marginoffer"><a class="header-anchor" href="#type-marginoffer">§</a> type MarginOffer</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> MarginOffer <span class="hljs-keyword">struct</span> {
+	ID              <span class="hljs-keyword">int64</span>
+	Currency        <span class="hljs-keyword">string</span>
+	Rate            <span class="hljs-keyword">string</span>
+	Period          <span class="hljs-keyword">int</span>
+	Direction       <span class="hljs-keyword">string</span>
+	Timestamp       <span class="hljs-keyword">string</span>
+	IsLive          <span class="hljs-keyword">bool</span>   <span class="hljs-string">`json:"is_live"`</span>
+	IsCancelled     <span class="hljs-keyword">bool</span>   <span class="hljs-string">`json:"is_cancelled"`</span>
+	OriginalAmount  <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"original_amount"`</span>
+	RemainingAmount <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"remaining_amount"`</span>
+	ExecutedAmount  <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"executed_amount"`</span>
+	OfferId         <span class="hljs-keyword">int</span>
+}
+</code></pre><h4 id="type-movement"><a class="header-anchor" href="#type-movement">§</a> type Movement</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Movement <span class="hljs-keyword">struct</span> {
+	ID          <span class="hljs-keyword">int64</span> <span class="hljs-string">`json:",int"`</span>
+	Currency    <span class="hljs-keyword">string</span>
+	Method      <span class="hljs-keyword">string</span>
+	Type        <span class="hljs-keyword">string</span>
+	Amount      <span class="hljs-keyword">string</span>
+	Description <span class="hljs-keyword">string</span>
+	Status      <span class="hljs-keyword">string</span>
+	Timestamp   <span class="hljs-keyword">string</span>
+}
+</code></pre><h4 id="type-multipleorderresponse"><a class="header-anchor" href="#type-multipleorderresponse">§</a> type MultipleOrderResponse</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> MultipleOrderResponse <span class="hljs-keyword">struct</span> {
+	Orders []Order <span class="hljs-string">`json:"order_ids"`</span>
+	Status <span class="hljs-keyword">string</span>
+}
+</code></pre><p>MultipleOrderResponse bundles orders returned by the CreateMulti method.</p><h4 id="type-offer"><a class="header-anchor" href="#type-offer">§</a> type Offer</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Offer <span class="hljs-keyword">struct</span> {
+	Id              <span class="hljs-keyword">int64</span>
+	Currency        <span class="hljs-keyword">string</span>
+	Rate            <span class="hljs-keyword">string</span>
+	Period          <span class="hljs-keyword">int64</span>
+	Direction       <span class="hljs-keyword">string</span>
+	Timestamp       <span class="hljs-keyword">string</span>
+	IsLive          <span class="hljs-keyword">bool</span>   <span class="hljs-string">`json:"is_live"`</span>
+	IsCancelled     <span class="hljs-keyword">bool</span>   <span class="hljs-string">`json:"is_cancelled"`</span>
+	OriginalAmount  <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"original_amount:string"`</span>
+	RemainingAmount <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"remaining_amount:string"`</span>
+	ExecutedAmount  <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"executed_amount:string"`</span>
+	OfferId         <span class="hljs-keyword">int64</span>  <span class="hljs-string">`json:"offer_id"`</span>
+}
+</code></pre><h4 id="type-offersservice"><a class="header-anchor" href="#type-offersservice">§</a> type OffersService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> OffersService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*offersservice)-cancel"><a class="header-anchor" href="#func-(*offersservice)-cancel">§</a> func (*OffersService) Cancel</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OffersService)</span> <span class="hljs-title">Cancel</span><span class="hljs-params">(offerId <span class="hljs-keyword">int64</span>)</span> <span class="hljs-params">(Offer, error)</span></span>
+</code></pre><h4 id="func-(*offersservice)-new"><a class="header-anchor" href="#func-(*offersservice)-new">§</a> func (*OffersService) New</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OffersService)</span> <span class="hljs-title">New</span><span class="hljs-params">(currency <span class="hljs-keyword">string</span>, amount, rate <span class="hljs-keyword">float64</span>, period <span class="hljs-keyword">int64</span>, direction <span class="hljs-keyword">string</span>)</span> <span class="hljs-params">(Offer, error)</span></span>
+</code></pre><p>Create new offer for LEND or LOAN a currency, use LEND or LOAN constants as direction</p><h4 id="func-(*offersservice)-status"><a class="header-anchor" href="#func-(*offersservice)-status">§</a> func (*OffersService) Status</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OffersService)</span> <span class="hljs-title">Status</span><span class="hljs-params">(offerId <span class="hljs-keyword">int64</span>)</span> <span class="hljs-params">(Offer, error)</span></span>
+</code></pre><h4 id="type-order"><a class="header-anchor" href="#type-order">§</a> type Order</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Order <span class="hljs-keyword">struct</span> {
+	ID                <span class="hljs-keyword">int64</span>
+	Symbol            <span class="hljs-keyword">string</span>
+	Exchange          <span class="hljs-keyword">string</span>
+	Price             <span class="hljs-keyword">string</span>
+	AvgExecutionPrice <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"avg_execution_price"`</span>
+	Side              <span class="hljs-keyword">string</span>
+	Type              <span class="hljs-keyword">string</span>
+	Timestamp         <span class="hljs-keyword">string</span>
+	IsLive            <span class="hljs-keyword">bool</span>   <span class="hljs-string">`json:"is_live"`</span>
+	IsCanceled        <span class="hljs-keyword">bool</span>   <span class="hljs-string">`json:"is_cancelled"`</span>
+	IsHidden          <span class="hljs-keyword">bool</span>   <span class="hljs-string">`json:"is_hidden"`</span>
+	WasForced         <span class="hljs-keyword">bool</span>   <span class="hljs-string">`json:"was_forced"`</span>
+	OriginalAmount    <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"original_amount"`</span>
+	RemainingAmount   <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"remaining_amount"`</span>
+	ExecutedAmount    <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"executed_amount"`</span>
+}
+</code></pre><p>Order represents one order on the bitfinex platform.</p><h4 id="type-orderbook"><a class="header-anchor" href="#type-orderbook">§</a> type OrderBook</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> OrderBook <span class="hljs-keyword">struct</span> {
+	Bids []OrderBookEntry
+	Asks []OrderBookEntry
+}
+</code></pre><h4 id="type-orderbookentry"><a class="header-anchor" href="#type-orderbookentry">§</a> type OrderBookEntry</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> OrderBookEntry <span class="hljs-keyword">struct</span> {
+	Price     <span class="hljs-keyword">string</span>
+	Rate      <span class="hljs-keyword">string</span>
+	Amount    <span class="hljs-keyword">string</span>
+	Period    <span class="hljs-keyword">int</span>
+	Timestamp <span class="hljs-keyword">string</span>
+	Frr       <span class="hljs-keyword">string</span>
+}
+</code></pre><h4 id="func-(*orderbookentry)-parsetime"><a class="header-anchor" href="#func-(*orderbookentry)-parsetime">§</a> func (*OrderBookEntry) ParseTime</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(el *OrderBookEntry)</span> <span class="hljs-title">ParseTime</span><span class="hljs-params">()</span> <span class="hljs-params">(*time.Time, error)</span></span>
+</code></pre><h4 id="type-orderbookservice"><a class="header-anchor" href="#type-orderbookservice">§</a> type OrderBookService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> OrderBookService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*orderbookservice)-get"><a class="header-anchor" href="#func-(*orderbookservice)-get">§</a> func (*OrderBookService) Get</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OrderBookService)</span> <span class="hljs-title">Get</span><span class="hljs-params">(pair <span class="hljs-keyword">string</span>, limitBids, limitAsks <span class="hljs-keyword">int</span>, noGroup <span class="hljs-keyword">bool</span>)</span> <span class="hljs-params">(OrderBook, error)</span></span>
+</code></pre><p>GET /book</p><h4 id="type-orderservice"><a class="header-anchor" href="#type-orderservice">§</a> type OrderService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> OrderService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><p>OrderService manages the Order endpoint.</p><h4 id="func-(*orderservice)-all"><a class="header-anchor" href="#func-(*orderservice)-all">§</a> func (*OrderService) All</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OrderService)</span> <span class="hljs-title">All</span><span class="hljs-params">()</span> <span class="hljs-params">([]Order, error)</span></span>
+</code></pre><p>All returns all orders for the authenticated account.</p><h4 id="func-(*orderservice)-cancel"><a class="header-anchor" href="#func-(*orderservice)-cancel">§</a> func (*OrderService) Cancel</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OrderService)</span> <span class="hljs-title">Cancel</span><span class="hljs-params">(orderID <span class="hljs-keyword">int64</span>)</span> <span class="hljs-title">error</span></span>
+</code></pre><p>Cancel the order with id <code>orderID</code>.</p><h4 id="func-(*orderservice)-cancelall"><a class="header-anchor" href="#func-(*orderservice)-cancelall">§</a> func (*OrderService) CancelAll</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OrderService)</span> <span class="hljs-title">CancelAll</span><span class="hljs-params">()</span> <span class="hljs-title">error</span></span>
+</code></pre><p>CancelAll active orders for the authenticated account.</p><h4 id="func-(*orderservice)-cancelmulti"><a class="header-anchor" href="#func-(*orderservice)-cancelmulti">§</a> func (*OrderService) CancelMulti</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OrderService)</span> <span class="hljs-title">CancelMulti</span><span class="hljs-params">(orderIDS []<span class="hljs-keyword">int64</span>)</span> <span class="hljs-params">(<span class="hljs-keyword">string</span>, error)</span></span>
+</code></pre><p>CancelMulti allows batch cancellation of orders.</p><h4 id="func-(*orderservice)-create"><a class="header-anchor" href="#func-(*orderservice)-create">§</a> func (*OrderService) Create</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OrderService)</span> <span class="hljs-title">Create</span><span class="hljs-params">(symbol <span class="hljs-keyword">string</span>, amount <span class="hljs-keyword">float64</span>, price <span class="hljs-keyword">float64</span>, orderType <span class="hljs-keyword">string</span>)</span> <span class="hljs-params">(*Order, error)</span></span>
+</code></pre><p>Create a new order.</p><h4 id="func-(*orderservice)-createmulti"><a class="header-anchor" href="#func-(*orderservice)-createmulti">§</a> func (*OrderService) CreateMulti</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OrderService)</span> <span class="hljs-title">CreateMulti</span><span class="hljs-params">(orders []SubmitOrder)</span> <span class="hljs-params">(MultipleOrderResponse, error)</span></span>
+</code></pre><p>CreateMulti allows batch creation of orders.</p><h4 id="func-(*orderservice)-replace"><a class="header-anchor" href="#func-(*orderservice)-replace">§</a> func (*OrderService) Replace</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OrderService)</span> <span class="hljs-title">Replace</span><span class="hljs-params">(orderID <span class="hljs-keyword">int64</span>, useRemaining <span class="hljs-keyword">bool</span>, newOrder SubmitOrder)</span> <span class="hljs-params">(Order, error)</span></span>
+</code></pre><p>Replace an Order</p><h4 id="func-(*orderservice)-status"><a class="header-anchor" href="#func-(*orderservice)-status">§</a> func (*OrderService) Status</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *OrderService)</span> <span class="hljs-title">Status</span><span class="hljs-params">(orderID <span class="hljs-keyword">int64</span>)</span> <span class="hljs-params">(Order, error)</span></span>
+</code></pre><p>Status retrieves the given order from the API.</p><h4 id="type-pair"><a class="header-anchor" href="#type-pair">§</a> type Pair</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Pair <span class="hljs-keyword">struct</span> {
+	Pair             <span class="hljs-keyword">string</span>
+	PricePrecision   <span class="hljs-keyword">int</span>     <span class="hljs-string">`json:"price_precision,int"`</span>
+	InitialMargin    <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"initial_margin,string"`</span>
+	MinimumMargin    <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"minimum_margin,string"`</span>
+	MaximumOrderSize <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"maximum_order_size,string"`</span>
+	MinimumOrderSize <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"minimum_order_size,string"`</span>
+	Expiration       <span class="hljs-keyword">string</span>
+	Margin           <span class="hljs-keyword">bool</span>
+}
+</code></pre><p>Detailed Pair</p><h4 id="type-pairsservice"><a class="header-anchor" href="#type-pairsservice">§</a> type PairsService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> PairsService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*pairsservice)-all"><a class="header-anchor" href="#func-(*pairsservice)-all">§</a> func (*PairsService) All</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(p *PairsService)</span> <span class="hljs-title">All</span><span class="hljs-params">()</span> <span class="hljs-params">([]<span class="hljs-keyword">string</span>, error)</span></span>
+</code></pre><p>Get all Pair names as array of strings</p><h4 id="func-(*pairsservice)-alldetailed"><a class="header-anchor" href="#func-(*pairsservice)-alldetailed">§</a> func (*PairsService) AllDetailed</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(p *PairsService)</span> <span class="hljs-title">AllDetailed</span><span class="hljs-params">()</span> <span class="hljs-params">([]Pair, error)</span></span>
+</code></pre><p>Return a list of detailed pairs</p><h4 id="type-pasttrade"><a class="header-anchor" href="#type-pasttrade">§</a> type PastTrade</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> PastTrade <span class="hljs-keyword">struct</span> {
+	Price       <span class="hljs-keyword">string</span>
+	Amount      <span class="hljs-keyword">string</span>
+	Timestamp   <span class="hljs-keyword">string</span>
+	Exchange    <span class="hljs-keyword">string</span>
+	Type        <span class="hljs-keyword">string</span>
+	FeeCurrency <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"fee_currency"`</span>
+	FeeAmount   <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"fee_amount"`</span>
+	TID         <span class="hljs-keyword">int64</span>
+	OrderId     <span class="hljs-keyword">int64</span> <span class="hljs-string">`json:"order_id,int"`</span>
+}
+</code></pre><h4 id="type-permissions"><a class="header-anchor" href="#type-permissions">§</a> type Permissions</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Permissions <span class="hljs-keyword">struct</span> {
+	Account   KeyPerm
+	History   KeyPerm
+	Orders    KeyPerm
+	Positions KeyPerm
+	Funding   KeyPerm
+	Wallets   KeyPerm
+	Withdraw  KeyPerm
+}
+</code></pre><h4 id="type-position"><a class="header-anchor" href="#type-position">§</a> type Position</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Position <span class="hljs-keyword">struct</span> {
+	ID        <span class="hljs-keyword">int</span>
+	Symbol    <span class="hljs-keyword">string</span>
+	Amount    <span class="hljs-keyword">string</span>
+	Status    <span class="hljs-keyword">string</span>
+	Base      <span class="hljs-keyword">string</span>
+	Timestamp <span class="hljs-keyword">string</span>
+	Swap      <span class="hljs-keyword">string</span>
+	Pl        <span class="hljs-keyword">string</span>
+}
+</code></pre><p>Position structure</p><h4 id="func-(*position)-parsetime"><a class="header-anchor" href="#func-(*position)-parsetime">§</a> func (*Position) ParseTime</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(p *Position)</span> <span class="hljs-title">ParseTime</span><span class="hljs-params">()</span> <span class="hljs-params">(*time.Time, error)</span></span>
+</code></pre><h4 id="type-positionsservice"><a class="header-anchor" href="#type-positionsservice">§</a> type PositionsService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> PositionsService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><p>PositionsService structure</p><h4 id="func-(*positionsservice)-all"><a class="header-anchor" href="#func-(*positionsservice)-all">§</a> func (*PositionsService) All</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(b *PositionsService)</span> <span class="hljs-title">All</span><span class="hljs-params">()</span> <span class="hljs-params">([]Position, error)</span></span>
+</code></pre><p>All - gets all positions</p><h4 id="func-(*positionsservice)-claim"><a class="header-anchor" href="#func-(*positionsservice)-claim">§</a> func (*PositionsService) Claim</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(b *PositionsService)</span> <span class="hljs-title">Claim</span><span class="hljs-params">(positionId <span class="hljs-keyword">int</span>, amount <span class="hljs-keyword">string</span>)</span> <span class="hljs-params">(Position, error)</span></span>
+</code></pre><p>Claim a position</p><h4 id="type-response"><a class="header-anchor" href="#type-response">§</a> type Response</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Response <span class="hljs-keyword">struct</span> {
+	Response *http.Response
+	Body     []<span class="hljs-keyword">byte</span>
+}
+</code></pre><p>Response is wrapper for standard http.Response and provides more methods.</p><h4 id="func-(*response)-string"><a class="header-anchor" href="#func-(*response)-string">§</a> func (*Response) String</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(r *Response)</span> <span class="hljs-title">String</span><span class="hljs-params">()</span> <span class="hljs-title">string</span></span>
+</code></pre><p>String converts response body to string. An empty string will be returned if error.</p><h4 id="type-stats"><a class="header-anchor" href="#type-stats">§</a> type Stats</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Stats <span class="hljs-keyword">struct</span> {
+	Period <span class="hljs-keyword">int64</span>
+	Volume <span class="hljs-keyword">float64</span> <span class="hljs-string">`json:"volume,string"`</span>
+}
+</code></pre><h4 id="type-statsservice"><a class="header-anchor" href="#type-statsservice">§</a> type StatsService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> StatsService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*statsservice)-all"><a class="header-anchor" href="#func-(*statsservice)-all">§</a> func (*StatsService) All</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *StatsService)</span> <span class="hljs-title">All</span><span class="hljs-params">(pair <span class="hljs-keyword">string</span>, period, volume <span class="hljs-keyword">string</span>)</span> <span class="hljs-params">([]Stats, error)</span></span>
+</code></pre><p>All(pair) - Volume stats for specified pair</p><h4 id="type-submitorder"><a class="header-anchor" href="#type-submitorder">§</a> type SubmitOrder</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> SubmitOrder <span class="hljs-keyword">struct</span> {
+	Symbol <span class="hljs-keyword">string</span>
+	Amount <span class="hljs-keyword">float64</span>
+	Price  <span class="hljs-keyword">float64</span>
+	Type   <span class="hljs-keyword">string</span>
+}
+</code></pre><p>SubmitOrder is an order to be created on the bitfinex platform.</p><h4 id="type-summary"><a class="header-anchor" href="#type-summary">§</a> type Summary</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Summary <span class="hljs-keyword">struct</span> {
+	TradeVolume   SummaryVolume <span class="hljs-string">`json:"trade_vol_30d"`</span>
+	FundingProfit SummaryProfit <span class="hljs-string">`json:"funding_profit_30d"`</span>
+	MakerFee      <span class="hljs-keyword">string</span>        <span class="hljs-string">`json:"maker_fee"`</span>
+	TakerFee      <span class="hljs-keyword">string</span>        <span class="hljs-string">`json:"taker_fee"`</span>
+}
+</code></pre><h4 id="type-summaryprofit"><a class="header-anchor" href="#type-summaryprofit">§</a> type SummaryProfit</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> SummaryProfit <span class="hljs-keyword">struct</span> {
+	Currency <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"curr"`</span>
+	Volume   <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"amount"`</span>
+}
+</code></pre><h4 id="type-summaryvolume"><a class="header-anchor" href="#type-summaryvolume">§</a> type SummaryVolume</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> SummaryVolume <span class="hljs-keyword">struct</span> {
+	Currency <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"curr"`</span>
+	Volume   <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"vol"`</span>
+}
+</code></pre><h4 id="type-termdata"><a class="header-anchor" href="#type-termdata">§</a> type TermData</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> TermData <span class="hljs-keyword">struct</span> {
+	<span class="hljs-comment">// Data term. E.g: ps, ws, ou, etc... See official documentation for more details.</span>
+	Term <span class="hljs-keyword">string</span>
+	<span class="hljs-comment">// Data will contain different number of elements for each term.</span>
+	<span class="hljs-comment">// Examples:</span>
+	<span class="hljs-comment">// Term: ws, Data: ["exchange","BTC",0.01410829,0]</span>
+	<span class="hljs-comment">// Term: oc, Data: [0,"BTCUSD",0,-0.01,"","CANCELED",270,0,"2015-10-15T11:26:13Z",0]</span>
+	Data  []<span class="hljs-keyword">interface</span>{}
+	Error <span class="hljs-keyword">string</span>
+}
+</code></pre><h4 id="func-(*termdata)-haserror"><a class="header-anchor" href="#func-(*termdata)-haserror">§</a> func (*TermData) HasError</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c *TermData)</span> <span class="hljs-title">HasError</span><span class="hljs-params">()</span> <span class="hljs-title">bool</span></span>
+</code></pre><h4 id="type-tick"><a class="header-anchor" href="#type-tick">§</a> type Tick</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Tick <span class="hljs-keyword">struct</span> {
+	Mid       <span class="hljs-keyword">string</span>
+	Bid       <span class="hljs-keyword">string</span>
+	Ask       <span class="hljs-keyword">string</span>
+	LastPrice <span class="hljs-keyword">string</span> <span class="hljs-string">`json:"last_price"`</span>
+	Low       <span class="hljs-keyword">string</span>
+	High      <span class="hljs-keyword">string</span>
+	Volume    <span class="hljs-keyword">string</span>
+	Timestamp <span class="hljs-keyword">string</span>
+}
+</code></pre><h4 id="func-(*tick)-parsetime"><a class="header-anchor" href="#func-(*tick)-parsetime">§</a> func (*Tick) ParseTime</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(el *Tick)</span> <span class="hljs-title">ParseTime</span><span class="hljs-params">()</span> <span class="hljs-params">(*time.Time, error)</span></span>
+</code></pre><p>ParseTime - return Timestamp in time.Time format</p><h4 id="type-tickerservice"><a class="header-anchor" href="#type-tickerservice">§</a> type TickerService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> TickerService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*tickerservice)-get"><a class="header-anchor" href="#func-(*tickerservice)-get">§</a> func (*TickerService) Get</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *TickerService)</span> <span class="hljs-title">Get</span><span class="hljs-params">(pair <span class="hljs-keyword">string</span>)</span> <span class="hljs-params">(Tick, error)</span></span>
+</code></pre><p>Get(pair) - return last Tick for specified pair</p><h4 id="type-trade"><a class="header-anchor" href="#type-trade">§</a> type Trade</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> Trade <span class="hljs-keyword">struct</span> {
+	Price     <span class="hljs-keyword">string</span>
+	Amount    <span class="hljs-keyword">string</span>
+	Exchange  <span class="hljs-keyword">string</span>
+	Type      <span class="hljs-keyword">string</span>
+	Timestamp <span class="hljs-keyword">int64</span>
+	TradeId   <span class="hljs-keyword">int64</span> <span class="hljs-string">`json:"tid,int"`</span>
+}
+</code></pre><h4 id="func-(*trade)-time"><a class="header-anchor" href="#func-(*trade)-time">§</a> func (*Trade) Time</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(el *Trade)</span> <span class="hljs-title">Time</span><span class="hljs-params">()</span> *<span class="hljs-title">time</span>.<span class="hljs-title">Time</span></span>
+</code></pre><h4 id="type-tradesservice"><a class="header-anchor" href="#type-tradesservice">§</a> type TradesService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> TradesService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*tradesservice)-all"><a class="header-anchor" href="#func-(*tradesservice)-all">§</a> func (*TradesService) All</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *TradesService)</span> <span class="hljs-title">All</span><span class="hljs-params">(pair <span class="hljs-keyword">string</span>, timestamp time.Time, limitTrades <span class="hljs-keyword">int</span>)</span> <span class="hljs-params">([]Trade, error)</span></span>
+</code></pre><h4 id="type-transferstatus"><a class="header-anchor" href="#type-transferstatus">§</a> type TransferStatus</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> TransferStatus <span class="hljs-keyword">struct</span> {
+	Status  <span class="hljs-keyword">string</span>
+	Message <span class="hljs-keyword">string</span>
+}
+</code></pre><h4 id="type-walletbalance"><a class="header-anchor" href="#type-walletbalance">§</a> type WalletBalance</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> WalletBalance <span class="hljs-keyword">struct</span> {
+	Type      <span class="hljs-keyword">string</span>
+	Currency  <span class="hljs-keyword">string</span>
+	Amount    <span class="hljs-keyword">string</span>
+	Available <span class="hljs-keyword">string</span>
+}
+</code></pre><h4 id="type-walletservice"><a class="header-anchor" href="#type-walletservice">§</a> type WalletService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> WalletService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><h4 id="func-(*walletservice)-transfer"><a class="header-anchor" href="#func-(*walletservice)-transfer">§</a> func (*WalletService) Transfer</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c *WalletService)</span> <span class="hljs-title">Transfer</span><span class="hljs-params">(amount <span class="hljs-keyword">float64</span>, currency, from, to <span class="hljs-keyword">string</span>)</span> <span class="hljs-params">([]TransferStatus, error)</span></span>
+</code></pre><p>Transfer funds between wallets</p><h4 id="func-(*walletservice)-withdrawcrypto"><a class="header-anchor" href="#func-(*walletservice)-withdrawcrypto">§</a> func (*WalletService) WithdrawCrypto</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c *WalletService)</span> <span class="hljs-title">WithdrawCrypto</span><span class="hljs-params">(amount <span class="hljs-keyword">float64</span>, currency, wallet, destinationAddress <span class="hljs-keyword">string</span>)</span> <span class="hljs-params">([]WithdrawStatus, error)</span></span>
+</code></pre><p>Withdraw a cryptocurrency to a digital wallet</p><h4 id="func-(*walletservice)-withdrawwire"><a class="header-anchor" href="#func-(*walletservice)-withdrawwire">§</a> func (*WalletService) WithdrawWire</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c *WalletService)</span> <span class="hljs-title">WithdrawWire</span><span class="hljs-params">(amount <span class="hljs-keyword">float64</span>, expressWire <span class="hljs-keyword">bool</span>, wallet <span class="hljs-keyword">string</span>, beneficiaryBank, intermediaryBank BankAccount, message <span class="hljs-keyword">string</span>)</span> <span class="hljs-params">([]WithdrawStatus, error)</span></span>
+</code></pre><h4 id="type-websocketservice"><a class="header-anchor" href="#type-websocketservice">§</a> type WebSocketService</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> WebSocketService <span class="hljs-keyword">struct</span> {
+}
+</code></pre><p>WebSocketService allow to connect and receive stream data from <a href="http://bitfinex.com">bitfinex.com</a> ws service. nolint:megacheck,structcheck</p><h4 id="func-newwebsocketservice"><a class="header-anchor" href="#func-newwebsocketservice">§</a> func NewWebSocketService</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewWebSocketService</span><span class="hljs-params">(c *Client)</span> *<span class="hljs-title">WebSocketService</span></span>
+</code></pre><p>NewWebSocketService returns a WebSocketService using the given client.</p><h4 id="func-(*websocketservice)-addsubscribe"><a class="header-anchor" href="#func-(*websocketservice)-addsubscribe">§</a> func (*WebSocketService) AddSubscribe</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(w *WebSocketService)</span> <span class="hljs-title">AddSubscribe</span><span class="hljs-params">(channel <span class="hljs-keyword">string</span>, pair <span class="hljs-keyword">string</span>, c <span class="hljs-keyword">chan</span> []<span class="hljs-keyword">float64</span>)</span></span>
+</code></pre><h4 id="func-(*websocketservice)-clearsubscriptions"><a class="header-anchor" href="#func-(*websocketservice)-clearsubscriptions">§</a> func (*WebSocketService) ClearSubscriptions</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(w *WebSocketService)</span> <span class="hljs-title">ClearSubscriptions</span><span class="hljs-params">()</span></span>
+</code></pre><h4 id="func-(*websocketservice)-close"><a class="header-anchor" href="#func-(*websocketservice)-close">§</a> func (*WebSocketService) Close</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(w *WebSocketService)</span> <span class="hljs-title">Close</span><span class="hljs-params">()</span></span>
+</code></pre><p>Close web socket connection</p><h4 id="func-(*websocketservice)-connect"><a class="header-anchor" href="#func-(*websocketservice)-connect">§</a> func (*WebSocketService) Connect</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(w *WebSocketService)</span> <span class="hljs-title">Connect</span><span class="hljs-params">()</span> <span class="hljs-title">error</span></span>
+</code></pre><p>Connect create new bitfinex websocket connection</p><h4 id="func-(*websocketservice)-connectprivate"><a class="header-anchor" href="#func-(*websocketservice)-connectprivate">§</a> func (*WebSocketService) ConnectPrivate</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(w *WebSocketService)</span> <span class="hljs-title">ConnectPrivate</span><span class="hljs-params">(ch <span class="hljs-keyword">chan</span> TermData)</span></span>
+</code></pre><h4 id="func-(*websocketservice)-subscribe"><a class="header-anchor" href="#func-(*websocketservice)-subscribe">§</a> func (*WebSocketService) Subscribe</h4><pre><code class="hljs language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(w *WebSocketService)</span> <span class="hljs-title">Subscribe</span><span class="hljs-params">()</span> <span class="hljs-title">error</span></span>
+</code></pre><p>Subscribe allows to subsribe to channels and watch for new updates. This method supports next channels: book, trade, ticker.</p><h4 id="type-withdrawstatus"><a class="header-anchor" href="#type-withdrawstatus">§</a> type WithdrawStatus</h4><pre><code class="hljs language-go"><span class="hljs-keyword">type</span> WithdrawStatus <span class="hljs-keyword">struct</span> {
+	Status       <span class="hljs-keyword">string</span>
+	Message      <span class="hljs-keyword">string</span>
+	WithdrawalID <span class="hljs-keyword">int</span> <span class="hljs-string">`json:"withdrawal_id"`</span>
+}
+</code></pre></div></div><!--
+      <div id="bfx-oss-docs-footer-bar">
+        <div id="bfx-oss-docs-footer-bar__container">
+          <p>Copyright © 2013-2020 iFinex Inc. All rights reserved.</p>
+        </div>
+      </div>
+      --></div><script type="text/javascript" src="js/vendor/debug.min.js"></script><script type="text/javascript" src="js/vendor/lodash.min.js"></script><script type="text/javascript" src="js/vendor/zepto.min.js"></script><script type="text/javascript" src="js/vendor/perfect-scrollbar.min.js"></script><script type="text/javascript" src="js/main.js"></script></body></html>
