@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 ## Bitfinex Honey Framework Trading Strategy Live Execution Module for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-strategy-exec.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-strategy-exec)

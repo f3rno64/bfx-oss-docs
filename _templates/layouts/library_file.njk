@@ -9,55 +9,6 @@
 <h2>{{ page.library }}</h2>
 {% endblock %}
 
-{% block sidebar %}
-<div
-  class="bfx-oss-docs-side-bar__sub-menu"
-  id="bfx-oss-docs-side-bar__api-reference-menu"
->
-  <ul>
-    {% for p in pages %}
-    {% if p.index %}
-    <li
-      {% if p.library === page.library %}
-      class="active"
-      {% endif %}
-    >
-      <a href="/{{ p.fn }}">
-        {% if p.language === 'js' %}
-        <img src="/svg/icons/nodejs_small.svg" />
-        {% elseif p.language === 'rb' %}
-        <img src="/svg/icons/ruby.svg" />
-        {% elseif p.language === 'py' %}
-        <img src="/svg/icons/python.svg" />
-        {% elseif p.language === 'go' %}
-        <img src="/svg/icons/go.svg" />
-        {% endif %}
-
-        <p>{{ p.library }}</p>
-      </a>
-
-      {% if p.library === page.library %}
-        <ul>
-          {% for child in pages %}
-          {% if child.library === page.library %}
-          <li
-            {% if child.fn === page.fn %}
-            class="active"
-            {% endif %}
-          >
-            <a href="{{ child.fn }}"><p>- {{ child.data.menuTitle }}</p></a>
-          </li>
-          {% endif %}
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </li>
-    {% endif %}
-    {% endfor %}
-  </ul>
-</div>
-{% endblock %}
-
 {% block content %}
 <div
   id="bfx-oss-docs-content-wrapper"

@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 # [Grenache](https://github.com/bitfinexcom/grenache) Node.JS HTTP implementation
 
 <img src="logo.png" width="15%" />

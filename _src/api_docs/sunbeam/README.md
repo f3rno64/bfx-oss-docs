@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 [![Build Status](https://travis-ci.org/bitfinexcom/sunbeam.svg?branch=master)](https://travis-ci.org/bitfinexcom/sunbeam)
 
 # Sunbeam

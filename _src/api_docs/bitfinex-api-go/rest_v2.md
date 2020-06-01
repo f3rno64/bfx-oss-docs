@@ -2,6 +2,10 @@
 title: "rest_v2"
 menuTitle: "rest_v2"
 ---
+::: api-docs-index
+[[toc]]
+:::
+
 # rest
 --
     import "github.com/bitfinexcom/bitfinex-api-go/v2/rest"

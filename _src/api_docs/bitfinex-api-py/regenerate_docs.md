@@ -2,22 +2,22 @@
 title: "regenerate_docs"
 menuTitle: "regenerate_docs"
 ---
+::: api-docs-index
+[[toc]]
+:::
+
+# Regenerate Documentation
+
 For development purposes, these are the commands used to generate the doc files.
 
 Install pydocmd:
 
-```
+```bash
 pip3 install pydoc-markdown
 ```
 
-Generate REST V2 docs:
+Generate API Reference:
 
-```
-pydocmd simple bfxapi bfxapi.client+ bfxapi.rest.bfx_rest.BfxRest+ > ./docs/rest_v2.md
-```
-
-Generate Websocket V2 docs:
-
-```
-pydocmd simple bfxapi bfxapi.client+ bfxapi.websockets.bfx_websocket.BfxWebsocket+ > ./docs/ws_v2.md
+```bash
+pydoc-markdown > docs/reference.md
 ```

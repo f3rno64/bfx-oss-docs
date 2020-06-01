@@ -1,7 +1,8 @@
 ---
 title: "Strategy Design"
 menuTitle: "Strategy Design"
-project: "bfx-hf-strategy"
-tutorial: true
 ---
+::: api-docs-index
+[[toc]]
+:::
 TODO

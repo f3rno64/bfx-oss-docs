@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 # lib-js-util-math
 
 The lib includes the utilities depicted below:

@@ -2,6 +2,10 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
+
 # Bitfinex Trading Library for Python - Bitcoin, Ethereum, Ripple and more
 
 ![https://api.travis-ci.org/bitfinexcom/bitfinex-api-py.svg?branch=master](https://api.travis-ci.org/bitfinexcom/bitfinex-api-py.svg?branch=master)
@@ -9,12 +13,11 @@ menuTitle: "README"
 A Python reference implementation of the Bitfinex API for both REST and websocket interaction.
 
 # Features
-- Official implementation
-- Websocket V2 and Rest V2
-- Connection multiplexing
-- Order and wallet management
-- All market data feeds
-
+* Official implementation
+* Websocket V2 and Rest V2
+* Connection multiplexing
+* Order and wallet management
+* All market data feeds
 ## Installation
 
 Clone package into PYTHONPATH:
@@ -58,7 +61,6 @@ bfx.ws.run()
 
 * <b>[V2 Rest](docs/rest_v2.md)</b> - Documentation
 * <b>[V2 Websocket](docs/ws_v2.md)</b> - Documentation
-
 ## Examples
 
 #### Authenticate
@@ -110,11 +112,10 @@ print ("Address: ", response.notify_info)
 ```
 See the <b>[examples](https://github.com/bitfinexcom/bitfinex-api-py/tree/master/examples)</b> directory for more, like:
 
-- [Creating/updating an order](https://github.com/bitfinexcom/bitfinex-api-py/blob/master/bfxapi/examples/ws/send_order.py)
-- [Subscribing to orderbook updates](https://github.com/bitfinexcom/bitfinex-api-py/blob/master/bfxapi/examples/ws/resubscribe_orderbook.py)
-- [Withdrawing crypto](https://github.com/bitfinexcom/bitfinex-api-py/blob/master/bfxapi/examples/rest/transfer_wallet.py)
-- [Submitting a funding offer](https://github.com/bitfinexcom/bitfinex-api-py/blob/master/bfxapi/examples/rest/create_funding.py)
-
+* [Creating/updating an order](https://github.com/bitfinexcom/bitfinex-api-py/blob/master/bfxapi/examples/ws/send_order.py)
+* [Subscribing to orderbook updates](https://github.com/bitfinexcom/bitfinex-api-py/blob/master/bfxapi/examples/ws/resubscribe_orderbook.py)
+* [Withdrawing crypto](https://github.com/bitfinexcom/bitfinex-api-py/blob/master/bfxapi/examples/rest/transfer_wallet.py)
+* [Submitting a funding offer](https://github.com/bitfinexcom/bitfinex-api-py/blob/master/bfxapi/examples/rest/create_funding.py)
 For more info on how to use this library please see the example scripts in the `bfxapi/examples` directory. Here you will find usage of all interface exposed functions for both the rest and websocket.
 
 Also please see [this medium article](https://medium.com/@Bitfinex/15f201ad20d4) for a tutorial.

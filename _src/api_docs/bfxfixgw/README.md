@@ -2,6 +2,10 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
+
 [![Build Status](https://api.travis-ci.org/bitfinexcom/bfxfixgw.png?branch=master)](https://travis-ci.org/bitfinexcom/bfxfixgw.svg?branch=master)
 
 # Bitfinex FIX Gateway

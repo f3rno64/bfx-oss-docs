@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 # eos-name-verify
 
 Small module to verify EOS Standard Account Names.

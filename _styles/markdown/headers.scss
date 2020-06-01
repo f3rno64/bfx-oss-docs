@@ -3,6 +3,8 @@
 .bfx-oss-docs-md-content {
   h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
+    white-space: pre-wrap;
+    word-break: break-word;
 
     code {
       font-family: $font-headers;
@@ -43,6 +45,7 @@
   }
 
   .bfx-oss-docs-empty:first-child,
+  #bfx-oss-docs-api-docs-index,
   #bfx-oss-docs-api-docs-index + .bfx-oss-docs-empty {
     + h1, + h2, + h3, + h4, + hh5, + h6 {
       margin-top: 0 !important;

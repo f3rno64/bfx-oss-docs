@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 # smidgen - Tiny IOTA multisignature wallet
 
 Status: *smidgen is in late BETA right now*

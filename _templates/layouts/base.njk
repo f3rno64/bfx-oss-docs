@@ -23,21 +23,60 @@
         />
       </div>
 
-      <ul id="bfx-oss-docs-side-bar__main-menu">
-        {% for entry in menuData %}
+      <ul>
+        {% for p in pages %}
+        {% if p.index %}
+        {# library pages #}
+        {% if p.library %}
         <li
-          {% if entry.fn === page.fn %}
+          {% if p.library === page.library %}
           class="active"
           {% endif %}
         >
-          <a href="{{ entry.fn }}">
-            <p>{{ entry.label }}</p>
+          <a href="/{{ p.fn }}">
+            {% if p.language === 'js' %}
+            <img src="/svg/icons/nodejs_small.svg" />
+            {% elseif p.language === 'rb' %}
+            <img src="/svg/icons/ruby.svg" />
+            {% elseif p.language === 'py' %}
+            <img src="/svg/icons/python.svg" />
+            {% elseif p.language === 'go' %}
+            <img src="/svg/icons/go.svg" />
+            {% endif %}
+
+            <p>{{ p.library }}</p>
+          </a>
+
+          {% if p.library === page.library %}
+          <ul>
+            {% for child in pages %}
+            {% if child.library === page.library %}
+            <li
+              {% if child.fn === page.fn %}
+              class="active"
+              {% endif %}
+            >
+              <a href="{{ child.fn }}"><p>- {{ child.label }}</p></a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% else %}{# end library pages #}
+        <li
+          {% if p.fn === page.fn %}
+          class="active"
+          {% endif %}
+        >
+          <a href="{{ p.fn }}">
+            <p>{{ p.label }}</p>
           </a>
         </li>
+        {% endif %} {# end page type switch #}
+        {% endif %} {# end index check #}
         {% endfor %}
       </ul>
-
-      {% block sidebar %}{% endblock %}
     </div>
 
     <div id="bfx-oss-docs-content">

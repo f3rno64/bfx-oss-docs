@@ -31,8 +31,7 @@
     }
   }
 
-  #bfx-oss-docs-side-bar__main-menu,
-  .bfx-oss-docs-side-bar__sub-menu {
+  ul {
     li {
       margin: 0 16px;
       opacity: 0.6;
@@ -42,15 +41,6 @@
 
         > a {
           text-decoration: underline;
-        }
-      }
-
-      &:not(.bfx-oss-docs-side-bar__sub-menu-subtitle):hover {
-        opacity: 1;
-
-        > a {
-          text-decoration: underline;
-          cursor: pointer;
         }
       }
 
@@ -82,15 +72,13 @@
           }
         }
       }
-    }
-  }
 
-  .bfx-oss-docs-side-bar__sub-menu {
-    ul ul {
-      margin: 0 0 16px 16px;
+      ul {
+        margin: 0 0 16px 16px;
 
-      p {
-        margin-left: 0 !important;
+        p {
+          margin-left: 0 !important;
+        }
       }
     }
   }

@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 # Bitfinex Managed OrderBook Plugin for the Node.JS API
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-api-node-plugin-managed-ob.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-api-node-plugin-managed-ob)

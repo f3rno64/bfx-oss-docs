@@ -1,9 +1,10 @@
 ---
 title: "Architectural Overview"
 menuTitle: "Architectural Overview"
-project: "bfx-hf-strategy"
-tutorial: true
 ---
+::: api-docs-index
+[[toc]]
+:::
 #### Defining a Strategy
 
 The `define` method is provided to construct a trading strategy from a set of

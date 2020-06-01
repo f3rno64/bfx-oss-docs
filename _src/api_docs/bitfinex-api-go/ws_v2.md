@@ -2,6 +2,10 @@
 title: "ws_v2"
 menuTitle: "ws_v2"
 ---
+::: api-docs-index
+[[toc]]
+:::
+
 # websocket
 --
     import "github.com/bitfinexcom/bitfinex-api-go/v2/websocket"

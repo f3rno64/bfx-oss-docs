@@ -127,7 +127,11 @@ const run = async () => {
       }
     }
 
-    // No accidental source overwrite, error raised here if the path exists
+    if (fs.existsSync(outputPath)) {
+      signale.warn(`Sources exist for ${project}, skipping build`)
+      return
+    }
+
     fs.mkdirSync(outputPath)
 
     // Grab readme as index if possible
@@ -138,6 +142,9 @@ const run = async () => {
         'title: "README"',
         'menuTitle: "README"',
         '---',
+        '::: api-docs-index',
+        '[[toc]]',
+        ':::',
         readmeMD
       ].join('\n')
 
@@ -186,6 +193,9 @@ const run = async () => {
               `title: "${tutorialName}"`,
               `menuTitle: "${tutorialName}"`,
               '---',
+              '::: api-docs-index',
+              '[[toc]]',
+              ':::',
               tutorialRaw
             ].join('\n')
 

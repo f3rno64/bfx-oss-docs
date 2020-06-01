@@ -2,14 +2,11 @@
 
 const loadConfig = require('./lib/config/load')
 const validateConfig = require('./lib/config/validate')
-const renderUnifiedJSDocConfig = require('./lib/jsdoc/render_unified_config')
 const getMD = require('./lib/markdown_it')
-const SECTION_TYPES = require('./lib/render/section_types')
-const renderPage = require('./lib/render/page')
-const renderLibraries = require('./lib/render/libraries')
-const buildLibsGo = require('./lib/build/libs_go')
-const buildLibsRuby = require('./lib/build/libs_ruby')
-const buildLibsPython = require('./lib/build/libs_python')
+const renderNJK = require('./lib/render/njk')
+const buildLibsGo = require('./lib/render/sources/libs_go')
+const buildLibsRuby = require('./lib/render/sources/libs_ruby')
+const buildLibsPython = require('./lib/render/sources/libs_python')
 
 /**
  * Bitfinex documentation (static site generator & content)
@@ -23,12 +20,9 @@ const buildLibsPython = require('./lib/build/libs_python')
  */
 
 module.exports = {
-  SECTION_TYPES,
   loadConfig,
   validateConfig,
-  renderUnifiedJSDocConfig,
-  renderPage,
-  renderLibraries,
+  renderNJK,
   buildLibsGo,
   buildLibsRuby,
   buildLibsPython,

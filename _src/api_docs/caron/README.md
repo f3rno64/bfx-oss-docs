@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 # caron
 
 Atomic Job enqueuer from Redis lists to popular Job Queues (Sidekiq, Bull, ...)

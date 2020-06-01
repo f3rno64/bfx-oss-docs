@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 ## Bitfinex Honey Framework Dummy DB plugin for Node.JS
 
 This plugin is meant to be used when no exchange-specific methods are required by a running instance of the `bfx-hf-models` database. It implements the required methods as stubs.

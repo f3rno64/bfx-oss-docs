@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 ## Bitfinex Honey Framework Utilities
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-util.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-util)

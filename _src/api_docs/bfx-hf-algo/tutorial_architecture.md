@@ -1,9 +1,10 @@
 ---
 title: "Architecture"
 menuTitle: "Architecture"
-project: "bfx-hf-algo"
-tutorial: true
 ---
+::: api-docs-index
+[[toc]]
+:::
 ## AO Host
 
 The [`AOHost`]{@link AOHost} class provides a wrapper around the algo order system, and manages

@@ -2,6 +2,10 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
+
 # Bitfinex Trading Library for GoLang  - Bitcoin, Ethereum, Ripple and more
 
 ![https://api.travis-ci.org/bitfinexcom/bitfinex-api-go.svg?branch=master](https://api.travis-ci.org/bitfinexcom/bitfinex-api-go.svg?branch=master)

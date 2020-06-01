@@ -1,28 +1,34 @@
 @import '../variables.scss';
 
-.bfx-oss-docs-md-content nav.bfx-oss-docs-md-toc {
-  display: inline-block;
-  border: 2px solid $color-border-md-toc;
-  border-radius: 4px;
-  padding: 24px 32px 16px 16px;
-  position: relative;
+.bfx-oss-docs-md-content {
+  > nav.bfx-oss-docs-md-toc {
+    display: inline-block;
+    border: 2px solid $color-border-md-toc;
+    border-radius: 4px;
+    padding: 24px 32px 16px 16px;
+    position: relative;
 
-  &::before {
-    content: 'Table of Contents';
-    top: -8px;
-    position: absolute;
-    background: #fff;
-    font-size: 14px;
-    padding: 0 8px;
+    &::before {
+      content: 'Table of Contents';
+      top: -8px;
+      position: absolute;
+      background: #fff;
+      font-size: 14px;
+      padding: 0 8px;
+    }
+
+    ol {
+      list-style-type: decimal;
+      margin-left: 16px;
+
+      li > a {
+        margin-bottom: 4px;
+        display: block;
+      }
+    }
   }
 
-  ol {
-    list-style-type: decimal;
-    margin-left: 16px;
-
-    li > a {
-      margin-bottom: 4px;
-      display: block;
-    }
+  #bfx-oss-docs-api-docs-index nav.bfx-oss-docs-md-toc {
+    padding: 32px 0;
   }
 }

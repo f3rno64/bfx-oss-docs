@@ -2,9 +2,10 @@
 id: md_test
 title: MD Render Test
 ---
-# Markdown Render Test
 
 [[toc]]
+
+# Markdown Render Test
 
 This page contains various markdown elements to test rendering.
 

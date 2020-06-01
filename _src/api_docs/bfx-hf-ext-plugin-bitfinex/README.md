@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 ## Bitfinex Honey Framework Exchange Plugin for Node.JS
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-ext-plugin-bitfinex.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-ext-plugin-bitfinex)

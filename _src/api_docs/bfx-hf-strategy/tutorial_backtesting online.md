@@ -1,6 +1,7 @@
 ---
 title: "Backtesting Online"
 menuTitle: "Backtesting Online"
-project: "bfx-hf-strategy"
-tutorial: true
 ---
+::: api-docs-index
+[[toc]]
+:::

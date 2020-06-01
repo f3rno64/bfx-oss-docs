@@ -20,15 +20,9 @@
       "root": "md_render_test",
       "label": "Markdown Render Test"
     }, {
-      "id": "oss_projects",
-      "type": "page",
-      "root": "oss_projects",
-      "label": "Open Source Projects"
-    }, {
       "id": "libraries",
       "type": "libraries",
-      "root": "api_docs",
-      "label": "Libraries"
+      "root": "api_docs"
     }]
   },
 

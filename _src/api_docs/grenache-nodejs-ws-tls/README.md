@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 # grenache-nodejs-ws-tls
 
 <img src="logo.png" width="15%" />

@@ -2,6 +2,9 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
 ## Bitfinex Honey Framework LowDB Adapter for Node.JS
 
 This is an adapter around lowdb (a lodash-powered JSON database) for the Bitfinex Honey Framework. To use, initialize an instance of the `bfx-hf-models` database with it as an adapter.

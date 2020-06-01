@@ -1,9 +1,10 @@
 ---
 title: "Plugin System"
 menuTitle: "Plugin System"
-project: "bfx-hf-strategy"
-tutorial: true
 ---
+::: api-docs-index
+[[toc]]
+:::
 # Event notes
 * onInit(args)
 * onPriceUpdate(state, update)

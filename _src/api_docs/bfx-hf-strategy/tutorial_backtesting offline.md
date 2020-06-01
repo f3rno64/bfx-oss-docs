@@ -1,9 +1,10 @@
 ---
 title: "Backtesting Offline"
 menuTitle: "Backtesting Offline"
-project: "bfx-hf-strategy"
-tutorial: true
 ---
+::: api-docs-index
+[[toc]]
+:::
 #### Overview
 
 The [bfx-hf-backtest](https://github.com/bitfinexcom/bfx-hf-backtest) library provides logic for executing backtests both offline and online while connected to a [bfx-hf-data-server](https://github.com/bitfinexcom/bf-hf-data-server) instance for live data retrieval.

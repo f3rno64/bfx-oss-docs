@@ -1,17 +1,17 @@
 {% extends 'layouts/base.njk' %}
 
 {% block page_title %}
-{{ data.title }}
+{{ page.label }}
 {% endblock %}
 
 {% block header %}
-<h2>{{ data.title }}</h2>
+<h2>{{ page.label }}</h2>
 {% endblock %}
 
 {% block content %}
 <div id='bfx-oss-docs-content-wrapper'>
   <div class="bfx-oss-docs-md-content bfx-oss-docs-code-wrapper">
-    {{ html | safe }}
+    {{ page.html | safe }}
   </div>
 </div>
 {% endblock %}

@@ -2,6 +2,10 @@
 title: "README"
 menuTitle: "README"
 ---
+::: api-docs-index
+[[toc]]
+:::
+
 # Bitfinex Trading API for Ruby - Bitcoin, Ethereum, Ripple and more
 
 A Ruby reference implementation of the Bitfinex REST & WebSocket APIs.
