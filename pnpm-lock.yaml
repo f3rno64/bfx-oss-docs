@@ -91,14 +91,14 @@ dependencies:
     specifier: ^4.17.21
     version: 4.17.21
   markdown-it:
-    specifier: '>=12.3.2'
-    version: 12.3.2
+    specifier: ^14.0.0
+    version: 14.0.0
   markdown-it-anchor:
     specifier: ^5.3.0
-    version: 5.3.0(markdown-it@12.3.2)
+    version: 5.3.0(markdown-it@14.0.0)
   markdown-it-collapsible:
     specifier: ^1.0.0
-    version: 1.0.0(markdown-it@12.3.2)
+    version: 1.0.0(markdown-it@14.0.0)
   markdown-it-container:
     specifier: ^2.0.0
     version: 2.0.0
@@ -107,7 +107,7 @@ dependencies:
     version: 0.2.3
   markdown-it-grouped-code-fence:
     specifier: ^1.2.0
-    version: 1.2.0(markdown-it@12.3.2)
+    version: 1.2.0(markdown-it@14.0.0)
   markdown-it-highlightjs:
     specifier: ^3.1.0
     version: 3.6.0
@@ -3880,7 +3880,7 @@ packages:
     engines: {node: '>=8.3.0'}
     dependencies:
       bfx-api-node-util: 1.0.11
-      bfx-hf-util: github.com/bitfinexcom/bfx-hf-util/8f75768fc0324f300b7ad377e201212c54109887
+      bfx-hf-util: git/github.com+bitfinexcom/bfx-hf-util/8f75768fc0324f300b7ad377e201212c54109887
       bluebird: 3.7.2
       crc-32: 1.2.0
       debug: 4.3.4(supports-color@6.1.0)
@@ -6088,9 +6088,15 @@ packages:
 
   /entities@2.1.0:
     resolution: {integrity: sha512-hCx1oky9PFrJ611mf0ifBLBRW8lUUVRlFolb5gWRfIELabBlbp9xZvrqZLZAs+NxFnbfQoeGd8wDkygjg7U85w==}
+    dev: true
 
   /entities@2.2.0:
     resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
+    dev: false
+
+  /entities@4.5.0:
+    resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
+    engines: {node: '>=0.12'}
     dev: false
 
   /env-variable@0.0.6:
@@ -7244,6 +7250,7 @@ packages:
   /file-saver@1.3.8:
     resolution: {integrity: sha512-spKHSBQIxxS81N/O21WmuXA2F6wppUCsutpzenOeZzOCCJ5gEfcbqJP983IrpLXzYmXnMUa6J03SubcNPdKrlg==}
     dev: false
+    bundledDependencies: false
 
   /file-set@2.0.1:
     resolution: {integrity: sha512-XgOUUpgR6FbbfYcniLw0qm1Am7PnNYIAkd+eXxRt42LiYhjaso0WiuQ+VmrNdtwotyM+cLCfZ56AZrySP3QnKA==}
@@ -10009,6 +10016,13 @@ packages:
     resolution: {integrity: sha512-ynTsyrFSdE5oZ/O9GEf00kPngmOfVwazR5GKDq6EYfhlpFug3J2zybX56a2PRRpc9P+FuSoGNAwjlbDs9jJBPQ==}
     dependencies:
       uc.micro: 1.0.6
+    dev: true
+
+  /linkify-it@5.0.0:
+    resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
+    dependencies:
+      uc.micro: 2.0.0
+    dev: false
 
   /load-json-file@2.0.0:
     resolution: {integrity: sha512-3p6ZOGNbiX4CdvEd1VcE6yi78UrGNpjHO33noGwHCnT/o2fyllJDepsm8+mFFv/DvtwFHht5HIHSyOy5a+ChVQ==}
@@ -10274,12 +10288,12 @@ packages:
       object-visit: 1.0.1
     dev: false
 
-  /markdown-it-anchor@5.3.0(markdown-it@12.3.2):
+  /markdown-it-anchor@5.3.0(markdown-it@14.0.0):
     resolution: {integrity: sha512-/V1MnLL/rgJ3jkMWo84UR+K+jF1cxNG1a+KwqeXqTIJ+jtA8aWSHuigx8lTzauiIjBDbwF3NcWQMotd0Dm39jA==}
     peerDependencies:
       markdown-it: '>=12.3.2'
     dependencies:
-      markdown-it: 12.3.2
+      markdown-it: 14.0.0
     dev: false
 
   /markdown-it-anchor@8.6.7(@types/markdown-it@12.2.3)(markdown-it@12.3.2):
@@ -10292,12 +10306,12 @@ packages:
       markdown-it: 12.3.2
     dev: true
 
-  /markdown-it-collapsible@1.0.0(markdown-it@12.3.2):
+  /markdown-it-collapsible@1.0.0(markdown-it@14.0.0):
     resolution: {integrity: sha512-WRkgDH66GNxkdkZGEyW/0VnsEtOzxZuQCAY1e5FjVYACAhMtDNleZs1Y7NZSj5Pn3yksQ6SrgPkEwQW2IFGAQw==}
     peerDependencies:
       markdown-it: '>=12.3.2'
     dependencies:
-      markdown-it: 12.3.2
+      markdown-it: 14.0.0
     dev: false
 
   /markdown-it-container@2.0.0:
@@ -10308,12 +10322,12 @@ packages:
     resolution: {integrity: sha512-s9+rcClLmZsZc3YL8Awjg/YO/VdphlE20LJ9Bx5a8RAFLI5a1vq6Mll8kOzG6w/wy8yhFLBupaa6Mfd60GATkA==}
     dev: false
 
-  /markdown-it-grouped-code-fence@1.2.0(markdown-it@12.3.2):
+  /markdown-it-grouped-code-fence@1.2.0(markdown-it@14.0.0):
     resolution: {integrity: sha512-k0SjXYhefBv/JEy7DUN9cTUbsig6tG7mu1sBmZ1rbbDcZEkX046eJSj6bvav5sp7TnXwmgFBEk9a/HS4aZTxTw==}
     peerDependencies:
       markdown-it: '>=12.3.2'
     dependencies:
-      markdown-it: 12.3.2
+      markdown-it: 14.0.0
     dev: false
 
   /markdown-it-highlightjs@3.6.0:
@@ -10352,6 +10366,19 @@ packages:
       linkify-it: 3.0.3
       mdurl: 1.0.1
       uc.micro: 1.0.6
+    dev: true
+
+  /markdown-it@14.0.0:
+    resolution: {integrity: sha512-seFjF0FIcPt4P9U39Bq1JYblX0KZCjDLFFQPHpL5AzHpqPEKtosxmdq/LTVZnjfH7tjt9BxStm+wXcDBNuYmzw==}
+    hasBin: true
+    dependencies:
+      argparse: 2.0.1
+      entities: 4.5.0
+      linkify-it: 5.0.0
+      mdurl: 2.0.0
+      punycode.js: 2.3.1
+      uc.micro: 2.0.0
+    dev: false
 
   /marked@4.3.0:
     resolution: {integrity: sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==}
@@ -10377,6 +10404,11 @@ packages:
 
   /mdurl@1.0.1:
     resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
+    dev: true
+
+  /mdurl@2.0.0:
+    resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
+    dev: false
 
   /media-typer@0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
@@ -12551,6 +12583,11 @@ packages:
       pump: 2.0.1
     dev: false
 
+  /punycode.js@2.3.1:
+    resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
+    engines: {node: '>=6'}
+    dev: false
+
   /punycode@1.4.1:
     resolution: {integrity: sha512-jmYNElW7yvO7TV33CjSmvSiE2yco3bV2czu/OzDKdMNVZQWfxCblURLhf+47syQRBntjfLdd/H0egrzIG+oaFQ==}
     dev: false
@@ -12728,6 +12765,7 @@ packages:
       react: 16.14.0
       scheduler: 0.19.1
     dev: false
+    bundledDependencies: false
 
   /react-error-overlay@6.0.11:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
@@ -12859,6 +12897,7 @@ packages:
       object-assign: 4.1.1
       prop-types: 15.8.1
     dev: false
+    bundledDependencies: false
 
   /read-only-stream@2.0.0:
     resolution: {integrity: sha512-3ALe0bjBVZtkdWKIcThYpQCLbBMd/+Tbh2CDSrAIDO3UsZ4Xs+tnyjv2MjCOMMgBG+AsUOeuP1cgtY1INISc8w==}
@@ -15143,6 +15182,11 @@ packages:
 
   /uc.micro@1.0.6:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
+    dev: true
+
+  /uc.micro@2.0.0:
+    resolution: {integrity: sha512-DffL94LsNOccVn4hyfRe5rdKa273swqeA5DJpMOeFmEn1wCDc7nAbbB0gXlgBCL7TNzeTv6G7XVWzan7iJtfig==}
+    dev: false
 
   /uglify-js@3.17.4:
     resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
@@ -16197,8 +16241,8 @@ packages:
     engines: {node: '>=4.0.0'}
     dev: false
 
-  github.com/bitfinexcom/bfx-hf-util/8f75768fc0324f300b7ad377e201212c54109887:
-    resolution: {tarball: https://codeload.github.com/bitfinexcom/bfx-hf-util/tar.gz/8f75768fc0324f300b7ad377e201212c54109887}
+  git/github.com+bitfinexcom/bfx-hf-util/8f75768fc0324f300b7ad377e201212c54109887:
+    resolution: {commit: 8f75768fc0324f300b7ad377e201212c54109887, repo: git@github.com:bitfinexcom/bfx-hf-util.git, type: git}
     name: bfx-hf-util
     version: 1.0.12
     dependencies:
